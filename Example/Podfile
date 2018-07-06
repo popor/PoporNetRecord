@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PoporNetRecord_Example' do
+  pod 'PoporNetRecord', :path => '../'
+
+  target 'PoporNetRecord_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

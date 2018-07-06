@@ -1,0 +1,6 @@
+framework module Pods_PoporNetRecord_Example {
+  umbrella header "Pods-PoporNetRecord_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

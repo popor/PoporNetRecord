@@ -1,0 +1,72 @@
+PODS:
+  - Masonry (1.1.0)
+  - PoporFoundation/NSDate (0.0.10):
+    - PoporFoundation/NSString
+  - PoporFoundation/NSDictionary (0.0.10):
+    - PoporFoundation/NSObject
+    - PoporFoundation/prefix
+  - PoporFoundation/NSObject (0.0.10)
+  - PoporFoundation/NSString (0.0.10):
+    - PoporFoundation/PrefixOs
+  - PoporFoundation/prefix (0.0.10):
+    - PoporFoundation/PrefixOs
+  - PoporFoundation/PrefixOs (0.0.10)
+  - PoporNetRecord (0.0.1):
+    - Masonry
+    - PoporFoundation/NSDate
+    - PoporFoundation/NSDictionary
+    - PoporFoundation/NSString
+    - PoporNetRecord/DetailVC (= 0.0.1)
+    - PoporNetRecord/ListVC (= 0.0.1)
+    - PoporNetRecord/Monitor (= 0.0.1)
+    - PoporUI/IToast
+    - PoporUI/UIView
+  - PoporNetRecord/DetailVC (0.0.1):
+    - Masonry
+    - PoporFoundation/NSDate
+    - PoporFoundation/NSDictionary
+    - PoporFoundation/NSString
+    - PoporUI/IToast
+    - PoporUI/UIView
+  - PoporNetRecord/ListVC (0.0.1):
+    - Masonry
+    - PoporFoundation/NSDate
+    - PoporFoundation/NSDictionary
+    - PoporFoundation/NSString
+    - PoporNetRecord/DetailVC
+    - PoporNetRecord/Monitor
+    - PoporUI/IToast
+    - PoporUI/UIView
+  - PoporNetRecord/Monitor (0.0.1):
+    - Masonry
+    - PoporFoundation/NSDate
+    - PoporFoundation/NSDictionary
+    - PoporFoundation/NSString
+    - PoporUI/IToast
+    - PoporUI/UIView
+  - PoporUI/IToast (0.0.7):
+    - PoporFoundation/NSString
+  - PoporUI/UIView (0.0.7)
+
+DEPENDENCIES:
+  - PoporNetRecord (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+    - PoporFoundation
+    - PoporUI
+
+EXTERNAL SOURCES:
+  PoporNetRecord:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  PoporFoundation: 48521112e62ce24c27b228b89ae8ba8089599e6e
+  PoporNetRecord: 9a98b0068ce8eef3735d7a4107d29caddab4c9a4
+  PoporUI: 22d654ee371bfdb02d5529084f20ccca2dd286e3
+
+PODFILE CHECKSUM: 8e5e063a762b6540e999f0788da6fdce493aea9d
+
+COCOAPODS: 1.5.3
