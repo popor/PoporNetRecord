@@ -17,11 +17,19 @@ PODS:
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
     - PoporNetRecord/DetailVC (= 0.0.1)
+    - PoporNetRecord/entity (= 0.0.1)
     - PoporNetRecord/ListVC (= 0.0.1)
     - PoporNetRecord/Monitor (= 0.0.1)
     - PoporUI/IToast
     - PoporUI/UIView
   - PoporNetRecord/DetailVC (0.0.1):
+    - Masonry
+    - PoporFoundation/NSDate
+    - PoporFoundation/NSDictionary
+    - PoporFoundation/NSString
+    - PoporUI/IToast
+    - PoporUI/UIView
+  - PoporNetRecord/entity (0.0.1):
     - Masonry
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
@@ -42,6 +50,7 @@ PODS:
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
+    - PoporNetRecord/entity
     - PoporUI/IToast
     - PoporUI/UIView
   - PoporUI/IToast (0.0.7):
@@ -64,7 +73,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporFoundation: 48521112e62ce24c27b228b89ae8ba8089599e6e
-  PoporNetRecord: 9a98b0068ce8eef3735d7a4107d29caddab4c9a4
+  PoporNetRecord: 0abaf8995d507410d46cae1e213d9a1fe9753fed
   PoporUI: 22d654ee371bfdb02d5529084f20ccca2dd286e3
 
 PODFILE CHECKSUM: 8e5e063a762b6540e999f0788da6fdce493aea9d

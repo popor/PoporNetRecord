@@ -25,8 +25,8 @@
 #import "PnrListVCPresenter.h"
 #import "PnrListVCProtocol.h"
 #import "PnrListVCRouter.h"
-#import "PnrVCEntity.h"
 #import "PoporNetRecord.h"
+#import "PnrVCEntity.h"
 
 FOUNDATION_EXPORT double PoporNetRecordVersionNumber;
 FOUNDATION_EXPORT const unsigned char PoporNetRecordVersionString[];

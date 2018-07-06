@@ -1,7 +1,7 @@
 {
   "name": "PoporNetRecord",
   "version": "0.0.1",
-  "summary": "PoporNetRecord will monitor net",
+  "summary": "PoporNetRecord will record net request only in debug configuration",
   "homepage": "https://github.com/popor/PoporNetRecord",
   "license": {
     "type": "MIT",
@@ -43,7 +43,16 @@
   },
   "subspecs": [
     {
+      "name": "entity",
+      "source_files": "PoporNetRecord/Classes/entity/*.{h,m}"
+    },
+    {
       "name": "Monitor",
+      "dependencies": {
+        "PoporNetRecord/entity": [
+
+        ]
+      },
       "source_files": "PoporNetRecord/Classes/Monitor/*.{h,m}"
     },
     {

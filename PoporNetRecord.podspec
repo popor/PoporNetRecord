@@ -19,8 +19,14 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '8.0'
     
     s.frameworks = 'UIKit', 'Foundation'
-    
+   
+   s.subspec 'entity' do |ss|
+       ss.source_files = 'PoporNetRecord/Classes/entity/*.{h,m}'
+   end
+   
     s.subspec 'Monitor' do |ss|
+        ss.dependency 'PoporNetRecord/entity'
+        
         ss.source_files = 'PoporNetRecord/Classes/Monitor/*.{h,m}'
     end
     
