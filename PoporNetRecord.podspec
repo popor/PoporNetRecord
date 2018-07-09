@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'PoporNetRecord'
-    s.version          = '0.0.3'
+    s.version          = '0.0.4'
     s.summary          = 'PoporNetRecord will record net request only in debug configuration'
     
     s.homepage         = 'https://github.com/popor/PoporNetRecord'
@@ -27,13 +27,14 @@ Pod::Spec.new do |s|
     end
     
     #    s.subspec 'Monitor' do |ss|
-    #        ss.dependency 'PoporNetRecord/entity'
+    #
     #
     #        ss.source_files = 'PoporNetRecord/Classes/Monitor/*.{h,m}'
     #    end
     
     s.subspec 'ListVC' do |ss|
         #ss.dependency 'PoporNetRecord/Monitor'
+        ss.dependency 'PoporNetRecord/entity'
         ss.dependency 'PoporNetRecord/DetailVC'
         
         ss.source_files = 'PoporNetRecord/Classes/ListVC/*.{h,m}'
