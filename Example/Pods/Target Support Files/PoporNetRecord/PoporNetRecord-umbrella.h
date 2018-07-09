@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "PoporNetRecord.h"
 #import "PnrDetailVC.h"
 #import "PnrDetailVCDataSource.h"
 #import "PnrDetailVCEventHandler.h"
@@ -26,6 +25,7 @@
 #import "PnrListVCPresenter.h"
 #import "PnrListVCProtocol.h"
 #import "PnrListVCRouter.h"
+#import "PoporNetRecord.h"
 #import "PnrVCEntity.h"
 
 FOUNDATION_EXPORT double PoporNetRecordVersionNumber;

@@ -11,36 +11,37 @@ PODS:
   - PoporFoundation/prefix (0.0.10):
     - PoporFoundation/PrefixOs
   - PoporFoundation/PrefixOs (0.0.10)
-  - PoporNetRecord (0.0.2):
+  - PoporNetRecord (0.0.5):
     - Masonry
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 0.0.2)
-    - PoporNetRecord/entity (= 0.0.2)
-    - PoporNetRecord/ListVC (= 0.0.2)
+    - PoporNetRecord/DetailVC (= 0.0.5)
+    - PoporNetRecord/entity (= 0.0.5)
+    - PoporNetRecord/ListVC (= 0.0.5)
     - PoporUI/IToast
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (0.0.2):
-    - Masonry
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporUI/IToast
-    - PoporUI/UIView
-  - PoporNetRecord/entity (0.0.2):
+  - PoporNetRecord/DetailVC (0.0.5):
     - Masonry
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
     - PoporUI/IToast
     - PoporUI/UIView
-  - PoporNetRecord/ListVC (0.0.2):
+  - PoporNetRecord/entity (0.0.5):
+    - Masonry
+    - PoporFoundation/NSDate
+    - PoporFoundation/NSDictionary
+    - PoporFoundation/NSString
+    - PoporUI/IToast
+    - PoporUI/UIView
+  - PoporNetRecord/ListVC (0.0.5):
     - Masonry
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
     - PoporNetRecord/DetailVC
+    - PoporNetRecord/entity
     - PoporUI/IToast
     - PoporUI/UIView
   - PoporUI/IToast (0.0.7):
@@ -63,7 +64,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporFoundation: 48521112e62ce24c27b228b89ae8ba8089599e6e
-  PoporNetRecord: 8ad2a3408a91eee3331492976468e1011ad82843
+  PoporNetRecord: af54434a5da4c736f65ff5ede5a5ef960df1fc16
   PoporUI: 22d654ee371bfdb02d5529084f20ccca2dd286e3
 
 PODFILE CHECKSUM: 8e5e063a762b6540e999f0788da6fdce493aea9d
