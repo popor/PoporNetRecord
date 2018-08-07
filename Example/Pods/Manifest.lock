@@ -11,31 +11,31 @@ PODS:
   - PoporFoundation/PrefixCore (0.0.15):
     - PoporFoundation/PrefixOs
   - PoporFoundation/PrefixOs (0.0.15)
-  - PoporNetRecord (0.0.7):
+  - PoporNetRecord (0.0.8):
     - Masonry
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 0.0.7)
-    - PoporNetRecord/entity (= 0.0.7)
-    - PoporNetRecord/ListVC (= 0.0.7)
+    - PoporNetRecord/DetailVC (= 0.0.8)
+    - PoporNetRecord/entity (= 0.0.8)
+    - PoporNetRecord/ListVC (= 0.0.8)
     - PoporUI/IToast
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (0.0.7):
-    - Masonry
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporUI/IToast
-    - PoporUI/UIView
-  - PoporNetRecord/entity (0.0.7):
+  - PoporNetRecord/DetailVC (0.0.8):
     - Masonry
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
     - PoporUI/IToast
     - PoporUI/UIView
-  - PoporNetRecord/ListVC (0.0.7):
+  - PoporNetRecord/entity (0.0.8):
+    - Masonry
+    - PoporFoundation/NSDate
+    - PoporFoundation/NSDictionary
+    - PoporFoundation/NSString
+    - PoporUI/IToast
+    - PoporUI/UIView
+  - PoporNetRecord/ListVC (0.0.8):
     - Masonry
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
@@ -64,7 +64,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporFoundation: 0293bddbd32f0c12b80c6149105e2804ae79b16c
-  PoporNetRecord: cf7efd2d9dc49b8156ad6d06653b32ba0d98d382
+  PoporNetRecord: f19a4c9df9964ac1d8ede317fe65b043f2c9239e
   PoporUI: 09366ba0d18b7099d7b3a37aaf7cac84a4954980
 
 PODFILE CHECKSUM: 8e5e063a762b6540e999f0788da6fdce493aea9d
