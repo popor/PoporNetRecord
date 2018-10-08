@@ -46,7 +46,7 @@ CG_INLINE UIColor * RGB16(unsigned long rgbValue) {
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     };
     
-    pnr.recordType = PoporNetRecordDisable;
+    //pnr.recordType = PoporNetRecordDisable;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [PoporNetRecord addUrl:@"http://www.baidu.com/test0.5" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:@{@"success":@"true"}];
