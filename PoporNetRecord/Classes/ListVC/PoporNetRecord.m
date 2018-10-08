@@ -127,6 +127,9 @@
         [nc pushViewController:vc animated:YES];
     }else{
         UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:vc];
+        if (self.presentNCBlock) {
+            self.presentNCBlock(nc);
+        }
         
         [self.window.rootViewController presentViewController:nc animated:YES completion:nil];
     }

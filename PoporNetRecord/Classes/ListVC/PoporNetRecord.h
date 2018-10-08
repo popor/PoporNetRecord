@@ -15,6 +15,8 @@ typedef NS_ENUM(int, PoporNetRecordType) {
     PoporNetRecordDisable, // 全部忽略
 };
 
+typedef void(^PoporNetRecordNcBlock) (UINavigationController * nc);
+
 @interface PoporNetRecord : NSObject
 
 @property (nonatomic        ) CGFloat   activeAlpha;
@@ -23,6 +25,7 @@ typedef NS_ENUM(int, PoporNetRecordType) {
 
 @property (nonatomic        ) PoporNetRecordType recordType;//监测类型
 @property (nonatomic, copy  ) BlockPVoid freshBlock;
+@property (nonatomic, copy  ) PoporNetRecordNcBlock presentNCBlock;// 用户更新 presentViewController NC的状态
 
 + (instancetype)share;
 
