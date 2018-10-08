@@ -191,7 +191,7 @@
 }
 
 - (void)changeSBallViewFrameWithPoint:(CGPoint)point {
-    self.ballBT.center = CGPointMake(point.x, point.y-self.ballBT.height/2);
+    self.ballBT.center = CGPointMake(point.x, point.y);
 }
 
 #pragma mark - 记录按钮位置
