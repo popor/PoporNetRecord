@@ -1,41 +1,41 @@
 PODS:
   - Masonry (1.1.0)
-  - PoporFoundation/NSDate (0.0.15):
+  - PoporFoundation/NSDate (0.0.25):
     - PoporFoundation/NSString
-  - PoporFoundation/NSDictionary (0.0.15):
+  - PoporFoundation/NSDictionary (0.0.25):
     - PoporFoundation/NSObject
     - PoporFoundation/PrefixCore
-  - PoporFoundation/NSObject (0.0.15)
-  - PoporFoundation/NSString (0.0.15):
+  - PoporFoundation/NSObject (0.0.25)
+  - PoporFoundation/NSString (0.0.25):
     - PoporFoundation/PrefixOs
-  - PoporFoundation/PrefixCore (0.0.15):
+  - PoporFoundation/PrefixCore (0.0.25):
     - PoporFoundation/PrefixOs
-  - PoporFoundation/PrefixOs (0.0.15)
-  - PoporNetRecord (0.0.10):
+  - PoporFoundation/PrefixOs (0.0.25)
+  - PoporNetRecord (0.0.11):
     - Masonry
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 0.0.10)
-    - PoporNetRecord/entity (= 0.0.10)
-    - PoporNetRecord/ListVC (= 0.0.10)
+    - PoporNetRecord/DetailVC (= 0.0.11)
+    - PoporNetRecord/entity (= 0.0.11)
+    - PoporNetRecord/ListVC (= 0.0.11)
     - PoporUI/IToast
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (0.0.10):
-    - Masonry
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporUI/IToast
-    - PoporUI/UIView
-  - PoporNetRecord/entity (0.0.10):
+  - PoporNetRecord/DetailVC (0.0.11):
     - Masonry
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
     - PoporUI/IToast
     - PoporUI/UIView
-  - PoporNetRecord/ListVC (0.0.10):
+  - PoporNetRecord/entity (0.0.11):
+    - Masonry
+    - PoporFoundation/NSDate
+    - PoporFoundation/NSDictionary
+    - PoporFoundation/NSString
+    - PoporUI/IToast
+    - PoporUI/UIView
+  - PoporNetRecord/ListVC (0.0.11):
     - Masonry
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
@@ -44,9 +44,9 @@ PODS:
     - PoporNetRecord/entity
     - PoporUI/IToast
     - PoporUI/UIView
-  - PoporUI/IToast (0.0.8):
+  - PoporUI/IToast (0.0.18):
     - PoporFoundation/NSString
-  - PoporUI/UIView (0.0.8)
+  - PoporUI/UIView (0.0.18)
 
 DEPENDENCIES:
   - PoporNetRecord (from `../`)
@@ -63,10 +63,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  PoporFoundation: 0293bddbd32f0c12b80c6149105e2804ae79b16c
-  PoporNetRecord: 52c2575b383ffb9319ed6084d100d29d299e0517
-  PoporUI: 09366ba0d18b7099d7b3a37aaf7cac84a4954980
+  PoporFoundation: bca1071cd750888f2dac9e5f5bb0857d4f76e92b
+  PoporNetRecord: 49dbe7d9c9703dd3557c28664487be140860c16d
+  PoporUI: e6a89da106f51c6ab18310b52fc926de9ec9527f
 
 PODFILE CHECKSUM: 8e5e063a762b6540e999f0788da6fdce493aea9d
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.0.beta.2

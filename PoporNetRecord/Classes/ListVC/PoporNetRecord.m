@@ -121,18 +121,18 @@
         }
     };
     UIViewController * vc = [PnrListVCRouter vcWithDic:@{@"title":@"网络请求", @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock}];
-    if (self.window.rootViewController.presentedViewController) {
-        UINavigationController * nc = (UINavigationController *)self.window.rootViewController.presentedViewController;
-        
-        [nc pushViewController:vc animated:YES];
-    }else{
-        UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:vc];
-        if (self.presentNCBlock) {
-            self.presentNCBlock(nc);
-        }
-        
-        [self.window.rootViewController presentViewController:nc animated:YES completion:nil];
+    //    if (self.window.rootViewController.presentedViewController) {
+    //        UINavigationController * nc = (UINavigationController *)self.window.rootViewController.presentedViewController;
+    //
+    //        [nc pushViewController:vc animated:YES];
+    //    }else{
+    UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:vc];
+    if (self.presentNCBlock) {
+        self.presentNCBlock(nc);
     }
+        
+    [self.window.rootViewController presentViewController:nc animated:YES completion:nil];
+    //    }
 }
 
 #pragma mark - Action
