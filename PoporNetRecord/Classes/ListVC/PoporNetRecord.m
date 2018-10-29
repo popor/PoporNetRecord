@@ -125,7 +125,8 @@
     if (self.presentNCBlock) {
         self.presentNCBlock(nc);
     }
-    if (self.window.rootViewController.presentationController) {
+    if (self.window.rootViewController.presentationController
+        && self.window.rootViewController.presentedViewController) {
         [self.window.rootViewController.presentedViewController presentViewController:nc animated:YES completion:nil];
     }else{
         [self.window.rootViewController presentViewController:nc animated:YES completion:nil];
