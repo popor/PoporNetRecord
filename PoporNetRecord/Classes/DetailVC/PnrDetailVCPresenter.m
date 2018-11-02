@@ -58,18 +58,7 @@
     
     CGRect rect = [att boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading |NSStringDrawingTruncatesLastVisibleLine context:nil];
     
-    //    NSDictionary *attribute = @{NSFontAttributeName: self.config.cellTitleFont};
-    //    rect = [att.string boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
-    //                                             options:
-    //                      NSStringDrawingTruncatesLastVisibleLine |
-    //                      NSStringDrawingUsesLineFragmentOrigin |
-    //                      NSStringDrawingUsesFontLeading
-    //                                          attributes:attribute
-    //                                             context:nil];
-    //
-    //    NSLog(@"%@ : %f", self.view.titleArray[indexPath.row], rect.size.height);
-    
-    return rect.size.height + 30;
+    return rect.size.height * 1.1 +10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -87,6 +76,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.numberOfLines = 0;
+        cell.textLabel.font = self.config.cellTitleFont;
     }
     
     cell.textLabel.attributedText = self.view.cellAttArray[indexPath.row];
