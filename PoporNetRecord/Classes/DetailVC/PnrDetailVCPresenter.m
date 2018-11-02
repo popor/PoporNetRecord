@@ -12,6 +12,7 @@
 #import <PoporUI/IToastKeyboard.h>
 #import <PoporFoundation/NSString+Size.h>
 #import "PoporNetRecordConfig.h"
+#import "PnrDetailCell.h"
 
 @interface PnrDetailVCPresenter ()
 
@@ -55,10 +56,16 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     float width = self.view.vc.view.frame.size.width;
     NSMutableAttributedString * att = self.view.cellAttArray[indexPath.row];
-    
-    CGRect rect = [att boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading |NSStringDrawingTruncatesLastVisibleLine context:nil];
-    
-    return rect.size.height * 1.1 +10;
+    static UILabel * l;
+    if (!l) {
+        l = [UILabel new];
+        l.font = self.config.cellTitleFont;
+        l.numberOfLines = 0;
+    }
+    l.frame = CGRectMake(0, 0, width-30, 10);
+    l.attributedText = att;
+    [l sizeToFit];
+    return MAX(l.frame.size.height + 6, 56);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -71,15 +78,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * CellID = @"CellID";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellID];
+    PnrDetailCell * cell = [tableView dequeueReusableCellWithIdentifier:CellID];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
+        cell = [[PnrDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textLabel.numberOfLines = 0;
-        cell.textLabel.font = self.config.cellTitleFont;
     }
     
-    cell.textLabel.attributedText = self.view.cellAttArray[indexPath.row];
+    cell.textL.attributedText = self.view.cellAttArray[indexPath.row];
     
     return cell;
 }

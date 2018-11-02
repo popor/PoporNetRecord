@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "PnrDetailCell.h"
 #import "PnrDetailVC.h"
 #import "PnrDetailVCDataSource.h"
 #import "PnrDetailVCEventHandler.h"

@@ -8,125 +8,127 @@
 
 /* Begin PBXBuildFile section */
 		0274ABF6E21F77404F3F24F23ECB617F /* PrefixFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 12E577FCFFA978935A36064B5FE63D93 /* PrefixFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		03A0DE8E6167D482C1920A687C575D7E /* PnrVCEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = AA52F4CDCAFA9B4D6AB78D5ADF1F1C9C /* PnrVCEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03D8A8C07569918F36F531D88BED060A /* NSDictionary+tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D4C8D188BB32E10FBF45F3E0DD1D2 /* NSDictionary+tool.m */; };
 		03E6C18745D7D3CFAD4F513DE97B954B /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B6A082A168B7C2A6E3892D5D18C8C73 /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0563CAFEF5B87CBE57C9596DBAD75056 /* PnrListVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D2872FEFE402D490748F829ED9C0FC7 /* PnrListVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0754999D1F31A6BD77E0156456F32AF5 /* PnrListVCRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F389D5AC059C2E58C80CA683628D067 /* PnrListVCRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08A5F48BEFF77A7202FA7C8AE98646EB /* JSONSyntaxHighlight-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBFAF53C09F2AB4857F6D598129A394 /* JSONSyntaxHighlight-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0927F599C75830F14A95B44E7119C39F /* PnrDetailVCPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = D957288DF9348A01C8AD963C4BC292C8 /* PnrDetailVCPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		09B11223F679A4A728106EC089D79B95 /* IToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B6A4380CF98315A48C6A07EC41D392F /* IToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A5F0FE9E0DF9B9F28611A38B111CB34 /* IToastKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = B64E6510ECF49D8EE148943671F34BB5 /* IToastKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AAC4B2B99475792F00CBA7D261B56CA /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = F175543E98BEE95ADB984CC03604C3D2 /* NSString+Size.m */; };
-		0C0CF79D025D2030CB778174F45A497A /* PnrListVCCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E3F000A012D5F578A5CBC234E0AF01B /* PnrListVCCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0CB26840B2CD2CDB40F8A29A935233E3 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FBDB70E9709C9D63CA2A09993D1DE01 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0CE8C518C49E7CAC44CD8A569E0980D5 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADD7834F9F0C3E3A934EBF4FC6BC2F7 /* UIView+Extension.m */; };
-		0E70F45C12FA6DA7E4A2373663384F14 /* PnrListVCPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6601D3F1C434D5BC2669F0159B44BBC9 /* PnrListVCPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0EDC3DD03B9BDA3474FC371114BD038C /* NSString+format.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F5E9FFDE7F9F1A7CD8920F986F496F /* NSString+format.m */; };
 		1046B7E99E763A9478CEDEB621A21C5F /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A40B4B452C8D7B72FFA4E2BE089C1E /* View+MASAdditions.m */; };
-		160F98FB7179511FD61F03BD71F417C7 /* PoporNetRecord-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 60E68A9231EEB6EA4A088673640EAF13 /* PoporNetRecord-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11779D2C9EFE9B5B9E669169B7AA5052 /* PnrListVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F753DE1E787D257E39C03849B1C6BC2 /* PnrListVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16056664D2B7E5C86CBAFD76CFEAA9A8 /* PnrListVCProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B8A822310A2917CF6E7C46E868A210C7 /* PnrListVCProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CAC6B611B34666743EAD31B1DA4789F /* PnrDetailVCPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = CB6DC4CA21C81240056B88377FE6D08A /* PnrDetailVCPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CF8F4463CB87D87E37273AF488DE8AC /* PnrDetailVCRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 58B6C77138A8CE486438F967C51202D6 /* PnrDetailVCRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E2EFA775E061A02E0CCF7AABB38078D /* PnrDetailCell.h in Headers */ = {isa = PBXBuildFile; fileRef = B01565D16D7AFDC4E8E6A6CAB8EE4DA8 /* PnrDetailCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E7401DC4993EC8EB5ADDFAF1A4C665F /* PnrVCEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD31C1F647D10FB07A127A81705D4AC /* PnrVCEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		211F163562203437B56D85020246F86F /* JSONSyntaxHighlight-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F01495D25B197F4BD73F2F4E57DE3AC8 /* JSONSyntaxHighlight-dummy.m */; };
 		22718A8331085A4DFCB57A7B8A7982A0 /* PoporFoundation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 21BD474B3F95A689B10F440CE2DD8EAF /* PoporFoundation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		229A8517A884B2B6F509075B03A71D11 /* NSDictionary+Swizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = EC0D0530911C05C0C36EC1C440ACC7A4 /* NSDictionary+Swizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		249E20A6244433FBF3CD8B8B7EAB1F02 /* PrefixFun.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB3A5059F3201ED4990DD4DBC9E07BB /* PrefixFun.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24AA095821D4A1EE5818A0374DFCD08B /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 42C8D8205A284191CB882B5D4356AD77 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27960F6341F830F74E7E37AF97921018 /* JSONSyntaxHighlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090B54C9D47F55AEAE1945476E27B10F /* JSONSyntaxHighlight.framework */; };
+		2873B8B77DB12F91BD51D055828E1883 /* PoporNetRecordConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 021912FD92D4ED6E177E9EB1312A9C58 /* PoporNetRecordConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29E5586975B4AC5D7B79B6192B48C335 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EDA502A544FA2901D311A21AF1D01 /* Foundation.framework */; };
 		2A0682DE5EE1C923A80367C36CC3F92C /* PoporFoundation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3308009351516F28C4CDC89892392120 /* PoporFoundation-dummy.m */; };
 		2A47719F7EB2CF871C02E5555A4B1970 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493A86679732381EB75CEB29DE650D17 /* Masonry.framework */; };
+		2E1780FDDBE942CBC8FD92ACA095C4BF /* PoporNetRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 319702A56A95E394555C3EEDD4CF8D94 /* PoporNetRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31C55217A6544DDFBC318B3A61EBC50C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EDA502A544FA2901D311A21AF1D01 /* Foundation.framework */; };
 		326FBDC63603C2B78432442F5FC5A8B7 /* Pods-PoporNetRecord_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C1292638A834B2AABCE79976985BB630 /* Pods-PoporNetRecord_Example-dummy.m */; };
+		35117B5F1BED2898A2EDD6AFC5EFBB74 /* PnrDetailVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CF2F12A1E55F7D3A183C2A77A37F783 /* PnrDetailVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3681FE2D1ED0834C4521CEB5AEF3D343 /* IToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F38F3AD50029C885A52C6A35D39864 /* IToast.m */; };
 		380AB29A6D2222A7BCE8BDAB15F136B1 /* NSString+IDCard.h in Headers */ = {isa = PBXBuildFile; fileRef = FF7689551E79E80CF5E16128DFF8E227 /* NSString+IDCard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39112DCE2CE6EF4A8CA1047B1C16DF40 /* PnrDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 507644EFB668543C0A179EC0801C1B27 /* PnrDetailVC.m */; };
+		3A96E61D286FA67013CBB79A41A1C6E5 /* PnrDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF1008EA9EF14980DDEB4C766C58F73 /* PnrDetailCell.m */; };
 		3B610CE92F5C2762F7E3F299FEC79F83 /* UIView+Tool.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D421FAE9B89AF3B695B5FD8CA0E9578 /* UIView+Tool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4268BB2A99BB1C1549117575DBBE44FB /* PnrListVCRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F7043C7A014350712B995EC7F08558 /* PnrListVCRouter.m */; };
+		4388CD4CC68B4D64322084AC2878790B /* PnrListVCPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 842217DC117BFEC80F0C2DD3942A7701 /* PnrListVCPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44E70E4F206313D6CA37AD4B3E250AF9 /* PoporNetRecord-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D04CC7EEC8A0CA6B1563455320856DC /* PoporNetRecord-dummy.m */; };
 		49CD91D6F77E8E088F0A5C59EE86B53C /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B79A5F29A84A72215AB2617CCFEAD2 /* ViewController+MASAdditions.m */; };
 		4A0E96A319444BBF90888BF962E8AD57 /* UIView+Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B7BE72A414E05140EEB027F9251D64D /* UIView+Extension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A3DD37ABD9A5758C3BE31E8B1CF7B29 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205228E5763AF35C92E53A6AB605903 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B68EAAD60BD0B67B42711BF6DACDC9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EDA502A544FA2901D311A21AF1D01 /* Foundation.framework */; };
 		4DBC8CE64A27AF5033333924553AA7B3 /* NSString+format.h in Headers */ = {isa = PBXBuildFile; fileRef = E32B288A3126A3DBF20D85FD214A00DC /* NSString+format.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4FA72FCD79FB6A63D67E3EEC07006D91 /* PoporNetRecordConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 40AACEC4CA755655161273D038A28F59 /* PoporNetRecordConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4DECCD008363853DB02A2B0490E0F52D /* PnrDetailVCInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = A910DC510C9F407F983FB6B832E08B86 /* PnrDetailVCInteractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F355A740BB50589858E160BF2C10518 /* PnrListVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D25F40DF5E112C758921679077C3A /* PnrListVCPresenter.m */; };
 		50FADD0D1A73B1AD065B54A6355CAA06 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 162A6FD1055EFF403B4D82C7056C8D58 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		540FF45EE91B2EEADFC98A0466EBB264 /* PoporFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9C9D0FBBFF3744B1E755AB9EF13540 /* PoporFoundation.framework */; };
-		54B3CE162D5BD74C520693F5514456D8 /* PnrDetailVCProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A1C2DC0063ADDD57CD971AB3EEF66D88 /* PnrDetailVCProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		57E291B161CC0EC928BE585BBD3FA211 /* JSONSyntaxHighlight.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B4F98C16DA2D97C811F7B24A07B5E2C /* JSONSyntaxHighlight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		59F1F34EC8668D299B1A1BEA3AD51A98 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = EA3197B8D8E97AB35F8D3F4F80976D08 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AA3FE242A69F285B3702C621D99007C /* PoporNetRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F70C3EEE5A436B15DF595B96ED96D5 /* PoporNetRecord.m */; };
 		5C59603F38A7DA09A2CFD5004B4599B7 /* IToastKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 62068F3724523F5D10BB0DC6931DF34A /* IToastKeyboard.m */; };
+		5D0380E24AA36655E01D65D403555888 /* PnrDetailVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F292488455BEA81C1D452103B88372 /* PnrDetailVCPresenter.m */; };
 		5D29F8AD0E338EE9C483F5AC8AD19613 /* Pods-PoporNetRecord_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 52AEC81731CAB07926A22ED15EFBBF6B /* Pods-PoporNetRecord_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5E7D6D4EC9DDFA3B4BABDA605FD194D9 /* NSDictionary+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 8699CE075AE50E20178E5F844FBD79DF /* NSDictionary+Swizzling.m */; };
 		61D6D891F5267AB65CD97EC2C0D4BA9C /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E2115AF982EC94527F6F7F768BB5AD3 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		632981C2C8E12600AB7E91F6F3455F24 /* PnrDetailVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F04A80A37BF6A1F29CBFB5BDC199AE9 /* PnrDetailVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65AD43F8BB7734430A4B11B134CFA4E0 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5713D1988A3E399E8B107700BF236AB5 /* MASLayoutConstraint.m */; };
+		662E690A042C4430777A39F2386E83CB /* PnrListVCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BACD5C0FD8ECF34D3303641BD3F74C /* PnrListVCCell.m */; };
 		6705CE2C295FE5BA23F2C5C6C9627F53 /* NSObject+performSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E70267993B26C339C443336428D21E2C /* NSObject+performSelector.m */; };
+		67FDC77D2F93D49AF241A9345680265E /* PnrListVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D4162D34DEA082CEB4EEEA1A284892 /* PnrListVCInteractor.m */; };
 		69E753A064765388C9FA44918F81E5A5 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922BA3BFC4BD7004275247FBE24A8AE /* MASViewConstraint.m */; };
 		6AAFCFFA8C2F4D8B7A4A8BDE07066A40 /* UIView+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDF685BBC22C0C98938035576B08C1 /* UIView+Tool.m */; };
 		6AF6A2E528B16F9D70043D7DCD294B3D /* PoporUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6862F8FB81754DFA32806E4E875FBD6F /* PoporUI-dummy.m */; };
 		6C4C4458592DF228357F8756BA478080 /* NSDictionary+tool.h in Headers */ = {isa = PBXBuildFile; fileRef = BA4C5927F89F67957BCA53907E2CD75A /* NSDictionary+tool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C978B7D6D7CF47929BCCCE7F27C133D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EDA502A544FA2901D311A21AF1D01 /* Foundation.framework */; };
-		6EA0FF34CF44C7D940D23ED9868CE69F /* PnrDetailVCEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 68487F3EFEC2914EC06498805606053D /* PnrDetailVCEventHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E712DC501D265942D9AE27630833F78 /* PoporNetRecordConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 688245F96073CA233F3A3CE65362C3B7 /* PoporNetRecordConfig.m */; };
 		739AF97C4910AC1C45F498BDB66E9B1C /* NSDate+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7711F1D13011C2AEBE29A56CC590712D /* NSDate+Tool.m */; };
-		740A601968DF6979AF3EB152871D467A /* PnrListVCRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = C049BAD4724EB4E14CB629EC6EE01BE9 /* PnrListVCRouter.m */; };
-		7B74B8B4450F52A9D27714CC982B202E /* PnrListVCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D180FB68DB61444D789BCDF0CD46C9AA /* PnrListVCCell.m */; };
+		74316E98F796E7420278B2C1B3F48C56 /* PnrListVCCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CC0DAD22C8E8CE16CEC9A88646C7F4F /* PnrListVCCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C709793C99CBC043C466B041CDB2458 /* PnrDetailVCEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = C40D5A2FAB3E54E81C4897BA028F049B /* PnrDetailVCEventHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D35768AF8470C95B99F9AB2542384BD /* PoporUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF270042DFF1E90B9433D14405A0B49A /* PoporUI.framework */; };
-		83CA24ADA3A3B95594E43C6C4A71D395 /* PnrListVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F945CF9E9DA334B72BEC2D5487916 /* PnrListVCInteractor.m */; };
-		8630C77D3B0D90287E75FBA3FB078EB2 /* PnrListVCInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D03457FD533F919C89A481E2373DB4A /* PnrListVCInteractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DA074395967E45C05A62EA0963B1BBE /* PnrListVCInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 961CE76E5B44EE9B5DC99304B3F27170 /* PnrListVCInteractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85F6F42478FE54A4CF895C4FA7E7071A /* PnrDetailVCRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D96044695337D3C7A582A932F184CF0 /* PnrDetailVCRouter.m */; };
 		892469602EA886064AC260E8CC7E6657 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D645DBC0F51C1A033B2732ACC3CEACBD /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89E1C4ED67A9AC34A08B8BADF8EF0DA9 /* PoporFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9C9D0FBBFF3744B1E755AB9EF13540 /* PoporFoundation.framework */; };
-		8ABAEB6F85C52F1F48611586AF863470 /* PnrVCEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DA7103C728EA159DFC285E4FDB6B1A /* PnrVCEntity.m */; };
 		8C6D51C01DD891838AA766B71085F01D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A7ABA36F44D7DF658BADE84D9B9893 /* UIKit.framework */; };
+		8D5F5F13329781381CF0FEA72D88F59C /* PnrListVCEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = C8C0CD21E7D985C3585C1A20AC601511 /* PnrListVCEventHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8ED6A96C093D82201F0FDD495D62F97A /* NSString+Size.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C47EF02A649128E69DC47AEDE311902 /* NSString+Size.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F55D939C5E4C5E681E3F70539DE64DB /* PnrDetailVCRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = F0C73BFB816C32A8A5A2FC2FA275CCEF /* PnrDetailVCRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95B9E1E6B25C4039D49F6EF86C06C9F7 /* PnrDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5CE42807C21D998809DFC97F86B20 /* PnrDetailVC.m */; };
 		98655E9ABEE655AC980F3AB422088C38 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8C03918E59491B2EF8438D5CC4844A /* MASConstraint.m */; };
 		9A69926C1D8C5D7F8757774578428398 /* NSString+IDCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C19A03A0DBFFF0A9D6C4693F9527DC9 /* NSString+IDCard.m */; };
 		9A9FB983FB2C68F7F15AE5E2AF70C1DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A7ABA36F44D7DF658BADE84D9B9893 /* UIKit.framework */; };
 		9AD76A81B93A144B5D63E1F8BA194BDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EDA502A544FA2901D311A21AF1D01 /* Foundation.framework */; };
 		9DF1CD6D437EF1F3334EF52497102528 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 42A14A318CA023BA75BD4A2D77EB1612 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0EA356466BD07FE9C7D4900FD6DD75B /* PnrListVCRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E58E2DAD0B8679E49E7B756D1798796 /* PnrListVCRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0FDD2A6832EE4854731CDB45C4B5B9F /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B253BDE64C312ADF3BFE37BC0C49A070 /* MASConstraintMaker.m */; };
 		A15DE0AAFB471CF3B2CD08341936B91E /* Pods-PoporNetRecord_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1D9ECD602AAF2BBA238A9394A951D /* Pods-PoporNetRecord_Tests-dummy.m */; };
+		A37C5AE2BD9869C5FA5E44F6872F5729 /* PnrDetailVCProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F7AF7DDBE1C73C091A69C6E5571A3CCD /* PnrDetailVCProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6BF5605389AD6C9E1119700C7677D09 /* NSDate+Tool.h in Headers */ = {isa = PBXBuildFile; fileRef = B99EDB777E845F1B1D9DB5C0B1994C59 /* NSDate+Tool.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A8D7E5C4E308FB1B70966862F50A1120 /* PoporNetRecordConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A742F81C568879CCA15952714CC7D98 /* PoporNetRecordConfig.m */; };
 		A9C9774D6BCA3A159F4DA9D9D0CD4196 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F642D3DC7DE8D0CC3AA6CA7A4C1DCAD8 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		AC1963A2D2514A34C0178578CF75CCBA /* NSString+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D76788CC6A9718B4017DAA2F71621C6C /* NSString+Tool.m */; };
-		AE8C927DC0C6BD52A6F27D4EEB8DD0C5 /* PnrListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B05E8144E91CED54D8BDFA1FD64EAA /* PnrListVC.m */; };
-		B5D18A1B6D6DA490484E09F7540D274A /* PnrDetailVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 289AB3E6F8DC988C50AF79A5B7D99799 /* PnrDetailVCInteractor.m */; };
+		AEEF6C04454F77DC4EC7DACCC964375F /* PoporNetRecord-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 56020F77B8A71A4BBB5AD833808B899F /* PoporNetRecord-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B72CA7D1C29375474E4915EC7C4B5ACC /* JSONSyntaxHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = A041ECD3B4BFA7AB51B625E6330DF58D /* JSONSyntaxHighlight.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		B7483B28C973E691918373DA294BD975 /* PnrDetailVCRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A35F1572BC6F91E8958E55B70ED216 /* PnrDetailVCRouter.m */; };
-		BA3B0D8F8340D53E99774C8BD6F353CC /* PnrDetailVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 398E97B64F1B7CED598FB3044D717FEA /* PnrDetailVCPresenter.m */; };
 		BA5B4FDF6BC70563A38254F2AC51D9AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EDA502A544FA2901D311A21AF1D01 /* Foundation.framework */; };
 		BBDDC6507FD152A6AD6349AB0BFBF474 /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C1EAB9FE98BF5E2C5C53A658A8BE9FB /* NSString+MD5.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0E60F0CEF08F6B87CA7E77161017610 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F8ACA662A8E5F122ABE6DC2AFC983ED /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C173B16249E10C519FBEDA45CE4D3D0A /* PrefixColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 83868845E1C5BB680ED19E7A1D350B51 /* PrefixColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C1DDF2ABB160893943C3FCE7B5006FAE /* PoporNetRecord-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7D94D4A9B17C434537B613BB737675 /* PoporNetRecord-dummy.m */; };
 		C2A9307EAF40C5CB41858411BCF0B39B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A7ABA36F44D7DF658BADE84D9B9893 /* UIKit.framework */; };
 		C2B0DA35772F9F6531314F99C5E2BBDD /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E98FB59022A6A32C206835FBE50AE254 /* MASCompositeConstraint.m */; };
 		C7F8E19DF007724D472F873813DC9EF8 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B8DA3F8C01E7716C0956CF968B2FE12E /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAD12EC4165B2CC0B80A5E7168037F4B /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = BA78BC36DFD50E3A4245906F0FF12892 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0CF81CE8C0902B25B9BA3B0846B938F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1EDA502A544FA2901D311A21AF1D01 /* Foundation.framework */; };
-		D0F440A8D63B3E93742A275AAF868138 /* PnrListVCDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACC1EB820D80A3976A98934DC09BB70 /* PnrListVCDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D18EFC9A8FD487436F6C8BB8A24C554C /* PrefixBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 959D68B5100CAF6834C4D1E5D3CB8F02 /* PrefixBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2D16721689BAC80FC005F13F361910C /* NSObject+Swizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = F3CEEA48C677EF196A02F3D454CF25F9 /* NSObject+Swizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D57A1B482F087155D5C6EE325574D038 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = DF46C6054CFD5171883C4C2DE04FF54C /* NSString+MD5.m */; };
 		D605770320B60F589EA55DF5DF30EFFF /* PrefixOs.h in Headers */ = {isa = PBXBuildFile; fileRef = 14FACC1EA4028A87FD9CC61FF38AFD1E /* PrefixOs.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D724B5F5B906DC8F472CDDB2E5D6CA5B /* PnrDetailVCInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DFF454EC790B1AEED63B2C72BAA727 /* PnrDetailVCInteractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D7606305793BB64732B3E3D5F9D50F0F /* PnrDetailVCDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 30F0CC2CE468950161BA8144A3EDE2D0 /* PnrDetailVCDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6FFC348499CADB47C5B5D5440781026 /* PnrVCEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B087725DB0A2362C52E7D13CF2E95511 /* PnrVCEntity.m */; };
+		D8822BEB56D086AF71739BF4CCF16A1F /* PnrDetailVCDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FD775E0ED928AA6203790E7D637BEBB /* PnrDetailVCDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D916188C8F9176A588DB7194CDA3C9AA /* NSObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 138D424861D9AE71E3E6B11CB3FAD2BF /* NSObject+Swizzling.m */; };
 		D9561A7C99AD978BA82BEC10C9DFCE04 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FB9B9BDCD5F9D0958726D3D106FFD98 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBC7C0867BA4FA5FB3F041246DD9FDFF /* PnrListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C54D22BA944B6567F47DA902A4405C /* PnrListVC.m */; };
 		DCBA94B9BD9E5DD47BAF0C901C85ABC4 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 244E0D440ADB8933C8A8E99954A47176 /* Masonry-dummy.m */; };
+		DCD82A415F91E9C73374ADAF90EFB132 /* PnrDetailVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 440961F4A6FF479506600F2C1FDAC42D /* PnrDetailVCInteractor.m */; };
 		E03F1127A557A7ABE5E8FC1E4281391A /* NSString+email.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E095C9CA631EB3B42956B89499A98 /* NSString+email.m */; };
 		E3B679D4D2E426638C3BFE59AD36A6BA /* NSString+email.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C5A381FD35BF6EA8EE6A81422885D9 /* NSString+email.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E41B1E0D1FB9BF51683DC7E7E359EF43 /* PrefixSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 40699E10869533E4C11040D9CA3FD417 /* PrefixSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E6C7BDDC671273F8F3508099FA725116 /* PnrListVCProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F2E9C38E0B915E19342601437164ABAF /* PnrListVCProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB4CF33D8864E455469344FF58BA4EF9 /* NSString+Tool.h in Headers */ = {isa = PBXBuildFile; fileRef = 4754EFF3ADF9FC9735F778E608FAC466 /* NSString+Tool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC276D99797A5947F84D1AB0BDD5B215 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = E0262A36D1204FD6DEC2B0E267617BBE /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F083D8E141B142AE88918880B09C6921 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A7ABA36F44D7DF658BADE84D9B9893 /* UIKit.framework */; };
 		F1F7EA0A021AF4A11E1C1D221186B378 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE830CE08027DFD1B727ACA8D495685 /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F220DE65EB582099A950C6E2C6D64C64 /* PnrListVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 968CFE41F42ED93FE7FD3D1A7ADE96A2 /* PnrListVCPresenter.m */; };
-		F2E6B4C545600C380B50444145FA99BF /* PoporNetRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E0018DFE3EC61B61232240243E0C2F /* PoporNetRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F53E3A2A1B6B94BF66E65E3A048C6769 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8DF9DCC429AEFE9A1FF1F2CFA5A33F /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F70096947E7F91201BC9FACCF008FE9C /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7744E71990162A7A08A779FA798ADA5A /* NSArray+MASAdditions.m */; };
-		F92964EC041B5253AECCBCFE8CCF724B /* PnrListVCEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A0592884B90BDA4E6A5C9A2D274BDCC /* PnrListVCEventHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCDB62D67B2C852FDCE745BBDB91826B /* PnrListVCDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2A8CA32D5C642FDB1D05EAC2ECBA6D /* PnrListVCDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FCE43D464D18874613D40BCAF034A404 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = BB44C1EE23049023B4E5D69D63BC5A44 /* MASViewAttribute.m */; };
+		FD2B561FB41DD7C915AC8EB7804F3F3C /* PoporNetRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = F81D4B96E46D6B4044944F63D55AA80D /* PoporNetRecord.m */; };
 		FE8C8C3B945790CBA3D3927C31305CC4 /* NSObject+performSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 4158C0A8D168B6E3B736C40670FBE191 /* NSObject+performSelector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEF4AAD2F17D7A72B00341604F3FE1B4 /* Pods-PoporNetRecord_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 02AE865313DBD676A4531B246C980F44 /* Pods-PoporNetRecord_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF0DED02A0FCAB19FA439F6BC20EC576 /* PoporUI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DE24B1E010342429D6979845A68783A1 /* PoporUI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -213,9 +215,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021912FD92D4ED6E177E9EB1312A9C58 /* PoporNetRecordConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoporNetRecordConfig.h; path = PoporNetRecord/Classes/entity/PoporNetRecordConfig.h; sourceTree = "<group>"; };
 		02AE865313DBD676A4531B246C980F44 /* Pods-PoporNetRecord_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PoporNetRecord_Tests-umbrella.h"; sourceTree = "<group>"; };
 		077CC49661E154646389E30F54B6B163 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
 		090B54C9D47F55AEAE1945476E27B10F /* JSONSyntaxHighlight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONSyntaxHighlight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09F7043C7A014350712B995EC7F08558 /* PnrListVCRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrListVCRouter.m; path = PoporNetRecord/Classes/ListVC/PnrListVCRouter.m; sourceTree = "<group>"; };
 		0ADD7834F9F0C3E3A934EBF4FC6BC2F7 /* UIView+Extension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extension.m"; path = "PoporUI/Classes/UIView/UIView+Extension.m"; sourceTree = "<group>"; };
 		0AE830CE08027DFD1B727ACA8D495685 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		0C47EF02A649128E69DC47AEDE311902 /* NSString+Size.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+Size.h"; path = "PoporFoundation/Classes/NSString/NSString+Size.h"; sourceTree = "<group>"; };
@@ -224,128 +228,128 @@
 		1155FD9B4573C49A8A1FDDD3F8DC15BA /* Pods-PoporNetRecord_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PoporNetRecord_Tests.modulemap"; sourceTree = "<group>"; };
 		12E577FCFFA978935A36064B5FE63D93 /* PrefixFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrefixFont.h; path = PoporFoundation/Classes/PrefixCore/PrefixFont.h; sourceTree = "<group>"; };
 		138D424861D9AE71E3E6B11CB3FAD2BF /* NSObject+Swizzling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Swizzling.m"; path = "PoporFoundation/Classes/NSObject/NSObject+Swizzling.m"; sourceTree = "<group>"; };
-		13DA7103C728EA159DFC285E4FDB6B1A /* PnrVCEntity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrVCEntity.m; path = PoporNetRecord/Classes/entity/PnrVCEntity.m; sourceTree = "<group>"; };
+		13C54D22BA944B6567F47DA902A4405C /* PnrListVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrListVC.m; path = PoporNetRecord/Classes/ListVC/PnrListVC.m; sourceTree = "<group>"; };
 		14FACC1EA4028A87FD9CC61FF38AFD1E /* PrefixOs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrefixOs.h; path = PoporFoundation/Classes/PrefixOs/PrefixOs.h; sourceTree = "<group>"; };
 		1617D99D3ED96BE3BD3461A5FEA36B57 /* PoporUI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporUI-prefix.pch"; sourceTree = "<group>"; };
 		162A6FD1055EFF403B4D82C7056C8D58 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
 		1A0582FFFEC1F6D6312679EE0FFFC0B2 /* PoporUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PoporUI.framework; path = PoporUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A23FA2FA0AFC3C43AA31486813E928B /* Pods_PoporNetRecord_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PoporNetRecord_Example.framework; path = "Pods-PoporNetRecord_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B8CE7C979B186D663C2BCD6A80F317F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		1CC1D9ECD602AAF2BBA238A9394A951D /* Pods-PoporNetRecord_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PoporNetRecord_Tests-dummy.m"; sourceTree = "<group>"; };
+		1CF2F12A1E55F7D3A183C2A77A37F783 /* PnrDetailVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVC.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVC.h; sourceTree = "<group>"; };
 		1D421FAE9B89AF3B695B5FD8CA0E9578 /* UIView+Tool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Tool.h"; path = "PoporUI/Classes/UIView/UIView+Tool.h"; sourceTree = "<group>"; };
-		1E3F000A012D5F578A5CBC234E0AF01B /* PnrListVCCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCCell.h; path = PoporNetRecord/Classes/ListVC/PnrListVCCell.h; sourceTree = "<group>"; };
-		1E8631924B97D12F859D6AFC6EADCCD6 /* PoporNetRecord-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PoporNetRecord-Info.plist"; sourceTree = "<group>"; };
+		1F2A8CA32D5C642FDB1D05EAC2ECBA6D /* PnrListVCDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCDataSource.h; path = PoporNetRecord/Classes/ListVC/PnrListVCDataSource.h; sourceTree = "<group>"; };
 		21BD474B3F95A689B10F440CE2DD8EAF /* PoporFoundation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporFoundation-umbrella.h"; sourceTree = "<group>"; };
 		244E0D440ADB8933C8A8E99954A47176 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
-		289AB3E6F8DC988C50AF79A5B7D99799 /* PnrDetailVCInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrDetailVCInteractor.m; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCInteractor.m; sourceTree = "<group>"; };
-		29838EDAA76D550AE19847C63155FC61 /* PoporNetRecord-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporNetRecord-prefix.pch"; sourceTree = "<group>"; };
-		2A742F81C568879CCA15952714CC7D98 /* PoporNetRecordConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PoporNetRecordConfig.m; path = PoporNetRecord/Classes/entity/PoporNetRecordConfig.m; sourceTree = "<group>"; };
 		2B6A4380CF98315A48C6A07EC41D392F /* IToast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IToast.h; path = PoporUI/Classes/IToast/IToast.h; sourceTree = "<group>"; };
 		30BA2F13B776C6FAD973FB91D178C528 /* Pods-PoporNetRecord_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoporNetRecord_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		30F0CC2CE468950161BA8144A3EDE2D0 /* PnrDetailVCDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCDataSource.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCDataSource.h; sourceTree = "<group>"; };
 		31418CEB641A13111D70120E35B796D5 /* Pods_PoporNetRecord_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PoporNetRecord_Tests.framework; path = "Pods-PoporNetRecord_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		319702A56A95E394555C3EEDD4CF8D94 /* PoporNetRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoporNetRecord.h; path = PoporNetRecord/Classes/ListVC/PoporNetRecord.h; sourceTree = "<group>"; };
 		3308009351516F28C4CDC89892392120 /* PoporFoundation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PoporFoundation-dummy.m"; sourceTree = "<group>"; };
 		34A7ABA36F44D7DF658BADE84D9B9893 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		398E97B64F1B7CED598FB3044D717FEA /* PnrDetailVCPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrDetailVCPresenter.m; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCPresenter.m; sourceTree = "<group>"; };
-		3ACC1EB820D80A3976A98934DC09BB70 /* PnrListVCDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCDataSource.h; path = PoporNetRecord/Classes/ListVC/PnrListVCDataSource.h; sourceTree = "<group>"; };
 		3E2115AF982EC94527F6F7F768BB5AD3 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		40699E10869533E4C11040D9CA3FD417 /* PrefixSize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrefixSize.h; path = PoporFoundation/Classes/PrefixCore/PrefixSize.h; sourceTree = "<group>"; };
-		40AACEC4CA755655161273D038A28F59 /* PoporNetRecordConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoporNetRecordConfig.h; path = PoporNetRecord/Classes/entity/PoporNetRecordConfig.h; sourceTree = "<group>"; };
 		4158C0A8D168B6E3B736C40670FBE191 /* NSObject+performSelector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+performSelector.h"; path = "PoporFoundation/Classes/NSObject/NSObject+performSelector.h"; sourceTree = "<group>"; };
 		42758A2986413BFC2042D322677812AD /* PoporFoundation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PoporFoundation.modulemap; sourceTree = "<group>"; };
 		427625F7433FBF797005D96642BD80EF /* PoporFoundation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporFoundation-prefix.pch"; sourceTree = "<group>"; };
 		4299541E70CE6E254F422C7C6AB341A7 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A14A318CA023BA75BD4A2D77EB1612 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		42C8D8205A284191CB882B5D4356AD77 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
+		440961F4A6FF479506600F2C1FDAC42D /* PnrDetailVCInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrDetailVCInteractor.m; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCInteractor.m; sourceTree = "<group>"; };
 		44F38F3AD50029C885A52C6A35D39864 /* IToast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IToast.m; path = PoporUI/Classes/IToast/IToast.m; sourceTree = "<group>"; };
 		468C3835BE0CD9D9597595E6D1F325FE /* JSONSyntaxHighlight-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSONSyntaxHighlight-prefix.pch"; sourceTree = "<group>"; };
-		46A1839A8CAB85BE7E33905E7FA78926 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		4754EFF3ADF9FC9735F778E608FAC466 /* NSString+Tool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+Tool.h"; path = "PoporFoundation/Classes/NSString/NSString+Tool.h"; sourceTree = "<group>"; };
+		48F292488455BEA81C1D452103B88372 /* PnrDetailVCPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrDetailVCPresenter.m; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCPresenter.m; sourceTree = "<group>"; };
 		493A86679732381EB75CEB29DE650D17 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1EAB9FE98BF5E2C5C53A658A8BE9FB /* NSString+MD5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "PoporFoundation/Classes/NSString/NSString+MD5.h"; sourceTree = "<group>"; };
 		4CEDF685BBC22C0C98938035576B08C1 /* UIView+Tool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Tool.m"; path = "PoporUI/Classes/UIView/UIView+Tool.m"; sourceTree = "<group>"; };
+		4D96044695337D3C7A582A932F184CF0 /* PnrDetailVCRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrDetailVCRouter.m; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCRouter.m; sourceTree = "<group>"; };
+		4E0D25F40DF5E112C758921679077C3A /* PnrListVCPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrListVCPresenter.m; path = PoporNetRecord/Classes/ListVC/PnrListVCPresenter.m; sourceTree = "<group>"; };
 		4E1EDA502A544FA2901D311A21AF1D01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4F389D5AC059C2E58C80CA683628D067 /* PnrListVCRouter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCRouter.h; path = PoporNetRecord/Classes/ListVC/PnrListVCRouter.h; sourceTree = "<group>"; };
 		50703FBDDED2F5BFA595847E7D26110F /* Pods-PoporNetRecord_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PoporNetRecord_Example-frameworks.sh"; sourceTree = "<group>"; };
-		507644EFB668543C0A179EC0801C1B27 /* PnrDetailVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrDetailVC.m; path = PoporNetRecord/Classes/DetailVC/PnrDetailVC.m; sourceTree = "<group>"; };
 		52AEC81731CAB07926A22ED15EFBBF6B /* Pods-PoporNetRecord_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PoporNetRecord_Example-umbrella.h"; sourceTree = "<group>"; };
 		52D413CCA3FE872EEA22EFAFCEAAA872 /* PoporFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PoporFoundation.framework; path = PoporFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		537C4326A78E7961CDFEA2F1B6ECBC2E /* Pods-PoporNetRecord_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoporNetRecord_Example.release.xcconfig"; sourceTree = "<group>"; };
 		54B79A5F29A84A72215AB2617CCFEAD2 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		56020F77B8A71A4BBB5AD833808B899F /* PoporNetRecord-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporNetRecord-umbrella.h"; sourceTree = "<group>"; };
 		56C5A381FD35BF6EA8EE6A81422885D9 /* NSString+email.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+email.h"; path = "PoporFoundation/Classes/NSString/NSString+email.h"; sourceTree = "<group>"; };
 		5713D1988A3E399E8B107700BF236AB5 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
+		58B6C77138A8CE486438F967C51202D6 /* PnrDetailVCRouter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCRouter.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCRouter.h; sourceTree = "<group>"; };
 		5B4F98C16DA2D97C811F7B24A07B5E2C /* JSONSyntaxHighlight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONSyntaxHighlight.h; sourceTree = "<group>"; };
+		5BA5CE42807C21D998809DFC97F86B20 /* PnrDetailVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrDetailVC.m; path = PoporNetRecord/Classes/DetailVC/PnrDetailVC.m; sourceTree = "<group>"; };
 		5BB3A5059F3201ED4990DD4DBC9E07BB /* PrefixFun.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrefixFun.h; path = PoporFoundation/Classes/PrefixCore/PrefixFun.h; sourceTree = "<group>"; };
 		5C8C03918E59491B2EF8438D5CC4844A /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
-		5D0F945CF9E9DA334B72BEC2D5487916 /* PnrListVCInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrListVCInteractor.m; path = PoporNetRecord/Classes/ListVC/PnrListVCInteractor.m; sourceTree = "<group>"; };
-		60E68A9231EEB6EA4A088673640EAF13 /* PoporNetRecord-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporNetRecord-umbrella.h"; sourceTree = "<group>"; };
+		5D04CC7EEC8A0CA6B1563455320856DC /* PoporNetRecord-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PoporNetRecord-dummy.m"; sourceTree = "<group>"; };
+		5F753DE1E787D257E39C03849B1C6BC2 /* PnrListVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVC.h; path = PoporNetRecord/Classes/ListVC/PnrListVC.h; sourceTree = "<group>"; };
+		61BACD5C0FD8ECF34D3303641BD3F74C /* PnrListVCCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrListVCCell.m; path = PoporNetRecord/Classes/ListVC/PnrListVCCell.m; sourceTree = "<group>"; };
 		62068F3724523F5D10BB0DC6931DF34A /* IToastKeyboard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IToastKeyboard.m; path = PoporUI/Classes/IToast/IToastKeyboard.m; sourceTree = "<group>"; };
 		6359C0A708A303D37FA77AE7D8E3875A /* JSONSyntaxHighlight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JSONSyntaxHighlight.framework; path = JSONSyntaxHighlight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		63B6A4D4DE9A24644B35F30727316D70 /* PoporNetRecord.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PoporNetRecord.modulemap; sourceTree = "<group>"; };
-		6601D3F1C434D5BC2669F0159B44BBC9 /* PnrListVCPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCPresenter.h; path = PoporNetRecord/Classes/ListVC/PnrListVCPresenter.h; sourceTree = "<group>"; };
 		67941C734F2AB687FA3157E035BFA4D3 /* JSONSyntaxHighlight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JSONSyntaxHighlight.xcconfig; sourceTree = "<group>"; };
-		68487F3EFEC2914EC06498805606053D /* PnrDetailVCEventHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCEventHandler.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCEventHandler.h; sourceTree = "<group>"; };
 		6862F8FB81754DFA32806E4E875FBD6F /* PoporUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PoporUI-dummy.m"; sourceTree = "<group>"; };
+		688245F96073CA233F3A3CE65362C3B7 /* PoporNetRecordConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PoporNetRecordConfig.m; path = PoporNetRecord/Classes/entity/PoporNetRecordConfig.m; sourceTree = "<group>"; };
 		6922BA3BFC4BD7004275247FBE24A8AE /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		6B6A082A168B7C2A6E3892D5D18C8C73 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
 		6D6C42EF244137D65F783D6D5026C606 /* PoporFoundation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PoporFoundation-Info.plist"; sourceTree = "<group>"; };
-		6F04A80A37BF6A1F29CBFB5BDC199AE9 /* PnrDetailVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVC.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVC.h; sourceTree = "<group>"; };
 		6F8ACA662A8E5F122ABE6DC2AFC983ED /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 		7230A98743968170D84508893F919993 /* Pods-PoporNetRecord_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoporNetRecord_Tests-Info.plist"; sourceTree = "<group>"; };
 		7711F1D13011C2AEBE29A56CC590712D /* NSDate+Tool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Tool.m"; path = "PoporFoundation/Classes/NSDate/NSDate+Tool.m"; sourceTree = "<group>"; };
 		7744E71990162A7A08A779FA798ADA5A /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
-		79B05E8144E91CED54D8BDFA1FD64EAA /* PnrListVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrListVC.m; path = PoporNetRecord/Classes/ListVC/PnrListVC.m; sourceTree = "<group>"; };
-		7A0592884B90BDA4E6A5C9A2D274BDCC /* PnrListVCEventHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCEventHandler.h; path = PoporNetRecord/Classes/ListVC/PnrListVCEventHandler.h; sourceTree = "<group>"; };
-		7D03457FD533F919C89A481E2373DB4A /* PnrListVCInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCInteractor.h; path = PoporNetRecord/Classes/ListVC/PnrListVCInteractor.h; sourceTree = "<group>"; };
+		77F6C6AF158C4879484AB7AF53A8007F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7AD31C1F647D10FB07A127A81705D4AC /* PnrVCEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrVCEntity.h; path = PoporNetRecord/Classes/entity/PnrVCEntity.h; sourceTree = "<group>"; };
 		7D6C99579F7B25944DFBB1BA6D15D59D /* Pods-PoporNetRecord_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoporNetRecord_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		7D99FEF90DB64236C059BA9440045C4E /* Pods-PoporNetRecord_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PoporNetRecord_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		80524FC0947A0FF43C56FD5DACA057C6 /* Pods-PoporNetRecord_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PoporNetRecord_Example.modulemap"; sourceTree = "<group>"; };
 		83868845E1C5BB680ED19E7A1D350B51 /* PrefixColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrefixColor.h; path = PoporFoundation/Classes/PrefixCore/PrefixColor.h; sourceTree = "<group>"; };
-		85A35F1572BC6F91E8958E55B70ED216 /* PnrDetailVCRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrDetailVCRouter.m; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCRouter.m; sourceTree = "<group>"; };
+		842217DC117BFEC80F0C2DD3942A7701 /* PnrListVCPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCPresenter.h; path = PoporNetRecord/Classes/ListVC/PnrListVCPresenter.h; sourceTree = "<group>"; };
 		8699CE075AE50E20178E5F844FBD79DF /* NSDictionary+Swizzling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Swizzling.m"; path = "PoporFoundation/Classes/NSDictionary/NSDictionary+Swizzling.m"; sourceTree = "<group>"; };
-		8E58E2DAD0B8679E49E7B756D1798796 /* PnrListVCRouter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCRouter.h; path = PoporNetRecord/Classes/ListVC/PnrListVCRouter.h; sourceTree = "<group>"; };
+		8CC0DAD22C8E8CE16CEC9A88646C7F4F /* PnrListVCCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCCell.h; path = PoporNetRecord/Classes/ListVC/PnrListVCCell.h; sourceTree = "<group>"; };
 		8F3D4C8D188BB32E10FBF45F3E0DD1D2 /* NSDictionary+tool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+tool.m"; path = "PoporFoundation/Classes/NSDictionary/NSDictionary+tool.m"; sourceTree = "<group>"; };
 		8FB9B9BDCD5F9D0958726D3D106FFD98 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		8FD775E0ED928AA6203790E7D637BEBB /* PnrDetailVCDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCDataSource.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCDataSource.h; sourceTree = "<group>"; };
 		901DFBEDD90A640185E9806E5B9B6F14 /* Masonry-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Masonry-Info.plist"; sourceTree = "<group>"; };
 		90F5E9FFDE7F9F1A7CD8920F986F496F /* NSString+format.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+format.m"; path = "PoporFoundation/Classes/NSString/NSString+format.m"; sourceTree = "<group>"; };
 		9205228E5763AF35C92E53A6AB605903 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		959D68B5100CAF6834C4D1E5D3CB8F02 /* PrefixBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrefixBlock.h; path = PoporFoundation/Classes/PrefixCore/PrefixBlock.h; sourceTree = "<group>"; };
-		968CFE41F42ED93FE7FD3D1A7ADE96A2 /* PnrListVCPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrListVCPresenter.m; path = PoporNetRecord/Classes/ListVC/PnrListVCPresenter.m; sourceTree = "<group>"; };
+		95D4162D34DEA082CEB4EEEA1A284892 /* PnrListVCInteractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrListVCInteractor.m; path = PoporNetRecord/Classes/ListVC/PnrListVCInteractor.m; sourceTree = "<group>"; };
+		961CE76E5B44EE9B5DC99304B3F27170 /* PnrListVCInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCInteractor.h; path = PoporNetRecord/Classes/ListVC/PnrListVCInteractor.h; sourceTree = "<group>"; };
+		9636B9334E9CF4EFCB61048150497D61 /* PoporNetRecord.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PoporNetRecord.xcconfig; sourceTree = "<group>"; };
+		994891B36C20A09CA91698664C66A538 /* PoporNetRecord.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PoporNetRecord.modulemap; sourceTree = "<group>"; };
+		995C8EE451ED9D8E5AF7E8BB6AC21127 /* PoporNetRecord.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = PoporNetRecord.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9B7BE72A414E05140EEB027F9251D64D /* UIView+Extension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "PoporUI/Classes/UIView/UIView+Extension.h"; sourceTree = "<group>"; };
 		9BBFAF53C09F2AB4857F6D598129A394 /* JSONSyntaxHighlight-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSONSyntaxHighlight-umbrella.h"; sourceTree = "<group>"; };
 		9C19A03A0DBFFF0A9D6C4693F9527DC9 /* NSString+IDCard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+IDCard.m"; path = "PoporFoundation/Classes/NSString/NSString+IDCard.m"; sourceTree = "<group>"; };
 		9C9C9D0FBBFF3744B1E755AB9EF13540 /* PoporFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PoporFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D2872FEFE402D490748F829ED9C0FC7 /* PnrListVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVC.h; path = PoporNetRecord/Classes/ListVC/PnrListVC.h; sourceTree = "<group>"; };
-		9FFAD2E00C1E548924D054CE0614959A /* PoporNetRecord.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = PoporNetRecord.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A041ECD3B4BFA7AB51B625E6330DF58D /* JSONSyntaxHighlight.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONSyntaxHighlight.m; sourceTree = "<group>"; };
-		A1C2DC0063ADDD57CD971AB3EEF66D88 /* PnrDetailVCProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCProtocol.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCProtocol.h; sourceTree = "<group>"; };
-		A6DFF454EC790B1AEED63B2C72BAA727 /* PnrDetailVCInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCInteractor.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCInteractor.h; sourceTree = "<group>"; };
-		AA52F4CDCAFA9B4D6AB78D5ADF1F1C9C /* PnrVCEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrVCEntity.h; path = PoporNetRecord/Classes/entity/PnrVCEntity.h; sourceTree = "<group>"; };
+		A910DC510C9F407F983FB6B832E08B86 /* PnrDetailVCInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCInteractor.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCInteractor.h; sourceTree = "<group>"; };
+		B01565D16D7AFDC4E8E6A6CAB8EE4DA8 /* PnrDetailCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailCell.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailCell.h; sourceTree = "<group>"; };
+		B087725DB0A2362C52E7D13CF2E95511 /* PnrVCEntity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrVCEntity.m; path = PoporNetRecord/Classes/entity/PnrVCEntity.m; sourceTree = "<group>"; };
 		B253BDE64C312ADF3BFE37BC0C49A070 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
 		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B44970BEAEBDB0F4593B7FAD790577E0 /* Pods-PoporNetRecord_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoporNetRecord_Example-Info.plist"; sourceTree = "<group>"; };
 		B64E6510ECF49D8EE148943671F34BB5 /* IToastKeyboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IToastKeyboard.h; path = PoporUI/Classes/IToast/IToastKeyboard.h; sourceTree = "<group>"; };
+		B8A822310A2917CF6E7C46E868A210C7 /* PnrListVCProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCProtocol.h; path = PoporNetRecord/Classes/ListVC/PnrListVCProtocol.h; sourceTree = "<group>"; };
 		B8DA3F8C01E7716C0956CF968B2FE12E /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		B8E95D94D44F5303D3FCDDB53C2E1C39 /* PoporUI-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PoporUI-Info.plist"; sourceTree = "<group>"; };
 		B99EDB777E845F1B1D9DB5C0B1994C59 /* NSDate+Tool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+Tool.h"; path = "PoporFoundation/Classes/NSDate/NSDate+Tool.h"; sourceTree = "<group>"; };
 		BA4C5927F89F67957BCA53907E2CD75A /* NSDictionary+tool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+tool.h"; path = "PoporFoundation/Classes/NSDictionary/NSDictionary+tool.h"; sourceTree = "<group>"; };
 		BA78BC36DFD50E3A4245906F0FF12892 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		BB44C1EE23049023B4E5D69D63BC5A44 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
-		C049BAD4724EB4E14CB629EC6EE01BE9 /* PnrListVCRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrListVCRouter.m; path = PoporNetRecord/Classes/ListVC/PnrListVCRouter.m; sourceTree = "<group>"; };
 		C1292638A834B2AABCE79976985BB630 /* Pods-PoporNetRecord_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PoporNetRecord_Example-dummy.m"; sourceTree = "<group>"; };
 		C1E29DA0E3467A81EE177DA0AD63CAD1 /* PoporUI.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PoporUI.xcconfig; sourceTree = "<group>"; };
-		C1F70C3EEE5A436B15DF595B96ED96D5 /* PoporNetRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PoporNetRecord.m; path = PoporNetRecord/Classes/ListVC/PoporNetRecord.m; sourceTree = "<group>"; };
-		C4B2A5CDD115959DECE48A378DC6C620 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		C40D5A2FAB3E54E81C4897BA028F049B /* PnrDetailVCEventHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCEventHandler.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCEventHandler.h; sourceTree = "<group>"; };
+		C8C0CD21E7D985C3585C1A20AC601511 /* PnrListVCEventHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCEventHandler.h; path = PoporNetRecord/Classes/ListVC/PnrListVCEventHandler.h; sourceTree = "<group>"; };
 		CA9270FD29EB98E224ABEB76C7B3EF3D /* JSONSyntaxHighlight.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JSONSyntaxHighlight.modulemap; sourceTree = "<group>"; };
+		CB6DC4CA21C81240056B88377FE6D08A /* PnrDetailVCPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCPresenter.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCPresenter.h; sourceTree = "<group>"; };
 		CBC8A02D11253AC8BFF519A0FFC3CD32 /* Pods-PoporNetRecord_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoporNetRecord_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		CC7D94D4A9B17C434537B613BB737675 /* PoporNetRecord-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PoporNetRecord-dummy.m"; sourceTree = "<group>"; };
 		CF270042DFF1E90B9433D14405A0B49A /* PoporUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PoporUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D180FB68DB61444D789BCDF0CD46C9AA /* PnrListVCCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrListVCCell.m; path = PoporNetRecord/Classes/ListVC/PnrListVCCell.m; sourceTree = "<group>"; };
 		D1C5179B992EBC938D63E7D1B4070A15 /* PoporFoundation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PoporFoundation.xcconfig; sourceTree = "<group>"; };
 		D645DBC0F51C1A033B2732ACC3CEACBD /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		D745401653CCDA7D89E7F175F1284372 /* Pods-PoporNetRecord_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoporNetRecord_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D76788CC6A9718B4017DAA2F71621C6C /* NSString+Tool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Tool.m"; path = "PoporFoundation/Classes/NSString/NSString+Tool.m"; sourceTree = "<group>"; };
-		D957288DF9348A01C8AD963C4BC292C8 /* PnrDetailVCPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCPresenter.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCPresenter.h; sourceTree = "<group>"; };
 		DE24B1E010342429D6979845A68783A1 /* PoporUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporUI-umbrella.h"; sourceTree = "<group>"; };
 		DF46C6054CFD5171883C4C2DE04FF54C /* NSString+MD5.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "PoporFoundation/Classes/NSString/NSString+MD5.m"; sourceTree = "<group>"; };
+		DFC0F093EC892F770F7CF140DA513D1B /* PoporNetRecord-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PoporNetRecord-Info.plist"; sourceTree = "<group>"; };
 		E0262A36D1204FD6DEC2B0E267617BBE /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
 		E26039AB0A48DA7FE4C0673231B26BDF /* Pods-PoporNetRecord_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PoporNetRecord_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E32B288A3126A3DBF20D85FD214A00DC /* NSString+format.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+format.h"; path = "PoporFoundation/Classes/NSString/NSString+format.h"; sourceTree = "<group>"; };
@@ -358,17 +362,17 @@
 		EA3197B8D8E97AB35F8D3F4F80976D08 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
 		EC0D0530911C05C0C36EC1C440ACC7A4 /* NSDictionary+Swizzling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Swizzling.h"; path = "PoporFoundation/Classes/NSDictionary/NSDictionary+Swizzling.h"; sourceTree = "<group>"; };
 		ECD2849DE910A0F3D8E67CB31F868F8E /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
+		EE19B8BB22DDA760ECA230FE396F58D4 /* PoporNetRecord-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporNetRecord-prefix.pch"; sourceTree = "<group>"; };
+		EFF1008EA9EF14980DDEB4C766C58F73 /* PnrDetailCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrDetailCell.m; path = PoporNetRecord/Classes/DetailVC/PnrDetailCell.m; sourceTree = "<group>"; };
 		F01495D25B197F4BD73F2F4E57DE3AC8 /* JSONSyntaxHighlight-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JSONSyntaxHighlight-dummy.m"; sourceTree = "<group>"; };
 		F0A40B4B452C8D7B72FFA4E2BE089C1E /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
-		F0C73BFB816C32A8A5A2FC2FA275CCEF /* PnrDetailVCRouter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCRouter.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCRouter.h; sourceTree = "<group>"; };
 		F175543E98BEE95ADB984CC03604C3D2 /* NSString+Size.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Size.m"; path = "PoporFoundation/Classes/NSString/NSString+Size.m"; sourceTree = "<group>"; };
-		F2E9C38E0B915E19342601437164ABAF /* PnrListVCProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVCProtocol.h; path = PoporNetRecord/Classes/ListVC/PnrListVCProtocol.h; sourceTree = "<group>"; };
 		F3CEEA48C677EF196A02F3D454CF25F9 /* NSObject+Swizzling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Swizzling.h"; path = "PoporFoundation/Classes/NSObject/NSObject+Swizzling.h"; sourceTree = "<group>"; };
-		F5E0018DFE3EC61B61232240243E0C2F /* PoporNetRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoporNetRecord.h; path = PoporNetRecord/Classes/ListVC/PoporNetRecord.h; sourceTree = "<group>"; };
 		F642D3DC7DE8D0CC3AA6CA7A4C1DCAD8 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		F7AF7DDBE1C73C091A69C6E5571A3CCD /* PnrDetailVCProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCProtocol.h; path = PoporNetRecord/Classes/DetailVC/PnrDetailVCProtocol.h; sourceTree = "<group>"; };
 		F8088CD48DC8900CE0FDBD4A67F42A1E /* PoporUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PoporUI.modulemap; sourceTree = "<group>"; };
+		F81D4B96E46D6B4044944F63D55AA80D /* PoporNetRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PoporNetRecord.m; path = PoporNetRecord/Classes/ListVC/PoporNetRecord.m; sourceTree = "<group>"; };
 		FD8DF9DCC429AEFE9A1FF1F2CFA5A33F /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
-		FF3A53042756BC4C8EB408BF76CDED94 /* PoporNetRecord.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PoporNetRecord.xcconfig; sourceTree = "<group>"; };
 		FF7689551E79E80CF5E16128DFF8E227 /* NSString+IDCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+IDCard.h"; path = "PoporFoundation/Classes/NSString/NSString+IDCard.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -477,28 +481,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		1D56385C1AC50A67174BBE75BC2380F5 /* ListVC */ = {
-			isa = PBXGroup;
-			children = (
-				9D2872FEFE402D490748F829ED9C0FC7 /* PnrListVC.h */,
-				79B05E8144E91CED54D8BDFA1FD64EAA /* PnrListVC.m */,
-				1E3F000A012D5F578A5CBC234E0AF01B /* PnrListVCCell.h */,
-				D180FB68DB61444D789BCDF0CD46C9AA /* PnrListVCCell.m */,
-				3ACC1EB820D80A3976A98934DC09BB70 /* PnrListVCDataSource.h */,
-				7A0592884B90BDA4E6A5C9A2D274BDCC /* PnrListVCEventHandler.h */,
-				7D03457FD533F919C89A481E2373DB4A /* PnrListVCInteractor.h */,
-				5D0F945CF9E9DA334B72BEC2D5487916 /* PnrListVCInteractor.m */,
-				6601D3F1C434D5BC2669F0159B44BBC9 /* PnrListVCPresenter.h */,
-				968CFE41F42ED93FE7FD3D1A7ADE96A2 /* PnrListVCPresenter.m */,
-				F2E9C38E0B915E19342601437164ABAF /* PnrListVCProtocol.h */,
-				8E58E2DAD0B8679E49E7B756D1798796 /* PnrListVCRouter.h */,
-				C049BAD4724EB4E14CB629EC6EE01BE9 /* PnrListVCRouter.m */,
-				F5E0018DFE3EC61B61232240243E0C2F /* PoporNetRecord.h */,
-				C1F70C3EEE5A436B15DF595B96ED96D5 /* PoporNetRecord.m */,
-			);
-			name = ListVC;
-			sourceTree = "<group>";
-		};
 		1E24D21D6C8149325C87191511EEBCF9 /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +532,53 @@
 			path = "Target Support Files/Pods-PoporNetRecord_Example";
 			sourceTree = "<group>";
 		};
+		228A0AA3D60105B672F1C4EDDBA04D4B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				994891B36C20A09CA91698664C66A538 /* PoporNetRecord.modulemap */,
+				9636B9334E9CF4EFCB61048150497D61 /* PoporNetRecord.xcconfig */,
+				5D04CC7EEC8A0CA6B1563455320856DC /* PoporNetRecord-dummy.m */,
+				DFC0F093EC892F770F7CF140DA513D1B /* PoporNetRecord-Info.plist */,
+				EE19B8BB22DDA760ECA230FE396F58D4 /* PoporNetRecord-prefix.pch */,
+				56020F77B8A71A4BBB5AD833808B899F /* PoporNetRecord-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/PoporNetRecord";
+			sourceTree = "<group>";
+		};
+		3AA7477AD205794E8D117CB4D65BBDA0 /* PoporNetRecord */ = {
+			isa = PBXGroup;
+			children = (
+				414DF68DA65D96D45FD72B2FFBF7543C /* DetailVC */,
+				6363A38A97160DEEA77A9877325CAB9B /* entity */,
+				52552BCF6CB3DB36314F95A8A507367C /* ListVC */,
+				49AF373DA8C58A1813128F3B2DEAAF4A /* Pod */,
+				228A0AA3D60105B672F1C4EDDBA04D4B /* Support Files */,
+			);
+			name = PoporNetRecord;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		414DF68DA65D96D45FD72B2FFBF7543C /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				B01565D16D7AFDC4E8E6A6CAB8EE4DA8 /* PnrDetailCell.h */,
+				EFF1008EA9EF14980DDEB4C766C58F73 /* PnrDetailCell.m */,
+				1CF2F12A1E55F7D3A183C2A77A37F783 /* PnrDetailVC.h */,
+				5BA5CE42807C21D998809DFC97F86B20 /* PnrDetailVC.m */,
+				8FD775E0ED928AA6203790E7D637BEBB /* PnrDetailVCDataSource.h */,
+				C40D5A2FAB3E54E81C4897BA028F049B /* PnrDetailVCEventHandler.h */,
+				A910DC510C9F407F983FB6B832E08B86 /* PnrDetailVCInteractor.h */,
+				440961F4A6FF479506600F2C1FDAC42D /* PnrDetailVCInteractor.m */,
+				CB6DC4CA21C81240056B88377FE6D08A /* PnrDetailVCPresenter.h */,
+				48F292488455BEA81C1D452103B88372 /* PnrDetailVCPresenter.m */,
+				F7AF7DDBE1C73C091A69C6E5571A3CCD /* PnrDetailVCProtocol.h */,
+				58B6C77138A8CE486438F967C51202D6 /* PnrDetailVCRouter.h */,
+				4D96044695337D3C7A582A932F184CF0 /* PnrDetailVCRouter.m */,
+			);
+			name = DetailVC;
+			sourceTree = "<group>";
+		};
 		42B521194C818AA44D4F52F22B00E0FB /* PoporUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +588,38 @@
 			);
 			name = PoporUI;
 			path = PoporUI;
+			sourceTree = "<group>";
+		};
+		49AF373DA8C58A1813128F3B2DEAAF4A /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				77F6C6AF158C4879484AB7AF53A8007F /* LICENSE */,
+				995C8EE451ED9D8E5AF7E8BB6AC21127 /* PoporNetRecord.podspec */,
+				1B8CE7C979B186D663C2BCD6A80F317F /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		52552BCF6CB3DB36314F95A8A507367C /* ListVC */ = {
+			isa = PBXGroup;
+			children = (
+				5F753DE1E787D257E39C03849B1C6BC2 /* PnrListVC.h */,
+				13C54D22BA944B6567F47DA902A4405C /* PnrListVC.m */,
+				8CC0DAD22C8E8CE16CEC9A88646C7F4F /* PnrListVCCell.h */,
+				61BACD5C0FD8ECF34D3303641BD3F74C /* PnrListVCCell.m */,
+				1F2A8CA32D5C642FDB1D05EAC2ECBA6D /* PnrListVCDataSource.h */,
+				C8C0CD21E7D985C3585C1A20AC601511 /* PnrListVCEventHandler.h */,
+				961CE76E5B44EE9B5DC99304B3F27170 /* PnrListVCInteractor.h */,
+				95D4162D34DEA082CEB4EEEA1A284892 /* PnrListVCInteractor.m */,
+				842217DC117BFEC80F0C2DD3942A7701 /* PnrListVCPresenter.h */,
+				4E0D25F40DF5E112C758921679077C3A /* PnrListVCPresenter.m */,
+				B8A822310A2917CF6E7C46E868A210C7 /* PnrListVCProtocol.h */,
+				4F389D5AC059C2E58C80CA683628D067 /* PnrListVCRouter.h */,
+				09F7043C7A014350712B995EC7F08558 /* PnrListVCRouter.m */,
+				319702A56A95E394555C3EEDD4CF8D94 /* PoporNetRecord.h */,
+				F81D4B96E46D6B4044944F63D55AA80D /* PoporNetRecord.m */,
+			);
+			name = ListVC;
 			sourceTree = "<group>";
 		};
 		629981938CC375ED94CE7BDC7933F378 /* Support Files */ = {
@@ -573,6 +634,17 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/PoporFoundation";
+			sourceTree = "<group>";
+		};
+		6363A38A97160DEEA77A9877325CAB9B /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				7AD31C1F647D10FB07A127A81705D4AC /* PnrVCEntity.h */,
+				B087725DB0A2362C52E7D13CF2E95511 /* PnrVCEntity.m */,
+				021912FD92D4ED6E177E9EB1312A9C58 /* PoporNetRecordConfig.h */,
+				688245F96073CA233F3A3CE65362C3B7 /* PoporNetRecordConfig.m */,
+			);
+			name = entity;
 			sourceTree = "<group>";
 		};
 		6A4160C1A9CF26FA2C812CB711F65C96 /* NSString */ = {
@@ -618,20 +690,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		85A97CA254BBF95CD95BF8B3B37A3774 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				63B6A4D4DE9A24644B35F30727316D70 /* PoporNetRecord.modulemap */,
-				FF3A53042756BC4C8EB408BF76CDED94 /* PoporNetRecord.xcconfig */,
-				CC7D94D4A9B17C434537B613BB737675 /* PoporNetRecord-dummy.m */,
-				1E8631924B97D12F859D6AFC6EADCCD6 /* PoporNetRecord-Info.plist */,
-				29838EDAA76D550AE19847C63155FC61 /* PoporNetRecord-prefix.pch */,
-				60E68A9231EEB6EA4A088673640EAF13 /* PoporNetRecord-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/PoporNetRecord";
-			sourceTree = "<group>";
-		};
 		8A2762E134A6786B741B8E666B231829 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,16 +711,6 @@
 				62068F3724523F5D10BB0DC6931DF34A /* IToastKeyboard.m */,
 			);
 			name = IToast;
-			sourceTree = "<group>";
-		};
-		8E502AAA4DCDA3717E4A6A0231D60831 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				C4B2A5CDD115959DECE48A378DC6C620 /* LICENSE */,
-				9FFAD2E00C1E548924D054CE0614959A /* PoporNetRecord.podspec */,
-				46A1839A8CAB85BE7E33905E7FA78926 /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		913F28340C812E830BAF4848F52ADC5A /* PrefixOs */ = {
@@ -698,24 +746,6 @@
 			name = NSDate;
 			sourceTree = "<group>";
 		};
-		A7621DFE91A295CDCC876251B7237232 /* DetailVC */ = {
-			isa = PBXGroup;
-			children = (
-				6F04A80A37BF6A1F29CBFB5BDC199AE9 /* PnrDetailVC.h */,
-				507644EFB668543C0A179EC0801C1B27 /* PnrDetailVC.m */,
-				30F0CC2CE468950161BA8144A3EDE2D0 /* PnrDetailVCDataSource.h */,
-				68487F3EFEC2914EC06498805606053D /* PnrDetailVCEventHandler.h */,
-				A6DFF454EC790B1AEED63B2C72BAA727 /* PnrDetailVCInteractor.h */,
-				289AB3E6F8DC988C50AF79A5B7D99799 /* PnrDetailVCInteractor.m */,
-				D957288DF9348A01C8AD963C4BC292C8 /* PnrDetailVCPresenter.h */,
-				398E97B64F1B7CED598FB3044D717FEA /* PnrDetailVCPresenter.m */,
-				A1C2DC0063ADDD57CD971AB3EEF66D88 /* PnrDetailVCProtocol.h */,
-				F0C73BFB816C32A8A5A2FC2FA275CCEF /* PnrDetailVCRouter.h */,
-				85A35F1572BC6F91E8958E55B70ED216 /* PnrDetailVCRouter.m */,
-			);
-			name = DetailVC;
-			sourceTree = "<group>";
-		};
 		B06460FB3C054CCE411AF5449737E3A2 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,17 +755,6 @@
 				138D424861D9AE71E3E6B11CB3FAD2BF /* NSObject+Swizzling.m */,
 			);
 			name = NSObject;
-			sourceTree = "<group>";
-		};
-		B80F6205F5939E5E5B7B59205869C441 /* entity */ = {
-			isa = PBXGroup;
-			children = (
-				AA52F4CDCAFA9B4D6AB78D5ADF1F1C9C /* PnrVCEntity.h */,
-				13DA7103C728EA159DFC285E4FDB6B1A /* PnrVCEntity.m */,
-				40AACEC4CA755655161273D038A28F59 /* PoporNetRecordConfig.h */,
-				2A742F81C568879CCA15952714CC7D98 /* PoporNetRecordConfig.m */,
-			);
-			name = entity;
 			sourceTree = "<group>";
 		};
 		BBD16B56F9CD4D4CEB5BBC75CA62326A /* PoporFoundation */ = {
@@ -792,19 +811,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB76FEF32E2714FF2AC722C4EF407137 /* PoporNetRecord */ = {
-			isa = PBXGroup;
-			children = (
-				A7621DFE91A295CDCC876251B7237232 /* DetailVC */,
-				B80F6205F5939E5E5B7B59205869C441 /* entity */,
-				1D56385C1AC50A67174BBE75BC2380F5 /* ListVC */,
-				8E502AAA4DCDA3717E4A6A0231D60831 /* Pod */,
-				85A97CA254BBF95CD95BF8B3B37A3774 /* Support Files */,
-			);
-			name = PoporNetRecord;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		DCA1C05CA63878CB654E59390D833EAF /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,7 +825,7 @@
 		DD4366266BA1C5145F11F35FA9DF537B /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DB76FEF32E2714FF2AC722C4EF407137 /* PoporNetRecord */,
+				3AA7477AD205794E8D117CB4D65BBDA0 /* PoporNetRecord */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -875,32 +881,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		276D22BAE5C0C025E48CEA7994FB19AB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				632981C2C8E12600AB7E91F6F3455F24 /* PnrDetailVC.h in Headers */,
-				D7606305793BB64732B3E3D5F9D50F0F /* PnrDetailVCDataSource.h in Headers */,
-				6EA0FF34CF44C7D940D23ED9868CE69F /* PnrDetailVCEventHandler.h in Headers */,
-				D724B5F5B906DC8F472CDDB2E5D6CA5B /* PnrDetailVCInteractor.h in Headers */,
-				0927F599C75830F14A95B44E7119C39F /* PnrDetailVCPresenter.h in Headers */,
-				54B3CE162D5BD74C520693F5514456D8 /* PnrDetailVCProtocol.h in Headers */,
-				8F55D939C5E4C5E681E3F70539DE64DB /* PnrDetailVCRouter.h in Headers */,
-				0563CAFEF5B87CBE57C9596DBAD75056 /* PnrListVC.h in Headers */,
-				0C0CF79D025D2030CB778174F45A497A /* PnrListVCCell.h in Headers */,
-				D0F440A8D63B3E93742A275AAF868138 /* PnrListVCDataSource.h in Headers */,
-				F92964EC041B5253AECCBCFE8CCF724B /* PnrListVCEventHandler.h in Headers */,
-				8630C77D3B0D90287E75FBA3FB078EB2 /* PnrListVCInteractor.h in Headers */,
-				0E70F45C12FA6DA7E4A2373663384F14 /* PnrListVCPresenter.h in Headers */,
-				E6C7BDDC671273F8F3508099FA725116 /* PnrListVCProtocol.h in Headers */,
-				A0EA356466BD07FE9C7D4900FD6DD75B /* PnrListVCRouter.h in Headers */,
-				03A0DE8E6167D482C1920A687C575D7E /* PnrVCEntity.h in Headers */,
-				160F98FB7179511FD61F03BD71F417C7 /* PoporNetRecord-umbrella.h in Headers */,
-				F2E6B4C545600C380B50444145FA99BF /* PoporNetRecord.h in Headers */,
-				4FA72FCD79FB6A63D67E3EEC07006D91 /* PoporNetRecordConfig.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		44A94ABBBB1D99771A4A465B3D12E73D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -933,6 +913,33 @@
 				4A3DD37ABD9A5758C3BE31E8B1CF7B29 /* View+MASAdditions.h in Headers */,
 				0CB26840B2CD2CDB40F8A29A935233E3 /* View+MASShorthandAdditions.h in Headers */,
 				C7F8E19DF007724D472F873813DC9EF8 /* ViewController+MASAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DDD088538AAD34A0010EA24762E9617 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E2EFA775E061A02E0CCF7AABB38078D /* PnrDetailCell.h in Headers */,
+				35117B5F1BED2898A2EDD6AFC5EFBB74 /* PnrDetailVC.h in Headers */,
+				D8822BEB56D086AF71739BF4CCF16A1F /* PnrDetailVCDataSource.h in Headers */,
+				7C709793C99CBC043C466B041CDB2458 /* PnrDetailVCEventHandler.h in Headers */,
+				4DECCD008363853DB02A2B0490E0F52D /* PnrDetailVCInteractor.h in Headers */,
+				1CAC6B611B34666743EAD31B1DA4789F /* PnrDetailVCPresenter.h in Headers */,
+				A37C5AE2BD9869C5FA5E44F6872F5729 /* PnrDetailVCProtocol.h in Headers */,
+				1CF8F4463CB87D87E37273AF488DE8AC /* PnrDetailVCRouter.h in Headers */,
+				11779D2C9EFE9B5B9E669169B7AA5052 /* PnrListVC.h in Headers */,
+				74316E98F796E7420278B2C1B3F48C56 /* PnrListVCCell.h in Headers */,
+				FCDB62D67B2C852FDCE745BBDB91826B /* PnrListVCDataSource.h in Headers */,
+				8D5F5F13329781381CF0FEA72D88F59C /* PnrListVCEventHandler.h in Headers */,
+				7DA074395967E45C05A62EA0963B1BBE /* PnrListVCInteractor.h in Headers */,
+				4388CD4CC68B4D64322084AC2878790B /* PnrListVCPresenter.h in Headers */,
+				16056664D2B7E5C86CBAFD76CFEAA9A8 /* PnrListVCProtocol.h in Headers */,
+				0754999D1F31A6BD77E0156456F32AF5 /* PnrListVCRouter.h in Headers */,
+				1E7401DC4993EC8EB5ADDFAF1A4C665F /* PnrVCEntity.h in Headers */,
+				AEEF6C04454F77DC4EC7DACCC964375F /* PoporNetRecord-umbrella.h in Headers */,
+				2E1780FDDBE942CBC8FD92ACA095C4BF /* PoporNetRecord.h in Headers */,
+				2873B8B77DB12F91BD51D055828E1883 /* PoporNetRecordConfig.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,8 +1026,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCE190CC70F5B9DBBA44F0B68AF7E577 /* Build configuration list for PBXNativeTarget "PoporNetRecord" */;
 			buildPhases = (
-				276D22BAE5C0C025E48CEA7994FB19AB /* Headers */,
-				4DADAE31983080B472846E6308881DA9 /* Sources */,
+				5DDD088538AAD34A0010EA24762E9617 /* Headers */,
+				D55F3C445FA42A275B86D7EE3225860D /* Sources */,
 				0C62B3E65BBFC2C03074235B959064C6 /* Frameworks */,
 				514B2A0FD6260B2637447F718F0CEC44 /* Resources */,
 			);
@@ -1203,26 +1210,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4DADAE31983080B472846E6308881DA9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				39112DCE2CE6EF4A8CA1047B1C16DF40 /* PnrDetailVC.m in Sources */,
-				B5D18A1B6D6DA490484E09F7540D274A /* PnrDetailVCInteractor.m in Sources */,
-				BA3B0D8F8340D53E99774C8BD6F353CC /* PnrDetailVCPresenter.m in Sources */,
-				B7483B28C973E691918373DA294BD975 /* PnrDetailVCRouter.m in Sources */,
-				AE8C927DC0C6BD52A6F27D4EEB8DD0C5 /* PnrListVC.m in Sources */,
-				7B74B8B4450F52A9D27714CC982B202E /* PnrListVCCell.m in Sources */,
-				83CA24ADA3A3B95594E43C6C4A71D395 /* PnrListVCInteractor.m in Sources */,
-				F220DE65EB582099A950C6E2C6D64C64 /* PnrListVCPresenter.m in Sources */,
-				740A601968DF6979AF3EB152871D467A /* PnrListVCRouter.m in Sources */,
-				8ABAEB6F85C52F1F48611586AF863470 /* PnrVCEntity.m in Sources */,
-				C1DDF2ABB160893943C3FCE7B5006FAE /* PoporNetRecord-dummy.m in Sources */,
-				5AA3FE242A69F285B3702C621D99007C /* PoporNetRecord.m in Sources */,
-				A8D7E5C4E308FB1B70966862F50A1120 /* PoporNetRecordConfig.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5D0C3F4BE83866E48EDE32A2931EB18B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1277,6 +1264,27 @@
 				6AF6A2E528B16F9D70043D7DCD294B3D /* PoporUI-dummy.m in Sources */,
 				0CE8C518C49E7CAC44CD8A569E0980D5 /* UIView+Extension.m in Sources */,
 				6AAFCFFA8C2F4D8B7A4A8BDE07066A40 /* UIView+Tool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D55F3C445FA42A275B86D7EE3225860D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A96E61D286FA67013CBB79A41A1C6E5 /* PnrDetailCell.m in Sources */,
+				95B9E1E6B25C4039D49F6EF86C06C9F7 /* PnrDetailVC.m in Sources */,
+				DCD82A415F91E9C73374ADAF90EFB132 /* PnrDetailVCInteractor.m in Sources */,
+				5D0380E24AA36655E01D65D403555888 /* PnrDetailVCPresenter.m in Sources */,
+				85F6F42478FE54A4CF895C4FA7E7071A /* PnrDetailVCRouter.m in Sources */,
+				DBC7C0867BA4FA5FB3F041246DD9FDFF /* PnrListVC.m in Sources */,
+				662E690A042C4430777A39F2386E83CB /* PnrListVCCell.m in Sources */,
+				67FDC77D2F93D49AF241A9345680265E /* PnrListVCInteractor.m in Sources */,
+				4F355A740BB50589858E160BF2C10518 /* PnrListVCPresenter.m in Sources */,
+				4268BB2A99BB1C1549117575DBBE44FB /* PnrListVCRouter.m in Sources */,
+				D6FFC348499CADB47C5B5D5440781026 /* PnrVCEntity.m in Sources */,
+				44E70E4F206313D6CA37AD4B3E250AF9 /* PoporNetRecord-dummy.m in Sources */,
+				FD2B561FB41DD7C915AC8EB7804F3F3C /* PoporNetRecord.m in Sources */,
+				6E712DC501D265942D9AE27630833F78 /* PoporNetRecordConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1583,7 +1591,7 @@
 		};
 		5D6A4453486630FD432CAF20615291FF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF3A53042756BC4C8EB408BF76CDED94 /* PoporNetRecord.xcconfig */;
+			baseConfigurationReference = 9636B9334E9CF4EFCB61048150497D61 /* PoporNetRecord.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1737,7 +1745,7 @@
 		};
 		89DA86A09EEA08AED8D67A7865BD0F9B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF3A53042756BC4C8EB408BF76CDED94 /* PoporNetRecord.xcconfig */;
+			baseConfigurationReference = 9636B9334E9CF4EFCB61048150497D61 /* PoporNetRecord.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
