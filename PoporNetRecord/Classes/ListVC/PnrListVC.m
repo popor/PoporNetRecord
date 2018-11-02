@@ -61,7 +61,7 @@
     [self addViews];
     
     __weak typeof(self) weakSelf = self;
-    [PoporNetRecord share].freshBlock = ^{
+    [PoporNetRecord share].config.freshBlock = ^{
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.infoTV reloadData];
         });

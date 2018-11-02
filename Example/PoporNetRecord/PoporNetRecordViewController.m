@@ -11,6 +11,8 @@
 #import <PoporNetRecord/PoporNetRecord.h>
 
 #import <CoreGraphics/CoreGraphics.h>
+#import <JSONSyntaxHighlight/JSONSyntaxHighlight.h>
+
 CG_INLINE UIColor * RGB16(unsigned long rgbValue) {
     return [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0];
 };
@@ -25,9 +27,19 @@ CG_INLINE UIColor * RGB16(unsigned long rgbValue) {
 {
     [super viewDidLoad];
 	
-    PoporNetRecord * pnr =[PoporNetRecord share];
+    PoporNetRecordConfig * config = [PoporNetRecordConfig share];
+    
+    //    config.recordType = PoporNetRecordDisable;
+    //    UIFont * font                = [UIFont systemFontOfSize:15];
+    //    // 假如att font 不为15,也需要设置,不然计算高度会出错.
+    //    config.cellTitleFont       = font;
+    //    config.titleAttributes     = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0x000000], NSFontAttributeName:font};
+    //    config.keyAttributes       = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0x8D208F], NSFontAttributeName:font};
+    //    config.stringAttributes    = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0x4BB748], NSFontAttributeName:font};
+    //    config.nonStringAttributes = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0x4BB748], NSFontAttributeName:font};
+    
     __weak typeof(self) weakSelf = self;
-    pnr.presentNCBlock = ^(UINavigationController *nc) {
+    config.presentNCBlock = ^(UINavigationController *nc) {
         // 设置标题颜色
         NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
         [dict setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
@@ -41,23 +53,21 @@ CG_INLINE UIColor * RGB16(unsigned long rgbValue) {
         //RGB16(0X68D3FF)
         [nc.navigationBar setBackgroundImage:[weakSelf gradientImageWithBounds:CGRectMake(0, 0, self.view.frame.size.width, 1) andColors:@[RGB16(0X68D3FF), RGB16(0X4585F5)] gradientHorizon:YES] forBarMetrics:UIBarMetricsDefault];
         
-        
         // 设置返回按钮字体颜色.
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     };
-    
-    //pnr.recordType = PoporNetRecordDisable;
+    NSDictionary * responseDic = @{@"success":@"true", @"child":@{@"name":@"abc", @"age":@(100)}, @"food":@[@"apple", @"orange"]};
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/test0.5" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:@{@"success":@"true"}];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/test0.5" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/test1.5" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:@{@"success":@"true"}];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/test1.5" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/test3.5" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:@{@"success":@"true"}];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/test3.5" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
     });
     
 }

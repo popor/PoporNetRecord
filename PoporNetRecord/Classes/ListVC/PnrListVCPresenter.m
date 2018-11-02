@@ -12,11 +12,14 @@
 #import "PnrDetailVCRouter.h"
 
 #import "PnrListVCCell.h"
+#import <JSONSyntaxHighlight/JSONSyntaxHighlight.h>
+#import "PoporNetRecordConfig.h"
 
 @interface PnrListVCPresenter ()
 
 @property (nonatomic, weak  ) id<PnrListVCProtocol> view;
 @property (nonatomic, strong) PnrListVCInteractor * interactor;
+@property (nonatomic, weak  ) PoporNetRecordConfig * config;
 
 @end
 
@@ -25,7 +28,7 @@
 - (id)init {
     if (self = [super init]) {
         [self initInteractors];
-        
+        self.config = [PoporNetRecordConfig share];
     }
     return self;
 }
@@ -83,44 +86,69 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     PnrVCEntity * entity = self.view.weakInfoArray[indexPath.row];
-    NSString * requestDes  = [self replaceUnicode:[entity.requestDic description]];
-    NSString * responseDes = [self replaceUnicode:[entity.responseDic description]];
+    //NSString * requestDes  = [self replaceUnicode:[entity.requestDic description]];
+    //NSString * responseDes = [self replaceUnicode:[entity.responseDic description]];
     
-    NSArray * infoArray = @[[NSString stringWithFormat:@"接口:\n%@", entity.request],
+    NSArray * titleArray = @[[NSString stringWithFormat:@"接口:\n%@", entity.request],
                             [NSString stringWithFormat:@"链接:\n%@", entity.url],
                             [NSString stringWithFormat:@"时间:\n%@", entity.time],
                             [NSString stringWithFormat:@"方法:\n%@", entity.method],
-                            [NSString stringWithFormat:@"head参数:\n%@", entity.headDic],
-                            
-                            [NSString stringWithFormat:@"请求参数:\n%@", requestDes],
-                            [NSString stringWithFormat:@"返回数据:\n%@", responseDes],
+                             
+                            @"head参数:\n",
+                            @"请求参数:\n",
+                            @"返回数据:\n",
                             ];
     NSArray * jsonArray = @[[NSNull null],
                             [NSNull null],
                             [NSNull null],
                             [NSNull null],
-                            entity.headDic ?:[NSNull null],
                             
+                            entity.headDic ?:[NSNull null],
                             entity.requestDic ?:[NSNull null],
                             entity.responseDic ?:[NSNull null],
                             ];
-    [self.view.vc.navigationController pushViewController:[PnrDetailVCRouter vcWithDic:@{@"title":@"请求详情", @"infoArray":infoArray, @"jsonArray":jsonArray}] animated:YES];
-}
-
-- (NSString *)replaceUnicode:(NSString *)unicodeStr {
-    if (unicodeStr) {
-        //NSString *tempStr1 = [unicodeStr stringByReplacingOccurrencesOfString:@"\\u" withString:@"\\U"];
-        NSString *tempStr2 = [unicodeStr stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
-        NSString *tempStr3 = [[@"\"" stringByAppendingString:tempStr2] stringByAppendingString:@"\""];
-        NSData *tempData = [tempStr3 dataUsingEncoding:NSUTF8StringEncoding];
-        NSString* returnStr = [NSPropertyListSerialization propertyListWithData:tempData options:NSPropertyListImmutable format:NULL error:nil];
+    
+    
+    NSMutableArray * cellAttArray = [NSMutableArray new];
+    for (int i = 0; i<jsonArray.count; i++) {
+        NSDictionary * json = jsonArray[i];
         
-        return returnStr ? :unicodeStr;
-    }else{
-        return nil;
+        NSMutableAttributedString * cellAtt = [[NSMutableAttributedString alloc] initWithString:titleArray[i] attributes:self.config.titleAttributes];
+        
+        if ([json isKindOfClass:[NSDictionary class]]) {
+            JSONSyntaxHighlight *jsh = [[JSONSyntaxHighlight alloc] initWithJSON:json];
+            jsh.keyAttributes       = self.config.keyAttributes;
+            jsh.stringAttributes    = self.config.stringAttributes;
+            jsh.nonStringAttributes = self.config.nonStringAttributes;
+            NSAttributedString * jsonAtt = [jsh highlightJSON];
+            [cellAtt appendAttributedString:jsonAtt];
+        }
+        
+        [cellAttArray addObject:cellAtt];
     }
+    NSDictionary * vcDic = @{
+                             @"title":@"请求详情",
+                             @"jsonArray":jsonArray,
+                             @"titleArray":titleArray,
+                             @"cellAttArray":cellAttArray,
+                             };
+    [self.view.vc.navigationController pushViewController:[PnrDetailVCRouter vcWithDic:vcDic] animated:YES];
 }
 
+//- (NSString *)replaceUnicode:(NSString *)unicodeStr {
+//    if (unicodeStr) {
+//        //NSString *tempStr1 = [unicodeStr stringByReplacingOccurrencesOfString:@"\\u" withString:@"\\U"];
+//        NSString *tempStr2 = [unicodeStr stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+//        NSString *tempStr3 = [[@"\"" stringByAppendingString:tempStr2] stringByAppendingString:@"\""];
+//        NSData *tempData = [tempStr3 dataUsingEncoding:NSUTF8StringEncoding];
+//        NSString* returnStr = [NSPropertyListSerialization propertyListWithData:tempData options:NSPropertyListImmutable format:NULL error:nil];
+//
+//        return returnStr ? :unicodeStr;
+//    }else{
+//        return nil;
+//    }
+//}
+//
 //- (NSString *)replaceUnicode1:(NSString *)unicodeStr {
 //
 //    NSString *tempStr1 = [unicodeStr stringByReplacingOccurrencesOfString:@"\\u" withString:@"\\U"];

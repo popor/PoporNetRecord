@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'PoporNetRecord'
-    s.version          = '0.0.13'
+    s.version          = '0.0.14'
     s.summary          = 'PoporNetRecord will record net request only in debug configuration'
     
     s.homepage         = 'https://github.com/popor/PoporNetRecord'
@@ -45,4 +45,5 @@ Pod::Spec.new do |s|
     s.dependency 'PoporFoundation/NSString'
     s.dependency 'PoporFoundation/NSDate'
     
+    s.dependency 'JSONSyntaxHighlight'
 end

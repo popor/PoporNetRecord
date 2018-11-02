@@ -11,11 +11,13 @@
 
 #import <PoporUI/IToastKeyboard.h>
 #import <PoporFoundation/NSString+Size.h>
+#import "PoporNetRecordConfig.h"
 
 @interface PnrDetailVCPresenter ()
 
 @property (nonatomic, weak  ) id<PnrDetailVCProtocol> view;
 @property (nonatomic, strong) PnrDetailVCInteractor * interactor;
+@property (nonatomic, weak  ) PoporNetRecordConfig * config;
 
 @end
 
@@ -24,7 +26,7 @@
 - (id)init {
     if (self = [super init]) {
         [self initInteractors];
-        
+        self.config = [PoporNetRecordConfig share];
     }
     return self;
 }
@@ -47,14 +49,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.view.infoArray.count;
+    return self.view.cellAttArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString * content = self.view.infoArray[indexPath.row];
-    float height = [content sizeInFont:[UIFont systemFontOfSize:15] width:self.view.vc.view.frame.size.width - 30].height;
+    float width = self.view.vc.view.frame.size.width;
+    NSMutableAttributedString * att = self.view.cellAttArray[indexPath.row];
     
-    return height + 20;
+    CGRect rect = [att boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading |NSStringDrawingTruncatesLastVisibleLine context:nil];
+    
+    //    NSDictionary *attribute = @{NSFontAttributeName: self.config.cellTitleFont};
+    //    rect = [att.string boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
+    //                                             options:
+    //                      NSStringDrawingTruncatesLastVisibleLine |
+    //                      NSStringDrawingUsesLineFragmentOrigin |
+    //                      NSStringDrawingUsesFontLeading
+    //                                          attributes:attribute
+    //                                             context:nil];
+    //
+    //    NSLog(@"%@ : %f", self.view.titleArray[indexPath.row], rect.size.height);
+    
+    return rect.size.height + 30;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -71,11 +86,10 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textLabel.font = [UIFont systemFontOfSize:15];
         cell.textLabel.numberOfLines = 0;
     }
     
-    cell.textLabel.text = self.view.infoArray[indexPath.row];
+    cell.textLabel.attributedText = self.view.cellAttArray[indexPath.row];
     
     return cell;
 }
@@ -97,8 +111,8 @@
 #pragma mark - VC_EventHandler
 - (void)copyAction {
     NSMutableString * text = [NSMutableString new];
-    for (NSString * string in self.view.infoArray) {
-        [text appendFormat:@"%@\n\n", string];
+    for (NSMutableAttributedString * att in self.view.cellAttArray) {
+        [text appendFormat:@"%@\n\n", att.string];
     }
     
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];

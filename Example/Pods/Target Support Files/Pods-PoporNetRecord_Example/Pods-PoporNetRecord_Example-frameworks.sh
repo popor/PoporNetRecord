@@ -153,12 +153,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/JSONSyntaxHighlight/JSONSyntaxHighlight.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PoporFoundation/PoporFoundation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PoporNetRecord/PoporNetRecord.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PoporUI/PoporUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/JSONSyntaxHighlight/JSONSyntaxHighlight.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PoporFoundation/PoporFoundation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PoporNetRecord/PoporNetRecord.framework"
