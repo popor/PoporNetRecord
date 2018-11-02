@@ -12,18 +12,27 @@ PODS:
   - PoporFoundation/PrefixCore (0.0.25):
     - PoporFoundation/PrefixOs
   - PoporFoundation/PrefixOs (0.0.25)
-  - PoporNetRecord (0.0.14):
+  - PoporNetRecord (0.0.15):
     - JSONSyntaxHighlight
     - Masonry
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 0.0.14)
-    - PoporNetRecord/entity (= 0.0.14)
-    - PoporNetRecord/ListVC (= 0.0.14)
+    - PoporNetRecord/DetailVC (= 0.0.15)
+    - PoporNetRecord/entity (= 0.0.15)
+    - PoporNetRecord/ListVC (= 0.0.15)
     - PoporUI/IToast
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (0.0.14):
+  - PoporNetRecord/DetailVC (0.0.15):
+    - JSONSyntaxHighlight
+    - Masonry
+    - PoporFoundation/NSDate
+    - PoporFoundation/NSDictionary
+    - PoporFoundation/NSString
+    - PoporNetRecord/entity
+    - PoporUI/IToast
+    - PoporUI/UIView
+  - PoporNetRecord/entity (0.0.15):
     - JSONSyntaxHighlight
     - Masonry
     - PoporFoundation/NSDate
@@ -31,15 +40,7 @@ PODS:
     - PoporFoundation/NSString
     - PoporUI/IToast
     - PoporUI/UIView
-  - PoporNetRecord/entity (0.0.14):
-    - JSONSyntaxHighlight
-    - Masonry
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporUI/IToast
-    - PoporUI/UIView
-  - PoporNetRecord/ListVC (0.0.14):
+  - PoporNetRecord/ListVC (0.0.15):
     - JSONSyntaxHighlight
     - Masonry
     - PoporFoundation/NSDate
@@ -71,7 +72,7 @@ SPEC CHECKSUMS:
   JSONSyntaxHighlight: 8685d8ad0259b909dc97a829fdfbefbec363f449
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporFoundation: bca1071cd750888f2dac9e5f5bb0857d4f76e92b
-  PoporNetRecord: 626c93932bdd04c645787c17361afb1c48b50731
+  PoporNetRecord: 90e881403c6a932017ff3e6cdc1d1364f6a8c00b
   PoporUI: e6a89da106f51c6ab18310b52fc926de9ec9527f
 
 PODFILE CHECKSUM: 8e5e063a762b6540e999f0788da6fdce493aea9d
