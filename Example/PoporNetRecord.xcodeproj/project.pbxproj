@@ -350,6 +350,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-PoporNetRecord_Example/Pods-PoporNetRecord_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/JSONSyntaxHighlight/JSONSyntaxHighlight.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/PoporAlertBubbleView/PoporAlertBubbleView.framework",
 				"${BUILT_PRODUCTS_DIR}/PoporFoundation/PoporFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/PoporNetRecord/PoporNetRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/PoporUI/PoporUI.framework",
@@ -358,6 +359,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONSyntaxHighlight.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PoporAlertBubbleView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PoporFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PoporNetRecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PoporUI.framework",

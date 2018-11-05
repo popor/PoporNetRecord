@@ -37,7 +37,7 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 @property (nonatomic, copy  ) PoporNetRecordRecordTypeBlock recordTypeBlock;
 @property (nonatomic, copy  ) PoporNetRecordNcBlock presentNCBlock;// 用户更新 presentViewController NC的状态
 
-
+@property (nonatomic        ) BOOL jsonViewColorBlack;// json详情页面是否使用黑白.
 + (instancetype)share;
 
 @end

@@ -63,7 +63,12 @@
         l.numberOfLines = 0;
     }
     l.frame = CGRectMake(0, 0, width-30, 10);
-    l.attributedText = att;
+    if (self.config.jsonViewColorBlack) {
+        l.text = att.string;
+    }else{
+        l.attributedText = att;
+    }
+    
     [l sizeToFit];
     return MAX(l.frame.size.height + 6, 56);
 }
@@ -83,8 +88,12 @@
         cell = [[PnrDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
-    cell.textL.attributedText = self.view.cellAttArray[indexPath.row];
+    NSMutableAttributedString * att = self.view.cellAttArray[indexPath.row];
+    if (self.config.jsonViewColorBlack) {
+        cell.textL.text = att.string;
+    }else{
+        cell.textL.attributedText = att;
+    }
     
     return cell;
 }
