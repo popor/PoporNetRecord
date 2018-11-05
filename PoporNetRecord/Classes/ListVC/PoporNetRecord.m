@@ -18,7 +18,7 @@
 #define LL_SCREEN_WIDTH  [[UIScreen mainScreen] bounds].size.width
 #define LL_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 
-@interface PoporNetRecord ()
+@interface PoporNetRecord () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak  ) UIWindow * window;
 @property (nonatomic, strong) UIButton * ballBT;
@@ -26,6 +26,8 @@
 @property (nonatomic        ) CGFloat sBallHideWidth;
 @property (nonatomic        ) CGFloat sBallWidth;
 @property (nonatomic, strong) NSMutableArray<PnrVCEntity *> * infoArray;
+
+@property (nonatomic, weak  ) UINavigationController * nc;
 
 @property (nonatomic, getter=isShow) BOOL show;
 
@@ -127,19 +129,37 @@
         }
     };
     UIViewController * vc = [PnrListVCRouter vcWithDic:@{@"title":@"网络请求", @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock}];
-    UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:vc];
+    UINavigationController * oneNC = [[UINavigationController alloc] initWithRootViewController:vc];
     if (self.config.presentNCBlock) {
-        self.config.presentNCBlock(nc);
+        self.config.presentNCBlock(oneNC);
     }
     if (self.window.rootViewController.presentationController
         && self.window.rootViewController.presentedViewController) {
-        [self.window.rootViewController.presentedViewController presentViewController:nc animated:YES completion:nil];
+        [self.window.rootViewController.presentedViewController presentViewController:oneNC animated:YES completion:nil];
     }else{
-        [self.window.rootViewController presentViewController:nc animated:YES completion:nil];
+        [self.window.rootViewController presentViewController:oneNC animated:YES completion:nil];
     }
+    oneNC.interactivePopGestureRecognizer.delegate = self;
+    
+    self.nc = oneNC;
 }
 
 #pragma mark - Action
+// 侧滑返回判断
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer == self.nc.interactivePopGestureRecognizer) {
+        if (self.nc.viewControllers.count == 1) {
+            [self.nc dismissViewControllerAnimated:YES completion:nil];
+            return NO;
+        }else{
+            return YES;
+        }
+    }else{
+        return YES;
+    }
+}
+
+// 球移动轨迹
 - (void)panGR:(UIPanGestureRecognizer *)gr {
     CGPoint panPoint = [gr locationInView:[[UIApplication sharedApplication] keyWindow]];
     //NSLog(@"panPoint: %f-%f", panPoint.x, panPoint.y);
