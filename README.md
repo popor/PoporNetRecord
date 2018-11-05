@@ -23,8 +23,8 @@ pod 'PoporNetRecord'
 ```
 
 <p>
-<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/image/list.png" width="40%" height="40%">
-<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/image/detail.png" width="40%" height="40%">
+<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/list.png" width="40%" height="40%">
+<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/detail.png" width="40%" height="40%">
 
 </p>
 
