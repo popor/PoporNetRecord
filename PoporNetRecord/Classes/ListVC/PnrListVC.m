@@ -126,7 +126,7 @@
 }
 
 - (UITableView *)alertBubbleTV {
-    UITableView * oneTV = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 140, 88) style:UITableViewStylePlain];
+    UITableView * oneTV = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 150, 88) style:UITableViewStylePlain];
     
     oneTV.delegate   = self.present;
     oneTV.dataSource = self.present;
@@ -140,7 +140,7 @@
     
     oneTV.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     
-    oneTV.layer.cornerRadius = 5;
+    oneTV.layer.cornerRadius = 4;
     oneTV.clipsToBounds      = YES;
     oneTV.scrollEnabled      = NO;
     

@@ -106,9 +106,10 @@
         UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellID];
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellID];
-            cell.backgroundColor = self.view.alertBubbleTVColor;
-            cell.textLabel.font = [UIFont systemFontOfSize:15];
+            cell.backgroundColor     = [UIColor clearColor];
+            cell.textLabel.font      = [UIFont systemFontOfSize:16];
             cell.textLabel.textColor = [UIColor whiteColor];
+            cell.tintColor           = [UIColor whiteColor];
         }
         if (indexPath.row == 0) {
             cell.textLabel.text = @"彩色:高内存";
@@ -221,7 +222,7 @@
     //fromRect.origin = point;
     
     CGRect fromRect = [touch.view.superview convertRect:touch.view.frame toView:self.view.vc.navigationController.view];
-    fromRect.origin.y -= 8;
+    fromRect.origin.y -= 7;
     
     NSDictionary * dic = @{
                            @"direction":@(AlertBubbleViewDirectionTop),
