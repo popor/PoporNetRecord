@@ -19,18 +19,18 @@ PODS:
   - PoporFoundation/PrefixCore (0.0.25):
     - PoporFoundation/PrefixOs
   - PoporFoundation/PrefixOs (0.0.25)
-  - PoporNetRecord (0.0.19):
+  - PoporNetRecord (0.0.20):
     - JSONSyntaxHighlight
     - Masonry
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 0.0.19)
-    - PoporNetRecord/entity (= 0.0.19)
-    - PoporNetRecord/ListVC (= 0.0.19)
+    - PoporNetRecord/DetailVC (= 0.0.20)
+    - PoporNetRecord/entity (= 0.0.20)
+    - PoporNetRecord/ListVC (= 0.0.20)
     - PoporUI/IToast
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (0.0.19):
+  - PoporNetRecord/DetailVC (0.0.20):
     - JSONSyntaxHighlight
     - Masonry
     - PoporFoundation/NSDate
@@ -39,7 +39,7 @@ PODS:
     - PoporNetRecord/entity
     - PoporUI/IToast
     - PoporUI/UIView
-  - PoporNetRecord/entity (0.0.19):
+  - PoporNetRecord/entity (0.0.20):
     - JSONSyntaxHighlight
     - Masonry
     - PoporFoundation/NSDate
@@ -47,7 +47,7 @@ PODS:
     - PoporFoundation/NSString
     - PoporUI/IToast
     - PoporUI/UIView
-  - PoporNetRecord/ListVC (0.0.19):
+  - PoporNetRecord/ListVC (0.0.20):
     - JSONSyntaxHighlight
     - Masonry
     - PoporAlertBubbleView
@@ -82,7 +82,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporAlertBubbleView: 833b1fdbff7d6ffdb721e8c133271b5459df8f86
   PoporFoundation: bca1071cd750888f2dac9e5f5bb0857d4f76e92b
-  PoporNetRecord: c4b3ef9bdbc8d2a669687cd63c317bd7b2366abd
+  PoporNetRecord: 760624db6a405c08cb02c1196fc665216bfaec71
   PoporUI: b4c780eec637e1123bdc9d6a55d0a555968c8773
 
 PODFILE CHECKSUM: 8e5e063a762b6540e999f0788da6fdce493aea9d

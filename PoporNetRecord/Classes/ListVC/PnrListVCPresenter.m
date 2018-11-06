@@ -234,7 +234,7 @@
                            @"trangleWidth":@(8),
                            
                            @"borderInnerGap":@(15),
-                           @"lableInnerGap":@(0),
+                           @"customeViewInnerGap":@(0),
                            
                            @"bubbleBgColor":self.view.alertBubbleTVColor,
                            @"bgColor":[UIColor clearColor],
