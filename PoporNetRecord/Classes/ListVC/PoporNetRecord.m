@@ -20,17 +20,6 @@
 
 @interface PoporNetRecord () <UIGestureRecognizerDelegate>
 
-@property (nonatomic, weak  ) UIWindow * window;
-@property (nonatomic, strong) UIButton * ballBT;
-
-@property (nonatomic        ) CGFloat sBallHideWidth;
-@property (nonatomic        ) CGFloat sBallWidth;
-@property (nonatomic, strong) NSMutableArray<PnrVCEntity *> * infoArray;
-
-@property (nonatomic, weak  ) UINavigationController * nc;
-
-@property (nonatomic, getter=isShow) BOOL show;
-
 @end
 
 @implementation PoporNetRecord
@@ -127,6 +116,9 @@
         if (weakSelf.isShow) {
             weakSelf.ballBT.hidden = NO;
         }
+        if (weakSelf.closeBlock) {
+            weakSelf.closeBlock();
+        }
     };
     UIViewController * vc = [PnrListVCRouter vcWithDic:@{@"title":@"网络请求", @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock}];
     UINavigationController * oneNC = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -141,6 +133,10 @@
     }
     oneNC.interactivePopGestureRecognizer.delegate = self;
     
+    // 打开block事件
+    if (self.openBlock) {
+        self.openBlock();
+    }
     self.nc = oneNC;
 }
 
@@ -269,5 +265,10 @@
     }
     
     
+}
+// 把ballBT提到最高层.
++ (void)bringFrontBallBT {
+    PoporNetRecord * pnr = [PoporNetRecord share];
+    [pnr.window bringSubviewToFront:pnr.ballBT];
 }
 @end
