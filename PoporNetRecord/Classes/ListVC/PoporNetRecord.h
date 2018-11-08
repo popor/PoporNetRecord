@@ -20,7 +20,7 @@ typedef void(^PoporNetRecordBlockPVoid) (void);
 
 @property (nonatomic        ) CGFloat sBallHideWidth;
 @property (nonatomic        ) CGFloat sBallWidth;
-@property (nonatomic, strong) NSMutableArray<PnrVCEntity *> * infoArray;
+@property (nonatomic, strong) NSMutableArray * infoArray;
 
 @property (nonatomic, weak  ) UINavigationController * nc;
 @property (nonatomic, copy  ) PoporNetRecordBlockPVoid openBlock;
