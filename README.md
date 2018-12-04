@@ -14,6 +14,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 iOS12获取WIFI名称需要额外设置.详情:https://www.jianshu.com/p/751625d4d282
 
 选择Target，在Capabilities中，激活Access WiFi Infomation项。
+<p>
+<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/AccessWifiInformation.png" width="100%" height="100%">
+
+</p>
 
 ## Requirements
 
