@@ -10,8 +10,15 @@
 #endif
 #endif
 
+#import "BlockActionSheet.h"
+#import "BlockAlertView.h"
 #import "IToast.h"
 #import "IToastKeyboard.h"
+#import "DeviceDisk.h"
+#import "DispatchTool.h"
+#import "UIDevice+Permission.h"
+#import "UIDevice+SaveImage.h"
+#import "UIDevice+Tool.h"
 #import "UIView+Extension.h"
 #import "UIView+Tool.h"
 

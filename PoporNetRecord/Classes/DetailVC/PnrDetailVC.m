@@ -92,7 +92,9 @@
     
     {
         UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"复制" style:UIBarButtonItemStylePlain target:self.present action:@selector(copyAction)];
-        self.navigationItem.rightBarButtonItems = @[item1];
+        UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"Web" style:UIBarButtonItemStylePlain target:self.present action:@selector(pushWebVC)];
+        
+        self.navigationItem.rightBarButtonItems = @[item1, item2];
     }
 }
 

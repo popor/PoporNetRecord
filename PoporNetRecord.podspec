@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'PoporNetRecord'
-    s.version          = '0.0.22'
+    s.version          = '0.0.23'
     s.summary          = 'PoporNetRecord will record net request only in debug configuration'
     
     s.homepage         = 'https://github.com/popor/PoporNetRecord'
@@ -34,9 +34,21 @@ Pod::Spec.new do |s|
     
     s.subspec 'DetailVC' do |ss|
       ss.dependency 'PoporNetRecord/entity'
+      ss.dependency 'PoporNetRecord/WebVC'
       
       ss.source_files = 'PoporNetRecord/Classes/DetailVC/*.{h,m}'
         
+    end
+    
+    s.subspec 'WebVC' do |ss|
+      ss.dependency 'PoporNetRecord/entity'
+      ss.dependency 'PoporFoundation/NSString'
+      ss.dependency 'PoporFoundation/PrefixCore'
+      ss.dependency 'PoporUI/Tool'
+      ss.dependency 'PoporQRCodeIos'
+      
+      ss.source_files = 'PoporNetRecord/Classes/WebVC/*.{h,m}'
+      
     end
     
     s.dependency 'Masonry'
@@ -49,4 +61,9 @@ Pod::Spec.new do |s|
     s.dependency 'PoporFoundation/NSDate'
     
     s.dependency 'JSONSyntaxHighlight'
+    
+    s.dependency 'GCDWebServer'
+    s.dependency 'GCDWebServer/WebUploader'
+    s.dependency 'GCDWebServer/WebDAV'
+    
 end

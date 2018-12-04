@@ -1,6 +1,6 @@
 {
   "name": "PoporNetRecord",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "summary": "PoporNetRecord will record net request only in debug configuration",
   "homepage": "https://github.com/popor/PoporNetRecord",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/popor/PoporNetRecord.git",
-    "tag": "0.0.22"
+    "tag": "0.0.23"
   },
   "platforms": {
     "ios": "8.0"
@@ -42,6 +42,15 @@
     ],
     "JSONSyntaxHighlight": [
 
+    ],
+    "GCDWebServer": [
+
+    ],
+    "GCDWebServer/WebUploader": [
+
+    ],
+    "GCDWebServer/WebDAV": [
+
     ]
   },
   "subspecs": [
@@ -69,9 +78,33 @@
       "dependencies": {
         "PoporNetRecord/entity": [
 
+        ],
+        "PoporNetRecord/WebVC": [
+
         ]
       },
       "source_files": "PoporNetRecord/Classes/DetailVC/*.{h,m}"
+    },
+    {
+      "name": "WebVC",
+      "dependencies": {
+        "PoporNetRecord/entity": [
+
+        ],
+        "PoporFoundation/NSString": [
+
+        ],
+        "PoporFoundation/PrefixCore": [
+
+        ],
+        "PoporUI/Tool": [
+
+        ],
+        "PoporQRCodeIos": [
+
+        ]
+      },
+      "source_files": "PoporNetRecord/Classes/WebVC/*.{h,m}"
     }
   ]
 }

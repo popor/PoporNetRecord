@@ -11,6 +11,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 思路模仿自LLDebugTool,https://github.com/HDB-Li/LLDebugTool.git,但是我只不需要监测所有的网络请求,另外其他需求也不一致,所以有了本framework.
 
+iOS12获取WIFI名称需要额外设置.详情:https://www.jianshu.com/p/751625d4d282
+
 ## Requirements
 
 ## Installation

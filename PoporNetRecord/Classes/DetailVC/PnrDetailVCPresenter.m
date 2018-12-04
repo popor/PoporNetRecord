@@ -13,6 +13,7 @@
 #import <PoporFoundation/NSString+Size.h>
 #import "PoporNetRecordConfig.h"
 #import "PnrDetailCell.h"
+#import "PnrWebVC.h"
 
 @interface PnrDetailVCPresenter ()
 
@@ -131,6 +132,13 @@
     }else{
         [self.view.vc.navigationController pushViewController:activity animated:YES];
     }
+}
+
+- (void)pushWebVC {
+    PnrWebVC * vc = [PnrWebVC new];
+    vc.cellAttArray = self.view.cellAttArray;
+    
+    [self.view.vc.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - Interactor_EventHandler
