@@ -8,25 +8,25 @@ PODS:
     - GCDWebServer/Core
   - JSONSyntaxHighlight (1.0.0)
   - Masonry (1.1.0)
-  - PoporAlertBubbleView (0.0.07):
+  - PoporAlertBubbleView (0.0.08):
     - PoporFoundation/NSAssistant
     - PoporFoundation/PrefixCore
     - PoporUI/UIView
-  - PoporFoundation/NSAssistant (0.0.25):
+  - PoporFoundation/NSAssistant (0.0.28):
     - PoporFoundation/PrefixCore
     - PoporFoundation/PrefixOs
-  - PoporFoundation/NSDate (0.0.25):
+  - PoporFoundation/NSDate (0.0.28):
     - PoporFoundation/NSString
-  - PoporFoundation/NSDictionary (0.0.25):
+  - PoporFoundation/NSDictionary (0.0.28):
     - PoporFoundation/NSObject
     - PoporFoundation/PrefixCore
-  - PoporFoundation/NSObject (0.0.25)
-  - PoporFoundation/NSString (0.0.25):
+  - PoporFoundation/NSObject (0.0.28)
+  - PoporFoundation/NSString (0.0.28):
     - PoporFoundation/PrefixOs
-  - PoporFoundation/PrefixCore (0.0.25):
+  - PoporFoundation/PrefixCore (0.0.28):
     - PoporFoundation/PrefixOs
-  - PoporFoundation/PrefixOs (0.0.25)
-  - PoporNetRecord (0.0.23):
+  - PoporFoundation/PrefixOs (0.0.28)
+  - PoporNetRecord (0.0.24):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -35,13 +35,14 @@ PODS:
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 0.0.23)
-    - PoporNetRecord/entity (= 0.0.23)
-    - PoporNetRecord/ListVC (= 0.0.23)
-    - PoporNetRecord/WebVC (= 0.0.23)
+    - PoporNetRecord/DetailVC (= 0.0.24)
+    - PoporNetRecord/entity (= 0.0.24)
+    - PoporNetRecord/ListVC (= 0.0.24)
+    - PoporNetRecord/WebVC (= 0.0.24)
     - PoporUI/IToast
+    - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (0.0.23):
+  - PoporNetRecord/DetailVC (0.0.24):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -53,8 +54,9 @@ PODS:
     - PoporNetRecord/entity
     - PoporNetRecord/WebVC
     - PoporUI/IToast
+    - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/entity (0.0.23):
+  - PoporNetRecord/entity (0.0.24):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -64,8 +66,9 @@ PODS:
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
     - PoporUI/IToast
+    - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/ListVC (0.0.23):
+  - PoporNetRecord/ListVC (0.0.24):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -78,8 +81,9 @@ PODS:
     - PoporNetRecord/DetailVC
     - PoporNetRecord/entity
     - PoporUI/IToast
+    - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/WebVC (0.0.23):
+  - PoporNetRecord/WebVC (0.0.24):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -93,16 +97,18 @@ PODS:
     - PoporQRCodeIos
     - PoporUI/IToast
     - PoporUI/Tool
+    - PoporUI/UITextField
     - PoporUI/UIView
   - PoporQRCodeIos (0.0.5)
-  - PoporUI/BlockView (0.0.20)
-  - PoporUI/IToast (0.0.20):
+  - PoporUI/BlockView (0.0.31)
+  - PoporUI/IToast (0.0.31):
     - PoporFoundation/NSString
-  - PoporUI/Tool (0.0.20):
+  - PoporUI/Tool (0.0.31):
     - PoporFoundation/NSString
     - PoporUI/BlockView
     - PoporUI/IToast
-  - PoporUI/UIView (0.0.20)
+  - PoporUI/UITextField (0.0.31)
+  - PoporUI/UIView (0.0.31)
 
 DEPENDENCIES:
   - PoporNetRecord (from `../`)
@@ -125,11 +131,11 @@ SPEC CHECKSUMS:
   GCDWebServer: 8d67ee9f634b4bb91eb4b8aee440318a5fc6debd
   JSONSyntaxHighlight: 8685d8ad0259b909dc97a829fdfbefbec363f449
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  PoporAlertBubbleView: 833b1fdbff7d6ffdb721e8c133271b5459df8f86
-  PoporFoundation: bca1071cd750888f2dac9e5f5bb0857d4f76e92b
-  PoporNetRecord: 1ada170a4b8aa1a4477606e228d0658a636587f0
+  PoporAlertBubbleView: aea73e383fca9d7dedda533fac160c9e66c720cf
+  PoporFoundation: fc84ffacadb2dd559c39146baff797b6c3d9f328
+  PoporNetRecord: d8b71553e5b0c450cce3b202d3c01c11a76d8ffa
   PoporQRCodeIos: c084b3873b2df1c86be06ad7d62574b994eaf8e2
-  PoporUI: b4c780eec637e1123bdc9d6a55d0a555968c8773
+  PoporUI: f0b9c53e47b3d9149f4624cdfbf3532f04f6ccbc
 
 PODFILE CHECKSUM: 8e5e063a762b6540e999f0788da6fdce493aea9d
 

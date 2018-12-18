@@ -55,6 +55,7 @@ Pod::Spec.new do |s|
     
     s.dependency 'PoporUI/IToast'
     s.dependency 'PoporUI/UIView'
+    s.dependency 'PoporUI/UITextField'
     
     s.dependency 'PoporFoundation/NSDictionary'
     s.dependency 'PoporFoundation/NSString'

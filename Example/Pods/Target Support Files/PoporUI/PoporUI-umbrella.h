@@ -19,6 +19,8 @@
 #import "UIDevice+Permission.h"
 #import "UIDevice+SaveImage.h"
 #import "UIDevice+Tool.h"
+#import "UIInsetsTextField.h"
+#import "UITextField+MaxLength.h"
 #import "UIView+Extension.h"
 #import "UIView+Tool.h"
 
