@@ -22,19 +22,6 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 </p>
 
-```
-电脑浏览器访问,假如使用chrome或者QQ浏览器,安装json-handle插件,可以点击[数据返回]进行更好的查看json数据
-```
-<p>
-<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/web1.png" width="100%" height="100%">
-
-</p>
-
-<p>
-<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/web2.png" width="100%" height="100%">
-
-</p>
-
 ## Requirements
 
 ## Installation
@@ -50,6 +37,19 @@ pod 'PoporNetRecord'
 <img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/list.png" width="30%" height="30%">
 <img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/detail.png" width="30%" height="30%">
 <img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/web.png" width="30%" height="30%">
+
+</p>
+
+```
+电脑浏览器访问,假如使用chrome或者QQ浏览器,安装json-handle插件,可以点击[数据返回]进行更好的查看json数据
+```
+<p>
+<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/web1.png" width="100%" height="100%">
+
+</p>
+
+<p>
+<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/web2.png" width="100%" height="100%">
 
 </p>
 
