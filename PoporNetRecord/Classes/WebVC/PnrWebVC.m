@@ -72,7 +72,7 @@
     NSString * target = self.portEntity.jsonWindowSwitch ? @" target='_blank'" : @"";
     if (!self.webServerAll) {
         NSMutableString * h5 = [NSMutableString new];
-        [h5 appendString:@"<html> <head><title>请求详情</title></head> <body><br/>"];
+        [h5 appendString:@"<html> <head><title>请求详情</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
         for (int i=0; i<self.titleArray.count; i++) {
             NSString * title = self.titleArray[i];
             NSString * content = self.jsonArray[i];
