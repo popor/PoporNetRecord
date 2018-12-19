@@ -69,8 +69,12 @@ CG_INLINE UIColor * RGB16(unsigned long rgbValue) {
         [PoporNetRecord addUrl:@"http://www.baidu.com/test1.5" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
     });
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/test3.5" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [PoporNetRecord addUrl:@"http://www.baidu.com/test2.5" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [PoporNetRecord addUrl:@"http://www.baidu.com/test2.6" method:@"GET" head:@{@"os":@"iOS"} request:nil response:responseDic];
     });
     
 }

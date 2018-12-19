@@ -12,7 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PnrWebVC : UIViewController
 
-@property (nonatomic, strong) NSArray * cellAttArray;
+@property (nonatomic, strong) NSArray * jsonArray;
+@property (nonatomic, strong) NSArray * titleArray;
+
+//@property (nonatomic, strong) NSArray * cellAttArray;
 
 @end
 

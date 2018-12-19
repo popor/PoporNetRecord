@@ -26,7 +26,7 @@ PODS:
   - PoporFoundation/PrefixCore (0.0.28):
     - PoporFoundation/PrefixOs
   - PoporFoundation/PrefixOs (0.0.28)
-  - PoporNetRecord (0.0.24):
+  - PoporNetRecord (0.0.23):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -35,14 +35,14 @@ PODS:
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 0.0.24)
-    - PoporNetRecord/entity (= 0.0.24)
-    - PoporNetRecord/ListVC (= 0.0.24)
-    - PoporNetRecord/WebVC (= 0.0.24)
+    - PoporNetRecord/DetailVC (= 0.0.23)
+    - PoporNetRecord/entity (= 0.0.23)
+    - PoporNetRecord/ListVC (= 0.0.23)
+    - PoporNetRecord/WebVC (= 0.0.23)
     - PoporUI/IToast
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (0.0.24):
+  - PoporNetRecord/DetailVC (0.0.23):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -56,7 +56,7 @@ PODS:
     - PoporUI/IToast
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/entity (0.0.24):
+  - PoporNetRecord/entity (0.0.23):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -68,7 +68,7 @@ PODS:
     - PoporUI/IToast
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/ListVC (0.0.24):
+  - PoporNetRecord/ListVC (0.0.23):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -83,7 +83,7 @@ PODS:
     - PoporUI/IToast
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/WebVC (0.0.24):
+  - PoporNetRecord/WebVC (0.0.23):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -133,7 +133,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporAlertBubbleView: aea73e383fca9d7dedda533fac160c9e66c720cf
   PoporFoundation: fc84ffacadb2dd559c39146baff797b6c3d9f328
-  PoporNetRecord: d8b71553e5b0c450cce3b202d3c01c11a76d8ffa
+  PoporNetRecord: 0c3a7b4dcc8d1fa41112b2a8892367b3f033840a
   PoporQRCodeIos: c084b3873b2df1c86be06ad7d62574b994eaf8e2
   PoporUI: f0b9c53e47b3d9149f4624cdfbf3532f04f6ccbc
 

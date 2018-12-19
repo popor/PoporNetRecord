@@ -136,7 +136,9 @@
 
 - (void)pushWebVC {
     PnrWebVC * vc = [PnrWebVC new];
-    vc.cellAttArray = self.view.cellAttArray;
+    //vc.cellAttArray = self.view.cellAttArray;
+    vc.jsonArray = self.view.jsonArray;
+    vc.titleArray = self.view.titleArray;
     
     [self.view.vc.navigationController pushViewController:vc animated:YES];
 }
