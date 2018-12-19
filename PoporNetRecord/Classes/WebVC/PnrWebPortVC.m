@@ -10,8 +10,12 @@
 #import <PoporUI/UIInsetsTextField.h>
 #import <PoporFoundation/PrefixColor.h>
 #import <PoporUI/IToastKeyboard.h>
+#import <PoporUI/UIImage+create.h>
 
 @interface PnrWebPortVC ()
+
+@property (nonatomic        ) int               cellH;
+@property (nonatomic, strong) UIColor           * blueColor;
 
 @property (nonatomic, strong) PnrWebPortEntity  * portEntity;
 
@@ -19,6 +23,8 @@
 @property (nonatomic, strong) UIInsetsTextField * headPortTF;
 @property (nonatomic, strong) UIInsetsTextField * requestPortTF;
 @property (nonatomic, strong) UIInsetsTextField * responsePortTF;
+
+@property (nonatomic, strong) UISwitch          * targetSwitch;
 
 
 @end
@@ -28,10 +34,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"端口";
+    self.title                = @"设置";
     self.view.backgroundColor = [UIColor whiteColor];
+    self.blueColor            = RGB16(0X4585F5);
+    self.cellH                = 30;
+    
     self.portEntity = [PnrWebPortEntity new];
     [self addTFs];
+    [self addWindowSwitch];
 }
 
 - (void)addTFs {
@@ -46,7 +56,7 @@
                             [NSString stringWithFormat:@"%i", self.portEntity.requestPortInt],
                             [NSString stringWithFormat:@"%i", self.portEntity.responsePortInt],
                             ];
-    int height = 30;
+    int height = self.cellH;
     UILabel * lastL;
     for (int i = 0; i<titleArray.count; i++) {
         UILabel * oneL = ({
@@ -77,7 +87,7 @@
             UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
             [button setTitle:@"更新" forState:UIControlStateNormal];
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [button setBackgroundColor:RGB16(0X4585F5)];
+            [button setBackgroundImage:[UIImage imageFromColor:self.blueColor size:CGSizeMake(1, 1)] forState:UIControlStateNormal];
             
             button.layer.cornerRadius = 5;
             button.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -87,7 +97,7 @@
             
             [self.view addSubview:button];
             
-            [button addTarget:self action:@selector(updateBtAction:) forControlEvents:UIControlEventTouchUpInside];
+            [button addTarget:self action:@selector(updateTfBtAction:) forControlEvents:UIControlEventTouchUpInside];
             
             button;
         });
@@ -146,8 +156,7 @@
     
 }
 
-
-- (void)updateBtAction:(UIButton *)bt {
+- (void)updateTfBtAction:(UIButton *)bt {
     switch (bt.tag) {
         case 0:{
             if (self.allPortTF.text.length > 0) {
@@ -189,6 +198,50 @@
             break;
     }
     
+}
+
+#pragma mark - 新窗口
+- (void)addWindowSwitch {
+    UILabel * oneL = ({
+        UILabel * l = [UILabel new];
+        l.frame              = CGRectMake(0, 0, 0, 44);
+        l.backgroundColor    = [UIColor clearColor];
+        l.font               = [UIFont systemFontOfSize:15];
+        l.textColor          = [UIColor darkGrayColor];
+        
+        [self.view addSubview:l];
+        l;
+    });
+    
+    self.targetSwitch = ({
+        UISwitch * uis = [UISwitch new];
+        uis.onTintColor = self.blueColor;
+        [uis addTarget:self action:@selector(UISAction:) forControlEvents:UIControlEventValueChanged];
+        
+        [self.view addSubview:uis];
+        uis;
+    });
+    
+    oneL.text = @"新窗口打开JSON详情页";
+    [self.targetSwitch setOn:self.portEntity.jsonWindowSwitch];
+    
+    [oneL mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.top.mas_equalTo(self.responsePortTF.mas_bottom).mas_offset(10);
+        make.width.mas_equalTo(180);
+        make.height.mas_equalTo(self.cellH);
+    }];
+    
+    [self.targetSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.responsePortTF.mas_right).mas_offset(20);
+        make.top.mas_equalTo(self.responsePortTF.mas_bottom).mas_offset(10);
+    }];
+}
+
+- (void)UISAction:(UISwitch *)us {
+    self.portEntity.jsonWindowSwitch = us.on;
+    [PnrWebPortEntity saveJsonWindowSwitch:us.on];
+    AlertToastTitle(@"重新载入生效");
 }
 
 @end

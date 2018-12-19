@@ -21,6 +21,8 @@ static int PoporNetRecordResponsePort = 8083;
 @property (nonatomic        ) int requestPortInt;
 @property (nonatomic        ) int responsePortInt;
 
+@property (nonatomic        ) BOOL jsonWindowSwitch;
+
 + (void)saveAllPort:(NSString *)allPort;
 + (NSString *)getAllPort;
 
@@ -32,6 +34,9 @@ static int PoporNetRecordResponsePort = 8083;
 
 + (void)saveResponsePort:(NSString *)responsePort;
 + (NSString *)getResponsePort;
+
++ (void)saveJsonWindowSwitch:(BOOL)JsonWindowSwitch;
++ (BOOL)getJsonWindowSwitch;
 
 @end
 

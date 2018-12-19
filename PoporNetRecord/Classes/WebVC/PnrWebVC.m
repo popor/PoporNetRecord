@@ -59,7 +59,7 @@
     self.portEntity = [PnrWebPortEntity new];
     [self addServer];
     {
-        UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"端口" style:UIBarButtonItemStylePlain target:self action:@selector(showPnrWebPortVC)];
+        UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(showPnrWebPortVC)];
         self.navigationItem.rightBarButtonItems = @[item1];
     }
 }
@@ -69,6 +69,7 @@
     self.webServerRequest  = [self addIndex:5 port:self.portEntity.requestPortInt];
     self.webServerResponse = [self addIndex:6 port:self.portEntity.responsePortInt];
     
+    NSString * target = self.portEntity.jsonWindowSwitch ? @" target='_blank'" : @"";
     if (!self.webServerAll) {
         NSMutableString * h5 = [NSMutableString new];
         [h5 appendString:@"<html> <head><title>请求详情</title></head> <body><br/>"];
@@ -79,7 +80,7 @@
             switch (i) {
                 case 4:{
                     if ([content isKindOfClass:[NSDictionary class]]) {
-                        [h5 appendFormat:@"<p><a href='%@'>%@</a> %@</p>", self.webServerHead.serverURL.absoluteString, title,[(NSDictionary *)content toJsonString]];
+                        [h5 appendFormat:@"<p><a href='%@'%@>%@</a> %@</p>", self.webServerHead.serverURL.absoluteString, target, title,[(NSDictionary *)content toJsonString]];
                     }else{
                         [h5 appendFormat:@"<p>%@</p>", title];
                     }
@@ -87,7 +88,7 @@
                 }
                 case 5:{
                     if ([content isKindOfClass:[NSDictionary class]]) {
-                        [h5 appendFormat:@"<p><a href='%@'>%@</a> %@</p>", self.webServerRequest.serverURL.absoluteString, title, [(NSDictionary *)content toJsonString]];
+                        [h5 appendFormat:@"<p><a href='%@'%@>%@</a> %@</p>", self.webServerRequest.serverURL.absoluteString, target, title, [(NSDictionary *)content toJsonString]];
                     }else{
                         [h5 appendFormat:@"<p>%@</p>", title];
                     }
@@ -95,7 +96,7 @@
                 }
                 case 6:{
                     if ([content isKindOfClass:[NSDictionary class]]) {
-                        [h5 appendFormat:@"<p><a href='%@'>%@</a> %@</p>", self.webServerResponse.serverURL.absoluteString, title, [(NSDictionary *)content toJsonString]];
+                        [h5 appendFormat:@"<p><a href='%@'%@>%@</a> %@</p>", self.webServerResponse.serverURL.absoluteString, target, title, [(NSDictionary *)content toJsonString]];
                     }else{
                         [h5 appendFormat:@"<p>%@</p>", title];
                     }

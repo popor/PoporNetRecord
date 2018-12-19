@@ -9,6 +9,14 @@
 
 #import <PoporUI/IToastKeyboard.h>
 
+static NSString * PoporNetRecord_allPort      = @"PoporNetRecord_allPort";
+static NSString * PoporNetRecord_headPort     = @"PoporNetRecord_headPort";
+static NSString * PoporNetRecord_requestPort  = @"PoporNetRecord_requestPort";
+static NSString * PoporNetRecord_responsePort = @"PoporNetRecord_responsePort";
+
+static NSString * PoporNetRecord_JsonWindow   = @"PoporNetRecord_JsonWindow";
+
+
 @implementation PnrWebPortEntity
 
 - (id)init {
@@ -60,50 +68,69 @@
         self.requestPortInt  = PoporNetRecordRequestPort;
         self.responsePortInt = PoporNetRecordResponsePort;
     }
+    
+    //-------
+    self.jsonWindowSwitch = [PnrWebPortEntity getJsonWindowSwitch];
 }
 
 #pragma mark - plist
 + (void)saveAllPort:(NSString *)allPort {
-    [[NSUserDefaults standardUserDefaults] setObject:allPort forKey:@"PoporNetRecord_allPort"];
+    [[NSUserDefaults standardUserDefaults] setObject:allPort forKey:PoporNetRecord_allPort];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (NSString *)getAllPort {
-    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:@"PoporNetRecord_allPort"];
+    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_allPort];
     return info;
 }
 
 //
 + (void)saveHeadPort:(NSString *)headPort {
-    [[NSUserDefaults standardUserDefaults] setObject:headPort forKey:@"PoporNetRecord_headPort"];
+    [[NSUserDefaults standardUserDefaults] setObject:headPort forKey:PoporNetRecord_headPort];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (NSString *)getHeadPort {
-    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:@"PoporNetRecord_headPort"];
+    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_headPort];
     return info;
 }
 
 //
 + (void)saveRequestPort:(NSString *)requestPort {
-    [[NSUserDefaults standardUserDefaults] setObject:requestPort forKey:@"PoporNetRecord_requestPort"];
+    [[NSUserDefaults standardUserDefaults] setObject:requestPort forKey:PoporNetRecord_requestPort];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (NSString *)getRequestPort {
-    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:@"PoporNetRecord_requestPort"];
+    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_requestPort];
     return info;
 }
 
 //
 + (void)saveResponsePort:(NSString *)responsePort {
-    [[NSUserDefaults standardUserDefaults] setObject:responsePort forKey:@"PoporNetRecord_responsePort"];
+    [[NSUserDefaults standardUserDefaults] setObject:responsePort forKey:PoporNetRecord_responsePort];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (NSString *)getResponsePort {
-    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:@"PoporNetRecord_responsePort"];
+    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_responsePort];
     return info;
+}
+
+//
++ (void)saveJsonWindowSwitch:(BOOL)JsonWindowSwitch {
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%i", JsonWindowSwitch] forKey:PoporNetRecord_JsonWindow];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (BOOL)getJsonWindowSwitch {
+    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_JsonWindow];
+    if (info) {
+        return [info boolValue];
+    }else{
+        //[self saveJsonWindowSwitch:NO];
+        return NO;
+    }
 }
 
 
