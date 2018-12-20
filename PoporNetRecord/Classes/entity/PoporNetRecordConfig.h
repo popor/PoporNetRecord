@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <PoporFoundation/PrefixBlock.h>
+#import <PoporFoundation/PrefixColor.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,6 +19,9 @@ typedef NS_ENUM(int, PoporNetRecordType) {
 
 typedef void(^PoporNetRecordNcBlock) (UINavigationController * nc);
 typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
+
+#define PnrColorGreen RGB16(0x4BB748)
+#define PnrColorRed   RGB16(0xF76738)
 
 @interface PoporNetRecordConfig : NSObject
 

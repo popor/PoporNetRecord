@@ -18,7 +18,7 @@
 @interface PnrListVCPresenter ()
 
 @property (nonatomic, weak  ) id<PnrListVCProtocol> view;
-@property (nonatomic, strong) PnrListVCInteractor * interactor;
+@property (nonatomic, strong) PnrListVCInteractor  * interactor;
 @property (nonatomic, weak  ) PoporNetRecordConfig * config;
 
 @end

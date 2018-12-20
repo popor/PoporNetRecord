@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GCDWebServer/GCDWebServer.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,8 +22,25 @@ static int PoporNetRecordResponsePort = 8083;
 @property (nonatomic        ) int requestPortInt;
 @property (nonatomic        ) int responsePortInt;
 
-@property (nonatomic        ) BOOL jsonWindowSwitch;
+@property (nonatomic        ) BOOL jsonWindow; // json详情网页 是否在新窗口打开
+@property (nonatomic        ) BOOL detailVCStartServer; // 是否在detailVC开启服务,默认为开
 
++ (instancetype)share;
+
+#pragma mark - server
+@property (nonatomic, strong) NSArray * titleArray;
+@property (nonatomic, strong) NSArray * jsonArray;
+
+@property (nonatomic, strong, nullable) GCDWebServer * webServerAll;
+@property (nonatomic, strong, nullable) GCDWebServer * webServerHead;
+@property (nonatomic, strong, nullable) GCDWebServer * webServerRequest;
+@property (nonatomic, strong, nullable) GCDWebServer * webServerResponse;
+
+- (void)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray;
+
+- (void)stopServer;
+
+#pragma mark - plist
 + (void)saveAllPort:(NSString *)allPort;
 + (NSString *)getAllPort;
 
@@ -35,8 +53,11 @@ static int PoporNetRecordResponsePort = 8083;
 + (void)saveResponsePort:(NSString *)responsePort;
 + (NSString *)getResponsePort;
 
-+ (void)saveJsonWindowSwitch:(BOOL)JsonWindowSwitch;
-+ (BOOL)getJsonWindowSwitch;
++ (void)saveJsonWindow:(BOOL)jsonWindow;
++ (BOOL)getJsonWindow;
+
++ (void)saveDetailVCStartServer:(BOOL)detailVCStartServer;
++ (BOOL)getDetailVCStartServer;
 
 @end
 

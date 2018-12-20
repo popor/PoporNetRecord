@@ -12,5 +12,6 @@
 
 - (void)copyAction;
 - (void)pushWebVC;
+- (void)startServer;
 
 @end

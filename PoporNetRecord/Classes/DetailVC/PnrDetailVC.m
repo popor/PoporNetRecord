@@ -11,11 +11,15 @@
 
 #import <Masonry/Masonry.h>
 #import <PoporFoundation/NSDictionary+tool.h>
+#import <PoporFoundation/PrefixColor.h>
 #import <PoporUI/IToastKeyboard.h>
+
+#import "PnrWebPortEntity.h"
 
 @interface PnrDetailVC ()
 
 @property (nonatomic, strong) PnrDetailVCPresenter * present;
+@property (nonatomic, weak  ) PnrWebPortEntity     * portEntity;
 
 @end
 
@@ -26,6 +30,7 @@
 @synthesize cellAttArray;
 @synthesize selectRow;
 @synthesize menu;
+@synthesize serverBT;
 
 - (instancetype)initWithDic:(NSDictionary *)dic {
     if (self = [super init]) {
@@ -36,6 +41,7 @@
             self.titleArray   = dic[@"titleArray"];
             self.cellAttArray = dic[@"cellAttArray"];
         }
+        self.portEntity = [PnrWebPortEntity share];
     }
     return self;
 }
@@ -60,6 +66,7 @@
     }
     
     [self addViews];
+    [self.present startServer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +89,41 @@
 
 #pragma mark - views
 - (void)addViews {
+    if (self.portEntity.detailVCStartServer) {
+        self.serverBT = ({
+            UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+            button.frame = CGRectMake(0, 0, 0, 40);
+            [button setBackgroundColor:[UIColor whiteColor]];
+            button.titleLabel.font = [UIFont systemFontOfSize:15];
+            button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+            button.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 15);
+            
+            button.userInteractionEnabled = NO;
+            [self.view addSubview:button];
+            button;
+        });
+        
+        [self.serverBT mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(0);
+            make.top.mas_equalTo(0);
+            make.right.mas_equalTo(0);
+            make.height.mas_equalTo(self.serverBT.frame.size.height);
+        }];
+        
+        {
+            UIView * lineView = [UIView new];
+            lineView.backgroundColor = ColorTV_separator;
+            
+            [self.serverBT addSubview:lineView];
+            
+            [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(0);
+                make.right.mas_equalTo(0);
+                make.height.mas_equalTo(0.5);
+                make.bottom.mas_equalTo(0);
+            }];
+        }
+    }
     self.infoTV = [self addTVs];
     self.infoTV.separatorInset = UIEdgeInsetsMake(0, 14, 0, 14);
     
@@ -114,7 +156,10 @@
     [self.view addSubview:oneTV];
     
     [oneTV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(self.serverBT.mas_bottom);
+        make.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
     }];
     
     oneTV.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);

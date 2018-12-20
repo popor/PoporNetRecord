@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSArray * jsonArray;
 @property (nonatomic, strong) NSArray * titleArray;
 
-//@property (nonatomic, strong) NSArray * cellAttArray;
-
 @end
 
 NS_ASSUME_NONNULL_END

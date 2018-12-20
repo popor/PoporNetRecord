@@ -26,7 +26,7 @@ PODS:
   - PoporFoundation/PrefixCore (0.0.28):
     - PoporFoundation/PrefixOs
   - PoporFoundation/PrefixOs (0.0.28)
-  - PoporNetRecord (0.0.25):
+  - PoporNetRecord (0.0.26):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -35,15 +35,15 @@ PODS:
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 0.0.25)
-    - PoporNetRecord/entity (= 0.0.25)
-    - PoporNetRecord/ListVC (= 0.0.25)
-    - PoporNetRecord/WebVC (= 0.0.25)
+    - PoporNetRecord/DetailVC (= 0.0.26)
+    - PoporNetRecord/entity (= 0.0.26)
+    - PoporNetRecord/ListVC (= 0.0.26)
+    - PoporNetRecord/WebVC (= 0.0.26)
     - PoporUI/IToast
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (0.0.25):
+  - PoporNetRecord/DetailVC (0.0.26):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -58,7 +58,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/entity (0.0.25):
+  - PoporNetRecord/entity (0.0.26):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -71,7 +71,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/ListVC (0.0.25):
+  - PoporNetRecord/ListVC (0.0.26):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -87,7 +87,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/WebVC (0.0.25):
+  - PoporNetRecord/WebVC (0.0.26):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -139,7 +139,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporAlertBubbleView: aea73e383fca9d7dedda533fac160c9e66c720cf
   PoporFoundation: fc84ffacadb2dd559c39146baff797b6c3d9f328
-  PoporNetRecord: 8e05c0293c9e52fd4af9e954923dc30527b73b5d
+  PoporNetRecord: e43f3b324ca02d02547ad57e3e1e4ffd443a3f51
   PoporQRCodeIos: c084b3873b2df1c86be06ad7d62574b994eaf8e2
   PoporUI: f0b9c53e47b3d9149f4624cdfbf3532f04f6ccbc
 
