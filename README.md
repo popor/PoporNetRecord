@@ -34,10 +34,10 @@ pod 'PoporNetRecord'
 ```
 
 <p>
-<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/list.png" width="25%" height="25%">
-<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/detail.png" width="25%" height="25%">
-<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/web.png" width="25%" height="25%">
-<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/set.png" width="25%" height="25%">
+<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/list.png" width="20%" height="20%">
+<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/detail.png" width="20%" height="20%">
+<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/web.png" width="20%" height="20%">
+<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/set.png" width="20%" height="20%">
 
 </p>
 
