@@ -32,6 +32,9 @@ typedef void(^PoporNetRecordBlockPVoid) (void);
 
 + (void)addUrl:(NSString *)urlString method:(NSString *)method head:(NSDictionary *)headDic request:(NSDictionary *)requestDic response:(NSDictionary *)responseDic;
 
+// 弹出请求列表
+- (void)showPnrListVC;
+
 // 把ballBT提到最高层.
 + (void)bringFrontBallBT;
 
