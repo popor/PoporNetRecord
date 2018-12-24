@@ -99,6 +99,8 @@
             button.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 15);
             
             button.userInteractionEnabled = NO;
+            button.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+            
             [self.view addSubview:button];
             button;
         });

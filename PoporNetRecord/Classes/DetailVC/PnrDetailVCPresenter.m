@@ -174,11 +174,14 @@
             NSMutableAttributedString * att = [NSMutableAttributedString new];
             [att addString:@"  已开启 " font:[UIFont systemFontOfSize:15] color:PnrColorGreen];
             
-            [att addString:self.portEntity.webServerAll.serverURL.absoluteString font:[UIFont systemFontOfSize:15] color:[UIColor blackColor]];
+            //[att addString:[NSString stringWithFormat:@"%@:%@", self.portEntity.webServerAll.serverURL.host, self.portEntity.webServerAll.serverURL.port] font:[UIFont systemFontOfSize:15] color:[UIColor blueColor] bgColor:nil underline:YES];
+            [att addString:[NSString stringWithFormat:@"%@:%@ (", self.portEntity.webServerAll.serverURL.host, self.portEntity.webServerAll.serverURL.port] font:[UIFont systemFontOfSize:15] color:[UIColor blackColor]];
             
             NSString * wifi = [UIDevice getWifiName];
             if (wifi) {
-                [att addString:[NSString stringWithFormat:@" (%@)", wifi] font:[UIFont systemFontOfSize:15] color:PnrColorGreen];
+                [att addString:[NSString stringWithFormat:@"%@", wifi] font:[UIFont systemFontOfSize:15] color:PnrColorGreen];
+                [att addString:@") " font:[UIFont systemFontOfSize:15] color:[UIColor blackColor]];
+
             }
             
             [oneBT setAttributedTitle:att forState:UIControlStateNormal];
