@@ -159,7 +159,11 @@
     
     [oneTV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
-        make.top.mas_equalTo(self.serverBT.mas_bottom);
+        if (self.serverBT) {
+            make.top.mas_equalTo(self.serverBT.mas_bottom);
+        }else{
+            make.top.mas_equalTo(0);
+        }
         make.right.mas_equalTo(0);
         make.bottom.mas_equalTo(0);
     }];
@@ -206,10 +210,10 @@
     UIMenuItem *copyJsonContentMenuItem = [[UIMenuItem alloc] initWithTitle:@"复制Json" action:@selector(copyJsonContent:)];
     UIMenuController *menu = [UIMenuController sharedMenuController];
     
-    if ([self.jsonArray[self.selectRow] isKindOfClass:[NSNull class]]) {
-        [menu setMenuItems:@[copyTextContentMenuItem]];
-    }else{
+    if ([self.jsonArray[self.selectRow] isKindOfClass:[NSDictionary class]]) {
         [menu setMenuItems:@[copyTextContentMenuItem, copyJsonContentMenuItem]];
+    }else{
+        [menu setMenuItems:@[copyTextContentMenuItem]];
     }
     
     [menu setTargetRect:CGRectMake(point.x - 50, point.y - 30, 100, 40) inView:self.infoTV];
