@@ -123,6 +123,8 @@
     };
     UIViewController * vc = [PnrListVCRouter vcWithDic:@{@"title":@"网络请求", @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock}];
     UINavigationController * oneNC = [[UINavigationController alloc] initWithRootViewController:vc];
+    oneNC.navigationBar.translucent = NO;
+    
     if (self.config.presentNCBlock) {
         self.config.presentNCBlock(oneNC);
     }
