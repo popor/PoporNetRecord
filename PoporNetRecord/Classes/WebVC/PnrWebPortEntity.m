@@ -23,13 +23,13 @@ static NSString * PoporNetRecord_DetailVCStartServer = @"PoporNetRecord_DetailVC
 
 
 @interface PnrWebPortEntity ()
-
-@property (nonatomic, getter=isRun) BOOL run;
-
-@end
+    
+    @property (nonatomic, getter=isRun) BOOL run;
+    
+    @end
 
 @implementation PnrWebPortEntity
-
+    
 + (instancetype)share {
     static dispatch_once_t once;
     static id instance;
@@ -38,14 +38,14 @@ static NSString * PoporNetRecord_DetailVCStartServer = @"PoporNetRecord_DetailVC
     });
     return instance;
 }
-
+    
 - (id)init {
     if (self = [super init]) {
         [self initPort];
     }
     return self;
 }
-
+    
 - (void)initPort {
     //------- 端口号
     NSString * allPortString      = [PnrWebPortEntity getAllPort];
@@ -98,7 +98,7 @@ static NSString * PoporNetRecord_DetailVCStartServer = @"PoporNetRecord_DetailVC
     
     //-------
 }
-
+    
 #pragma mark - server
 - (void)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray {
     if (!self.isRun) {
@@ -113,48 +113,35 @@ static NSString * PoporNetRecord_DetailVCStartServer = @"PoporNetRecord_DetailVC
         }
     }
 }
-
+    
 - (void)addServer {
-    self.webServerHead     = [self addIndex:4 port:self.headPortInt];
-    self.webServerRequest  = [self addIndex:5 port:self.requestPortInt];
-    self.webServerResponse = [self addIndex:6 port:self.responsePortInt];
+    
+    NSMutableArray * webServerArray = [NSMutableArray new];
+    [webServerArray addObjectsFromArray:@[[NSNull null], [NSNull null], [NSNull null], [NSNull null]]];
+    
+    self.webServerHead     = [self addIndex:4 port:self.headPortInt array:webServerArray];
+    self.webServerRequest  = [self addIndex:5 port:self.requestPortInt array:webServerArray];
+    self.webServerResponse = [self addIndex:6 port:self.responsePortInt array:webServerArray];
+    
     
     NSString * target = self.jsonWindow ? @" target='_blank'" : @"";
     if (!self.webServerAll) {
         NSMutableString * h5 = [NSMutableString new];
         [h5 appendString:@"<html> <head><title>请求详情</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
         for (int i=0; i<self.titleArray.count; i++) {
-            NSString * title = self.titleArray[i];
-            NSString * content = self.jsonArray[i];
+            NSString * title         = self.titleArray[i];
+            id content               = self.jsonArray[i];
+            GCDWebServer * webServer = webServerArray[i];
             
-            switch (i) {
-                case 4:{
-                    if ([content isKindOfClass:[NSDictionary class]]) {
-                        [h5 appendFormat:@"<p><a href='%@'%@>%@</a> %@</p>", self.webServerHead.serverURL.absoluteString, target, title,[(NSDictionary *)content toJsonString]];
-                    }else{
-                        [h5 appendFormat:@"<p>%@</p>", title];
-                    }
-                    break;
-                }
-                case 5:{
-                    if ([content isKindOfClass:[NSDictionary class]]) {
-                        [h5 appendFormat:@"<p><a href='%@'%@>%@</a> %@</p>", self.webServerRequest.serverURL.absoluteString, target, title, [(NSDictionary *)content toJsonString]];
-                    }else{
-                        [h5 appendFormat:@"<p>%@</p>", title];
-                    }
-                    break;
-                }
-                case 6:{
-                    if ([content isKindOfClass:[NSDictionary class]]) {
-                        [h5 appendFormat:@"<p><a href='%@'%@>%@</a> %@</p>", self.webServerResponse.serverURL.absoluteString, target, title, [(NSDictionary *)content toJsonString]];
-                    }else{
-                        [h5 appendFormat:@"<p>%@</p>", title];
-                    }
-                    break;
-                }
-                default:{
-                    [h5 appendFormat:@"<p>%@</p>", title];
-                    break;
+            if ([webServer isKindOfClass:[NSNull class]]) {
+                [h5 appendFormat:@"<p>%@</p>", title];
+            }else{
+                if ([content isKindOfClass:[NSDictionary class]]) {
+                    [h5 appendFormat:@"<p><a href='%@'%@>%@</a> %@</p>", webServer.serverURL.absoluteString, target, title, [(NSDictionary *)content toJsonString]];
+                }else if([content isKindOfClass:[NSString class]]) {
+                    [h5 appendFormat:@"<p><a href='%@'%@>%@</a> %@</p>", webServer.serverURL.absoluteString, target, title, (NSString *)content];
+                }else{
+                    [h5 appendFormat:@"<p>%@ NULL</p>", title];
                 }
             }
         }
@@ -171,14 +158,19 @@ static NSString * PoporNetRecord_DetailVCStartServer = @"PoporNetRecord_DetailVC
         self.webServerAll = server;
     }
 }
-
-- (GCDWebServer *)addIndex:(int)index port:(int)port{
+    
+- (GCDWebServer *)addIndex:(int)index port:(int)port array:(NSMutableArray *)array {
     NSString * title = self.titleArray[index];
     id content = self.jsonArray[index];
-    if([content isKindOfClass:[NSDictionary class]]) {
+    if (content) {
         NSMutableString * h5 = [NSMutableString new];
         [h5 appendFormat:@"<html> <head><title>%@</title></head> <body><br/>", title];
-        [h5 appendFormat:@"<p>%@</p>", [(NSDictionary *)content toJsonString]];
+        
+        if([content isKindOfClass:[NSDictionary class]]) {
+            [h5 appendFormat:@"<p>%@</p>", [(NSDictionary *)content toJsonString]];
+        }else if([content isKindOfClass:[NSString class]]){
+            [h5 appendFormat:@"<p>%@</p>", (NSString *)content];
+        }
         
         [h5 appendString:@"</body></html>"];
         
@@ -188,77 +180,83 @@ static NSString * PoporNetRecord_DetailVCStartServer = @"PoporNetRecord_DetailVC
         }];
         [server startWithPort:port bonjourName:nil];
         
+        // 增加到数组中
+        [array addObject:server];
+        
         return server;
     }else{
+        // 增加一个普通数组
+        [array addObject:[NSNull null]];
+        
         return nil;
     }
 }
-
+    
 - (void)stopServer {
     
-    [self.webServerAll stop];
-    [self.webServerHead stop];
-    [self.webServerRequest stop];
+    [self.webServerAll      stop];
+    [self.webServerHead     stop];
+    [self.webServerRequest  stop];
     [self.webServerResponse stop];
     
     self.webServerAll      = nil;
     self.webServerHead     = nil;
     self.webServerRequest  = nil;
     self.webServerResponse = nil;
-
+    
     self.run               = NO;
 }
-
+    
 #pragma mark - plist
 + (void)saveAllPort:(NSString *)allPort {
     [[NSUserDefaults standardUserDefaults] setObject:allPort forKey:PoporNetRecord_allPort];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
+    
 + (NSString *)getAllPort {
     NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_allPort];
     return info;
 }
-
-//
+    
+    //
 + (void)saveHeadPort:(NSString *)headPort {
     [[NSUserDefaults standardUserDefaults] setObject:headPort forKey:PoporNetRecord_headPort];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
+    
 + (NSString *)getHeadPort {
     NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_headPort];
     return info;
 }
-
-//
+    
+    //
 + (void)saveRequestPort:(NSString *)requestPort {
     [[NSUserDefaults standardUserDefaults] setObject:requestPort forKey:PoporNetRecord_requestPort];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
+    
 + (NSString *)getRequestPort {
     NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_requestPort];
     return info;
 }
-
-//
+    
+    //
 + (void)saveResponsePort:(NSString *)responsePort {
     [[NSUserDefaults standardUserDefaults] setObject:responsePort forKey:PoporNetRecord_responsePort];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
+    
 + (NSString *)getResponsePort {
     NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_responsePort];
     return info;
 }
-
-//
+    
+    //
 + (void)saveJsonWindow:(BOOL)jsonWindow {
     [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%i", jsonWindow] forKey:PoporNetRecord_JsonWindow];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
+    
 + (BOOL)getJsonWindow {
     NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_JsonWindow];
     if (info) {
@@ -268,13 +266,13 @@ static NSString * PoporNetRecord_DetailVCStartServer = @"PoporNetRecord_DetailVC
         return NO;
     }
 }
-
-//
+    
+    //
 + (void)saveDetailVCStartServer:(BOOL)detailVCStartServer {
     [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%i", detailVCStartServer] forKey:PoporNetRecord_DetailVCStartServer];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
+    
 + (BOOL)getDetailVCStartServer {
     NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_DetailVCStartServer];
     if (info) {
@@ -284,5 +282,5 @@ static NSString * PoporNetRecord_DetailVCStartServer = @"PoporNetRecord_DetailVC
         return YES;
     }
 }
-
-@end
+    
+    @end

@@ -26,7 +26,7 @@ PODS:
   - PoporFoundation/PrefixCore (0.0.28):
     - PoporFoundation/PrefixOs
   - PoporFoundation/PrefixOs (0.0.28)
-  - PoporNetRecord (0.0.28):
+  - PoporNetRecord (0.0.29):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -35,15 +35,15 @@ PODS:
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 0.0.28)
-    - PoporNetRecord/entity (= 0.0.28)
-    - PoporNetRecord/ListVC (= 0.0.28)
-    - PoporNetRecord/WebVC (= 0.0.28)
+    - PoporNetRecord/DetailVC (= 0.0.29)
+    - PoporNetRecord/entity (= 0.0.29)
+    - PoporNetRecord/ListVC (= 0.0.29)
+    - PoporNetRecord/WebVC (= 0.0.29)
     - PoporUI/IToast
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (0.0.28):
+  - PoporNetRecord/DetailVC (0.0.29):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -58,7 +58,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/entity (0.0.28):
+  - PoporNetRecord/entity (0.0.29):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -71,7 +71,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/ListVC (0.0.28):
+  - PoporNetRecord/ListVC (0.0.29):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -87,7 +87,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/WebVC (0.0.28):
+  - PoporNetRecord/WebVC (0.0.29):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -139,10 +139,10 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporAlertBubbleView: aea73e383fca9d7dedda533fac160c9e66c720cf
   PoporFoundation: fc84ffacadb2dd559c39146baff797b6c3d9f328
-  PoporNetRecord: 5051fd24357b497a46c3476518635893c872d6ca
+  PoporNetRecord: eb219e5a702107581ec5c01a0e84f715079f54c5
   PoporQRCodeIos: c084b3873b2df1c86be06ad7d62574b994eaf8e2
   PoporUI: f0b9c53e47b3d9149f4624cdfbf3532f04f6ccbc
 
-PODFILE CHECKSUM: 8e5e063a762b6540e999f0788da6fdce493aea9d
+PODFILE CHECKSUM: 1b9f9275c0e1e18bb04c524a65be21c6c2186d98
 
 COCOAPODS: 1.6.0.beta.2

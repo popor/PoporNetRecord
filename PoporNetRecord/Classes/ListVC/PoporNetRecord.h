@@ -30,7 +30,12 @@ typedef void(^PoporNetRecordBlockPVoid) (void);
 
 + (instancetype)share;
 
-+ (void)addUrl:(NSString *)urlString method:(NSString *)method head:(NSDictionary *)headDic request:(NSDictionary *)requestDic response:(NSDictionary *)responseDic;
+/**
+ headValue:     NSDictionary | NSString
+ requestValue:  NSDictionary | NSString
+ responseValue: NSDictionary | NSString
+ */
++ (void)addUrl:(NSString *)urlString method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue;
 
 // 弹出请求列表
 - (void)showPnrListVC;
