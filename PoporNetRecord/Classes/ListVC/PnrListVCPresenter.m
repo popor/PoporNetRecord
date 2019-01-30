@@ -158,8 +158,13 @@
         PnrVCEntity * entity = self.view.weakInfoArray[indexPath.row];
         //NSString * requestDes  = [self replaceUnicode:[entity.requestDic description]];
         //NSString * responseDes = [self replaceUnicode:[entity.responseDic description]];
-        
-        NSArray * titleArray = @[[NSString stringWithFormat:@"接口:\n%@", entity.request],
+        NSString * title;
+        if (entity.title) {
+            title = [NSString stringWithFormat:@" %@\n%@", entity.title, entity.request];
+        }else{
+            title = [NSString stringWithFormat:@" \n%@",entity.request];
+        }
+        NSArray * titleArray = @[[NSString stringWithFormat:@"接口:%@", title],
                                  [NSString stringWithFormat:@"链接:\n%@", entity.url],
                                  [NSString stringWithFormat:@"时间:\n%@", entity.time],
                                  [NSString stringWithFormat:@"方法:\n%@", entity.method],

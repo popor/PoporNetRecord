@@ -64,8 +64,8 @@
         if (urlString.length>0) {
             NSURL * url = [NSURL URLWithString:urlString];
             entity.domain = [NSString stringWithFormat:@"%@://%@", url.scheme, url.host];
-            if (entity.domain.length < urlString.length) {
-                entity.request = [urlString substringFromIndex:entity.domain.length];
+            if (entity.domain.length+1 < urlString.length) {
+                entity.request = [urlString substringFromIndex:entity.domain.length+1];
             }
         }
         // 移除超出限制的数据请求
