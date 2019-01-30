@@ -37,6 +37,8 @@ typedef void(^PoporNetRecordBlockPVoid) (void);
  */
 + (void)addUrl:(NSString *)urlString method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue;
 
++ (void)addTitle:(NSString *)title url:(NSString *)urlString method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue;
+
 // 弹出请求列表
 - (void)showPnrListVC;
 

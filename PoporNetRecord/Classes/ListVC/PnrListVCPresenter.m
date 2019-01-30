@@ -63,6 +63,10 @@
     }
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [cell setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.view.infoTV) {
         return 55;
@@ -89,7 +93,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.view.infoTV) {
-        static NSString * CellID = @"infoTV";
+        static NSString * CellID   = @"infoTV";
+        static UIFont * cellFont15;
+        if (!cellFont15) {
+            cellFont15 = [UIFont systemFontOfSize:15];
+        }
         PnrListVCCell * cell = [tableView dequeueReusableCellWithIdentifier:CellID];
         if (!cell) {
             cell = [[PnrListVCCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellID];
@@ -97,10 +105,22 @@
         }
         PnrVCEntity * entity = self.view.weakInfoArray[indexPath.row];
         
-        cell.titleL.text    = entity.request;
-        cell.timeL.text     = entity.time;
-        cell.subtitleL.text = entity.domain;
+        if (entity.title) {
+            NSMutableAttributedString * att = [NSMutableAttributedString new];
+            [att addString:entity.title font:cellFont15 color:ColorBlack3];
+            [att addString:[NSString stringWithFormat:@" %@", entity.request] font:cellFont15 color:ColorBlack6];
+            cell.requestL.attributedText = att;
+        }else{
+            cell.requestL.text = entity.request;
+        }
+        cell.timeL.text    = entity.time;
+        cell.domainL.text  = entity.domain;
         
+        if (indexPath.row%2 == 0) {
+            cell.backgroundColor = [UIColor whiteColor];
+        }else{
+            cell.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
+        }
         return cell;
     }else{
         static NSString * CellID = @"alertTV";
