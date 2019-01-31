@@ -63,7 +63,7 @@
     //NSDictionary * responseDic = @{@"success":@"true", @"child":@{@"name":@"abc", @"age":@(100)}, @"food":@[@"apple", @"orange"], @"device":@[@"bicyle", @"car",]};
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addTitle:@"测试数据" url:@"http://www.baidu.com/testJson1" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson1" title:@"测试数据" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -79,10 +79,10 @@
     });
  
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addTitle:@"测试数据2" url:@"http://www.baidu.com/TestText12345678901234567890" method:@"GET" head:@{@"os":@"iOS"} request:nil response:@"responseText"];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText12345678901234567890" title:@"测试数据" method:@"GET" head:@{@"os":@"iOS"} request:nil response:@"responseText"];
     });
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addTitle:@"测试数据3" url:@"http://www.baidu.com/TestText2232423234?a=32&b=1234567890" method:@"GET" head:@"head" request:@"request" response:@"responseText"];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText2232423234?a=32&b=1234567890" title:@"测试数据" method:@"GET" head:@"head" request:@"request" response:@"responseText"];
     });
 }
 

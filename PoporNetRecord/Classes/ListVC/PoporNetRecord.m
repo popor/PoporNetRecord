@@ -45,11 +45,12 @@
     return instance;
 }
 
-+ (void)addUrl:(NSString *)urlString method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue {
-    [self addTitle:nil url:urlString method:method head:headValue request:requestValue response:responseValue];
++ (void)addUrl:(NSString *)urlString method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue
+{
+    [self addUrl:urlString title:nil method:method head:headValue request:requestValue response:responseValue];
 }
 
-+ (void)addTitle:(NSString *)title url:(NSString *)urlString method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue {
++ (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue;{
     
     if ([PoporNetRecord share].isShow) {
         PnrVCEntity * entity = [PnrVCEntity new];
