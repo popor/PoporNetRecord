@@ -9,6 +9,7 @@
 #import "PnrListVCCell.h"
 #import <PoporFoundation/PrefixColor.h>
 #import <Masonry/Masonry.h>
+#import "PoporNetRecordConfig.h"
 
 @implementation PnrListVCCell
 
@@ -21,6 +22,7 @@
 }
 
 - (void)addViews {
+    PoporNetRecordConfig * config = [PoporNetRecordConfig share];
     for (int i = 0; i<3; i++) {
         UILabel * oneL = ({
             UILabel * l = [UILabel new];
@@ -34,45 +36,46 @@
         
         switch (i) {
             case 0:{
-                self.requestL = oneL;
-                oneL.textColor = ColorBlack3;
-                
+                self.requestL  = oneL;
+                oneL.textColor = config.listColorTitle;
+                oneL.font      = config.listFontTitle;
                 break;
             }
             case 1:{
-                self.timeL = oneL;
-                oneL.textColor = ColorBlack3;
-                self.timeL.textAlignment = NSTextAlignmentRight;
-                
+                oneL.textAlignment = NSTextAlignmentRight;
+                self.timeL     = oneL;
+                oneL.textColor = config.listColorTime;
+                oneL.font      = config.listFontTime;
                 break;
             }
             case 2:{
-                self.domainL = oneL;
-                oneL.textColor = ColorBlack6;
+                self.domainL   = oneL;
+                oneL.textColor = config.listColorDomain;
+                oneL.font      = config.listFontDomain;
                 break;
             }
             default:
                 break;
         }
     }
-    
+    float gap = PnrListCellGap;
     [self.timeL mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-35);
-        make.top.mas_equalTo(self.requestL.mas_top);
+        make.top.mas_equalTo(gap);
         make.height.mas_equalTo(self.timeL.font.pointSize + 3);
         make.width.mas_equalTo(65);
     }];
     
     [self.requestL mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
-        make.top.mas_equalTo(5);
-        make.height.mas_equalTo(self.requestL.font.pointSize + 3);
+        make.top.mas_equalTo(gap);
+        make.height.mas_equalTo(MAX(config.listFontTitle.pointSize, config.listFontRequest.pointSize) + 3);
         make.right.mas_equalTo(self.timeL.mas_left);
     }];
     
     [self.domainL mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
-        make.top.mas_equalTo(self.requestL.mas_bottom).mas_offset(5);
+        make.top.mas_equalTo(self.requestL.mas_bottom).mas_offset(gap-1);
         make.height.mas_equalTo(self.domainL.font.pointSize + 3);
         make.right.mas_equalTo(self.timeL.mas_right);
     }];

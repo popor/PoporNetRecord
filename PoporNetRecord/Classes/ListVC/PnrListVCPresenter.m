@@ -69,7 +69,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.view.infoTV) {
-        return 55;
+        return self.config.listCellHeight;
     }else{
         return 44;
     }
@@ -96,7 +96,7 @@
         static NSString * CellID   = @"infoTV";
         static UIFont * cellFont15;
         if (!cellFont15) {
-            cellFont15 = [UIFont systemFontOfSize:15];
+            cellFont15 = [UIFont systemFontOfSize:20];
         }
         PnrListVCCell * cell = [tableView dequeueReusableCellWithIdentifier:CellID];
         if (!cell) {
@@ -107,8 +107,12 @@
         
         if (entity.title) {
             NSMutableAttributedString * att = [NSMutableAttributedString new];
-            [att addString:entity.title font:cellFont15 color:ColorBlack3];
-            [att addString:[NSString stringWithFormat:@" %@", entity.request] font:cellFont15 color:ColorBlack6];
+            //[att addString:entity.title font:cellFont15 color:ColorBlack3];
+            //[att addString:[NSString stringWithFormat:@" %@", entity.request] font:cellFont15 color:ColorBlack6];
+            
+            [att addString:entity.title font:self.config.listFontTitle color:self.config.listColorTitle];
+            [att addString:[NSString stringWithFormat:@" %@", entity.request] font:self.config.listFontRequest color:self.config.listColorRequest];
+            
             cell.requestL.attributedText = att;
         }else{
             cell.requestL.text = entity.request;

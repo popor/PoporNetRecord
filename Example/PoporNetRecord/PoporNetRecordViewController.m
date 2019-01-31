@@ -30,15 +30,21 @@
     
     PoporNetRecordConfig * config = [PoporNetRecordConfig share];
     
-    //    config.recordType = PoporNetRecordDisable;
-    //    UIFont * font                = [UIFont systemFontOfSize:15];
-    //    // 假如att font 不为15,也需要设置,不然计算高度会出错.
-    //    config.cellTitleFont       = font;
-    //    config.titleAttributes     = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0x000000], NSFontAttributeName:font};
-    //    config.keyAttributes       = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0xE46F5C], NSFontAttributeName:font};
-    //    config.stringAttributes    = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0x4BB748], NSFontAttributeName:font};
-    //    config.nonStringAttributes = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0x4BB748], NSFontAttributeName:font};
-    
+    {
+        //config.listFontTitle   = [UIFont systemFontOfSize:16];
+        //config.listFontRequest = [UIFont systemFontOfSize:14];
+        //[config updateListCellHeight];
+    }
+    {
+        // config.recordType = PoporNetRecordDisable;
+        // UIFont * font                = [UIFont systemFontOfSize:15];
+        // // 假如att font 不为15,也需要设置,不然计算高度会出错.
+        // config.cellTitleFont       = font;
+        // config.titleAttributes     = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0x000000], NSFontAttributeName:font};
+        // config.keyAttributes       = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0xE46F5C], NSFontAttributeName:font};
+        // config.stringAttributes    = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0x4BB748], NSFontAttributeName:font};
+        // config.nonStringAttributes = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0x4BB748], NSFontAttributeName:font};
+    }
     __weak typeof(self) weakSelf = self;
     config.presentNCBlock = ^(UINavigationController *nc) {
         // 设置标题颜色

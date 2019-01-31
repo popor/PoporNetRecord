@@ -36,6 +36,25 @@
         instance.keyAttributes       = @{NSForegroundColorAttributeName:PnrColorGreen, NSFontAttributeName:font};
         instance.stringAttributes    = @{NSForegroundColorAttributeName:PnrColorRed, NSFontAttributeName:font};
         instance.nonStringAttributes = @{NSForegroundColorAttributeName:PnrColorRed, NSFontAttributeName:font};
+        
+        {
+            // instance.listCellHeight = 55;
+
+            instance.listFontTitle    = [UIFont systemFontOfSize:16];
+            instance.listFontRequest  = [UIFont systemFontOfSize:14];
+            instance.listFontDomain   = [UIFont systemFontOfSize:15];
+            instance.listFontTime     = [UIFont systemFontOfSize:15];
+
+            instance.listColorTitle   = PnrColorGreen;
+            instance.listColorRequest = PnrColorRed;
+            instance.listColorDomain  = ColorBlack3;
+            instance.listColorTime    = ColorBlack6;
+
+            instance.listColorCell0   = [UIColor whiteColor];
+            instance.listColorCell1   = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
+            
+            [instance updateListCellHeight];
+        }
     });
     return instance;
 }
@@ -48,6 +67,10 @@
             self.recordTypeBlock(recordType);
         }
     }
+}
+
+- (void)updateListCellHeight {
+    self.listCellHeight = PnrListCellGap*3 + 6 + MAX(self.listFontTitle.pointSize, self.listFontRequest.pointSize) + self.listFontDomain.pointSize;
 }
 
 @end
