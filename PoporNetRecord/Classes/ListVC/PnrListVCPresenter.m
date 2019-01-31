@@ -116,6 +116,7 @@
             cell.requestL.attributedText = att;
         }else{
             cell.requestL.text = entity.request;
+            cell.requestL.font = self.config.listFontRequest;
         }
         cell.timeL.text    = entity.time;
         cell.domainL.text  = entity.domain;
