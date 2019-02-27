@@ -14,19 +14,22 @@
 #import <JSONSyntaxHighlight/JSONSyntaxHighlight.h>
 #import <PoporFoundation/PrefixColor.h>
 
-//CG_INLINE UIColor * RGB16(unsigned long rgbValue) {
-//    return [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0];
-//};
-
-@interface PoporNetRecordViewController ()
-
-@end
+#import <PoporUI/UINavigationController+Size.h>
 
 @implementation PoporNetRecordViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
+    
+    self.title = @"PoporNetRecord";
+    {
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
+        item.title = @"返回";
+        self.navigationItem.backBarButtonItem = item;
+    }
+    
+    [self addTypeBT];
+    [self setNcStyle];
     
     PoporNetRecordConfig * config = [PoporNetRecordConfig share];
     
@@ -61,7 +64,9 @@
         [nc.navigationBar setBackgroundImage:[weakSelf gradientImageWithBounds:CGRectMake(0, 0, self.view.frame.size.width, 1) andColors:@[RGB16(0X68D3FF), RGB16(0X4585F5)] gradientHorizon:YES] forBarMetrics:UIBarMetricsDefault];
         
         // 设置返回按钮字体颜色.
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        //[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        nc.navigationBar.tintColor = [UIColor whiteColor];
+        
     };
     
     NSDictionary * responseDic = @{@"success":@"true", @"child":@{@"name":@"abc", @"age":@(100)}, @"food":@[@"apple", @"orange"], @"device":@[@{@"bicyle":@{@"type":@"2轮子"}}, @{@"car":@{@"type":@"4轮子"}}]};
@@ -92,7 +97,75 @@
     });
 }
 
+#pragma mark - nc bar style
+- (void)setNcStyle {
+    UINavigationController * nc = self.navigationController;
+    // 设置标题颜色
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    [dict setObject:[UIFont systemFontOfSize:18] forKey:NSFontAttributeName];
+    
+    nc.navigationBar.titleTextAttributes = dict;
+    
+    // 设置bar背景颜色
+    //[self.navigationBar setBarTintColor:RGB16(0X4077ED)];
+    //[self.navigationBar setBarTintColor:ColorNCBar];
+    //RGB16(0X68D3FF)
+    [nc.navigationBar setBackgroundImage:[self gradientImageWithBounds:CGRectMake(0, 0, self.view.frame.size.width, 1) andColors:@[RGB16(0X68D3FF), RGB16(0X4585F5)] gradientHorizon:YES] forBarMetrics:UIBarMetricsDefault];
+    
+    // 设置返回按钮字体颜色.
+    //[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    nc.navigationBar.tintColor = [UIColor whiteColor];
+}
 
+#pragma mark - 设置记录类型
+- (void)addTypeBT {
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"类型" style:UIBarButtonItemStylePlain target:self action:@selector(changeRecordTypeAction)];
+    self.navigationItem.leftBarButtonItems = @[item1];
+}
+
+- (void)pushNetRecordListVC {
+    
+    PoporNetRecord * pnr = [PoporNetRecord share];
+    UIViewController * vc = [pnr getPnrListVC];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)changeRecordTypeAction {
+    __weak typeof(self) weakSelf = self;
+    {
+        UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:@"提醒" message:@"更改记录类型" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        
+        UIAlertAction * autoAction = [UIAlertAction actionWithTitle:@"自动" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            PoporNetRecord * pnr = [PoporNetRecord share];
+            pnr.customBallBtVisible = NO;
+            pnr.ballBT.hidden = NO;
+            
+            weakSelf.navigationItem.rightBarButtonItems = nil;
+        }];
+        UIAlertAction * customAction = [UIAlertAction actionWithTitle:@"自定义" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            PoporNetRecord * pnr = [PoporNetRecord share];
+            pnr.customBallBtVisible = YES;
+            pnr.ballBT.hidden = YES;
+            
+            UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"网络请求" style:UIBarButtonItemStylePlain target:self action:@selector(pushNetRecordListVC)];
+            weakSelf.navigationItem.rightBarButtonItems = @[item1];
+        }];
+        
+        [oneAC addAction:cancleAction];
+        [oneAC addAction:autoAction];
+        [oneAC addAction:customAction];
+        
+        [self presentViewController:oneAC animated:YES completion:nil];
+    }
+}
+
+#pragma mark - 设置图片
 - (UIImage*)gradientImageWithBounds:(CGRect)bounds andColors:(NSArray*)colors gradientHorizon:(BOOL)gradientHorizon {
     CGPoint start;
     CGPoint end;
@@ -129,6 +202,5 @@
     UIGraphicsEndImageContext();
     return image;
 }
-
 
 @end

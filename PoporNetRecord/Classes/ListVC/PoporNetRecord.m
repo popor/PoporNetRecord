@@ -52,7 +52,7 @@
 
 + (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue;{
     
-    if ([PoporNetRecord share].isShow) {
+    if ([PoporNetRecord share].isRecord) {
         PnrVCEntity * entity = [PnrVCEntity new];
         entity.title         = title;
         entity.url           = urlString;
@@ -102,7 +102,7 @@
         
         [self.window addSubview:button];
         
-        [button addTarget:self action:@selector(showPnrListVC) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(showPnrListVCNC) forControlEvents:UIControlEventTouchUpInside];
         
         button;
     });
@@ -112,25 +112,21 @@
     }else{
         self.ballBT.center = CGPointMake(self.ballBT.width/2- self.sBallHideWidth, 180);
     }
-    self.ballBT.alpha = self.config.normalAlpha;
+    if (self.isCustomBallBtVisible) {
+        self.ballBT.hidden = YES;
+    }else{
+        self.ballBT.alpha = self.config.normalAlpha;
+    }
     
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGR:)];
     [self.ballBT addGestureRecognizer:pan];
 }
 
-- (void)showPnrListVC {
-    self.ballBT.hidden = YES;
-    __weak typeof(self) weakSelf = self;
-    BlockPVoid closeBlock = ^() {
-        if (weakSelf.isShow) {
-            weakSelf.ballBT.hidden = NO;
-        }
-        if (weakSelf.closeBlock) {
-            weakSelf.closeBlock();
-        }
-    };
-    UIViewController * vc = [PnrListVCRouter vcWithDic:@{@"title":@"网络请求", @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock}];
-    UINavigationController * oneNC = [[UINavigationController alloc] initWithRootViewController:vc];
+- (void)showPnrListVCNC {
+    if (!self.isCustomBallBtVisible) {
+        self.ballBT.hidden = YES;
+    }
+    UINavigationController * oneNC = [[UINavigationController alloc] initWithRootViewController:[self getPnrListVC]];
     oneNC.navigationBar.translucent = NO;
     
     if (self.config.presentNCBlock) {
@@ -148,6 +144,23 @@
         self.openBlock();
     }
     self.nc = oneNC;
+}
+
+- (UIViewController *)getPnrListVC {
+    __weak typeof(self) weakSelf = self;
+    BlockPVoid closeBlock = ^() {
+        if (weakSelf.isRecord) {
+            if (!weakSelf.isCustomBallBtVisible) {
+                weakSelf.ballBT.hidden = NO;
+            }
+        }
+        if (weakSelf.closeBlock) {
+            weakSelf.closeBlock();
+        }
+    };
+    UIViewController * vc = [PnrListVCRouter vcWithDic:@{@"title":@"网络请求", @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock}];
+    
+    return vc;
 }
 
 #pragma mark - Action
@@ -243,37 +256,39 @@
     switch (recordType) {
         case PoporNetRecordAuto:
 #if TARGET_IPHONE_SIMULATOR
-            _show = YES;
+            _record = YES;
 #else
             if (IsDebugVersion) {
-                _show = YES;
+                _record = YES;
             }else{
-                _show = NO;
+                _record = NO;
             }
 #endif
             break;
         case PoporNetRecordEnable:
-            _show = YES;
+            _record = YES;
             break;
             
         case PoporNetRecordDisable:
-            _show = NO;
+            _record = NO;
             break;
             
         default:
             break;
     }
-    if (_show) {
+    if (_record) {
         if (!_window) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self addViews];
             });
         }
-        _ballBT.hidden = NO;
+        if (!_customBallBtVisible) {
+            _ballBT.hidden = NO;
+        }
     }else{
+        // 默认设置的是隐藏,假如设置的时候,不允许recorde,那么设置为隐藏
         _ballBT.hidden = YES;
     }
-    
 }
 
 // 把ballBT提到最高层.

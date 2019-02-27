@@ -26,7 +26,11 @@ typedef void(^PoporNetRecordBlockPVoid) (void);
 @property (nonatomic, copy  ) PoporNetRecordBlockPVoid openBlock;
 @property (nonatomic, copy  ) PoporNetRecordBlockPVoid closeBlock;
 
-@property (nonatomic, getter=isShow) BOOL show;
+// 是否开启监测
+@property (nonatomic, getter=isRecord) BOOL record;
+
+// 自定义ballBT可见度, 假如为YES,那么ballBT第一次显示会设置为hidden=YES.
+@property (nonatomic, getter=isCustomBallBtVisible) BOOL customBallBtVisible;
 
 + (instancetype)share;
 
@@ -40,8 +44,11 @@ typedef void(^PoporNetRecordBlockPVoid) (void);
 // 增加title
 + (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue;
 
-// 弹出请求列表
-- (void)showPnrListVC;
+// 弹出请求列表 UINavigationController
+- (void)showPnrListVCNC;
+
+// 获取VC,可以设置在自定义 UINavigationController 中
+- (UIViewController *)getPnrListVC;
 
 // 把ballBT提到最高层.
 + (void)bringFrontBallBT;

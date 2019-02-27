@@ -15,6 +15,7 @@
 #import <PoporUI/IToastKeyboard.h>
 #import <PoporUI/UIDevice+Tool.h>
 #import <PoporUI/UIInsetsTextField.h>
+#import <PoporUI/UINavigationController+Size.h>
 
 #import "PnrWebPortVC.h"
 #import "PoporNetRecordConfig.h"
@@ -85,7 +86,7 @@
     
     self.infoL.attributedText = att;
     self.infoL.numberOfLines  = 0;
-    self.infoL.frame = CGRectMake(10, 10, self.view.frame.size.width-20, 60);
+    self.infoL.frame = CGRectMake(10, self.navigationController.topMargin + 10, self.view.frame.size.width-20, 60);
 }
 
 - (void)addQrIV:(NSString *)webUrl {

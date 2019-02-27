@@ -11,6 +11,7 @@
 
 #import "PoporNetRecord.h"
 #import <Masonry/Masonry.h>
+#import <PoporUI/UINavigationController+Size.h>
 
 @interface PnrListVC ()
 
@@ -58,6 +59,8 @@
         self.title = @"PnrListVC";
     }
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.topMargin = [self.navigationController getTopMargin];
+    
     if (!self.present) {
         [PnrListVCRouter setVCPresent:self];
     }
@@ -96,7 +99,7 @@
 #pragma mark - views
 - (void)addViews {
     self.infoTV = [self addTVs];
-    {
+    if ([self.navigationController.viewControllers indexOfObject:self] == 0) {
         UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self.present action:@selector(closeAction)];
         self.navigationItem.leftBarButtonItems = @[item1];
     }

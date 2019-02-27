@@ -7,14 +7,14 @@
 #
 
 Pod::Spec.new do |s|
-    s.name             = 'PoporNetRecord'
-    s.version          = '0.0.36'
-    s.summary          = 'PoporNetRecord will record net request only in debug configuration'
-    
-    s.homepage         = 'https://github.com/popor/PoporNetRecord'
-    s.license          = { :type => 'MIT', :file => 'LICENSE' }
-    s.author           = { 'popor' => '908891024@qq.com' }
-    s.source           = { :git => 'https://github.com/popor/PoporNetRecord.git', :tag => s.version.to_s }
+    s.name     = 'PoporNetRecord'
+    s.version  = '0.0.37'
+    s.summary  = 'PoporNetRecord will record net request only in debug configuration'
+
+    s.homepage = 'https://github.com/popor/PoporNetRecord'
+    s.license  = { :type => 'MIT', :file => 'LICENSE' }
+    s.author   = { 'popor' => '908891024@qq.com' }
+    s.source   = { :git => 'https://github.com/popor/PoporNetRecord.git', :tag => s.version.to_s }
     
     s.ios.deployment_target = '8.0'
     
@@ -57,6 +57,7 @@ Pod::Spec.new do |s|
     s.dependency 'PoporUI/UIView'
     s.dependency 'PoporUI/UIImage'
     s.dependency 'PoporUI/UITextField'
+    s.dependency 'PoporUI/UINavigationController'
     
     s.dependency 'PoporFoundation/NSDictionary'
     s.dependency 'PoporFoundation/NSString'

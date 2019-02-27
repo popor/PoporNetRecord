@@ -13,6 +13,7 @@
 #import <PoporFoundation/NSDictionary+tool.h>
 #import <PoporFoundation/PrefixColor.h>
 #import <PoporUI/IToastKeyboard.h>
+#import <PoporUI/UINavigationController+Size.h>
 
 #import "PnrWebPortEntity.h"
 
@@ -89,43 +90,7 @@
 
 #pragma mark - views
 - (void)addViews {
-    if (self.portEntity.detailVCStartServer) {
-        self.serverBT = ({
-            UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.frame = CGRectMake(0, 0, 0, 40);
-            [button setBackgroundColor:[UIColor whiteColor]];
-            button.titleLabel.font = [UIFont systemFontOfSize:15];
-            button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-            button.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 15);
-            
-            button.userInteractionEnabled = NO;
-            button.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-            
-            [self.view addSubview:button];
-            button;
-        });
-        
-        [self.serverBT mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(0);
-            make.top.mas_equalTo(0);
-            make.right.mas_equalTo(0);
-            make.height.mas_equalTo(self.serverBT.frame.size.height);
-        }];
-        
-        {
-            UIView * lineView = [UIView new];
-            lineView.backgroundColor = ColorTV_separator;
-            
-            [self.serverBT addSubview:lineView];
-            
-            [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.mas_equalTo(0);
-                make.right.mas_equalTo(0);
-                make.height.mas_equalTo(0.5);
-                make.bottom.mas_equalTo(0);
-            }];
-        }
-    }
+    [self addServerBT];
     self.infoTV = [self addTVs];
     self.infoTV.separatorInset = UIEdgeInsetsMake(0, 14, 0, 14);
     
@@ -139,6 +104,50 @@
         UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"Web" style:UIBarButtonItemStylePlain target:self.present action:@selector(pushWebVC)];
         
         self.navigationItem.rightBarButtonItems = @[item1, item2];
+    }
+}
+
+- (void)addServerBT {
+    self.serverBT = ({
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(0, 0, 0, 40);
+        [button setBackgroundColor:[UIColor whiteColor]];
+        button.titleLabel.font = [UIFont systemFontOfSize:15];
+        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        button.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 15);
+        
+        button.userInteractionEnabled = NO;
+        button.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+        
+        [self.view addSubview:button];
+        button;
+    });
+    
+    [self.serverBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(self.navigationController.topMargin);
+        
+        make.right.mas_equalTo(0);        
+        if (self.portEntity.detailVCStartServer) {
+            make.height.mas_equalTo(self.serverBT.frame.size.height);
+        }else{
+            make.height.mas_equalTo(0);
+            self.serverBT.hidden = YES;
+        }
+    }];
+    
+    {
+        UIView * lineView = [UIView new];
+        lineView.backgroundColor = ColorTV_separator;
+        
+        [self.serverBT addSubview:lineView];
+        
+        [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(0);
+            make.right.mas_equalTo(0);
+            make.height.mas_equalTo(0.5);
+            make.bottom.mas_equalTo(0);
+        }];
     }
 }
 
@@ -159,11 +168,7 @@
     
     [oneTV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
-        if (self.serverBT) {
-            make.top.mas_equalTo(self.serverBT.mas_bottom);
-        }else{
-            make.top.mas_equalTo(0);
-        }
+        make.top.mas_equalTo(self.serverBT.mas_bottom);
         make.right.mas_equalTo(0);
         make.bottom.mas_equalTo(0);
     }];

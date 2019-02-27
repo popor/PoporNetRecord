@@ -1,6 +1,6 @@
 {
   "name": "PoporNetRecord",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "summary": "PoporNetRecord will record net request only in debug configuration",
   "homepage": "https://github.com/popor/PoporNetRecord",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/popor/PoporNetRecord.git",
-    "tag": "0.0.36"
+    "tag": "0.0.37"
   },
   "platforms": {
     "ios": "8.0"
@@ -35,6 +35,9 @@
 
     ],
     "PoporUI/UITextField": [
+
+    ],
+    "PoporUI/UINavigationController": [
 
     ],
     "PoporFoundation/NSDictionary": [

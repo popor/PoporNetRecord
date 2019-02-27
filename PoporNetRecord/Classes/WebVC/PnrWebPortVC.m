@@ -11,6 +11,7 @@
 #import <PoporFoundation/PrefixColor.h>
 #import <PoporUI/IToastKeyboard.h>
 #import <PoporUI/UIImage+create.h>
+#import <PoporUI/UINavigationController+Size.h>
 
 @interface PnrWebPortVC ()
 
@@ -130,7 +131,7 @@
             if (lastL) {
                 make.top.mas_equalTo(lastL.mas_bottom).mas_offset(10);
             }else{
-                make.top.mas_equalTo(20).mas_offset(10);
+                make.top.mas_equalTo(self.navigationController.topMargin + 20);
             }
             
             make.width.mas_equalTo(100);
