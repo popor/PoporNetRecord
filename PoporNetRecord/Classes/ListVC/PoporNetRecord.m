@@ -8,6 +8,7 @@
 
 #import "PoporNetRecord.h"
 #import "PnrVCEntity.h"
+#import "PnrWebPortEntity.h"
 
 #import "PnrListVCRouter.h"
 #import <PoporUI/UIView+Extension.h>
@@ -29,10 +30,15 @@
     static PoporNetRecord * instance;
     dispatch_once(&once, ^{
         instance = [self new];
-        instance.sBallHideWidth = 10;
-        instance.sBallWidth     = 80;
-        instance.infoArray      = [NSMutableArray new];
+        instance.sBallHideWidth   = 10;
+        instance.sBallWidth       = 80;
+        instance.infoArray        = [NSMutableArray new];
         
+        instance.freshListWebLock     = NO;
+        instance.freshListWebLockTime = 3;
+        instance.freshListWebLockMax  = 5;
+        instance.freshListWebLockNum  = 0;
+
         {
             instance.config = [PoporNetRecordConfig share];
             __weak typeof(instance) weakSelf = instance;
@@ -52,7 +58,8 @@
 
 + (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue;{
     
-    if ([PoporNetRecord share].isRecord) {
+    PoporNetRecord * pnr = [PoporNetRecord share];
+    if (pnr.isRecord) {
         PnrVCEntity * entity = [PnrVCEntity new];
         entity.title         = title;
         entity.url           = urlString;
@@ -70,16 +77,54 @@
             }
         }
         // 移除超出限制的数据请求
-        if ([PoporNetRecord share].infoArray.count >= [PoporNetRecord share].config.recordMaxNum) {
-            [[PoporNetRecord share].infoArray removeLastObject];
+        if (pnr.infoArray.count >= pnr.config.recordMaxNum) {
+            [pnr.infoArray removeLastObject];
         }
         // 插入到第一条
-        [[PoporNetRecord share].infoArray insertObject:entity atIndex:0];
+        [pnr.infoArray insertObject:entity atIndex:0];
         // 假如在打开界面的时候收到请求,那么刷新数据
-        if ([PoporNetRecord share].config.freshBlock) {
-            [PoporNetRecord share].config.freshBlock();
+        if (pnr.config.freshBlock) {
+            pnr.config.freshBlock();
         }
+        
+        BOOL isFresh = NO;
+#if TARGET_IPHONE_SIMULATOR
+        if (pnr.config.listSwitchSimulator) {
+            isFresh = YES;
+        }
+#else
+        if (pnr.config.listSwitchIphone) {
+            isFresh = YES;
+            
+        }
+#endif
+        if (isFresh) {
+            if (pnr.freshListWebLockNum >= pnr.freshListWebLockMax) {
+                NSLog(@"临时放行");
+                // 临时放行,取消之前数据.
+                [[pnr class] cancelPreviousPerformRequestsWithTarget:pnr selector:@selector(freshListWebEvent) object:nil];
+                
+                [pnr freshListWebEvent];
+            }else{
+                if (pnr.freshListWebLock) {
+                    NSLog(@"阻塞: %li", pnr.freshListWebLockNum);
+                    pnr.freshListWebLockNum ++;
+                    [[pnr class] cancelPreviousPerformRequestsWithTarget:pnr selector:@selector(freshListWebEvent) object:nil];
+                }
+                pnr.freshListWebLock = YES;
+                [pnr performSelector:@selector(freshListWebEvent) withObject:nil afterDelay:pnr.freshListWebLockTime];
+            }
+            
+        }
+        
     }
+}
+
+- (void)freshListWebEvent {
+    NSLog(@"执行");
+    self.freshListWebLock    = NO;
+    self.freshListWebLockNum = 0;
+    [[PnrWebPortEntity share] startListServer:self.infoArray];
 }
 
 - (void)addViews {

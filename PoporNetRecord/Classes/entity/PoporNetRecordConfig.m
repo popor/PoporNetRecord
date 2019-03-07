@@ -16,15 +16,22 @@
     dispatch_once(&once, ^{
         instance = [self new];
         
+        // 基础设置
         instance.activeAlpha         = 1.0;
         instance.normalAlpha         = 0.6;
         instance.recordMaxNum        = 100;
-        
+
+        // list网页设置
+        instance.listSwitchIphone    = YES;
+        instance.listSwitchSimulator = YES;
+        //instance.listFreshAuto       = YES;
+        instance.listFreshTime       = 5;
+
         instance.recordType          = PoporNetRecordAuto;
         UIFont * font                = [UIFont systemFontOfSize:15];
         //NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
         //paraStyle.lineSpacing = 1;
-        
+
         instance.cellTitleFont       = font;
         // instance.titleAttributes     = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0x000000], NSFontAttributeName:font, NSParagraphStyleAttributeName:paraStyle};
         // instance.keyAttributes       = @{NSForegroundColorAttributeName:[JSONSyntaxHighlight colorWithRGB:0xE46F5C], NSFontAttributeName:font, NSParagraphStyleAttributeName:paraStyle};

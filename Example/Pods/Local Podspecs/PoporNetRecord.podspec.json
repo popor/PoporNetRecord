@@ -1,6 +1,6 @@
 {
   "name": "PoporNetRecord",
-  "version": "0.0.37",
+  "version": "0.1.00",
   "summary": "PoporNetRecord will record net request only in debug configuration",
   "homepage": "https://github.com/popor/PoporNetRecord",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/popor/PoporNetRecord.git",
-    "tag": "0.0.37"
+    "tag": "0.1.00"
   },
   "platforms": {
     "ios": "8.0"
@@ -68,33 +68,6 @@
       "source_files": "PoporNetRecord/Classes/entity/*.{h,m}"
     },
     {
-      "name": "ListVC",
-      "dependencies": {
-        "PoporNetRecord/entity": [
-
-        ],
-        "PoporNetRecord/DetailVC": [
-
-        ],
-        "PoporAlertBubbleView": [
-
-        ]
-      },
-      "source_files": "PoporNetRecord/Classes/ListVC/*.{h,m}"
-    },
-    {
-      "name": "DetailVC",
-      "dependencies": {
-        "PoporNetRecord/entity": [
-
-        ],
-        "PoporNetRecord/WebVC": [
-
-        ]
-      },
-      "source_files": "PoporNetRecord/Classes/DetailVC/*.{h,m}"
-    },
-    {
       "name": "WebVC",
       "dependencies": {
         "PoporNetRecord/entity": [
@@ -114,6 +87,36 @@
         ]
       },
       "source_files": "PoporNetRecord/Classes/WebVC/*.{h,m}"
+    },
+    {
+      "name": "DetailVC",
+      "dependencies": {
+        "PoporNetRecord/entity": [
+
+        ],
+        "PoporNetRecord/WebVC": [
+
+        ]
+      },
+      "source_files": "PoporNetRecord/Classes/DetailVC/*.{h,m}"
+    },
+    {
+      "name": "ListVC",
+      "dependencies": {
+        "PoporNetRecord/entity": [
+
+        ],
+        "PoporNetRecord/DetailVC": [
+
+        ],
+        "PoporNetRecord/WebVC": [
+
+        ],
+        "PoporAlertBubbleView": [
+
+        ]
+      },
+      "source_files": "PoporNetRecord/Classes/ListVC/*.{h,m}"
     }
   ]
 }

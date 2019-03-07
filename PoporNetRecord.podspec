@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name     = 'PoporNetRecord'
-    s.version  = '0.0.37'
+    s.version  = '0.1.00'
     s.summary  = 'PoporNetRecord will record net request only in debug configuration'
 
     s.homepage = 'https://github.com/popor/PoporNetRecord'
@@ -20,16 +20,21 @@ Pod::Spec.new do |s|
     
     s.frameworks = 'UIKit', 'Foundation'
     
+    # 基础1
     s.subspec 'entity' do |ss|
         ss.source_files = 'PoporNetRecord/Classes/entity/*.{h,m}'
     end
     
-    s.subspec 'ListVC' do |ss|
-        ss.dependency 'PoporNetRecord/entity'
-        ss.dependency 'PoporNetRecord/DetailVC'
-        ss.dependency 'PoporAlertBubbleView'
-        
-        ss.source_files = 'PoporNetRecord/Classes/ListVC/*.{h,m}'
+    # 基础2
+    s.subspec 'WebVC' do |ss|
+      ss.dependency 'PoporNetRecord/entity'
+      
+      ss.dependency 'PoporFoundation/NSString'
+      ss.dependency 'PoporFoundation/PrefixCore'
+      ss.dependency 'PoporUI/Tool'
+      ss.dependency 'PoporQRCodeIos'
+      
+      ss.source_files = 'PoporNetRecord/Classes/WebVC/*.{h,m}'
     end
     
     s.subspec 'DetailVC' do |ss|
@@ -37,18 +42,16 @@ Pod::Spec.new do |s|
       ss.dependency 'PoporNetRecord/WebVC'
       
       ss.source_files = 'PoporNetRecord/Classes/DetailVC/*.{h,m}'
-        
     end
     
-    s.subspec 'WebVC' do |ss|
-      ss.dependency 'PoporNetRecord/entity'
-      ss.dependency 'PoporFoundation/NSString'
-      ss.dependency 'PoporFoundation/PrefixCore'
-      ss.dependency 'PoporUI/Tool'
-      ss.dependency 'PoporQRCodeIos'
-      
-      ss.source_files = 'PoporNetRecord/Classes/WebVC/*.{h,m}'
-      
+    s.subspec 'ListVC' do |ss|
+        ss.dependency 'PoporNetRecord/entity'
+        ss.dependency 'PoporNetRecord/DetailVC'
+        ss.dependency 'PoporNetRecord/WebVC'
+        
+        ss.dependency 'PoporAlertBubbleView'
+        
+        ss.source_files = 'PoporNetRecord/Classes/ListVC/*.{h,m}'
     end
     
     s.dependency 'Masonry'

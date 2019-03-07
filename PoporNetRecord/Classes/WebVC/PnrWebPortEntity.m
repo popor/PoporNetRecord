@@ -7,10 +7,14 @@
 
 #import "PnrWebPortEntity.h"
 
+#import "PnrVCEntity.h"
+
 #import <PoporUI/IToastKeyboard.h>
 
 #import <GCDWebServer/GCDWebServer.h>
 #import <GCDWebServer/GCDWebServerDataResponse.h>
+#import <GCDWebServer/GCDWebServerPrivate.h>
+
 #import <PoporFoundation/NSDictionary+tool.h>
 
 static NSString * PoporNetRecord_allPort      = @"PoporNetRecord_allPort";
@@ -35,6 +39,8 @@ static NSString * PoporNetRecord_DetailVCStartServer = @"PoporNetRecord_DetailVC
     static id instance;
     dispatch_once(&once, ^{
         instance = [self new];
+        
+        [GCDWebServer setLogLevel:kGCDWebServerLoggingLevel_Error];
     });
     return instance;
 }
@@ -97,6 +103,41 @@ static NSString * PoporNetRecord_DetailVCStartServer = @"PoporNetRecord_DetailVC
     
     
     //-------
+}
+
+#pragma mark - list server
+- (void)startListServer:(NSMutableArray *)infoArray {
+    if (self.webServerList) {
+        [self.webServerList stop];
+        self.webServerList = nil;
+    }
+    {
+        NSMutableString * h5 = [NSMutableString new];
+        [h5 appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
+        for (int i=0; i<infoArray.count; i++) {
+            [h5 appendString:@"<hr>"];
+            PnrVCEntity * entity = infoArray[i];
+            [h5 appendString:@"<p>"];
+            if (entity.title) {
+                [h5 appendFormat:@"%@ ", entity.title];
+            }
+            [h5 appendFormat:@"%@ ", entity.request];
+            
+        }
+        [h5 appendString:@"<hr>"];
+        
+        [h5 appendString:@"</body></html>"];
+        
+        GCDWebServer * server = [GCDWebServer new];
+        [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
+            return [GCDWebServerDataResponse responseWithHTML:h5];
+        }];
+        [server startWithPort:9000 bonjourName:nil];
+        //NSLog(@"Visit %@ in your web browser", server.serverURL);
+        
+        self.webServerList = server;
+    }
+    
 }
 
 #pragma mark - server

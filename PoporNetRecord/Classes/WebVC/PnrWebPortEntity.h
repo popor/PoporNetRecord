@@ -31,10 +31,13 @@ static int PoporNetRecordResponsePort = 8083;
 @property (nonatomic, strong) NSArray * titleArray;
 @property (nonatomic, strong) NSArray * jsonArray;
 
+@property (nonatomic, strong, nullable) GCDWebServer * webServerList;
 @property (nonatomic, strong, nullable) GCDWebServer * webServerAll;
 @property (nonatomic, strong, nullable) GCDWebServer * webServerHead;
 @property (nonatomic, strong, nullable) GCDWebServer * webServerRequest;
 @property (nonatomic, strong, nullable) GCDWebServer * webServerResponse;
+
+- (void)startListServer:(NSMutableArray *)infoArray;
 
 - (void)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray;
 
