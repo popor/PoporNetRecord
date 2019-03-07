@@ -18,11 +18,6 @@ typedef void(^PoporNetRecordBlockPVoid) (void);
 @property (nonatomic, weak  ) UIWindow * window;
 @property (nonatomic, strong) UIButton * ballBT;
 
-@property (nonatomic        ) BOOL freshListWebLock; // 锁,防止频繁刷新
-@property (nonatomic        ) NSInteger freshListWebLockTime; // 阻塞时间间隔
-@property (nonatomic        ) NSInteger freshListWebLockMax; // 锁次数,防止一直无法解锁
-@property (nonatomic        ) NSInteger freshListWebLockNum; // 当前阻塞数字
-
 @property (nonatomic        ) CGFloat sBallHideWidth;
 @property (nonatomic        ) CGFloat sBallWidth;
 @property (nonatomic, strong) NSMutableArray * infoArray;

@@ -32,16 +32,10 @@
     static PoporNetRecord * instance;
     dispatch_once(&once, ^{
         instance = [self new];
-        instance.sBallHideWidth   = 10;
-        instance.sBallWidth       = 80;
-        instance.infoArray        = [NSMutableArray new];
-        
-        instance.freshListWebLock     = NO;
-        instance.freshListWebLockTime = 3;
-        instance.freshListWebLockMax  = 5;
-        instance.freshListWebLockNum  = 0;
-
-        instance.listWebH5 = [NSMutableString new];
+        instance.sBallHideWidth = 10;
+        instance.sBallWidth     = 80;
+        instance.infoArray      = [NSMutableArray new];
+        instance.listWebH5      = [NSMutableString new];
         {
             instance.config = [PoporNetRecordConfig share];
             __weak typeof(instance) weakSelf = instance;
@@ -103,34 +97,10 @@
         if (isFresh) {
             [entity createListWebH5];
             [pnr.listWebH5 insertString:entity.listWebH5 atIndex:0];
-            
-            if (pnr.freshListWebLockNum >= pnr.freshListWebLockMax) {
-                NSLog(@"临时放行");
-                // 临时放行,取消之前数据.
-                [[pnr class] cancelPreviousPerformRequestsWithTarget:pnr selector:@selector(freshListWebEvent) object:nil];
-                
-                [pnr freshListWebEvent];
-            }else{
-                if (pnr.freshListWebLock) {
-                    NSLog(@"阻塞: %li", pnr.freshListWebLockNum);
-                    pnr.freshListWebLockNum ++;
-                    [[pnr class] cancelPreviousPerformRequestsWithTarget:pnr selector:@selector(freshListWebEvent) object:nil];
-                }
-                pnr.freshListWebLock = YES;
-                [pnr performSelector:@selector(freshListWebEvent) withObject:nil afterDelay:pnr.freshListWebLockTime];
-            }
-            
+            [[PnrServerTool share] startListServer:pnr.listWebH5];
         }
         
     }
-}
-
-- (void)freshListWebEvent {
-    
-    NSLog(@"执行");
-    self.freshListWebLock    = NO;
-    self.freshListWebLockNum = 0;
-    [[PnrServerTool share] startListServer:self.listWebH5];
 }
 
 - (void)addViews {

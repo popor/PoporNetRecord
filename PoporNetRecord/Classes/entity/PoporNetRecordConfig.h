@@ -33,8 +33,6 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 // 列表网页刷新设置
 @property (nonatomic        ) BOOL      listSwitchIphone;    // 是否开启list网页:模拟器
 @property (nonatomic        ) BOOL      listSwitchSimulator; // 是否开启list网页:手机
-//@property (nonatomic        ) BOOL      listFreshAuto;       // list网页是否开启:自动刷新
-@property (nonatomic        ) NSInteger listFreshTime;       // list网页刷新间隔:默认为5
 
 #pragma mark - 列表配置参数
 // = (listFontTitle+3) + (listFontDomain+3) + PnrListCellGap*3,可以通过updateListCellHeight设置

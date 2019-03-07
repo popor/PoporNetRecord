@@ -24,8 +24,6 @@
         // list网页设置
         instance.listSwitchIphone    = YES;
         instance.listSwitchSimulator = YES;
-        //instance.listFreshAuto       = YES;
-        instance.listFreshTime       = 5;
 
         instance.recordType          = PoporNetRecordAuto;
         UIFont * font                = [UIFont systemFontOfSize:15];
