@@ -7,7 +7,6 @@
 
 #import "PnrListVCPresenter.h"
 #import "PnrListVCInteractor.h"
-#import "PnrListVCProtocol.h"
 
 #import "PnrDetailVCRouter.h"
 

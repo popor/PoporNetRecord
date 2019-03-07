@@ -31,3 +31,21 @@ static NSString * PoporNetRecordTextColorColors = @"彩色";
 @property (nonatomic, weak  ) NSMutableArray<PnrVCEntity *> * weakInfoArray;
 
 @end
+
+
+// 数据来源
+@protocol PnrListVCDataSource <NSObject>
+
+@end
+
+
+// UI事件
+@protocol PnrListVCEventHandler <NSObject>
+
+- (void)closeAction;
+- (void)clearAction;
+
+- (void)setRightBarAction;
+- (void)setTextColorAction:(UIBarButtonItem *)sender event:(UIEvent *)event;
+
+@end

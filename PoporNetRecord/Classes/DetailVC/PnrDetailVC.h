@@ -6,8 +6,6 @@
 //  Copyright © 2018年 popor. All rights reserved.
 
 #import <UIKit/UIKit.h>
-#import "PnrDetailVCEventHandler.h"
-#import "PnrDetailVCDataSource.h"
 #import "PnrDetailVCProtocol.h"
 
 @interface PnrDetailVC : UIViewController <PnrDetailVCProtocol>

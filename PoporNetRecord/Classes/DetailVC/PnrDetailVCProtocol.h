@@ -25,3 +25,18 @@
 @property (nonatomic, strong) NSArray * cellAttArray;
 
 @end
+
+// 数据来源
+@protocol PnrDetailVCDataSource <NSObject>
+
+@end
+
+// UI事件
+@protocol PnrDetailVCEventHandler <NSObject>
+
+- (void)copyAction;
+- (void)pushWebVC;
+- (void)startServer;
+
+@end
+

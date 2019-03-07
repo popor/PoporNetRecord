@@ -7,7 +7,6 @@
 
 #import "PnrDetailVCPresenter.h"
 #import "PnrDetailVCInteractor.h"
-#import "PnrDetailVCProtocol.h"
 
 #import <PoporUI/IToastKeyboard.h>
 #import <PoporUI/UIImage+create.h>
