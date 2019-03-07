@@ -1,6 +1,6 @@
 //
 //  PnrWebVC.m
-//  GCDWebServer
+//  PoporNetRecord
 //
 //  Created by apple on 2018/12/3.
 //
@@ -25,15 +25,15 @@
 @property (nonatomic, strong) UILabel          * infoL;
 @property (nonatomic, strong) UIImageView      * qrCodeIV;
 
-@property (nonatomic, weak  ) PnrWebPortEntity * portEntity;
+@property (nonatomic, weak  ) PnrServerTool * serverTool;
 
 @end
 
 @implementation PnrWebVC
 
 - (void)dealloc {
-    if (!self.portEntity.detailVCStartServer) {
-        [self.portEntity stopServer];
+    if (!self.serverTool.portEntity.detailVCStartServer) {
+        [self.serverTool stopServer];
     }
 }
 
@@ -43,11 +43,11 @@
     self.title = @"Web";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.portEntity = [PnrWebPortEntity share];
-    [self.portEntity startServerTitle:self.titleArray json:self.jsonArray];
+    self.serverTool = [PnrServerTool share];
+    [self.serverTool startServerTitle:self.titleArray json:self.jsonArray];
     
-    [self setWebUrl:self.portEntity.webServerAll.serverURL.absoluteString];
-    [self addQrIV:self.portEntity.webServerAll.serverURL.absoluteString];
+    [self setWebUrl:self.serverTool.webServerAll.serverURL.absoluteString];
+    [self addQrIV:self.serverTool.webServerAll.serverURL.absoluteString];
     
     {
         UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(showPnrWebPortVC)];

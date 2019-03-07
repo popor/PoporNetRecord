@@ -1,6 +1,6 @@
 //
 //  PoporNetRecordConfig.h
-//  JSONSyntaxHighlight
+//  PoporNetRecord
 //
 //  Created by apple on 2018/11/2.
 //
@@ -28,7 +28,7 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 
 @property (nonatomic        ) CGFloat   activeAlpha;
 @property (nonatomic        ) CGFloat   normalAlpha;
-@property (nonatomic        ) NSInteger recordMaxNum;
+//@property (nonatomic        ) NSInteger recordMaxNum;
 
 // 列表网页刷新设置
 @property (nonatomic        ) BOOL      listSwitchIphone;    // 是否开启list网页:模拟器

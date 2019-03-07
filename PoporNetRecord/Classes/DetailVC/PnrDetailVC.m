@@ -1,6 +1,6 @@
 //
 //  PnrDetailVC.m
-//  linRunShengPi
+//  PoporNetRecord
 //
 //  Created by apple on 2018/5/16.
 //  Copyright © 2018年 popor. All rights reserved.
@@ -15,12 +15,12 @@
 #import <PoporUI/IToastKeyboard.h>
 #import <PoporUI/UINavigationController+Size.h>
 
-#import "PnrWebPortEntity.h"
+#import "PnrPortEntity.h"
 
 @interface PnrDetailVC ()
 
 @property (nonatomic, strong) PnrDetailVCPresenter * present;
-@property (nonatomic, weak  ) PnrWebPortEntity     * portEntity;
+@property (nonatomic, weak  ) PnrPortEntity     * portEntity;
 
 @end
 
@@ -42,7 +42,7 @@
             self.titleArray   = dic[@"titleArray"];
             self.cellAttArray = dic[@"cellAttArray"];
         }
-        self.portEntity = [PnrWebPortEntity share];
+        self.portEntity = [PnrPortEntity share];
     }
     return self;
 }

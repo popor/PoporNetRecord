@@ -1,6 +1,6 @@
 //
 //  PnrVCEntity.h
-//  linRunShengPi
+//  PoporNetRecord
 //
 //  Created by apple on 2018/5/16.
 //  Copyright © 2018年 popor. All rights reserved.
@@ -22,6 +22,10 @@
 
 @property (nonatomic, strong) NSString * time;
 
+@property (nonatomic, strong) NSString * listWebH5; // 列表网页html5代码
+
 //@property (nonatomic        ) float cellH;
+
+- (void)createListWebH5;
 
 @end

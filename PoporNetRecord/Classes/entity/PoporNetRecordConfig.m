@@ -1,6 +1,6 @@
 //
 //  PoporNetRecordConfig.m
-//  JSONSyntaxHighlight
+//  PoporNetRecord
 //
 //  Created by apple on 2018/11/2.
 //
@@ -19,7 +19,7 @@
         // 基础设置
         instance.activeAlpha         = 1.0;
         instance.normalAlpha         = 0.6;
-        instance.recordMaxNum        = 100;
+        //instance.recordMaxNum        = 100;
 
         // list网页设置
         instance.listSwitchIphone    = YES;

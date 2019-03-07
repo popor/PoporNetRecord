@@ -1,6 +1,6 @@
 //
 //  PnrDetailVCPresenter.m
-//  linRunShengPi
+//  PoporNetRecord
 //
 //  Created by apple on 2018/5/16.
 //  Copyright © 2018年 popor. All rights reserved.
@@ -19,28 +19,28 @@
 #import "PnrDetailCell.h"
 #import "PnrWebVC.h"
 
-#import "PnrWebPortEntity.h"
+#import "PnrServerTool.h"
 
 @interface PnrDetailVCPresenter ()
 
 @property (nonatomic, weak  ) id<PnrDetailVCProtocol> view;
 @property (nonatomic, strong) PnrDetailVCInteractor * interactor;
 @property (nonatomic, weak  ) PoporNetRecordConfig  * config;
-@property (nonatomic, weak  ) PnrWebPortEntity      * portEntity;
+@property (nonatomic, weak  ) PnrServerTool         * serverTool;
 
 @end
 
 @implementation PnrDetailVCPresenter
 
 - (void)dealloc {
-    [self.portEntity stopServer];
+    [self.serverTool stopServer];
 }
 
 - (id)init {
     if (self = [super init]) {
         [self initInteractors];
         self.config = [PoporNetRecordConfig share];
-        self.portEntity = [PnrWebPortEntity share];
+        self.serverTool = [PnrServerTool share];
     }
     return self;
 }
@@ -89,7 +89,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (self.portEntity.detailVCStartServer) {
+    if (self.serverTool.portEntity.detailVCStartServer) {
         return 0.1;
     }else{
         return 10;
@@ -163,12 +163,12 @@
 
 #pragma mark - Interactor_EventHandler
 - (void)startServer {
-    if (self.portEntity.detailVCStartServer) {
-        [self.portEntity startServerTitle:self.view.titleArray json:self.view.jsonArray];
+    if (self.serverTool.portEntity.detailVCStartServer) {
+        [self.serverTool startServerTitle:self.view.titleArray json:self.view.jsonArray];
         
         UIButton * oneBT = self.view.serverBT;
         
-        if (self.portEntity.webServerAll.serverURL) {
+        if (self.serverTool.webServerAll.serverURL) {
             UIImage * image = [UIImage imageFromColor:PnrColorGreen size:CGSizeMake(10, 10) corner:5];
             [oneBT setImage:image forState:UIControlStateNormal];
             
@@ -176,7 +176,7 @@
             [att addString:@"  已开启 " font:[UIFont systemFontOfSize:15] color:PnrColorGreen];
             
             //[att addString:[NSString stringWithFormat:@"%@:%@", self.portEntity.webServerAll.serverURL.host, self.portEntity.webServerAll.serverURL.port] font:[UIFont systemFontOfSize:15] color:[UIColor blueColor] bgColor:nil underline:YES];
-            [att addString:[NSString stringWithFormat:@"%@:%@", self.portEntity.webServerAll.serverURL.host, self.portEntity.webServerAll.serverURL.port] font:[UIFont systemFontOfSize:15] color:[UIColor blackColor]];
+            [att addString:[NSString stringWithFormat:@"%@:%@", self.serverTool.webServerAll.serverURL.host, self.serverTool.webServerAll.serverURL.port] font:[UIFont systemFontOfSize:15] color:[UIColor blackColor]];
             
             NSString * wifi = [UIDevice getWifiName];
             if (wifi) {

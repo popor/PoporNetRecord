@@ -1,6 +1,6 @@
 //
 //  NetMonitorTool.m
-//  linRunShengPi
+//  PoporNetRecord
 //
 //  Created by apple on 2018/5/16.
 //  Copyright © 2018年 popor. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "PoporNetRecord.h"
 #import "PnrVCEntity.h"
-#import "PnrWebPortEntity.h"
+#import "PnrServerTool.h"
 
 #import "PnrListVCRouter.h"
 #import <PoporUI/UIView+Extension.h>
@@ -20,6 +20,8 @@
 #define LL_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 
 @interface PoporNetRecord () <UIGestureRecognizerDelegate>
+
+@property (nonatomic, strong) NSMutableString * listWebH5;
 
 @end
 
@@ -39,6 +41,7 @@
         instance.freshListWebLockMax  = 5;
         instance.freshListWebLockNum  = 0;
 
+        instance.listWebH5 = [NSMutableString new];
         {
             instance.config = [PoporNetRecordConfig share];
             __weak typeof(instance) weakSelf = instance;
@@ -56,8 +59,8 @@
     [self addUrl:urlString title:nil method:method head:headValue request:requestValue response:responseValue];
 }
 
-+ (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue;{
-    
++ (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue
+{
     PoporNetRecord * pnr = [PoporNetRecord share];
     if (pnr.isRecord) {
         PnrVCEntity * entity = [PnrVCEntity new];
@@ -77,9 +80,9 @@
             }
         }
         // 移除超出限制的数据请求
-        if (pnr.infoArray.count >= pnr.config.recordMaxNum) {
-            [pnr.infoArray removeLastObject];
-        }
+        //if (pnr.infoArray.count >= pnr.config.recordMaxNum) {
+        //    [pnr.infoArray removeLastObject];
+        //}
         // 插入到第一条
         [pnr.infoArray insertObject:entity atIndex:0];
         // 假如在打开界面的时候收到请求,那么刷新数据
@@ -95,10 +98,12 @@
 #else
         if (pnr.config.listSwitchIphone) {
             isFresh = YES;
-            
         }
 #endif
         if (isFresh) {
+            [entity createListWebH5];
+            [pnr.listWebH5 insertString:entity.listWebH5 atIndex:0];
+            
             if (pnr.freshListWebLockNum >= pnr.freshListWebLockMax) {
                 NSLog(@"临时放行");
                 // 临时放行,取消之前数据.
@@ -121,10 +126,11 @@
 }
 
 - (void)freshListWebEvent {
+    
     NSLog(@"执行");
     self.freshListWebLock    = NO;
     self.freshListWebLockNum = 0;
-    [[PnrWebPortEntity share] startListServer:self.infoArray];
+    [[PnrServerTool share] startListServer:self.listWebH5];
 }
 
 - (void)addViews {

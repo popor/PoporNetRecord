@@ -1,6 +1,6 @@
 //
 //  PnrWebPortVC.m
-//  GCDWebServer
+//  PoporNetRecord
 //
 //  Created by apple on 2018/12/18.
 //
@@ -18,7 +18,7 @@
 @property (nonatomic        ) int               cellH;
 @property (nonatomic, strong) UIColor           * blueColor;
 
-@property (nonatomic, weak  ) PnrWebPortEntity  * portEntity;
+@property (nonatomic, weak  ) PnrPortEntity  * portEntity;
 
 @property (nonatomic, strong) UIInsetsTextField * allPortTF;
 @property (nonatomic, strong) UIInsetsTextField * headPortTF;
@@ -40,7 +40,7 @@
     self.blueColor            = RGB16(0X4585F5);
     self.cellH                = 30;
     
-    self.portEntity = [PnrWebPortEntity share];
+    self.portEntity = [PnrPortEntity share];
     [self addTFs];
     [self addWindowSwitch];
 }
@@ -159,7 +159,7 @@
     switch (bt.tag) {
         case 0:{
             if (self.allPortTF.text.length > 0) {
-                [PnrWebPortEntity saveAllPort:self.allPortTF.text];
+                [PnrPortEntity saveAllPort:self.allPortTF.text];
                 self.portEntity.allPortInt = self.allPortTF.text.intValue;
                 AlertToastTitle(@"重新载入生效");
             }else{
@@ -169,7 +169,7 @@
         }
         case 1:{
             if (self.headPortTF.text.length > 0) {
-                [PnrWebPortEntity saveHeadPort:self.headPortTF.text];
+                [PnrPortEntity saveHeadPort:self.headPortTF.text];
                 self.portEntity.headPortInt = self.headPortTF.text.intValue;
                 AlertToastTitle(@"重新载入生效");
             }else{
@@ -179,7 +179,7 @@
         }
         case 2:{
             if (self.requestPortTF.text.length > 0) {
-                [PnrWebPortEntity saveRequestPort:self.requestPortTF.text];
+                [PnrPortEntity saveRequestPort:self.requestPortTF.text];
                 self.portEntity.requestPortInt = self.requestPortTF.text.intValue;
                 AlertToastTitle(@"重新载入生效");
             }else{
@@ -189,7 +189,7 @@
         }
         case 3:{
             if (self.responsePortTF.text.length > 0) {
-                [PnrWebPortEntity saveResponsePort:self.responsePortTF.text];
+                [PnrPortEntity saveResponsePort:self.responsePortTF.text];
                 self.portEntity.responsePortInt = self.responsePortTF.text.intValue;
                 AlertToastTitle(@"重新载入生效");
             }else{
@@ -264,10 +264,10 @@
 - (void)UISAction:(UISwitch *)us {
     if (us == self.jsonWindowSwitch) {
         self.portEntity.jsonWindow = us.on;
-        [PnrWebPortEntity saveJsonWindow:us.on];
+        [PnrPortEntity saveJsonWindow:us.on];
     }else if (us == self.detailVCSwitch) {
         self.portEntity.detailVCStartServer = us.on;
-        [PnrWebPortEntity saveDetailVCStartServer:us.on];
+        [PnrPortEntity saveDetailVCStartServer:us.on];
     }
     
     AlertToastTitle(@"重新载入生效");

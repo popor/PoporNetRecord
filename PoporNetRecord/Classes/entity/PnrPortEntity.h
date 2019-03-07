@@ -1,6 +1,6 @@
 //
 //  PnrWebPortEntity.h
-//  GCDWebServer
+//  PoporNetRecord
 //
 //  Created by apple on 2018/12/18.
 //
@@ -15,7 +15,7 @@ static int PoporNetRecordHeadPort     = 8081;
 static int PoporNetRecordRequestPort  = 8082;
 static int PoporNetRecordResponsePort = 8083;
 
-@interface PnrWebPortEntity : NSObject
+@interface PnrPortEntity : NSObject
 
 @property (nonatomic        ) int allPortInt;
 @property (nonatomic        ) int headPortInt;
@@ -26,22 +26,6 @@ static int PoporNetRecordResponsePort = 8083;
 @property (nonatomic        ) BOOL detailVCStartServer; // 是否在detailVC开启服务,默认为开
 
 + (instancetype)share;
-
-#pragma mark - server
-@property (nonatomic, strong) NSArray * titleArray;
-@property (nonatomic, strong) NSArray * jsonArray;
-
-@property (nonatomic, strong, nullable) GCDWebServer * webServerList;
-@property (nonatomic, strong, nullable) GCDWebServer * webServerAll;
-@property (nonatomic, strong, nullable) GCDWebServer * webServerHead;
-@property (nonatomic, strong, nullable) GCDWebServer * webServerRequest;
-@property (nonatomic, strong, nullable) GCDWebServer * webServerResponse;
-
-- (void)startListServer:(NSMutableArray *)infoArray;
-
-- (void)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray;
-
-- (void)stopServer;
 
 #pragma mark - plist
 + (void)saveAllPort:(NSString *)allPort;
