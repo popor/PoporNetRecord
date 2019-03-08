@@ -8,6 +8,7 @@
 #import "PnrConfig.h"
 
 #import "PnrServerTool.h"
+#import <PoporFoundation/PrefixFun.h>
 
 @interface PnrConfig ()
 // 是否开启监测
@@ -27,8 +28,7 @@
         // 基础设置
         instance.activeAlpha         = 1.0;
         instance.normalAlpha         = 0.6;
-        //instance.recordMaxNum        = 100;
-
+        
         // list网页设置
         instance.listSwitchIphone    = YES;
         instance.listSwitchSimulator = YES;
