@@ -18,7 +18,7 @@
 #import <PoporUI/UINavigationController+Size.h>
 
 #import "PnrWebPortVC.h"
-#import "PoporNetRecordConfig.h"
+#import "PnrConfig.h"
 
 @interface PnrWebVC ()
 

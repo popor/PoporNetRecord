@@ -1,5 +1,5 @@
 //
-//  PoporNetRecordConfig.h
+//  PnrConfig.h
 //  PoporNetRecord
 //
 //  Created by apple on 2018/11/2.
@@ -24,7 +24,7 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 #define PnrColorRed    RGB16(0xF76738)
 #define PnrListCellGap 7
 
-@interface PoporNetRecordConfig : NSObject
+@interface PnrConfig : NSObject
 
 @property (nonatomic        ) CGFloat   activeAlpha;
 @property (nonatomic        ) CGFloat   normalAlpha;

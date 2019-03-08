@@ -31,7 +31,7 @@
     [self addTypeBT];
     [self setNcStyle];
     
-    PoporNetRecordConfig * config = [PoporNetRecordConfig share];
+    PnrConfig * config = [PnrConfig share];
     
     {
         //config.listFontTitle   = [UIFont systemFontOfSize:16];

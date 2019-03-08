@@ -1,21 +1,21 @@
 //
-//  PoporNetRecordConfig.m
+//  PnrConfig.m
 //  PoporNetRecord
 //
 //  Created by apple on 2018/11/2.
 //
 
-#import "PoporNetRecordConfig.h"
+#import "PnrConfig.h"
 
-@interface PoporNetRecordConfig ()
+@interface PnrConfig ()
 
 @end
 
-@implementation PoporNetRecordConfig
+@implementation PnrConfig
 
 + (instancetype)share {
     static dispatch_once_t once;
-    static PoporNetRecordConfig * instance;
+    static PnrConfig * instance;
     dispatch_once(&once, ^{
         instance = [self new];
         

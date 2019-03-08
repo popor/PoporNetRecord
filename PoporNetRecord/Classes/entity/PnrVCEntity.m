@@ -8,14 +8,14 @@
 //
 
 #import "PnrVCEntity.h"
-#import "PoporNetRecordConfig.h"
+#import "PnrConfig.h"
 #import <JSONSyntaxHighlight/JSONSyntaxHighlight.h>
 #import <PoporFoundation/NSString+format.h>
 
 @implementation PnrVCEntity
 
 - (void)createListWebH5:(NSInteger)index {
-    PoporNetRecordConfig * config = [PoporNetRecordConfig share];
+    PnrConfig * config = [PnrConfig share];
     
     NSMutableString * h5 = [NSMutableString new];
     [h5 appendString:@"<hr>"];
@@ -41,7 +41,7 @@
 }
 
 - (NSArray *)titleArray {
-    PoporNetRecordConfig * config = [PoporNetRecordConfig share];
+    PnrConfig * config = [PnrConfig share];
     PnrVCEntity * entity = self;
     NSString * title;
     if (entity.title) {
@@ -80,7 +80,7 @@
     if (!finish) {
         return;
     }
-    PoporNetRecordConfig * config = [PoporNetRecordConfig share];
+    PnrConfig * config = [PnrConfig share];
     PnrVCEntity * entity = self;
     NSString * title;
     if (entity.title) {

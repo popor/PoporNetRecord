@@ -9,7 +9,7 @@
 #import "PnrListVCCell.h"
 #import <PoporFoundation/PrefixColor.h>
 #import <Masonry/Masonry.h>
-#import "PoporNetRecordConfig.h"
+#import "PnrConfig.h"
 
 @implementation PnrListVCCell
 
@@ -22,7 +22,7 @@
 }
 
 - (void)addViews {
-    PoporNetRecordConfig * config = [PoporNetRecordConfig share];
+    PnrConfig * config = [PnrConfig share];
     for (int i = 0; i<3; i++) {
         UILabel * oneL = ({
             UILabel * l = [UILabel new];

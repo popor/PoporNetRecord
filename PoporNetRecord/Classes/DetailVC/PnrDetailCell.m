@@ -6,12 +6,12 @@
 //
 
 #import "PnrDetailCell.h"
-#import "PoporNetRecordConfig.h"
+#import "PnrConfig.h"
 #import <Masonry/Masonry.h>
 
 @interface PnrDetailCell ()
 
-@property (nonatomic, weak  ) PoporNetRecordConfig * config;
+@property (nonatomic, weak  ) PnrConfig * config;
 
 @end
 
@@ -19,7 +19,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.config = [PoporNetRecordConfig share];
+        self.config = [PnrConfig share];
         [self addViews];
     }
     return self;

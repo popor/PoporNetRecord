@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PoporNetRecordConfig.h"
+#import "PnrConfig.h"
 
 typedef void(^PoporNetRecordBlockPVoid) (void);
 
 @interface PoporNetRecord : NSObject
 
-@property (nonatomic, weak  ) PoporNetRecordConfig * config;
+@property (nonatomic, weak  ) PnrConfig * config;
 
 @property (nonatomic, weak  ) UIWindow * window;
 @property (nonatomic, strong) UIButton * ballBT;

@@ -15,7 +15,7 @@
 #import <PoporFoundation/NSString+format.h>
 #import <PoporFoundation/PrefixColor.h>
 
-#import "PoporNetRecordConfig.h"
+#import "PnrConfig.h"
 #import "PnrDetailCell.h"
 #import "PnrWebVC.h"
 
@@ -25,7 +25,7 @@
 
 @property (nonatomic, weak  ) id<PnrDetailVCProtocol> view;
 @property (nonatomic, strong) PnrDetailVCInteractor * interactor;
-@property (nonatomic, weak  ) PoporNetRecordConfig  * config;
+@property (nonatomic, weak  ) PnrConfig  * config;
 @property (nonatomic, weak  ) PnrServerTool         * serverTool;
 
 @end
@@ -39,7 +39,7 @@
 - (id)init {
     if (self = [super init]) {
         [self initInteractors];
-        self.config = [PoporNetRecordConfig share];
+        self.config = [PnrConfig share];
         self.serverTool = [PnrServerTool share];
     }
     return self;

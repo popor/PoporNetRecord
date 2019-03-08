@@ -37,7 +37,7 @@
         instance.infoArray      = [NSMutableArray new];
         instance.listWebH5      = [NSMutableString new];
         {
-            instance.config = [PoporNetRecordConfig share];
+            instance.config = [PnrConfig share];
             __weak typeof(instance) weakSelf = instance;
             instance.config.recordTypeBlock = ^(PoporNetRecordType type) {
                 [weakSelf setRecordType:type];

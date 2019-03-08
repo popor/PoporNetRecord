@@ -12,13 +12,13 @@
 
 #import "PnrListVCCell.h"
 #import <PoporFoundation/NSString+format.h>
-#import "PoporNetRecordConfig.h"
+#import "PnrConfig.h"
 
 @interface PnrListVCPresenter ()
 
 @property (nonatomic, weak  ) id<PnrListVCProtocol> view;
 @property (nonatomic, strong) PnrListVCInteractor  * interactor;
-@property (nonatomic, weak  ) PoporNetRecordConfig * config;
+@property (nonatomic, weak  ) PnrConfig * config;
 
 @end
 
@@ -27,7 +27,7 @@
 - (id)init {
     if (self = [super init]) {
         [self initInteractors];
-        self.config = [PoporNetRecordConfig share];
+        self.config = [PnrConfig share];
     }
     return self;
 }
