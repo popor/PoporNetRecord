@@ -155,6 +155,7 @@
     self.listCellHeight = PnrListCellGap*3 + 6 + MAX(self.listFontTitle.pointSize, self.listFontRequest.pointSize) + self.listFontDomain.pointSize;
 }
 
+// 设定hexcolor
 - (void)setListColorTitle:(UIColor *)listColorTitle {
     _listColorTitle = listColorTitle;
     _listColorTitleHex = [self hexStringColorNoAlpha:listColorTitle];
@@ -175,15 +176,32 @@
     _listColorTimeHex = [self hexStringColorNoAlpha:listColorTime];
 }
 
+- (void)setListColorCell0:(UIColor *)listColorCell0 {
+    _listColorCell0 = listColorCell0;
+    _listColorCell0Hex = [self hexStringColorNoAlpha:listColorCell0];
+}
+
+- (void)setListColorCell1:(UIColor *)listColorCell1 {
+    _listColorCell1 = listColorCell1;
+    _listColorCell1Hex = [self hexStringColorNoAlpha:listColorCell1];
+}
+
+// tool
 - (NSString *)hexStringColorNoAlpha:(UIColor *)color {
     //颜色值个数，rgb和alpha
-    //NSInteger cpts = CGColorGetNumberOfComponents(color.CGColor);
+    NSInteger cpts = (NSInteger)CGColorGetNumberOfComponents(color.CGColor);
     const CGFloat *components = CGColorGetComponents(color.CGColor);
-    CGFloat r = components[0];//红色
-    CGFloat g = components[1];//绿色
-    CGFloat b = components[2];//蓝色
     
-    return [NSString stringWithFormat:@"#%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255)];
+    if (cpts == 2) {
+        CGFloat w = components[0];//白色
+        return [NSString stringWithFormat:@"#%02lX%02lX%02lX", lroundf(w * 255), lroundf(w * 255), lroundf(w * 255)];
+    }else{
+        CGFloat r = components[0];//红色
+        CGFloat g = components[1];//绿色
+        CGFloat b = components[2];//蓝色
+        
+        return [NSString stringWithFormat:@"#%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255)];
+    }
 }
 
 //- (NSString *)hexStringColor: (UIColor*) color {

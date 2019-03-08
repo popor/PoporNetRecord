@@ -18,26 +18,20 @@
 - (void)createListWebH5:(NSInteger)index {
     PnrConfig * config = [PnrConfig share];
     
+    NSString * bgColor = index%2==0 ? config.listColorCell0Hex:config.listColorCell1Hex;
     NSMutableString * h5 = [NSMutableString new];
-    [h5 appendString:@"<hr>"];
-    [h5 appendString:@"<p>"];
+    
+    [h5 appendFormat:@"<div style=\" background:%@; \" onclick= \"javascript:location.href='/%i/%@'\" >", bgColor, (int)index, PnrPathRoot];
+    
     if (self.title) {
         [h5 appendFormat:@"<font color='%@'>%@ </font>", config.listColorTitleHex, self.title];
     }
-    [h5 appendFormat:@"<font color='%@'>%@ </font>", config.listColorRequestHex, [self.request substringToIndex:MIN(self.request.length, 40)]];
+    [h5 appendFormat:@"<font color='%@'>%@ </font>", config.listColorRequestHex, [self.request substringToIndex:MIN(self.request.length, 80)]];
     [h5 appendString:@"<br/>"];
     
     [h5 appendFormat:@"<font color='%@'>%@ </font>", config.listColorDomainHex, self.domain];
     
-    [h5 appendFormat:@"<a href='/%i/%@'> <font color='%@'>%@ </font></a>",
-     (int)index, PnrPathRoot,
-     config.listColorDomainHex,
-     @"查看详情"
-     ];
-    
-    [h5 appendString:@"</p>"];
-
-    //[h5 appendFormat:@"<p> %@ </p>", self.domain];
+    [h5 appendString:@"</div>"];
     
     self.listWebH5 = [h5 copy];
 }

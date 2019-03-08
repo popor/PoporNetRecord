@@ -50,7 +50,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         instance.h5Request  = [NSMutableString new];
         instance.h5Response = [NSMutableString new];
         instance.lastIndex  = -1;
-        //[GCDWebServer setLogLevel:kGCDWebServerLoggingLevel_Error];
+        [GCDWebServer setLogLevel:kGCDWebServerLoggingLevel_Error];
     });
     return instance;
 }

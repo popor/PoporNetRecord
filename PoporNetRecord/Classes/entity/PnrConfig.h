@@ -52,16 +52,18 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 @property (nonatomic, strong) UIColor * listColorRequest;// 请求
 @property (nonatomic, strong) UIColor * listColorDomain;// 域名
 @property (nonatomic, strong) UIColor * listColorTime;// 时间
+// ▽
+@property (nonatomic, strong) NSString * listColorTitleHex;
+@property (nonatomic, strong) NSString * listColorRequestHex;
+@property (nonatomic, strong) NSString * listColorDomainHex;
+@property (nonatomic, strong) NSString * listColorTimeHex;
 
-
-@property (nonatomic, strong) NSString * listColorTitleHex;// 标题
-@property (nonatomic, strong) NSString * listColorRequestHex;// 请求
-@property (nonatomic, strong) NSString * listColorDomainHex;// 域名
-@property (nonatomic, strong) NSString * listColorTimeHex;// 时间
-
-
+// -----
 @property (nonatomic, strong) UIColor * listColorCell0;// 列表偶数行背景色
 @property (nonatomic, strong) UIColor * listColorCell1;// 列表奇数行背景色
+// ▽
+@property (nonatomic, strong) NSString * listColorCell0Hex;
+@property (nonatomic, strong) NSString * listColorCell1Hex;
 
 #pragma mark - 请求详情配置
 // 详情假如 att font 不为15也需要设置.
@@ -88,11 +90,6 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 - (BOOL)isShowListWeb;
 
 - (void)updateListCellHeight;
-
-- (NSString *)listColorTitleHex;
-- (NSString *)listColorRequestHex;
-- (NSString *)listColorDomainHex;
-- (NSString *)listColorTimeHex;
 
 @end
 
