@@ -17,7 +17,6 @@
 
 - (void)createListWebH5:(NSInteger)index {
     PnrConfig * config = [PnrConfig share];
-    PnrPortEntity * port = [PnrPortEntity share];
     
     NSMutableString * h5 = [NSMutableString new];
     [h5 appendString:@"<hr>"];
@@ -30,8 +29,8 @@
     
     [h5 appendFormat:@"<font color='%@'>%@ </font>", config.listColorDomainHex, self.domain];
     
-    [h5 appendFormat:@"<a href='/%li/%@'> <font color='%@'>%@ </font></a>",
-     index, PnrPathRoot,
+    [h5 appendFormat:@"<a href='/%i/%@'> <font color='%@'>%@ </font></a>",
+     (int)index, PnrPathRoot,
      config.listColorDomainHex,
      @"查看详情"
      ];
@@ -44,7 +43,6 @@
 }
 
 - (NSArray *)titleArray {
-    PnrConfig * config = [PnrConfig share];
     PnrVCEntity * entity = self;
     NSString * title;
     if (entity.title) {
@@ -83,33 +81,9 @@
     if (!finish) {
         return;
     }
-    PnrConfig * config = [PnrConfig share];
-    PnrVCEntity * entity = self;
-    NSString * title;
-    if (entity.title) {
-        title = [NSString stringWithFormat:@" %@\n%@", entity.title, entity.request];
-    }else{
-        title = [NSString stringWithFormat:@" \n%@",entity.request];
-    }
-    NSArray * titleArray = @[[NSString stringWithFormat:@"接口:%@", title],
-                             [NSString stringWithFormat:@"链接:\n%@", entity.url],
-                             [NSString stringWithFormat:@"时间:\n%@", entity.time],
-                             [NSString stringWithFormat:@"方法:\n%@", entity.method],
-                             
-                             @"head参数:\n",
-                             @"请求参数:\n",
-                             @"返回数据:\n",
-                             ];
-    NSArray * jsonArray = @[[NSNull null],
-                            [NSNull null],
-                            [NSNull null],
-                            [NSNull null],
-                            
-                            entity.headValue ?:[NSNull null],
-                            entity.requesValue ?:[NSNull null],
-                            entity.responseValue ?:[NSNull null],
-                            ];
-    
+    PnrConfig * config   = [PnrConfig share];
+    NSArray * titleArray = [self titleArray];
+    NSArray * jsonArray  = [self jsonArray];
     
     NSMutableArray * cellAttArray = [NSMutableArray new];
     for (int i = 0; i<jsonArray.count; i++) {
@@ -134,7 +108,6 @@
     }
     
     finish(titleArray, jsonArray, cellAttArray);
-    
 }
 
 @end

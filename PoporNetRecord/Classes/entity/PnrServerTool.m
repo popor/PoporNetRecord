@@ -28,10 +28,10 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
 
 @interface PnrServerTool ()
 @property (nonatomic, strong) NSMutableString * h5List;
-@property (nonatomic, strong) NSMutableString * h5Root;
-@property (nonatomic, strong) NSMutableString * h5Head;
-@property (nonatomic, strong) NSMutableString * h5Request;
-@property (nonatomic, strong) NSMutableString * h5Response;
+@property (nonatomic, strong) NSString * h5Root;
+@property (nonatomic, strong) NSString * h5Head;
+@property (nonatomic, strong) NSString * h5Request;
+@property (nonatomic, strong) NSString * h5Response;
 
 @property (nonatomic        ) NSInteger lastIndex;
 
@@ -107,7 +107,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
                 self.lastIndex = index;
                 [self startServerTitle:entity.titleArray json:entity.jsonArray index:index];
             }
-            NSMutableString * str;
+            NSString * str;
             if ([path isEqualToString:PnrPathRoot]) {
                 str = self.h5Root;
             }else if ([path isEqualToString:PnrPathHead]){
@@ -163,9 +163,9 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             }
             if (secondPath) {
                 if ([content isKindOfClass:[NSDictionary class]]) {
-                    [h5 appendFormat:@"<p><a href='/%li/%@'>%@</a> %@</p>", index, secondPath, title, [(NSDictionary *)content toJsonString]];
+                    [h5 appendFormat:@"<p><a href='/%i/%@'>%@</a> %@</p>", (int)index, secondPath, title, [(NSDictionary *)content toJsonString]];
                 }else if([content isKindOfClass:[NSString class]]) {
-                    [h5 appendFormat:@"<p><a href='/%li/%@'>%@</a> %@</p>", index, secondPath, title, (NSString *)content];
+                    [h5 appendFormat:@"<p><a href='/%i/%@'>%@</a> %@</p>", (int)index, secondPath, title, (NSString *)content];
                 }else{
                     [h5 appendFormat:@"<p>%@ NULL</p>", title];
                 }
@@ -179,7 +179,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     }
 }
 
-- (NSMutableString *)h5CodeAtIndex:(int)index {
+- (NSString *)h5CodeAtIndex:(int)index {
     NSString * title = self.titleArray[index];
     id content       = self.jsonArray[index];
     if (content) {

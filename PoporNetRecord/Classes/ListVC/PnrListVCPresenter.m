@@ -316,7 +316,7 @@
         UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
         UIAlertAction * changeAction = [UIAlertAction actionWithTitle:@"修改" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             UITextField * nameTF = oneAC.textFields[0];
-            int * portInt = nameTF.text.intValue;
+            int portInt = nameTF.text.intValue;
             if (portInt > 0) {
                 [PnrPortEntity savePort:[NSString stringWithFormat:@"%i", portInt]];
             }
