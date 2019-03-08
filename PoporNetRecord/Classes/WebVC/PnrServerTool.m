@@ -48,6 +48,7 @@ static NSString * ErrorUnknow = @"<html> <head><title>错误</title></head> <bod
 
 #pragma mark - list server
 - (void)startListServer:(NSString *)body {
+    
     if (self.webServerUnit) {
         [self.webServerUnit stop];
         self.webServerUnit = nil;
@@ -55,32 +56,61 @@ static NSString * ErrorUnknow = @"<html> <head><title>错误</title></head> <bod
     {
         __weak typeof(self) weakSelf = self;
         GCDWebServer * server = [GCDWebServer new];
-        [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
+        // asyncProcessBlock
+        [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
+        
             NSLog(@"list request : %@", request.URL.absoluteString);
             NSLog(@"list request : %@", request.URL.path);
             NSString * path = request.URL.path;
             if (path.length > 1) {
                 path = [path substringFromIndex:1];
-            }else{
-                return [GCDWebServerDataResponse responseWithHTML:ErrorUrl];
-            }
-            NSInteger index = [path integerValue];
-            
-            PnrVCEntity * entity = weakSelf.infoArray[index];
-            NSLog(@"index:%li, all: %li, entity:%@", index, weakSelf.infoArray.count, entity);
-            if (entity) {
-                NSMutableString * h5unit = [weakSelf startServerTitle:entity.titleArray json:entity.jsonArray];
-                if (h5unit) {
-                    return [GCDWebServerDataResponse responseWithHTML:h5unit];
-                }else{
-                    return [GCDWebServerDataResponse responseWithHTML:ErrorUnknow];
-                }
+                NSInteger index = [path integerValue];
+                PnrVCEntity * entity = weakSelf.infoArray[index];
+                NSLog(@"index:%li, all: %li, entity:%@", index, weakSelf.infoArray.count, entity);
                 
+                if (entity) {
+                    NSMutableString * h5unit = [weakSelf startServerTitle:entity.titleArray json:entity.jsonArray];
+                    if (h5unit) {
+                        completionBlock([GCDWebServerDataResponse responseWithHTML:h5unit]);
+                    }else{
+                        completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUnknow]);
+                    }
+                }else{
+                    completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorEntity]);
+                }
             }else{
-                return [GCDWebServerDataResponse responseWithHTML:ErrorEntity];
+                completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
             }
-           
         }];
+         
+         
+        //        [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
+        //
+        //            NSLog(@"list request : %@", request.URL.absoluteString);
+        //            NSLog(@"list request : %@", request.URL.path);
+        //            NSString * path = request.URL.path;
+        //            if (path.length > 1) {
+        //                path = [path substringFromIndex:1];
+        //            }else{
+        //                return [GCDWebServerDataResponse responseWithHTML:ErrorUrl];
+        //            }
+        //            NSInteger index = [path integerValue];
+        //
+        //            PnrVCEntity * entity = weakSelf.infoArray[index];
+        //            NSLog(@"index:%li, all: %li, entity:%@", index, weakSelf.infoArray.count, entity);
+        //            if (entity) {
+        //                NSMutableString * h5unit = [weakSelf startServerTitle:entity.titleArray json:entity.jsonArray];
+        //                if (h5unit) {
+        //                    return [GCDWebServerDataResponse responseWithHTML:h5unit];
+        //                }else{
+        //                    return [GCDWebServerDataResponse responseWithHTML:ErrorUnknow];
+        //                }
+        //
+        //            }else{
+        //                return [GCDWebServerDataResponse responseWithHTML:ErrorEntity];
+        //            }
+        //
+        //        }];
         
         [server startWithPort:8080 bonjourName:nil];
         
