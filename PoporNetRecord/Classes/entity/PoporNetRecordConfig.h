@@ -68,10 +68,13 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 
 
 @property (nonatomic        ) PoporNetRecordType recordType;//监测类型
+@property (nonatomic        ) PoporNetRecordType listWebType;//网页显示数据
     
 // Block
 @property (nonatomic, copy  ) BlockPVoid                    freshBlock;
-@property (nonatomic, copy  ) PoporNetRecordRecordTypeBlock recordTypeBlock;
+@property (nonatomic, copy  ) PoporNetRecordRecordTypeBlock recordTypeBlock; // 网络监测类型block
+@property (nonatomic, copy  ) PoporNetRecordRecordTypeBlock listWebTypeBlock; // 网页显示数据block
+
 @property (nonatomic, copy  ) PoporNetRecordNcBlock         presentNCBlock;// 用户更新 presentViewController NC的状态
 
 @property (nonatomic        ) BOOL jsonViewColorBlack;// json详情页面是否使用黑白.

@@ -29,6 +29,7 @@
         instance.listSwitchSimulator = YES;
 
         instance.recordType          = PoporNetRecordAuto;
+        instance.listWebType         = PoporNetRecordAuto;
         UIFont * font                = [UIFont systemFontOfSize:15];
         //NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
         //paraStyle.lineSpacing = 1;
@@ -73,6 +74,15 @@
         _recordType = recordType;
         if (self.recordTypeBlock) {
             self.recordTypeBlock(recordType);
+        }
+    }
+}
+
+- (void)setListWebType:(PoporNetRecordType)listWebType {
+    if (_listWebType == 0 || _listWebType != listWebType) {
+        _listWebType = listWebType;
+        if (self.listWebTypeBlock) {
+            self.listWebTypeBlock(listWebType);
         }
     }
 }

@@ -42,7 +42,12 @@
             instance.config.recordTypeBlock = ^(PoporNetRecordType type) {
                 [weakSelf setRecordType:type];
             };
+            instance.config.listWebTypeBlock = ^(PoporNetRecordType type) {
+                [weakSelf setListWebType:type];
+            };
+            
             instance.config.recordTypeBlock(instance.config.recordType);
+            instance.config.listWebTypeBlock(instance.config.listWebType);
         }
         [PnrServerTool share].infoArray = instance.infoArray;
         
@@ -86,22 +91,11 @@
             pnr.config.freshBlock();
         }
         
-        BOOL isFresh = NO;
-#if TARGET_IPHONE_SIMULATOR
-        if (pnr.config.listSwitchSimulator) {
-            isFresh = YES;
-        }
-#else
-        if (pnr.config.listSwitchIphone) {
-            isFresh = YES;
-        }
-#endif
-        if (isFresh) {
+        if (pnr.isShowListWeb) {
             [entity createListWebH5:pnr.infoArray.count - 1];
             [pnr.listWebH5 insertString:entity.listWebH5 atIndex:0];
             [[PnrServerTool share] startListServer:pnr.listWebH5];
         }
-        
     }
 }
 
@@ -311,6 +305,32 @@
     }else{
         // 默认设置的是隐藏,假如设置的时候,不允许recorde,那么设置为隐藏
         _ballBT.hidden = YES;
+    }
+}
+
+- (void)setListWebType:(PoporNetRecordType)listWebType {
+    switch (listWebType) {
+        case PoporNetRecordAuto:
+#if TARGET_IPHONE_SIMULATOR
+            _showListWeb = YES;
+#else
+            if (IsDebugVersion) {
+                _record = YES;
+            }else{
+                _record = NO;
+            }
+#endif
+            break;
+        case PoporNetRecordEnable:
+            _showListWeb = YES;
+            break;
+            
+        case PoporNetRecordDisable:
+            _showListWeb = NO;
+            break;
+            
+        default:
+            break;
     }
 }
 

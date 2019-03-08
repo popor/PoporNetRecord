@@ -28,6 +28,7 @@ typedef void(^PoporNetRecordBlockPVoid) (void);
 
 // 是否开启监测
 @property (nonatomic, getter=isRecord) BOOL record;
+@property (nonatomic, getter=isShowListWeb) BOOL showListWeb;
 
 // 自定义ballBT可见度, 假如为YES,那么ballBT第一次显示会设置为hidden=YES.
 @property (nonatomic, getter=isCustomBallBtVisible) BOOL customBallBtVisible;
