@@ -18,22 +18,22 @@
 
 #import <PoporFoundation/NSDictionary+tool.h>
 
-static NSString * ErrorUrl = @"<html> <head><title>错误</title></head> <body><p> URL异常 </p> </body></html>";
+static NSString * ErrorUrl    = @"<html> <head><title>错误</title></head> <body><p> URL异常 </p> </body></html>";
 static NSString * ErrorEntity = @"<html> <head><title>错误</title></head> <body><p> 无法找到对应请求 </p> </body></html>";
 static NSString * ErrorUnknow = @"<html> <head><title>错误</title></head> <body><p> 未知bug </p> </body></html>";
 
 @interface PnrServerTool ()
-
+@property (nonatomic, strong) NSMutableString * listH5;
 @end
 
 @implementation PnrServerTool
 
 + (instancetype)share {
     static dispatch_once_t once;
-    static id instance;
+    static PnrServerTool * instance;
     dispatch_once(&once, ^{
-        instance = [self new];
-        
+        instance = [PnrServerTool new];
+        instance.listH5 = [NSMutableString new];
         [GCDWebServer setLogLevel:kGCDWebServerLoggingLevel_Error];
     });
     return instance;
@@ -48,17 +48,14 @@ static NSString * ErrorUnknow = @"<html> <head><title>错误</title></head> <bod
 
 #pragma mark - list server
 - (void)startListServer:(NSString *)body {
+    __weak typeof(self) weakSelf = self;
     
-    if (self.webServerUnit) {
-        [self.webServerUnit stop];
-        self.webServerUnit = nil;
-    }
-    {
-        __weak typeof(self) weakSelf = self;
+    if (!self.webServerUnit) {
         GCDWebServer * server = [GCDWebServer new];
-        // asyncProcessBlock
-        [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
+        self.webServerUnit = server;
         
+        [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
+            
             NSLog(@"list request : %@", request.URL.absoluteString);
             NSLog(@"list request : %@", request.URL.path);
             NSString * path = request.URL.path;
@@ -82,62 +79,28 @@ static NSString * ErrorUnknow = @"<html> <head><title>错误</title></head> <bod
                 completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
             }
         }];
-         
-         
-        //        [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
-        //
-        //            NSLog(@"list request : %@", request.URL.absoluteString);
-        //            NSLog(@"list request : %@", request.URL.path);
-        //            NSString * path = request.URL.path;
-        //            if (path.length > 1) {
-        //                path = [path substringFromIndex:1];
-        //            }else{
-        //                return [GCDWebServerDataResponse responseWithHTML:ErrorUrl];
-        //            }
-        //            NSInteger index = [path integerValue];
-        //
-        //            PnrVCEntity * entity = weakSelf.infoArray[index];
-        //            NSLog(@"index:%li, all: %li, entity:%@", index, weakSelf.infoArray.count, entity);
-        //            if (entity) {
-        //                NSMutableString * h5unit = [weakSelf startServerTitle:entity.titleArray json:entity.jsonArray];
-        //                if (h5unit) {
-        //                    return [GCDWebServerDataResponse responseWithHTML:h5unit];
-        //                }else{
-        //                    return [GCDWebServerDataResponse responseWithHTML:ErrorUnknow];
-        //                }
-        //
-        //            }else{
-        //                return [GCDWebServerDataResponse responseWithHTML:ErrorEntity];
-        //            }
-        //
-        //        }];
         
         [server startWithPort:8080 bonjourName:nil];
-        
-        self.webServerUnit = server;
-    }
-    if (self.webServerList) {
-        [self.webServerList stop];
-        self.webServerList = nil;
     }
     
-    {
-        NSMutableString * h5 = [NSMutableString new];
-        [h5 appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
-        
-        [h5 appendString:body];
-        
-        [h5 appendString:@"</body></html>"];
-        
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.listH5 setString:@""];
+        [self.listH5 appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
+        [self.listH5 appendString:body];
+        [self.listH5 appendString:@"</body></html>"];
+    });
+    
+    if (!self.webServerList) {
         GCDWebServer * server = [GCDWebServer new];
-        [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
-            return [GCDWebServerDataResponse responseWithHTML:h5];
-        }];
-    
-        [server startWithPort:9000 bonjourName:nil];
-        
         self.webServerList = server;
+        
+        [self.webServerList addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
+            completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.listH5]);
+        }];
+        
+        [server startWithPort:9000 bonjourName:nil];
     }
+    
 }
 
 #pragma mark - server
@@ -163,7 +126,6 @@ static NSString * ErrorUnknow = @"<html> <head><title>错误</title></head> <bod
     self.webServerRequest  = [self addIndex:5 port:self.portEntity.requestPortInt array:webServerArray];
     self.webServerResponse = [self addIndex:6 port:self.portEntity.responsePortInt array:webServerArray];
     
-    
     NSString * target = self.portEntity.jsonWindow ? @" target='_blank'" : @"";
     if (!self.webServerAll) {
         h5 = [NSMutableString new];
@@ -187,15 +149,6 @@ static NSString * ErrorUnknow = @"<html> <head><title>错误</title></head> <bod
         }
         
         [h5 appendString:@"</body></html>"];
-        
-//        GCDWebServer * server = [GCDWebServer new];
-//        [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
-//            return [GCDWebServerDataResponse responseWithHTML:h5];
-//        }];
-//        [server startWithPort:self.portEntity.allPortInt bonjourName:nil];
-//        NSLog(@"Visit %@ in your web browser", server.serverURL);
-//
-//        self.webServerAll = server;
     }
     return h5;
 }
@@ -234,12 +187,15 @@ static NSString * ErrorUnknow = @"<html> <head><title>错误</title></head> <bod
 }
 
 - (void)stopServer {
-    
+    [self.webServerList     stop];
+    [self.webServerUnit     stop];
     [self.webServerAll      stop];
     [self.webServerHead     stop];
     [self.webServerRequest  stop];
     [self.webServerResponse stop];
     
+    self.webServerList     = nil;
+    self.webServerUnit     = nil;
     self.webServerAll      = nil;
     self.webServerHead     = nil;
     self.webServerRequest  = nil;

@@ -7,6 +7,8 @@
 
 #import "PnrConfig.h"
 
+#import "PnrServerTool.h"
+
 @interface PnrConfig ()
 // 是否开启监测
 @property (nonatomic) BOOL record;
@@ -116,6 +118,7 @@
                     _showListWeb = YES;
                 }else{
                     _showListWeb = NO;
+                    [self stopListWebEvent];
                 }
 #endif
                 break;
@@ -125,6 +128,7 @@
                 
             case PoporNetRecordDisable:
                 _showListWeb = NO;
+                [self stopListWebEvent];
                 break;
                 
             default:
@@ -132,6 +136,11 @@
         }
         
     }
+}
+
+- (void)stopListWebEvent {
+    PnrServerTool * serverTool = [PnrServerTool share];
+    [serverTool stopServer];
 }
 
 - (BOOL)isRecord {
