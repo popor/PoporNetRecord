@@ -100,8 +100,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     if (self.infoArray.count > index) {
         entity = self.infoArray[index];
     }
-    NSLog(@"index:%li, all: %li, entity:%@", index, self.infoArray.count, entity);
-    
+    //NSLog(@"index:%li, all: %li, entity:%@", index, self.infoArray.count, entity);
     if (entity) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (index != self.lastIndex) {

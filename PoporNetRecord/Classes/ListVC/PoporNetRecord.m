@@ -71,17 +71,23 @@
                 entity.request = [urlString substringFromIndex:entity.domain.length+1];
             }
         }
-        
-        [pnr.infoArray addObject:entity];
-        // 假如在打开界面的时候收到请求,那么刷新数据
-        if (pnr.config.freshBlock) {
-            pnr.config.freshBlock();
+        if (pnr.infoArray.count == 0) {
+            // 当执行了数组清空之后, h5代码清零一次.
+            [pnr.listWebH5 setString:@""];
         }
+        [pnr.infoArray addObject:entity];
+        
         
         if (pnr.config.isShowListWeb) {
+            
             [entity createListWebH5:pnr.infoArray.count - 1];
             [pnr.listWebH5 insertString:entity.listWebH5 atIndex:0];
             [[PnrServerTool share] startListServer:pnr.listWebH5];
+        }
+        
+        // 假如在打开界面的时候收到请求,那么刷新数据
+        if (pnr.config.freshBlock) {
+            pnr.config.freshBlock();
         }
     }
 }
