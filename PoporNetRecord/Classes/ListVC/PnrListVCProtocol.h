@@ -47,7 +47,7 @@ static NSString * PoporNetRecordTextColorColors = @"彩色";
 - (void)clearAction;
 - (void)updateServerBT;
 
-- (void)startServer;
+- (void)editPortAction;
 
 - (void)setRightBarAction;
 - (void)setTextColorAction:(UIBarButtonItem *)sender event:(UIEvent *)event;

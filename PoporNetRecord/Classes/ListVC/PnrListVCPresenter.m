@@ -302,8 +302,31 @@
     }
 }
 
-- (void)startServer {
-    
+- (void)editPortAction {
+    {
+        PnrPortEntity * port = [PnrPortEntity share];
+        UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:@"端口号" message:@"修改后，下次启动生效" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [oneAC addTextFieldWithConfigurationHandler:^(UITextField *textField){
+            
+            textField.placeholder = [NSString stringWithFormat:@"%i", PoporNetRecordPort];
+            textField.text = [NSString stringWithFormat:@"%i", port.portInt];
+        }];
+        
+        UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction * changeAction = [UIAlertAction actionWithTitle:@"修改" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UITextField * nameTF = oneAC.textFields[0];
+            int * portInt = nameTF.text.intValue;
+            if (portInt > 0) {
+                [PnrPortEntity savePort:[NSString stringWithFormat:@"%i", portInt]];
+            }
+        }];
+        
+        [oneAC addAction:cancleAction];
+        [oneAC addAction:changeAction];
+        
+        [self.view.vc presentViewController:oneAC animated:YES completion:nil];
+    }
 }
 
 #pragma mark - Interactor_EventHandler

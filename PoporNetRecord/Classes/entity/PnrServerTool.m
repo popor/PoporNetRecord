@@ -89,7 +89,8 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
                 completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.h5List]);
             }
         }];
-        [server startWithPort:9000 bonjourName:nil];
+        PnrPortEntity * port = [PnrPortEntity share];
+        [server startWithPort:port.portInt bonjourName:nil];
     }
 }
 
