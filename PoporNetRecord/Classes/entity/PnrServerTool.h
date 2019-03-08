@@ -22,17 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSArray * titleArray;
 @property (nonatomic, strong) NSArray * jsonArray;
 
-@property (nonatomic, strong, nullable) GCDWebServer * webServerList;
-@property (nonatomic, strong, nullable) GCDWebServer * webServerUnit;
-
-@property (nonatomic, strong, nullable) GCDWebServer * webServerAll;
-@property (nonatomic, strong, nullable) GCDWebServer * webServerHead;
-@property (nonatomic, strong, nullable) GCDWebServer * webServerRequest;
-@property (nonatomic, strong, nullable) GCDWebServer * webServerResponse;
+@property (nonatomic, strong, nullable) GCDWebServer * webServer;
 
 - (void)startListServer:(NSString *)body;
 
-- (NSMutableString *)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray;
+//- (NSMutableString *)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray;
 
 - (void)stopServer;
 

@@ -44,10 +44,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.serverTool = [PnrServerTool share];
-    [self.serverTool startServerTitle:self.titleArray json:self.jsonArray];
+    //[self.serverTool startServerTitle:self.titleArray json:self.jsonArray];
     
-    [self setWebUrl:self.serverTool.webServerAll.serverURL.absoluteString];
-    [self addQrIV:self.serverTool.webServerAll.serverURL.absoluteString];
+    //[self setWebUrl:self.serverTool.webServerAll.serverURL.absoluteString];
+    //[self addQrIV:self.serverTool.webServerAll.serverURL.absoluteString];
     
     {
         UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(showPnrWebPortVC)];

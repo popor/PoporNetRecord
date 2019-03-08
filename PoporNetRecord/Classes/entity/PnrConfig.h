@@ -11,6 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+static NSString * PnrPathRoot     = @"root";
+static NSString * PnrPathHead     = @"head";
+static NSString * PnrPathRequest  = @"request";
+static NSString * PnrPathResponse = @"response";
+
 typedef NS_ENUM(int, PoporNetRecordType) {
     PoporNetRecordAuto = 1, // 开发环境或者虚拟机环境
     PoporNetRecordEnable, // 全部监测
