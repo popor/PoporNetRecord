@@ -9,10 +9,12 @@
 #import "PnrListVCInteractor.h"
 
 #import "PnrDetailVCRouter.h"
-
+#import "PnrServerTool.h"
 #import "PnrListVCCell.h"
 #import <PoporFoundation/NSString+format.h>
 #import "PnrConfig.h"
+#import <PoporUI/UIDevice+Tool.h>
+#import <PoporUI/UIImage+create.h>
 
 @interface PnrListVCPresenter ()
 
@@ -74,11 +76,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (tableView == self.view.infoTV) {
-        return 10;
-    }else{
-        return 0.1;
-    }
+    return 0.1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -269,6 +267,43 @@
     UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:[self textColorText] style:UIBarButtonItemStylePlain target:self action:@selector(setTextColorAction:event:)];
     UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"清空" style:UIBarButtonItemStylePlain target:self action:@selector(clearAction)];
     self.view.vc.navigationItem.rightBarButtonItems = @[item2, item1];
+}
+
+- (void)updateServerBT {
+    PnrServerTool * tool = [PnrServerTool share];
+    UIButton * oneBT = self.view.serverBT;
+    if (tool.webServer.serverURL) {
+        UIImage * image = [UIImage imageFromColor:PnrColorGreen size:CGSizeMake(10, 10) corner:5];
+        [oneBT setImage:image forState:UIControlStateNormal];
+        
+        NSMutableAttributedString * att = [NSMutableAttributedString new];
+        [att addString:@"  已开启 " font:[UIFont systemFontOfSize:15] color:PnrColorGreen];
+        
+        [att addString:[NSString stringWithFormat:@"%@", tool.webServer.serverURL.absoluteString] font:[UIFont systemFontOfSize:15] color:[UIColor blackColor]];
+        
+        NSString * wifi = [UIDevice getWifiName];
+        if (wifi) {
+            [att addString:@" (" font:[UIFont systemFontOfSize:15] color:[UIColor blackColor]];
+            [att addString:[NSString stringWithFormat:@"%@", wifi] font:[UIFont systemFontOfSize:15] color:PnrColorGreen];
+            [att addString:@") " font:[UIFont systemFontOfSize:15] color:[UIColor blackColor]];
+            
+        }
+        
+        [oneBT setAttributedTitle:att forState:UIControlStateNormal];
+    }else{
+        UIImage * image = [UIImage imageFromColor:PnrColorRed size:CGSizeMake(10, 10) corner:5];
+        [oneBT setImage:image forState:UIControlStateNormal];
+        
+        NSMutableAttributedString * att = [NSMutableAttributedString new];
+        [att addString:@"  未开启 " font:[UIFont systemFontOfSize:15] color:PnrColorRed];
+        [att addString:@"WIFI 或者无法获得IP地址" font:[UIFont systemFontOfSize:15] color:[UIColor blackColor]];
+        
+        [oneBT setAttributedTitle:att forState:UIControlStateNormal];
+    }
+}
+
+- (void)startServer {
+    
 }
 
 #pragma mark - Interactor_EventHandler

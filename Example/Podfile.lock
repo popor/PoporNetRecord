@@ -38,7 +38,6 @@ PODS:
     - PoporNetRecord/DetailVC (= 0.1.00)
     - PoporNetRecord/entity (= 0.1.00)
     - PoporNetRecord/ListVC (= 0.1.00)
-    - PoporNetRecord/WebVC (= 0.1.00)
     - PoporUI/IToast
     - PoporUI/UIImage
     - PoporUI/UINavigationController
@@ -54,7 +53,6 @@ PODS:
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
     - PoporNetRecord/entity
-    - PoporNetRecord/WebVC
     - PoporUI/IToast
     - PoporUI/UIImage
     - PoporUI/UINavigationController
@@ -86,31 +84,12 @@ PODS:
     - PoporFoundation/NSString
     - PoporNetRecord/DetailVC
     - PoporNetRecord/entity
-    - PoporNetRecord/WebVC
-    - PoporUI/IToast
-    - PoporUI/UIImage
-    - PoporUI/UINavigationController
-    - PoporUI/UITextField
-    - PoporUI/UIView
-  - PoporNetRecord/WebVC (0.1.00):
-    - GCDWebServer
-    - GCDWebServer/WebDAV
-    - GCDWebServer/WebUploader
-    - JSONSyntaxHighlight
-    - Masonry
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporFoundation/PrefixCore
-    - PoporNetRecord/entity
-    - PoporQRCodeIos
     - PoporUI/IToast
     - PoporUI/Tool
     - PoporUI/UIImage
     - PoporUI/UINavigationController
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporQRCodeIos (0.0.5)
   - PoporUI/BlockView (0.0.44)
   - PoporUI/IToast (0.0.44):
     - PoporFoundation/NSString
@@ -134,7 +113,6 @@ SPEC REPOS:
     - Masonry
     - PoporAlertBubbleView
     - PoporFoundation
-    - PoporQRCodeIos
     - PoporUI
 
 EXTERNAL SOURCES:
@@ -147,8 +125,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporAlertBubbleView: aea73e383fca9d7dedda533fac160c9e66c720cf
   PoporFoundation: cff730f97d34e15721657efb6c144d5eeb297180
-  PoporNetRecord: 530a8cbbe3d1ccc5f6ef5f7ee5a21ef6bc5698d9
-  PoporQRCodeIos: c084b3873b2df1c86be06ad7d62574b994eaf8e2
+  PoporNetRecord: 6f22df1a83f11cd114abb6a764e9b176b82b693a
   PoporUI: 76f897c3acd3d4a8f90a0b79df444dd14d167d67
 
 PODFILE CHECKSUM: e00cc688498f763e5e96216baf21dedc61801ba7

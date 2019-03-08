@@ -21,6 +21,7 @@
 
 @implementation PnrListVC
 @synthesize infoTV;
+@synthesize serverBT;
 @synthesize weakInfoArray;
 @synthesize closeBlock;
 
@@ -98,7 +99,8 @@
 
 #pragma mark - views
 - (void)addViews {
-    self.infoTV = [self addTVs];
+    [self addServerBT];
+    self.infoTV   = [self addTVs];
     if ([self.navigationController.viewControllers indexOfObject:self] == 0) {
         UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self.present action:@selector(closeAction)];
         self.navigationItem.leftBarButtonItems = @[item1];
@@ -122,7 +124,10 @@
     [self.view addSubview:oneTV];
     
     [oneTV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(self.serverBT.mas_bottom);
+        make.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
     }];
     
     return oneTV;
@@ -150,6 +155,46 @@
     oneTV.backgroundColor = [UIColor clearColor];
     
     return oneTV;
+}
+
+- (void)addServerBT {
+    self.serverBT = ({
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(0, 0, 0, 40);
+        [button setBackgroundColor:[UIColor whiteColor]];
+        button.titleLabel.font = [UIFont systemFontOfSize:15];
+        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        button.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 15);
+        
+        button.userInteractionEnabled = NO;
+        button.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+        
+        [self.view addSubview:button];
+        button;
+    });
+    
+    [self.serverBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(self.navigationController.topMargin);
+        
+        make.right.mas_equalTo(0);
+        make.height.mas_equalTo(self.serverBT.frame.size.height);
+    }];
+    
+    {
+        UIView * lineView = [UIView new];
+        lineView.backgroundColor = ColorTV_separator;
+        
+        [self.serverBT addSubview:lineView];
+        
+        [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(0);
+            make.right.mas_equalTo(0);
+            make.height.mas_equalTo(0.5);
+            make.bottom.mas_equalTo(0);
+        }];
+    }
+    [self.present updateServerBT];
 }
 
 @end

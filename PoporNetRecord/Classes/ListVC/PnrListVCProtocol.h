@@ -21,6 +21,7 @@ static NSString * PoporNetRecordTextColorColors = @"彩色";
 
 // self   : 自己的
 @property (nonatomic, strong) UITableView     * infoTV;
+@property (nonatomic, strong) UIButton        * serverBT;
 @property (nonatomic, copy  ) BlockPVoid      closeBlock;
 
 @property (nonatomic, strong) AlertBubbleView * alertBubbleView;
@@ -44,6 +45,9 @@ static NSString * PoporNetRecordTextColorColors = @"彩色";
 
 - (void)closeAction;
 - (void)clearAction;
+- (void)updateServerBT;
+
+- (void)startServer;
 
 - (void)setRightBarAction;
 - (void)setTextColorAction:(UIBarButtonItem *)sender event:(UIEvent *)event;

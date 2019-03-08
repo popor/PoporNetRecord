@@ -17,7 +17,6 @@
 @property (nonatomic, strong) UITableView * infoTV;
 @property (nonatomic        ) int selectRow;
 @property (nonatomic, strong) UIMenuController * menu;
-@property (nonatomic, strong) UIButton * serverBT;
 
 // inject : 外部注入的
 @property (nonatomic, strong) NSArray * jsonArray;
@@ -35,8 +34,6 @@
 @protocol PnrDetailVCEventHandler <NSObject>
 
 - (void)copyAction;
-- (void)pushWebVC;
-- (void)startServer;
 
 @end
 

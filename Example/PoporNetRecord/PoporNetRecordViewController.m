@@ -96,7 +96,7 @@
         [PoporNetRecord addUrl:@"http://www.baidu.com/TestText2232423234?a=32&b=1234567890" title:@"测试数据" method:@"GET" head:@"head" request:@"request" response:@"responseText"];
     });
     
-    for (int i=0; i<20; i++) {
+    for (int i=0; i<0; i++) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((2+ i*1) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSString * autoTitle = [NSString stringWithFormat:@"测试数据:%i", i+1];
             NSLog(@"auto title : %@ ", autoTitle);

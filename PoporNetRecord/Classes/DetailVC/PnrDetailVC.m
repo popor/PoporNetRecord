@@ -31,7 +31,6 @@
 @synthesize cellAttArray;
 @synthesize selectRow;
 @synthesize menu;
-@synthesize serverBT;
 
 - (instancetype)initWithDic:(NSDictionary *)dic {
     if (self = [super init]) {
@@ -67,7 +66,6 @@
     }
     
     [self addViews];
-    [self.present startServer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,7 +88,6 @@
 
 #pragma mark - views
 - (void)addViews {
-    [self addServerBT];
     self.infoTV = [self addTVs];
     self.infoTV.separatorInset = UIEdgeInsetsMake(0, 14, 0, 14);
     
@@ -101,53 +98,8 @@
     
     {
         UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"复制" style:UIBarButtonItemStylePlain target:self.present action:@selector(copyAction)];
-        UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"Web" style:UIBarButtonItemStylePlain target:self.present action:@selector(pushWebVC)];
         
-        self.navigationItem.rightBarButtonItems = @[item1, item2];
-    }
-}
-
-- (void)addServerBT {
-    self.serverBT = ({
-        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(0, 0, 0, 40);
-        [button setBackgroundColor:[UIColor whiteColor]];
-        button.titleLabel.font = [UIFont systemFontOfSize:15];
-        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        button.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 15);
-        
-        button.userInteractionEnabled = NO;
-        button.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-        
-        [self.view addSubview:button];
-        button;
-    });
-    
-    [self.serverBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.top.mas_equalTo(self.navigationController.topMargin);
-        
-        make.right.mas_equalTo(0);        
-        if (self.portEntity.detailVCStartServer) {
-            make.height.mas_equalTo(self.serverBT.frame.size.height);
-        }else{
-            make.height.mas_equalTo(0);
-            self.serverBT.hidden = YES;
-        }
-    }];
-    
-    {
-        UIView * lineView = [UIView new];
-        lineView.backgroundColor = ColorTV_separator;
-        
-        [self.serverBT addSubview:lineView];
-        
-        [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(0);
-            make.right.mas_equalTo(0);
-            make.height.mas_equalTo(0.5);
-            make.bottom.mas_equalTo(0);
-        }];
+        self.navigationItem.rightBarButtonItems = @[item1];
     }
 }
 
@@ -167,10 +119,7 @@
     [self.view addSubview:oneTV];
     
     [oneTV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.top.mas_equalTo(self.serverBT.mas_bottom);
-        make.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(0);
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
     oneTV.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);

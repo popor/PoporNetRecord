@@ -44,11 +44,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PoporQRCodeIos.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>PoporUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>

@@ -68,33 +68,9 @@
       "source_files": "PoporNetRecord/Classes/entity/*.{h,m}"
     },
     {
-      "name": "WebVC",
-      "dependencies": {
-        "PoporNetRecord/entity": [
-
-        ],
-        "PoporFoundation/NSString": [
-
-        ],
-        "PoporFoundation/PrefixCore": [
-
-        ],
-        "PoporUI/Tool": [
-
-        ],
-        "PoporQRCodeIos": [
-
-        ]
-      },
-      "source_files": "PoporNetRecord/Classes/WebVC/*.{h,m}"
-    },
-    {
       "name": "DetailVC",
       "dependencies": {
         "PoporNetRecord/entity": [
-
-        ],
-        "PoporNetRecord/WebVC": [
 
         ]
       },
@@ -109,7 +85,7 @@
         "PoporNetRecord/DetailVC": [
 
         ],
-        "PoporNetRecord/WebVC": [
+        "PoporUI/Tool": [
 
         ],
         "PoporAlertBubbleView": [

@@ -25,21 +25,8 @@ Pod::Spec.new do |s|
         ss.source_files = 'PoporNetRecord/Classes/entity/*.{h,m}'
     end
     
-    # 基础2
-    s.subspec 'WebVC' do |ss|
-      ss.dependency 'PoporNetRecord/entity'
-      
-      ss.dependency 'PoporFoundation/NSString'
-      ss.dependency 'PoporFoundation/PrefixCore'
-      ss.dependency 'PoporUI/Tool'
-      ss.dependency 'PoporQRCodeIos'
-      
-      ss.source_files = 'PoporNetRecord/Classes/WebVC/*.{h,m}'
-    end
-    
     s.subspec 'DetailVC' do |ss|
       ss.dependency 'PoporNetRecord/entity'
-      ss.dependency 'PoporNetRecord/WebVC'
       
       ss.source_files = 'PoporNetRecord/Classes/DetailVC/*.{h,m}'
     end
@@ -47,8 +34,7 @@ Pod::Spec.new do |s|
     s.subspec 'ListVC' do |ss|
         ss.dependency 'PoporNetRecord/entity'
         ss.dependency 'PoporNetRecord/DetailVC'
-        ss.dependency 'PoporNetRecord/WebVC'
-        
+        ss.dependency 'PoporUI/Tool'
         ss.dependency 'PoporAlertBubbleView'
         
         ss.source_files = 'PoporNetRecord/Classes/ListVC/*.{h,m}'

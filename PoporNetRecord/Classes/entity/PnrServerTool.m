@@ -89,14 +89,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
                 completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.h5List]);
             }
         }];
-        
         [server startWithPort:9000 bonjourName:nil];
-        NSString * baseUrl = server.serverURL.absoluteString;
-        if (baseUrl.length > 6) {
-            baseUrl = [baseUrl substringToIndex:baseUrl.length - 6];
-        }
-        weakSelf.portEntity.baseUrl = baseUrl;
-        NSLog(@"baseUrl: %@", baseUrl);
     }
 }
 
@@ -145,8 +138,6 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         
         NSMutableString * h5;
         
-        NSString * target = self.portEntity.jsonWindow ? @" target='_blank'" : @"";
-        
         h5 = [NSMutableString new];
         [h5 appendString:@"<html> <head><title>请求详情</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
         for (int i=0; i<self.titleArray.count; i++) {
@@ -172,9 +163,9 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             }
             if (secondPath) {
                 if ([content isKindOfClass:[NSDictionary class]]) {
-                    [h5 appendFormat:@"<p><a href='/%li/%@'%@>%@</a> %@</p>", index, secondPath, target, title, [(NSDictionary *)content toJsonString]];
+                    [h5 appendFormat:@"<p><a href='/%li/%@'>%@</a> %@</p>", index, secondPath, title, [(NSDictionary *)content toJsonString]];
                 }else if([content isKindOfClass:[NSString class]]) {
-                    [h5 appendFormat:@"<p><a href='/%li/%@'%@>%@</a> %@</p>", index, secondPath, target, title, (NSString *)content];
+                    [h5 appendFormat:@"<p><a href='/%li/%@'>%@</a> %@</p>", index, secondPath, title, (NSString *)content];
                 }else{
                     [h5 appendFormat:@"<p>%@ NULL</p>", title];
                 }
