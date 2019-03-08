@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^PnrVCEntityBlock) (NSArray *titleArray, NSArray *jsonArray, NSMutableArray *cellAttArray);
+
 @interface PnrVCEntity : NSObject
 
 @property (nonatomic, strong) NSString * title;
@@ -26,6 +28,11 @@
 
 //@property (nonatomic        ) float cellH;
 
-- (void)createListWebH5;
+- (void)createListWebH5:(NSInteger)index;
+
+- (NSArray *)titleArray;
+- (NSArray *)jsonArray;
+
+- (void)getJsonArrayBlock:(PnrVCEntityBlock)finish;
 
 @end

@@ -16,11 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)share;
 
 @property (nonatomic, weak  ) PnrPortEntity * portEntity;
+@property (nonatomic, weak  ) NSMutableArray * infoArray; // PoporNetRecord.infoArray
+
 #pragma mark - server
 @property (nonatomic, strong) NSArray * titleArray;
 @property (nonatomic, strong) NSArray * jsonArray;
 
 @property (nonatomic, strong, nullable) GCDWebServer * webServerList;
+@property (nonatomic, strong, nullable) GCDWebServer * webServerUnit;
+
 @property (nonatomic, strong, nullable) GCDWebServer * webServerAll;
 @property (nonatomic, strong, nullable) GCDWebServer * webServerHead;
 @property (nonatomic, strong, nullable) GCDWebServer * webServerRequest;
@@ -28,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)startListServer:(NSString *)body;
 
-- (void)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray;
+- (NSMutableString *)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray;
 
 - (void)stopServer;
 

@@ -44,6 +44,8 @@
             };
             instance.config.recordTypeBlock(instance.config.recordType);
         }
+        [PnrServerTool share].infoArray = instance.infoArray;
+        
     });
     return instance;
 }
@@ -77,8 +79,8 @@
         //if (pnr.infoArray.count >= pnr.config.recordMaxNum) {
         //    [pnr.infoArray removeLastObject];
         //}
-        // 插入到第一条
-        [pnr.infoArray insertObject:entity atIndex:0];
+        
+        [pnr.infoArray addObject:entity];
         // 假如在打开界面的时候收到请求,那么刷新数据
         if (pnr.config.freshBlock) {
             pnr.config.freshBlock();
@@ -95,7 +97,7 @@
         }
 #endif
         if (isFresh) {
-            [entity createListWebH5];
+            [entity createListWebH5:pnr.infoArray.count - 1];
             [pnr.listWebH5 insertString:entity.listWebH5 atIndex:0];
             [[PnrServerTool share] startListServer:pnr.listWebH5];
         }

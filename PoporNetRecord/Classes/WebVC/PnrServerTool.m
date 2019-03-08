@@ -18,9 +18,11 @@
 
 #import <PoporFoundation/NSDictionary+tool.h>
 
-@interface PnrServerTool ()
+static NSString * ErrorUrl = @"<html> <head><title>错误</title></head> <body><p> URL异常 </p> </body></html>";
+static NSString * ErrorEntity = @"<html> <head><title>错误</title></head> <body><p> 无法找到对应请求 </p> </body></html>";
+static NSString * ErrorUnknow = @"<html> <head><title>错误</title></head> <body><p> 未知bug </p> </body></html>";
 
-@property (nonatomic, getter=isRun) BOOL run;
+@interface PnrServerTool ()
 
 @end
 
@@ -46,10 +48,49 @@
 
 #pragma mark - list server
 - (void)startListServer:(NSString *)body {
+    if (self.webServerUnit) {
+        [self.webServerUnit stop];
+        self.webServerUnit = nil;
+    }
+    {
+        __weak typeof(self) weakSelf = self;
+        GCDWebServer * server = [GCDWebServer new];
+        [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
+            NSLog(@"list request : %@", request.URL.absoluteString);
+            NSLog(@"list request : %@", request.URL.path);
+            NSString * path = request.URL.path;
+            if (path.length > 1) {
+                path = [path substringFromIndex:1];
+            }else{
+                return [GCDWebServerDataResponse responseWithHTML:ErrorUrl];
+            }
+            NSInteger index = [path integerValue];
+            
+            PnrVCEntity * entity = weakSelf.infoArray[index];
+            NSLog(@"index:%li, all: %li, entity:%@", index, weakSelf.infoArray.count, entity);
+            if (entity) {
+                NSMutableString * h5unit = [weakSelf startServerTitle:entity.titleArray json:entity.jsonArray];
+                if (h5unit) {
+                    return [GCDWebServerDataResponse responseWithHTML:h5unit];
+                }else{
+                    return [GCDWebServerDataResponse responseWithHTML:ErrorUnknow];
+                }
+                
+            }else{
+                return [GCDWebServerDataResponse responseWithHTML:ErrorEntity];
+            }
+           
+        }];
+        
+        [server startWithPort:8080 bonjourName:nil];
+        
+        self.webServerUnit = server;
+    }
     if (self.webServerList) {
         [self.webServerList stop];
         self.webServerList = nil;
     }
+    
     {
         NSMutableString * h5 = [NSMutableString new];
         [h5 appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
@@ -62,30 +103,28 @@
         [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
             return [GCDWebServerDataResponse responseWithHTML:h5];
         }];
+    
         [server startWithPort:9000 bonjourName:nil];
-        //NSLog(@"Visit %@ in your web browser", server.serverURL);
         
         self.webServerList = server;
     }
-    
 }
 
 #pragma mark - server
-- (void)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray {
-    if (!self.isRun) {
-        if (titleArray.count == jsonArray.count) {
-            self.run        = YES;
-            self.titleArray = titleArray;
-            self.jsonArray  = jsonArray;
-            
-            [self addServer];
-        }else{
-            AlertToastTitle(@"无法开启服务，titleArray与jsonArray数组不一致");
-        }
+- (NSMutableString *)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray {
+    if (titleArray.count == jsonArray.count) {
+        self.titleArray = titleArray;
+        self.jsonArray  = jsonArray;
+        
+        return [self addServer];
+    }else{
+        AlertToastTitle(@"无法开启服务，titleArray与jsonArray数组不一致");
+        return nil;
     }
 }
 
-- (void)addServer {
+- (NSMutableString *)addServer {
+    NSMutableString * h5;
     
     NSMutableArray * webServerArray = [NSMutableArray new];
     [webServerArray addObjectsFromArray:@[[NSNull null], [NSNull null], [NSNull null], [NSNull null]]];
@@ -97,7 +136,7 @@
     
     NSString * target = self.portEntity.jsonWindow ? @" target='_blank'" : @"";
     if (!self.webServerAll) {
-        NSMutableString * h5 = [NSMutableString new];
+        h5 = [NSMutableString new];
         [h5 appendString:@"<html> <head><title>请求详情</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
         for (int i=0; i<self.titleArray.count; i++) {
             NSString * title         = self.titleArray[i];
@@ -119,15 +158,16 @@
         
         [h5 appendString:@"</body></html>"];
         
-        GCDWebServer * server = [GCDWebServer new];
-        [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
-            return [GCDWebServerDataResponse responseWithHTML:h5];
-        }];
-        [server startWithPort:self.portEntity.allPortInt bonjourName:nil];
-        NSLog(@"Visit %@ in your web browser", server.serverURL);
-        
-        self.webServerAll = server;
+//        GCDWebServer * server = [GCDWebServer new];
+//        [server addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
+//            return [GCDWebServerDataResponse responseWithHTML:h5];
+//        }];
+//        [server startWithPort:self.portEntity.allPortInt bonjourName:nil];
+//        NSLog(@"Visit %@ in your web browser", server.serverURL);
+//
+//        self.webServerAll = server;
     }
+    return h5;
 }
 
 - (GCDWebServer *)addIndex:(int)index port:(int)port array:(NSMutableArray *)array {
@@ -174,8 +214,6 @@
     self.webServerHead     = nil;
     self.webServerRequest  = nil;
     self.webServerResponse = nil;
-    
-    self.run               = NO;
 }
 
 @end

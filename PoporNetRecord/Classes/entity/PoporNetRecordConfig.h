@@ -48,6 +48,13 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 @property (nonatomic, strong) UIColor * listColorDomain;// 域名
 @property (nonatomic, strong) UIColor * listColorTime;// 时间
 
+
+@property (nonatomic, strong) NSString * listColorTitleHex;// 标题
+@property (nonatomic, strong) NSString * listColorRequestHex;// 请求
+@property (nonatomic, strong) NSString * listColorDomainHex;// 域名
+@property (nonatomic, strong) NSString * listColorTimeHex;// 时间
+
+
 @property (nonatomic, strong) UIColor * listColorCell0;// 列表偶数行背景色
 @property (nonatomic, strong) UIColor * listColorCell1;// 列表奇数行背景色
 
@@ -72,6 +79,11 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 + (instancetype)share;
 
 - (void)updateListCellHeight;
+
+- (NSString *)listColorTitleHex;
+- (NSString *)listColorRequestHex;
+- (NSString *)listColorDomainHex;
+- (NSString *)listColorTimeHex;
 
 @end
 

@@ -11,7 +11,6 @@
 #import "PnrDetailVCRouter.h"
 
 #import "PnrListVCCell.h"
-#import <JSONSyntaxHighlight/JSONSyntaxHighlight.h>
 #import <PoporFoundation/NSString+format.h>
 #import "PoporNetRecordConfig.h"
 
@@ -102,7 +101,7 @@
             cell = [[PnrListVCCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellID];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
-        PnrVCEntity * entity = self.view.weakInfoArray[indexPath.row];
+        PnrVCEntity * entity = self.view.weakInfoArray[self.view.weakInfoArray.count -  indexPath.row - 1];
         
         if (entity.title) {
             NSMutableAttributedString * att = [NSMutableAttributedString new];
@@ -160,63 +159,20 @@
     if (tableView == self.view.infoTV) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
-        PnrVCEntity * entity = self.view.weakInfoArray[indexPath.row];
-        //NSString * requestDes  = [self replaceUnicode:[entity.requestDic description]];
-        //NSString * responseDes = [self replaceUnicode:[entity.responseDic description]];
-        NSString * title;
-        if (entity.title) {
-            title = [NSString stringWithFormat:@" %@\n%@", entity.title, entity.request];
-        }else{
-            title = [NSString stringWithFormat:@" \n%@",entity.request];
-        }
-        NSArray * titleArray = @[[NSString stringWithFormat:@"接口:%@", title],
-                                 [NSString stringWithFormat:@"链接:\n%@", entity.url],
-                                 [NSString stringWithFormat:@"时间:\n%@", entity.time],
-                                 [NSString stringWithFormat:@"方法:\n%@", entity.method],
-                                 
-                                 @"head参数:\n",
-                                 @"请求参数:\n",
-                                 @"返回数据:\n",
-                                 ];
-        NSArray * jsonArray = @[[NSNull null],
-                                [NSNull null],
-                                [NSNull null],
-                                [NSNull null],
-                                
-                                entity.headValue ?:[NSNull null],
-                                entity.requesValue ?:[NSNull null],
-                                entity.responseValue ?:[NSNull null],
-                                ];
+        PnrVCEntity * entity = self.view.weakInfoArray[self.view.weakInfoArray.count -  indexPath.row - 1];
         
-        
-        NSMutableArray * cellAttArray = [NSMutableArray new];
-        for (int i = 0; i<jsonArray.count; i++) {
-            NSDictionary * json = jsonArray[i];
+        __weak typeof(self) weakSelf = self;
+        [entity getJsonArrayBlock:^(NSArray *titleArray, NSArray *jsonArray, NSMutableArray *cellAttArray) {
             
-            NSMutableAttributedString * cellAtt = [[NSMutableAttributedString alloc] initWithString:titleArray[i] attributes:self.config.titleAttributes];
-            
-            if (json) {
-                if ([json isKindOfClass:[NSDictionary class]]) {
-                    JSONSyntaxHighlight *jsh = [[JSONSyntaxHighlight alloc] initWithJSON:json];
-                    jsh.keyAttributes       = self.config.keyAttributes;
-                    jsh.stringAttributes    = self.config.stringAttributes;
-                    jsh.nonStringAttributes = self.config.nonStringAttributes;
-                    NSAttributedString * jsonAtt = [jsh highlightJSON];
-                    [cellAtt appendAttributedString:jsonAtt];
-                }else if ([json isKindOfClass:[NSString class]]) {
-                    [cellAtt addString:(NSString *)json font:nil color:[UIColor darkGrayColor]];
-                }
-            }
-            
-            [cellAttArray addObject:cellAtt];
-        }
-        NSDictionary * vcDic = @{
-                                 @"title":@"请求详情",
-                                 @"jsonArray":jsonArray,
-                                 @"titleArray":titleArray,
-                                 @"cellAttArray":cellAttArray,
-                                 };
-        [self.view.vc.navigationController pushViewController:[PnrDetailVCRouter vcWithDic:vcDic] animated:YES];
+            NSDictionary * vcDic = @{
+                                     @"title":@"请求详情",
+                                     @"jsonArray":jsonArray,
+                                     @"titleArray":titleArray,
+                                     @"cellAttArray":cellAttArray,
+                                     };
+            [weakSelf.view.vc.navigationController pushViewController:[PnrDetailVCRouter vcWithDic:vcDic] animated:YES];
+        }];
+       
     }else{
         if (indexPath.row == 0) {
             [self save__textColor:PoporNetRecordTextColorColors];
