@@ -66,20 +66,21 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 @property (nonatomic, strong) NSDictionary * stringAttributes;// value string颜色
 @property (nonatomic, strong) NSDictionary * nonStringAttributes;// value int颜色
 
-
 @property (nonatomic        ) PoporNetRecordType recordType;//监测类型
 @property (nonatomic        ) PoporNetRecordType listWebType;//网页显示数据
-    
-// Block
-@property (nonatomic, copy  ) BlockPVoid                    freshBlock;
-@property (nonatomic, copy  ) PoporNetRecordRecordTypeBlock recordTypeBlock; // 网络监测类型block
-@property (nonatomic, copy  ) PoporNetRecordRecordTypeBlock listWebTypeBlock; // 网页显示数据block
 
+@property (nonatomic, copy  ) BlockPVoid                    freshBlock;
 @property (nonatomic, copy  ) PoporNetRecordNcBlock         presentNCBlock;// 用户更新 presentViewController NC的状态
 
 @property (nonatomic        ) BOOL jsonViewColorBlack;// json详情页面是否使用黑白.
-    
+
+// 自定义ballBT可见度, 假如为YES,那么ballBT第一次显示会设置为hidden=YES.
+@property (nonatomic, getter=isCustomBallBtVisible) BOOL customBallBtVisible;
+
 + (instancetype)share;
+
+- (BOOL)isRecord;
+- (BOOL)isShowListWeb;
 
 - (void)updateListCellHeight;
 

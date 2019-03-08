@@ -1,5 +1,5 @@
 //
-//  NetMonitorTool.m
+//  PoporNetRecord.m
 //  PoporNetRecord
 //
 //  Created by apple on 2018/5/16.
@@ -32,24 +32,15 @@
     static PoporNetRecord * instance;
     dispatch_once(&once, ^{
         instance = [self new];
-        instance.sBallHideWidth = 10;
-        instance.sBallWidth     = 80;
-        instance.infoArray      = [NSMutableArray new];
-        instance.listWebH5      = [NSMutableString new];
-        {
-            instance.config = [PnrConfig share];
-            __weak typeof(instance) weakSelf = instance;
-            instance.config.recordTypeBlock = ^(PoporNetRecordType type) {
-                [weakSelf setRecordType:type];
-            };
-            instance.config.listWebTypeBlock = ^(PoporNetRecordType type) {
-                [weakSelf setListWebType:type];
-            };
-            
-            instance.config.recordTypeBlock(instance.config.recordType);
-            instance.config.listWebTypeBlock(instance.config.listWebType);
-        }
+        instance.infoArray = [NSMutableArray new];
+        instance.listWebH5 = [NSMutableString new];
+        
+        instance.config    = [PnrConfig share];
+        instance.view      = [PnrView share];
+        
+        // 相关联的关联数组
         [PnrServerTool share].infoArray = instance.infoArray;
+        instance.view.infoArray = instance.infoArray;
         
     });
     return instance;
@@ -63,7 +54,7 @@
 + (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue
 {
     PoporNetRecord * pnr = [PoporNetRecord share];
-    if (pnr.isRecord) {
+    if (pnr.config.isRecord) {
         PnrVCEntity * entity = [PnrVCEntity new];
         entity.title         = title;
         entity.url           = urlString;
@@ -80,10 +71,6 @@
                 entity.request = [urlString substringFromIndex:entity.domain.length+1];
             }
         }
-        // 移除超出限制的数据请求
-        //if (pnr.infoArray.count >= pnr.config.recordMaxNum) {
-        //    [pnr.infoArray removeLastObject];
-        //}
         
         [pnr.infoArray addObject:entity];
         // 假如在打开界面的时候收到请求,那么刷新数据
@@ -91,253 +78,12 @@
             pnr.config.freshBlock();
         }
         
-        if (pnr.isShowListWeb) {
+        if (pnr.config.isShowListWeb) {
             [entity createListWebH5:pnr.infoArray.count - 1];
             [pnr.listWebH5 insertString:entity.listWebH5 atIndex:0];
             [[PnrServerTool share] startListServer:pnr.listWebH5];
         }
     }
-}
-
-- (void)addViews {
-    if (self.window) {
-        return;
-    }
-    self.window = [[UIApplication sharedApplication] keyWindow];
-    self.ballBT = ({
-        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame =  CGRectMake(0, 0, self.sBallWidth, self.sBallWidth);
-        [button setTitle:@"网络请求" forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [button setBackgroundColor:[UIColor brownColor]];
-        button.titleLabel.font = [UIFont systemFontOfSize:15];
-        
-        button.layer.cornerRadius = button.frame.size.width/2;
-        button.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        button.layer.borderWidth = 1;
-        button.clipsToBounds = YES;
-        
-        [self.window addSubview:button];
-        
-        [button addTarget:self action:@selector(showPnrListVCNC) forControlEvents:UIControlEventTouchUpInside];
-        
-        button;
-    });
-    NSString * pointString = [self getBallPoint];
-    if (pointString) {
-        self.ballBT.center = CGPointFromString(pointString);
-    }else{
-        self.ballBT.center = CGPointMake(self.ballBT.width/2- self.sBallHideWidth, 180);
-    }
-    if (self.isCustomBallBtVisible) {
-        self.ballBT.hidden = YES;
-    }else{
-        self.ballBT.alpha = self.config.normalAlpha;
-    }
-    
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGR:)];
-    [self.ballBT addGestureRecognizer:pan];
-}
-
-- (void)showPnrListVCNC {
-    if (!self.isCustomBallBtVisible) {
-        self.ballBT.hidden = YES;
-    }
-    UINavigationController * oneNC = [[UINavigationController alloc] initWithRootViewController:[self getPnrListVC]];
-    oneNC.navigationBar.translucent = NO;
-    
-    if (self.config.presentNCBlock) {
-        self.config.presentNCBlock(oneNC);
-    }
-    if (self.window.rootViewController.presentationController && self.window.rootViewController.presentedViewController) {
-        [self.window.rootViewController.presentedViewController presentViewController:oneNC animated:YES completion:nil];
-    }else{
-        [self.window.rootViewController presentViewController:oneNC animated:YES completion:nil];
-    }
-    oneNC.interactivePopGestureRecognizer.delegate = self;
-    
-    // 打开block事件
-    if (self.openBlock) {
-        self.openBlock();
-    }
-    self.nc = oneNC;
-}
-
-- (UIViewController *)getPnrListVC {
-    __weak typeof(self) weakSelf = self;
-    BlockPVoid closeBlock = ^() {
-        if (weakSelf.isRecord) {
-            if (!weakSelf.isCustomBallBtVisible) {
-                weakSelf.ballBT.hidden = NO;
-            }
-        }
-        if (weakSelf.closeBlock) {
-            weakSelf.closeBlock();
-        }
-    };
-    UIViewController * vc = [PnrListVCRouter vcWithDic:@{@"title":@"网络请求", @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock}];
-    
-    return vc;
-}
-
-#pragma mark - Action
-// 侧滑返回判断
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    if (gestureRecognizer == self.nc.interactivePopGestureRecognizer) {
-        if (self.nc.viewControllers.count == 1) {
-            [self.nc dismissViewControllerAnimated:YES completion:nil];
-            return NO;
-        }else{
-            return YES;
-        }
-    }else{
-        return YES;
-    }
-}
-
-// 球移动轨迹
-- (void)panGR:(UIPanGestureRecognizer *)gr {
-    CGPoint panPoint = [gr locationInView:[[UIApplication sharedApplication] keyWindow]];
-    //NSLog(@"panPoint: %f-%f", panPoint.x, panPoint.y);
-    if (gr.state == UIGestureRecognizerStateBegan) {
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(resignActive) object:nil];
-        [self becomeActive];
-    } else if (gr.state == UIGestureRecognizerStateChanged) {
-        [self changeSBallViewFrameWithPoint:panPoint];
-    } else if (gr.state == UIGestureRecognizerStateEnded || gr.state == UIGestureRecognizerStateCancelled || gr.state == UIGestureRecognizerStateFailed) {
-        [self resignActive];
-    }
-}
-
-- (void)becomeActive {
-    self.ballBT.alpha = self.config.activeAlpha;
-}
-
-- (void)resignActive {
-    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:2.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.ballBT.alpha = self.config.normalAlpha;
-        // Calculate End Point
-        CGFloat x = self.ballBT.center.x;
-        CGFloat y = self.ballBT.center.y;
-        CGFloat x1 = LL_SCREEN_WIDTH / 2.0;
-        CGFloat y1 = LL_SCREEN_HEIGHT / 2.0;
-        
-        CGFloat distanceX = x1 > x ? x : LL_SCREEN_WIDTH - x;
-        CGFloat distanceY = y1 > y ? y : LL_SCREEN_HEIGHT - y;
-        CGPoint endPoint = CGPointZero;
-        
-        if (distanceX <= distanceY) {
-            // animation to left or right
-            endPoint.y = y;
-            if (x1 < x) {
-                // to right
-                endPoint.x = LL_SCREEN_WIDTH - self.ballBT.frame.size.width / 2.0 + self.sBallHideWidth;
-            } else {
-                // to left
-                endPoint.x = self.ballBT.frame.size.width / 2.0 - self.sBallHideWidth;
-            }
-        } else {
-            // animation to top or bottom
-            endPoint.x = x;
-            if (y1 < y) {
-                // to bottom
-                endPoint.y = LL_SCREEN_HEIGHT - self.ballBT.frame.size.height / 2.0 + self.sBallHideWidth;
-            } else {
-                // to top
-                endPoint.y = self.ballBT.frame.size.height / 2.0 - self.sBallHideWidth;
-            }
-        }
-        self.ballBT.center = endPoint;
-        
-        [self saveBallPoint:NSStringFromCGPoint(endPoint)];
-    } completion:nil];
-}
-
-- (void)changeSBallViewFrameWithPoint:(CGPoint)point {
-    self.ballBT.center = CGPointMake(point.x, point.y);
-}
-
-#pragma mark - 记录按钮位置
-- (void)saveBallPoint:(NSString *)BallPoint {
-    [[NSUserDefaults standardUserDefaults] setObject:BallPoint forKey:@"BallPoint"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (NSString *)getBallPoint {
-    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:@"BallPoint"];
-    return info;
-}
-
-// 开关
-- (void)setRecordType:(PoporNetRecordType)recordType {
-    switch (recordType) {
-        case PoporNetRecordAuto:
-#if TARGET_IPHONE_SIMULATOR
-            _record = YES;
-#else
-            if (IsDebugVersion) {
-                _record = YES;
-            }else{
-                _record = NO;
-            }
-#endif
-            break;
-        case PoporNetRecordEnable:
-            _record = YES;
-            break;
-            
-        case PoporNetRecordDisable:
-            _record = NO;
-            break;
-            
-        default:
-            break;
-    }
-    if (_record) {
-        if (!_window) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self addViews];
-            });
-        }
-        if (!_customBallBtVisible) {
-            _ballBT.hidden = NO;
-        }
-    }else{
-        // 默认设置的是隐藏,假如设置的时候,不允许recorde,那么设置为隐藏
-        _ballBT.hidden = YES;
-    }
-}
-
-- (void)setListWebType:(PoporNetRecordType)listWebType {
-    switch (listWebType) {
-        case PoporNetRecordAuto:
-#if TARGET_IPHONE_SIMULATOR
-            _showListWeb = YES;
-#else
-            if (IsDebugVersion) {
-                _record = YES;
-            }else{
-                _record = NO;
-            }
-#endif
-            break;
-        case PoporNetRecordEnable:
-            _showListWeb = YES;
-            break;
-            
-        case PoporNetRecordDisable:
-            _showListWeb = NO;
-            break;
-            
-        default:
-            break;
-    }
-}
-
-// 把ballBT提到最高层.
-+ (void)bringFrontBallBT {
-    PoporNetRecord * pnr = [PoporNetRecord share];
-    [pnr.window bringSubviewToFront:pnr.ballBT];
 }
 
 @end

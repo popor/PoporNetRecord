@@ -8,6 +8,9 @@
 #import "PnrConfig.h"
 
 @interface PnrConfig ()
+// 是否开启监测
+@property (nonatomic) BOOL record;
+@property (nonatomic) BOOL showListWeb;
 
 @end
 
@@ -72,19 +75,71 @@
 - (void)setRecordType:(PoporNetRecordType)recordType {
     if (_recordType == 0 || _recordType != recordType) {
         _recordType = recordType;
-        if (self.recordTypeBlock) {
-            self.recordTypeBlock(recordType);
+        
+        switch (recordType) {
+            case PoporNetRecordAuto:
+#if TARGET_IPHONE_SIMULATOR
+                _record = YES;
+#else
+                if (IsDebugVersion) {
+                    _record = YES;
+                }else{
+                    _record = NO;
+                }
+#endif
+                break;
+            case PoporNetRecordEnable:
+                _record = YES;
+                break;
+                
+            case PoporNetRecordDisable:
+                _record = NO;
+                break;
+                
+            default:
+                break;
         }
+        
     }
 }
 
 - (void)setListWebType:(PoporNetRecordType)listWebType {
     if (_listWebType == 0 || _listWebType != listWebType) {
         _listWebType = listWebType;
-        if (self.listWebTypeBlock) {
-            self.listWebTypeBlock(listWebType);
+        
+        switch (listWebType) {
+            case PoporNetRecordAuto:
+#if TARGET_IPHONE_SIMULATOR
+                _showListWeb = YES;
+#else
+                if (IsDebugVersion) {
+                    _showListWeb = YES;
+                }else{
+                    _showListWeb = NO;
+                }
+#endif
+                break;
+            case PoporNetRecordEnable:
+                _showListWeb = YES;
+                break;
+                
+            case PoporNetRecordDisable:
+                _showListWeb = NO;
+                break;
+                
+            default:
+                break;
         }
+        
     }
+}
+
+- (BOOL)isRecord {
+    return _record;
+}
+
+- (BOOL)isShowListWeb {
+    return _showListWeb;
 }
 
 - (void)updateListCellHeight {

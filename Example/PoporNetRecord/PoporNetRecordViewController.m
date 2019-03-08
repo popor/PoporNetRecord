@@ -133,9 +133,8 @@
 }
 
 - (void)pushNetRecordListVC {
-    
-    PoporNetRecord * pnr = [PoporNetRecord share];
-    UIViewController * vc = [pnr getPnrListVC];
+    PnrView * pnrView = [PnrView share];
+    UIViewController * vc = [pnrView getPnrListVC];
     
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -150,16 +149,16 @@
         UIAlertAction * autoAction = [UIAlertAction actionWithTitle:@"自动" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             PoporNetRecord * pnr = [PoporNetRecord share];
-            pnr.customBallBtVisible = NO;
-            pnr.ballBT.hidden = NO;
+            pnr.config.customBallBtVisible = NO;
+            pnr.view.ballBT.hidden = NO;
             
             weakSelf.navigationItem.rightBarButtonItems = nil;
         }];
         UIAlertAction * customAction = [UIAlertAction actionWithTitle:@"自定义" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             PoporNetRecord * pnr = [PoporNetRecord share];
-            pnr.customBallBtVisible = YES;
-            pnr.ballBT.hidden = YES;
+            pnr.config.customBallBtVisible = YES;
+            pnr.view.ballBT.hidden = YES;
             
             UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"网络请求" style:UIBarButtonItemStylePlain target:self action:@selector(pushNetRecordListVC)];
             weakSelf.navigationItem.rightBarButtonItems = @[item1];
