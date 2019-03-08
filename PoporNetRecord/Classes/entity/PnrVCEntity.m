@@ -18,20 +18,17 @@
 - (void)createListWebH5:(NSInteger)index {
     PnrConfig * config = [PnrConfig share];
     
-    NSString * bgColor = index%2==0 ? config.listColorCell0Hex:config.listColorCell1Hex;
+    NSString * bgColor = index%2==1 ? config.listColorCell0Hex:config.listColorCell1Hex;
     NSMutableString * h5 = [NSMutableString new];
     
-    [h5 appendFormat:@"<div style=\" background:%@; \" onclick= \"javascript:location.href='/%i/%@'\" >", bgColor, (int)index, PnrPathRoot];
+    [h5 appendFormat:@"<div style=\" background:%@; height:50px; position:relative; \" onclick= \"javascript:location.href='/%i/%@'\" >", bgColor, (int)index, PnrPathRoot];
     
-    if (self.title) {
-        [h5 appendFormat:@"<font color='%@'>%@ </font>", config.listColorTitleHex, self.title];
-    }
-    [h5 appendFormat:@"<font color='%@'>%@ </font>", config.listColorRequestHex, [self.request substringToIndex:MIN(self.request.length, 80)]];
-    [h5 appendString:@"<br/>"];
+    [h5 appendString:@"<div style=\" position:relative; top:4px; left:5px; \">"];
     
-    [h5 appendFormat:@"<font color='%@'>%@ </font>", config.listColorDomainHex, self.domain];
+    [h5 appendFormat:@"<font color='%@'>%@ </font> <font color='%@'>%@  </font>", config.listColorTitleHex, self.title , config.listColorRequestHex, [self.request substringToIndex:MIN(self.request.length, 80)]];
+    [h5 appendFormat:@"<br/> <font color='%@'>%@  </font> <font color='%@'>%@ </font>", config.listColorTimeHex, self.time, config.listColorDomainHex, self.domain];
     
-    [h5 appendString:@"</div>"];
+    [h5 appendString:@"</div></div>"];
     
     self.listWebH5 = [h5 copy];
 }

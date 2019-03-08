@@ -48,7 +48,7 @@
 
 + (void)addUrl:(NSString *)urlString method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue
 {
-    [self addUrl:urlString title:nil method:method head:headValue request:requestValue response:responseValue];
+    [self addUrl:urlString title:@"--" method:method head:headValue request:requestValue response:responseValue];
 }
 
 + (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue
