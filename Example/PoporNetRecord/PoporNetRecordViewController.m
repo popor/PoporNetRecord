@@ -8,13 +8,20 @@
 
 #import "PoporNetRecordViewController.h"
 
-#import <PoporNetRecord/PoporNetRecord.h>
+//#import <PoporNetRecord/PoporNetRecord.h>
+#import "PoporNetRecord.h"
 
 #import <CoreGraphics/CoreGraphics.h>
 #import <JSONSyntaxHighlight/JSONSyntaxHighlight.h>
 #import <PoporFoundation/PrefixColor.h>
 
 #import <PoporUI/UINavigationController+Size.h>
+
+@interface PoporNetRecordViewController ()
+
+@property (nonatomic        ) int netIndex;
+
+@end
 
 @implementation PoporNetRecordViewController
 
@@ -31,6 +38,98 @@
     [self addTypeBT];
     [self setNcStyle];
     
+    // pnr 设置
+    [self addPnrSettings];
+    
+    {
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame =  CGRectMake(0, 0, 140, 44);
+        button.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size .height/2);
+        [button setTitle:@"New Request" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setBackgroundColor:[UIColor brownColor]];
+        
+        button.layer.cornerRadius = 5;
+        button.clipsToBounds = YES;
+        [self.view addSubview:button];
+        
+        [button addTarget:self action:@selector(addOneNetRequest) forControlEvents:UIControlEventTouchUpInside];
+    }
+    [self addOneNetRequest];
+}
+
+- (void)addOneNetRequest {
+    NSString * autoTitle = [NSString stringWithFormat:@"测试数据:%i", self.netIndex++ + 1];
+    NSLog(@"auto title : %@ ", autoTitle);
+    [PoporNetRecord addUrl:@"http://www.baidu.com/auto_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890" title:autoTitle method:@"GET" head:@{@"os":@"iOS"} request:@"request" response:@"responseText"];
+}
+
+- (void)Demos {
+    NSDictionary * responseDic = @{@"success":@"true", @"child":@{@"name":@"abc", @"age":@(100)}, @"food":@[@"apple", @"orange"], @"device":@[@{@"bicyle":@{@"type":@"2轮子"}}, @{@"car":@{@"type":@"4轮子"}}]};
+    
+    //NSDictionary * responseDic = @{@"success":@"true", @"child":@{@"name":@"abc", @"age":@(100)}, @"food":@[@"apple", @"orange"], @"device":@[@"bicyle", @"car",]};
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson1" title:@"测试数据" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson2" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson3" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson4" method:@"GET" head:@{@"os":@"iOS"} request:nil response:responseDic];
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText12345678901234567890" title:@"测试数据" method:@"GET" head:@{@"os":@"iOS"} request:nil response:@"responseText"];
+    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText2232423234?a=32&b=1234567890" title:@"测试数据" method:@"GET" head:@"head" request:@"request" response:@"responseText"];
+    });
+    
+    for (int i=0; i<8; i++) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((2+ i*1) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString * autoTitle = [NSString stringWithFormat:@"测试数据:%i", i+1];
+            NSLog(@"auto title : %@ ", autoTitle);
+            [PoporNetRecord addUrl:@"http://www.baidu.com/auto_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890" title:autoTitle method:@"GET" head:@{@"os":@"iOS"} request:@"request" response:@"responseText"];
+        });
+    }
+    
+}
+
+#pragma mark - nc bar style
+- (void)setNcStyle {
+    UINavigationController * nc = self.navigationController;
+    // 设置标题颜色
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    [dict setObject:[UIFont systemFontOfSize:18] forKey:NSFontAttributeName];
+    
+    nc.navigationBar.titleTextAttributes = dict;
+    
+    // 设置bar背景颜色
+    //[self.navigationBar setBarTintColor:RGB16(0X4077ED)];
+    //[self.navigationBar setBarTintColor:ColorNCBar];
+    //RGB16(0X68D3FF)
+    [nc.navigationBar setBackgroundImage:[self gradientImageWithBounds:CGRectMake(0, 0, self.view.frame.size.width, 1) andColors:@[RGB16(0X68D3FF), RGB16(0X4585F5)] gradientHorizon:YES] forBarMetrics:UIBarMetricsDefault];
+    
+    // 设置返回按钮字体颜色.
+    //[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    nc.navigationBar.tintColor = [UIColor whiteColor];
+}
+
+#pragma mark - 设置记录类型
+- (void)addTypeBT {
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"类型" style:UIBarButtonItemStylePlain target:self action:@selector(changeRecordTypeAction)];
+    self.navigationItem.leftBarButtonItems = @[item1];
+}
+
+- (void)addPnrSettings {
     PnrConfig * config = [PnrConfig share];
     
     {
@@ -69,68 +168,6 @@
         
     };
     
-    NSDictionary * responseDic = @{@"success":@"true", @"child":@{@"name":@"abc", @"age":@(100)}, @"food":@[@"apple", @"orange"], @"device":@[@{@"bicyle":@{@"type":@"2轮子"}}, @{@"car":@{@"type":@"4轮子"}}]};
-    
-    //NSDictionary * responseDic = @{@"success":@"true", @"child":@{@"name":@"abc", @"age":@(100)}, @"food":@[@"apple", @"orange"], @"device":@[@"bicyle", @"car",]};
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson1" title:@"测试数据" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
-    });
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson2" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
-    });
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson3" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
-    });
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson4" method:@"GET" head:@{@"os":@"iOS"} request:nil response:responseDic];
-    });
- 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText12345678901234567890" title:@"测试数据" method:@"GET" head:@{@"os":@"iOS"} request:nil response:@"responseText"];
-    });
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText2232423234?a=32&b=1234567890" title:@"测试数据" method:@"GET" head:@"head" request:@"request" response:@"responseText"];
-    });
-    
-    for (int i=0; i<8; i++) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((2+ i*1) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSString * autoTitle = [NSString stringWithFormat:@"测试数据:%i", i+1];
-            NSLog(@"auto title : %@ ", autoTitle);
-            [PoporNetRecord addUrl:@"http://www.baidu.com/auto_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890" title:autoTitle method:@"GET" head:@{@"os":@"iOS"} request:@"request" response:@"responseText"];
-        });
-    }
-    // test
-}
-
-#pragma mark - nc bar style
-- (void)setNcStyle {
-    UINavigationController * nc = self.navigationController;
-    // 设置标题颜色
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
-    [dict setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
-    [dict setObject:[UIFont systemFontOfSize:18] forKey:NSFontAttributeName];
-    
-    nc.navigationBar.titleTextAttributes = dict;
-    
-    // 设置bar背景颜色
-    //[self.navigationBar setBarTintColor:RGB16(0X4077ED)];
-    //[self.navigationBar setBarTintColor:ColorNCBar];
-    //RGB16(0X68D3FF)
-    [nc.navigationBar setBackgroundImage:[self gradientImageWithBounds:CGRectMake(0, 0, self.view.frame.size.width, 1) andColors:@[RGB16(0X68D3FF), RGB16(0X4585F5)] gradientHorizon:YES] forBarMetrics:UIBarMetricsDefault];
-    
-    // 设置返回按钮字体颜色.
-    //[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    nc.navigationBar.tintColor = [UIColor whiteColor];
-}
-
-#pragma mark - 设置记录类型
-- (void)addTypeBT {
-    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"类型" style:UIBarButtonItemStylePlain target:self action:@selector(changeRecordTypeAction)];
-    self.navigationItem.leftBarButtonItems = @[item1];
 }
 
 - (void)pushNetRecordListVC {

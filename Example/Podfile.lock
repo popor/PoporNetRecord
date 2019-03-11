@@ -32,58 +32,10 @@ PODS:
     - GCDWebServer/WebUploader
     - JSONSyntaxHighlight
     - Masonry
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 0.1.01)
-    - PoporNetRecord/entity (= 0.1.01)
-    - PoporNetRecord/ListVC (= 0.1.01)
-    - PoporUI/IToast
-    - PoporUI/UIImage
-    - PoporUI/UINavigationController
-    - PoporUI/UITextField
-    - PoporUI/UIView
-  - PoporNetRecord/DetailVC (0.1.01):
-    - GCDWebServer
-    - GCDWebServer/WebDAV
-    - GCDWebServer/WebUploader
-    - JSONSyntaxHighlight
-    - Masonry
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporNetRecord/entity
-    - PoporUI/IToast
-    - PoporUI/UIImage
-    - PoporUI/UINavigationController
-    - PoporUI/UITextField
-    - PoporUI/UIView
-  - PoporNetRecord/entity (0.1.01):
-    - GCDWebServer
-    - GCDWebServer/WebDAV
-    - GCDWebServer/WebUploader
-    - JSONSyntaxHighlight
-    - Masonry
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporUI/IToast
-    - PoporUI/UIImage
-    - PoporUI/UINavigationController
-    - PoporUI/UITextField
-    - PoporUI/UIView
-  - PoporNetRecord/ListVC (0.1.01):
-    - GCDWebServer
-    - GCDWebServer/WebDAV
-    - GCDWebServer/WebUploader
-    - JSONSyntaxHighlight
-    - Masonry
     - PoporAlertBubbleView
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC
-    - PoporNetRecord/entity
     - PoporUI/IToast
     - PoporUI/Tool
     - PoporUI/UIImage
@@ -125,9 +77,9 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporAlertBubbleView: aea73e383fca9d7dedda533fac160c9e66c720cf
   PoporFoundation: cff730f97d34e15721657efb6c144d5eeb297180
-  PoporNetRecord: 9ed09795cba1d7a07e91289e8e1ccf345a29cfd9
+  PoporNetRecord: 2dd483e65d5c3bb2804c951a1344ec6ba1f80290
   PoporUI: 76f897c3acd3d4a8f90a0b79df444dd14d167d67
 
 PODFILE CHECKSUM: e00cc688498f763e5e96216baf21dedc61801ba7
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.7.0.beta.1

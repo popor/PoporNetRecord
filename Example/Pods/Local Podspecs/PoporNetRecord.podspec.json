@@ -25,6 +25,9 @@
     "Masonry": [
 
     ],
+    "PoporUI/Tool": [
+
+    ],
     "PoporUI/IToast": [
 
     ],
@@ -49,6 +52,9 @@
     "PoporFoundation/NSDate": [
 
     ],
+    "PoporAlertBubbleView": [
+
+    ],
     "JSONSyntaxHighlight": [
 
     ],
@@ -61,38 +67,5 @@
     "GCDWebServer/WebDAV": [
 
     ]
-  },
-  "subspecs": [
-    {
-      "name": "entity",
-      "source_files": "PoporNetRecord/Classes/entity/*.{h,m}"
-    },
-    {
-      "name": "DetailVC",
-      "dependencies": {
-        "PoporNetRecord/entity": [
-
-        ]
-      },
-      "source_files": "PoporNetRecord/Classes/DetailVC/*.{h,m}"
-    },
-    {
-      "name": "ListVC",
-      "dependencies": {
-        "PoporNetRecord/entity": [
-
-        ],
-        "PoporNetRecord/DetailVC": [
-
-        ],
-        "PoporUI/Tool": [
-
-        ],
-        "PoporAlertBubbleView": [
-
-        ]
-      },
-      "source_files": "PoporNetRecord/Classes/ListVC/*.{h,m}"
-    }
-  ]
+  }
 }
