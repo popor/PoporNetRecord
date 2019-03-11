@@ -133,8 +133,12 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
 #pragma mark - server
 - (void)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray index:(NSInteger)index {
     if (titleArray.count == jsonArray.count) {
-        self.titleArray = titleArray;
-        self.jsonArray  = jsonArray;
+        self.titleArray       = titleArray;
+        self.jsonArray        = jsonArray;
+        
+        PnrConfig * config    = [PnrConfig share];
+        NSString * colorKey   = config.rootColorKeyHex;
+        NSString * colorValue = config.rootColorValueHex;
         
         NSMutableString * h5;
         
@@ -142,6 +146,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         [h5 appendString:@"<html> <head><title>请求详情</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
         for (int i=0; i<self.titleArray.count; i++) {
             NSString * title         = self.titleArray[i];
+            //NSLog(@"title: %@", title);
             id content               = self.jsonArray[i];
             NSString * secondPath;
             switch (i) {
@@ -157,15 +162,24 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
                     secondPath = PnrPathResponse;
                     self.h5Response = [self h5CodeAtIndex:i];
                     break;
-                default:
-                    [h5 appendFormat:@"<p>%@</p>", title];
+                default:{
+                    NSInteger location = [title rangeOfString:@":"].location;
+                    if (location > 0) {
+                        NSString * title1 = [title substringToIndex:location+1];
+                        NSString * title2 = [title substringFromIndex:location+1];
+                        [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, title1, colorValue, title2];
+                    }else{
+                        [h5 appendFormat:@"<p>%@</p>", title];
+                    }
+                    
                     break;
+                }
             }
             if (secondPath) {
                 if ([content isKindOfClass:[NSDictionary class]]) {
-                    [h5 appendFormat:@"<p><a href='/%i/%@'>%@</a> %@</p>", (int)index, secondPath, title, [(NSDictionary *)content toJsonString]];
+                    [h5 appendFormat:@"<p><a href='/%i/%@'> <font color='%@'> %@ </font></a> <font color='%@'> %@ </font></p>", (int)index, secondPath, colorKey, title, colorValue, [(NSDictionary *)content toJsonString]];
                 }else if([content isKindOfClass:[NSString class]]) {
-                    [h5 appendFormat:@"<p><a href='/%i/%@'>%@</a> %@</p>", (int)index, secondPath, title, (NSString *)content];
+                    [h5 appendFormat:@"<p><a href='/%i/%@'> <font color='%@'> %@ </font></a> <font color='%@'> %@ </font></p>", (int)index, secondPath, colorKey, title, colorValue, (NSString *)content];
                 }else{
                     [h5 appendFormat:@"<p>%@ NULL</p>", title];
                 }

@@ -35,10 +35,6 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 @property (nonatomic        ) CGFloat   normalAlpha;
 //@property (nonatomic        ) NSInteger recordMaxNum;
 
-// 列表网页刷新设置
-@property (nonatomic        ) BOOL      listSwitchIphone;    // 是否开启list网页:模拟器
-@property (nonatomic        ) BOOL      listSwitchSimulator; // 是否开启list网页:手机
-
 #pragma mark - 列表配置参数
 // = (listFontTitle+3) + (listFontDomain+3) + PnrListCellGap*3,可以通过updateListCellHeight设置
 @property (nonatomic        ) float   listCellHeight;
@@ -65,6 +61,14 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 @property (nonatomic, strong) NSString * listColorCell0Hex;
 @property (nonatomic, strong) NSString * listColorCell1Hex;
 
+// -----
+@property (nonatomic, strong) UIColor * rootColorKey;
+@property (nonatomic, strong) UIColor * rootColorValue;
+// ▽
+@property (nonatomic, strong) NSString * rootColorKeyHex;
+@property (nonatomic, strong) NSString * rootColorValueHex;
+
+
 #pragma mark - 请求详情配置
 // 详情假如 att font 不为15也需要设置.
 @property (nonatomic, strong) UIFont       * cellTitleFont;
@@ -76,8 +80,8 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 @property (nonatomic        ) PoporNetRecordType recordType;//监测类型
 @property (nonatomic        ) PoporNetRecordType listWebType;//网页显示数据
 
-@property (nonatomic, copy  ) BlockPVoid                    freshBlock;
-@property (nonatomic, copy  ) PoporNetRecordNcBlock         presentNCBlock;// 用户更新 presentViewController NC的状态
+@property (nonatomic, copy  ) BlockPVoid            freshBlock;
+@property (nonatomic, copy  ) PoporNetRecordNcBlock presentNCBlock;// 用户更新 presentViewController NC的状态
 
 @property (nonatomic        ) BOOL jsonViewColorBlack;// json详情页面是否使用黑白.
 

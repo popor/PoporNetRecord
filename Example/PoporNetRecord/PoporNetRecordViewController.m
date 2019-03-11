@@ -16,6 +16,7 @@
 #import <PoporFoundation/PrefixColor.h>
 
 #import <PoporUI/UINavigationController+Size.h>
+#import <PoporUI/UIImage+create.h>
 
 @interface PoporNetRecordViewController ()
 
@@ -47,7 +48,7 @@
         button.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size .height/2);
         [button setTitle:@"New Request" forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [button setBackgroundColor:[UIColor brownColor]];
+        [button setBackgroundImage:[UIImage imageFromColor:[UIColor brownColor] size:CGSizeMake(1, 1)] forState:UIControlStateNormal];
         
         button.layer.cornerRadius = 5;
         button.clipsToBounds = YES;

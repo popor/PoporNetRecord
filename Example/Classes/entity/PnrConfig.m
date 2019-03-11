@@ -28,10 +28,6 @@
         // 基础设置
         instance.activeAlpha         = 1.0;
         instance.normalAlpha         = 0.6;
-        
-        // list网页设置
-        instance.listSwitchIphone    = YES;
-        instance.listSwitchSimulator = YES;
 
         instance.recordType          = PoporNetRecordAuto;
         instance.listWebType         = PoporNetRecordAuto;
@@ -67,6 +63,8 @@
             instance.listColorCell0   = [UIColor whiteColor];
             instance.listColorCell1   = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
             
+            instance.rootColorKey     = PnrColorGreen;
+            instance.rootColorValue   = PnrColorRed;
             [instance updateListCellHeight];
         }
     });
@@ -184,6 +182,17 @@
 - (void)setListColorCell1:(UIColor *)listColorCell1 {
     _listColorCell1 = listColorCell1;
     _listColorCell1Hex = [self hexStringColorNoAlpha:listColorCell1];
+}
+
+- (void)setRootColorKey:(UIColor *)rootColorKey {
+    _rootColorKey = rootColorKey;
+    _rootColorKeyHex = [self hexStringColorNoAlpha:rootColorKey];
+}
+
+- (void)setRootColorValue:(UIColor *)rootColorValue {
+    _rootColorValue = rootColorValue;
+    _rootColorValueHex = [self hexStringColorNoAlpha:rootColorValue];
+    
 }
 
 // tool
