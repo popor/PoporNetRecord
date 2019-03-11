@@ -7,7 +7,7 @@
 
 #import "PnrServerTool.h"
 
-#import "PnrVCEntity.h"
+#import "PnrEntity.h"
 #import "PnrPortEntity.h"
 #import "PnrConfig.h"
 
@@ -96,7 +96,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
 
 - (void)analysisIndex:(NSInteger)index path:(NSString *)path complete:(GCDWebServerCompletionBlock  _Nonnull)complete {
     
-    PnrVCEntity * entity;
+    PnrEntity * entity;
     if (self.infoArray.count > index) {
         entity = self.infoArray[index];
     }

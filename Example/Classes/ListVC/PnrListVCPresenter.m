@@ -99,7 +99,7 @@
             cell = [[PnrListVCCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellID];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
-        PnrVCEntity * entity = self.view.weakInfoArray[self.view.weakInfoArray.count -  indexPath.row - 1];
+        PnrEntity * entity = self.view.weakInfoArray[self.view.weakInfoArray.count -  indexPath.row - 1];
         
         if (entity.title) {
             NSMutableAttributedString * att = [NSMutableAttributedString new];
@@ -157,7 +157,7 @@
     if (tableView == self.view.infoTV) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
-        PnrVCEntity * entity = self.view.weakInfoArray[self.view.weakInfoArray.count -  indexPath.row - 1];
+        PnrEntity * entity = self.view.weakInfoArray[self.view.weakInfoArray.count -  indexPath.row - 1];
         
         __weak typeof(self) weakSelf = self;
         [entity getJsonArrayBlock:^(NSArray *titleArray, NSArray *jsonArray, NSMutableArray *cellAttArray) {

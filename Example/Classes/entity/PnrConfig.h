@@ -9,6 +9,8 @@
 #import <PoporFoundation/PrefixBlock.h>
 #import <PoporFoundation/PrefixColor.h>
 
+#import "PnrPrefix.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 static NSString * PnrPathRoot     = @"root";
@@ -87,6 +89,9 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 
 // 自定义ballBT可见度, 假如为YES,那么ballBT第一次显示会设置为hidden=YES.
 @property (nonatomic, getter=isCustomBallBtVisible) BOOL customBallBtVisible;
+
+// 设置重新发起请求
+@property (nonatomic, copy  ) PnrBlockPPnrEntity reRequestBlock;
 
 + (instancetype)share;
 

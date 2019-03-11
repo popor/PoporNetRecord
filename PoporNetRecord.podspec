@@ -19,22 +19,22 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.frameworks = 'UIKit', 'Foundation'
   
-  s.subspec 'entity' do |ss|
-    ss.source_files = 'Example/Classes/entity/*.{h,m}'
-  end
-  
-  s.subspec 'DetailVC' do |ss|
-    ss.dependency 'PoporNetRecord/entity'
-    #---
-    ss.source_files = 'Example/Classes/DetailVC/*.{h,m}'
-  end
-  
-  s.subspec 'ListVC' do |ss|
-    ss.dependency 'PoporNetRecord/entity'
-    ss.dependency 'PoporNetRecord/DetailVC'
-    #---
-    ss.source_files = 'Example/Classes/ListVC/*.{h,m}'
-  end
+#  s.subspec 'entity' do |ss|
+#    ss.source_files = 'Example/Classes/entity/*.{h,m}'
+#  end
+#  
+#  s.subspec 'DetailVC' do |ss|
+#    ss.dependency 'PoporNetRecord/entity'
+#    #---
+#    ss.source_files = 'Example/Classes/DetailVC/*.{h,m}'
+#  end
+#  
+#  s.subspec 'ListVC' do |ss|
+#    ss.dependency 'PoporNetRecord/entity'
+#    ss.dependency 'PoporNetRecord/DetailVC'
+#    #---
+#    ss.source_files = 'Example/Classes/ListVC/*.{h,m}'
+#  end
   
   s.dependency 'Masonry'
   

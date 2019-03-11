@@ -6,7 +6,7 @@
 //  Copyright © 2018年 popor. All rights reserved.
 
 #import <Foundation/Foundation.h>
-#import "PnrVCEntity.h"
+#import "PnrEntity.h"
 #import <PoporFoundation/PrefixBlock.h>
 #import <PoporAlertBubbleView/AlertBubbleView.h>
 
@@ -29,7 +29,7 @@ static NSString * PoporNetRecordTextColorColors = @"彩色";
 @property (nonatomic, strong) UIColor         * alertBubbleTVColor;
 
 // inject : 外部注入的
-@property (nonatomic, weak  ) NSMutableArray<PnrVCEntity *> * weakInfoArray;
+@property (nonatomic, weak  ) NSMutableArray<PnrEntity *> * weakInfoArray;
 
 @end
 

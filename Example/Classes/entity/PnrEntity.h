@@ -1,5 +1,5 @@
 //
-//  PnrVCEntity.h
+//  PnrEntity.h
 //  PoporNetRecord
 //
 //  Created by apple on 2018/5/16.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^PnrVCEntityBlock) (NSArray *titleArray, NSArray *jsonArray, NSMutableArray *cellAttArray);
+typedef void(^PnrEntityBlock) (NSArray *titleArray, NSArray *jsonArray, NSMutableArray *cellAttArray);
 
-@interface PnrVCEntity : NSObject
+@interface PnrEntity : NSObject
 
 @property (nonatomic, strong) NSString * title;
 @property (nonatomic, strong) NSString * url;
@@ -33,6 +33,6 @@ typedef void(^PnrVCEntityBlock) (NSArray *titleArray, NSArray *jsonArray, NSMuta
 - (NSArray *)titleArray;
 - (NSArray *)jsonArray;
 
-- (void)getJsonArrayBlock:(PnrVCEntityBlock)finish;
+- (void)getJsonArrayBlock:(PnrEntityBlock)finish;
 
 @end

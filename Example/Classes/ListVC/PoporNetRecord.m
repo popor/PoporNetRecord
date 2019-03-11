@@ -7,7 +7,7 @@
 //
 
 #import "PoporNetRecord.h"
-#import "PnrVCEntity.h"
+#import "PnrEntity.h"
 #import "PnrServerTool.h"
 
 #import "PnrListVCRouter.h"
@@ -55,7 +55,7 @@
 {
     PoporNetRecord * pnr = [PoporNetRecord share];
     if (pnr.config.isRecord) {
-        PnrVCEntity * entity = [PnrVCEntity new];
+        PnrEntity * entity = [PnrEntity new];
         entity.title         = title;
         entity.url           = urlString;
         entity.method        = method;

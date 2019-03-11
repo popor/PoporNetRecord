@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PnrPrefix.h"
 #import "PnrConfig.h"
 #import "PnrView.h"
-
-typedef void(^PoporNetRecordBlockPVoid) (void);
+#import "PnrEntity.h"
 
 @interface PoporNetRecord : NSObject
 
@@ -18,10 +18,7 @@ typedef void(^PoporNetRecordBlockPVoid) (void);
 @property (nonatomic, weak  ) PnrView   * view;
 
 @property (nonatomic, strong) NSMutableArray * infoArray;
-
 @property (nonatomic, weak  ) UINavigationController * nc;
-@property (nonatomic, copy  ) PoporNetRecordBlockPVoid openBlock;
-@property (nonatomic, copy  ) PoporNetRecordBlockPVoid closeBlock;
 
 + (instancetype)share;
 

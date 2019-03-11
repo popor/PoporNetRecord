@@ -7,7 +7,7 @@
 //
 
 #import "PnrView.h"
-#import "PnrVCEntity.h"
+#import "PnrEntity.h"
 #import "PnrServerTool.h"
 
 #import "PnrListVCRouter.h"

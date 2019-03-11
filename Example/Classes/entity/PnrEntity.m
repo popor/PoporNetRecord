@@ -1,19 +1,19 @@
 
 //
-//  PnrVCEntity.m
+//  PnrEntity.m
 //  PoporNetRecord
 //
 //  Created by apple on 2018/5/16.
 //  Copyright © 2018年 popor. All rights reserved.
 //
 
-#import "PnrVCEntity.h"
+#import "PnrEntity.h"
 #import "PnrConfig.h"
 #import "PnrPortEntity.h"
 #import <JSONSyntaxHighlight/JSONSyntaxHighlight.h>
 #import <PoporFoundation/NSString+format.h>
 
-@implementation PnrVCEntity
+@implementation PnrEntity
 
 - (void)createListWebH5:(NSInteger)index {
     PnrConfig * config = [PnrConfig share];
@@ -34,7 +34,7 @@
 }
 
 - (NSArray *)titleArray {
-    PnrVCEntity * entity = self;
+    PnrEntity * entity = self;
     NSString * title;
     if (entity.title) {
         title = [NSString stringWithFormat:@" %@\n%@", entity.title, entity.request];
@@ -54,7 +54,7 @@
 }
 
 - (NSArray *)jsonArray {
-    PnrVCEntity * entity = self;
+    PnrEntity * entity = self;
     NSArray * jsonArray = @[[NSNull null],
                             [NSNull null],
                             [NSNull null],
@@ -68,7 +68,7 @@
     return jsonArray;
 }
 
-- (void)getJsonArrayBlock:(PnrVCEntityBlock)finish {
+- (void)getJsonArrayBlock:(PnrEntityBlock)finish {
     if (!finish) {
         return;
     }
