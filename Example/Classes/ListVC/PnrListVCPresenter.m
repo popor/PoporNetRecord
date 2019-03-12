@@ -200,6 +200,9 @@
 - (void)clearAction {
     [self.view.weakInfoArray removeAllObjects];
     [self.view.infoTV reloadData];
+    
+    // 清空记录
+    [[PnrServerTool share] clearListWeb];
 }
 
 - (void)setTextColorAction:(UIBarButtonItem *)sender event:(UIEvent *)event {

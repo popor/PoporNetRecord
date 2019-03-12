@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak  ) PnrPortEntity * portEntity;
 @property (nonatomic, weak  ) NSMutableArray * infoArray; // PoporNetRecord.infoArray
+@property (nonatomic, strong) NSMutableString * h5List;
+@property (nonatomic        ) NSInteger lastIndex;
 
 #pragma mark - server
 @property (nonatomic, strong) NSArray * titleArray;
@@ -31,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)startListServer:(NSMutableString *)listBodyH5;
 - (void)stopServer;
+
+- (void)clearListWeb;
 
 @end
 

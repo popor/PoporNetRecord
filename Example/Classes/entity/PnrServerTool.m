@@ -17,8 +17,6 @@
 #import <GCDWebServer/GCDWebServerDataResponse.h>
 #import <GCDWebServer/GCDWebServerPrivate.h>
 
-//#import <GCDWebServer/GCDWebServerDataRequest.h>
-
 #import <PoporFoundation/NSDictionary+tool.h>
 
 static NSString * ErrorUrl    = @"<html> <head><title>错误</title></head> <body><p> URL异常 </p> </body></html>";
@@ -29,15 +27,12 @@ static NSString * ErrorEmpty  = @"<html> <head><title>错误</title></head> <bod
 static NSString * PnrWebCode1 = @"PnrWebCode1";
 
 @interface PnrServerTool ()
-@property (nonatomic, strong) NSMutableString * h5List;
 
 @property (nonatomic, strong) NSString * h5Root;
 @property (nonatomic, strong) NSString * h5Head;
 @property (nonatomic, strong) NSString * h5Request;
 @property (nonatomic, strong) NSString * h5Response;
 @property (nonatomic, strong) NSString * h5Edit;
-
-@property (nonatomic        ) NSInteger lastIndex;
 
 @end
 
@@ -115,7 +110,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     }
 }
 
-// get 请求
+// 分析 get 请求
 - (void)analysisGetIndex:(NSInteger)index path:(NSString *)path request:(GCDWebServerRequest * _Nonnull)request complete:(GCDWebServerCompletionBlock  _Nonnull)complete {
     
     PnrEntity * entity;
@@ -126,7 +121,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     if (entity) {
         if (index != self.lastIndex) {
             self.lastIndex = index;
-            [self startServerTitle:entity index:index];
+            [self startServerUnitEntity:entity index:index];
         }
         NSString * str;
         if ([path isEqualToString:PnrPathRoot]) {
@@ -151,7 +146,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     }
 }
 
-// post 请求
+// 分析 post 请求
 - (void)analysisPostIndex:(NSInteger)index path:(NSString *)path request:(GCDWebServerRequest * _Nonnull)request complete:(GCDWebServerCompletionBlock  _Nonnull)complete {
     
     PnrEntity * entity;
@@ -161,7 +156,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     if (entity) {
         if (index != self.lastIndex) {
             self.lastIndex = index;
-            [self startServerTitle:entity index:index];
+            [self startServerUnitEntity:entity index:index];
         }
         NSString * str;
         if([path isEqualToString:PnrPathResubmit]){
@@ -179,8 +174,8 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     }
 }
 
-#pragma mark - server
-- (void)startServerTitle:(PnrEntity *)pnrEntity index:(NSInteger)index {
+#pragma mark - server 某个单独请求
+- (void)startServerUnitEntity:(PnrEntity *)pnrEntity index:(NSInteger)index {
     NSArray * titleArray = pnrEntity.titleArray;
     NSArray * jsonArray  = pnrEntity.jsonArray;
     if (titleArray.count == jsonArray.count) {
@@ -191,6 +186,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         NSString * colorKey     = config.rootColorKeyHex;
         NSString * colorValue   = config.rootColorValueHex;
         
+        NSString * pnrTitle     = pnrEntity.title? [NSString stringWithFormat:@"%@: ", pnrEntity.title]: @"";
         NSString * headStr      = [self contentString:pnrEntity.headValue];
         NSString * parameterStr = [self contentString:pnrEntity.parameterValue];
         NSString * responseStr  = [self contentString:pnrEntity.responseValue];
@@ -201,10 +197,10 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             NSMutableString * h5;
             
             h5 = [NSMutableString new];
-            [h5 appendString:@"<html> <head><title>请求详情</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
+            [h5 appendFormat:@"<html> <head><title>%@ 请求详情</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>", pnrTitle];
             // 是否开启了重新提交
             if (self.resubmitBlock) {
-                [h5 appendFormat:@"<p> <a href='/%i/%@'> <button type='button' style=\"width:200px;\" > 重新请求 </button> </p>", (int)index, PnrPathEdit];
+                [h5 appendFormat:@"<p> <a href='/%i/%@'> <button type='button' style=\"width:200px;\" > 重新请求 </button> </a> </p>", (int)index, PnrPathEdit];
             }
             [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootPath1, colorValue, pnrEntity.path];
             [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootUrl1, colorValue, pnrEntity.url];
@@ -215,9 +211,9 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
                 [h5 appendFormat:@"<p><a href='/%i/%@'> <font color='%@'> %@ </font></a> <font color='%@'> %@ </font></p>", (int)index, secondPath, colorKey, title, colorValue, content];
             };
             
-            NSString * (^ webBlock)(NSString *, id) = ^(NSString * title, NSString * content){
+            NSString * (^ webBlock)(NSString *, id) = ^(NSString * subtitle, NSString * content){
                 if (content) {
-                    return [NSString stringWithFormat:@"<html> <head><title>%@</title></head> <body><br/> <p>%@</p> </body></html>", title, content];
+                    return [NSString stringWithFormat:@"<html> <head><title>%@%@</title></head> <body><br/> <p>%@</p> </body></html>", pnrTitle, subtitle, content];
                 }else{
                     return ErrorEmpty;
                 }
@@ -241,7 +237,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             NSMutableString * h5;
             
             h5 = [NSMutableString new];
-            [h5 appendString:@"<html> <head><title>请求详情</title></head> <body>"];
+            [h5 appendFormat:@"<html> <head><title>%@重新提交</title></head> <body>", pnrTitle];
             [h5 appendFormat:@"<form action='/%i/%@' method='POST' target='myIframe' >",  (int)index, PnrPathResubmit];
             
             // url
@@ -285,26 +281,6 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     }
 }
 
-- (NSString *)h5CodeAtIndex:(int)index {
-    NSString * title = self.titleArray[index];
-    id content       = self.jsonArray[index];
-    if (content) {
-        NSMutableString * h5 = [NSMutableString new];
-        [h5 appendFormat:@"<html> <head><title>%@</title></head> <body><br/>", title];
-        
-        if([content isKindOfClass:[NSDictionary class]]) {
-            [h5 appendFormat:@"<p>%@</p>", [(NSDictionary *)content toJsonString]];
-        }else if([content isKindOfClass:[NSString class]]){
-            [h5 appendFormat:@"<p>%@</p>", (NSString *)content];
-        }
-        
-        [h5 appendString:@"</body></html>"];
-        return h5;
-    }else{
-        return ErrorEmpty;
-    }
-}
-
 - (void)resubmitEntity:(PnrEntity *)pnrEntity request:(GCDWebServerRequest * _Nonnull)request {
     if (self.resubmitBlock) {
         self.resubmitBlock(pnrEntity, (GCDWebServerURLEncodedFormRequest *)request);
@@ -314,6 +290,16 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
 - (void)stopServer {
     [self.webServer stop];
     self.webServer = nil;
+}
+
+- (void)clearListWeb {
+    self.lastIndex = -1;
+    {
+        [self.h5List setString:@""];
+        [self.h5List appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
+        [self.h5List appendString:@"暂无数据"];
+        [self.h5List appendString:@"</body></html>"];
+    }
 }
 
 @end
