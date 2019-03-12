@@ -62,7 +62,7 @@
 - (void)addOneNetRequest {
     NSString * autoTitle = [NSString stringWithFormat:@"测试数据:%i", self.netIndex++ + 1];
     NSLog(@"auto title : %@ ", autoTitle);
-    [PoporNetRecord addUrl:@"http://www.baidu.com/auto_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890" title:autoTitle method:@"GET" head:@{@"os":@"iOS"} request:@"request" response:@"responseText"];
+    [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:@"GET" head:@{@"os":@"iOS"} parameter:@{@"a":@"a", @"b":@"b"} response:@"responseText"];
 }
 
 - (void)Demos {
@@ -71,33 +71,33 @@
     //NSDictionary * responseDic = @{@"success":@"true", @"child":@{@"name":@"abc", @"age":@(100)}, @"food":@[@"apple", @"orange"], @"device":@[@"bicyle", @"car",]};
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson1" title:@"测试数据" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson1" title:@"测试数据" method:@"POST" head:@{@"os":@"iOS"} parameter:@{@"name":@"popor"} response:responseDic];
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson2" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson2" method:@"POST" head:@{@"os":@"iOS"} parameter:@{@"name":@"popor"} response:responseDic];
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson3" method:@"POST" head:@{@"os":@"iOS"} request:@{@"name":@"popor"} response:responseDic];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson3" method:@"POST" head:@{@"os":@"iOS"} parameter:@{@"name":@"popor"} response:responseDic];
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson4" method:@"GET" head:@{@"os":@"iOS"} request:nil response:responseDic];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson4" method:@"GET" head:@{@"os":@"iOS"} parameter:nil response:responseDic];
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText12345678901234567890" title:@"测试数据" method:@"GET" head:@{@"os":@"iOS"} request:nil response:@"responseText"];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText12345678901234567890" title:@"测试数据" method:@"GET" head:@{@"os":@"iOS"} parameter:nil response:@"responseText"];
     });
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText2232423234?a=32&b=1234567890" title:@"测试数据" method:@"GET" head:@"head" request:@"request" response:@"responseText"];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText2232423234?a=32&b=1234567890" title:@"测试数据" method:@"GET" head:@"head" parameter:@"request" response:@"responseText"];
     });
     
     for (int i=0; i<8; i++) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((2+ i*1) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSString * autoTitle = [NSString stringWithFormat:@"测试数据:%i", i+1];
             NSLog(@"auto title : %@ ", autoTitle);
-            [PoporNetRecord addUrl:@"http://www.baidu.com/auto_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890" title:autoTitle method:@"GET" head:@{@"os":@"iOS"} request:@"request" response:@"responseText"];
+            [PoporNetRecord addUrl:@"http://www.baidu.com/auto_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890" title:autoTitle method:@"GET" head:@{@"os":@"iOS"} parameter:@"request" response:@"responseText"];
         });
     }
     

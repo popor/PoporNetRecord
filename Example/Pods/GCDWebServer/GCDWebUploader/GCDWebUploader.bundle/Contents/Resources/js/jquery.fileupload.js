@@ -200,7 +200,7 @@
             // Callback for the submit event of each file upload:
             // submit: function (e, data) {}, // .bind('fileuploadsubmit', func);
 
-            // Callback for the start of each file upload request:
+            // Callback for the start of each file upload parameter:
             // send: function (e, data) {}, // .bind('fileuploadsend', func);
 
             // Callback for successful uploads:
@@ -236,7 +236,7 @@
             // Callback for dragover events of the dropZone(s):
             // dragover: function (e) {}, // .bind('fileuploaddragover', func);
 
-            // Callback for the start of each chunk upload request:
+            // Callback for the start of each chunk upload parameter:
             // chunksend: function (e, data) {}, // .bind('fileuploadchunksend', func);
 
             // Callback for successful chunk uploads:

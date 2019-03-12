@@ -159,7 +159,7 @@
     _listColorTitleHex = [self hexStringColorNoAlpha:listColorTitle];
 }
 
-- (void)setListColorRequest:(UIColor *)listColorRequest {
+- (void)setListColorparameter:(UIColor *)listColorRequest {
     _listColorRequest = listColorRequest;
     _listColorRequestHex = [self hexStringColorNoAlpha:listColorRequest];
 }

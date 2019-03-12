@@ -25,7 +25,7 @@
     
     [h5 appendString:@"<div style=\" position:relative; top:4px; left:5px; \">"];
     
-    [h5 appendFormat:@"<font color='%@'>%@ </font> <font color='%@'>%@  </font>", config.listColorTitleHex, self.title , config.listColorRequestHex, [self.request substringToIndex:MIN(self.request.length, 80)]];
+    [h5 appendFormat:@"<font color='%@'>%@ </font> <font color='%@'>%@  </font>", config.listColorTitleHex, self.title , config.listColorRequestHex, [self.path substringToIndex:MIN(self.path.length, 80)]];
     [h5 appendFormat:@"<br/> <font color='%@'>%@  </font> <font color='%@'>%@ </font>", config.listColorTimeHex, self.time, config.listColorDomainHex, self.domain];
     
     [h5 appendString:@"</div></div>"];
@@ -33,22 +33,24 @@
     self.listWebH5 = [h5 copy];
 }
 
+
+
 - (NSArray *)titleArray {
     PnrEntity * entity = self;
     NSString * title;
     if (entity.title) {
-        title = [NSString stringWithFormat:@" %@\n%@", entity.title, entity.request];
+        title = [NSString stringWithFormat:@" %@\n%@", entity.title, entity.path];
     }else{
-        title = [NSString stringWithFormat:@" \n%@",entity.request];
+        title = [NSString stringWithFormat:@" \n%@",entity.path];
     }
-    NSArray * titleArray = @[[NSString stringWithFormat:@"接口:%@", title],
-                             [NSString stringWithFormat:@"链接:\n%@", entity.url],
-                             [NSString stringWithFormat:@"时间:\n%@", entity.time],
-                             [NSString stringWithFormat:@"方法:\n%@", entity.method],
+    NSArray * titleArray = @[[NSString stringWithFormat:@"%@\n%@", PnrRootPath1, title],
+                             [NSString stringWithFormat:@"%@\n%@", PnrRootUrl1, entity.url],
+                             [NSString stringWithFormat:@"%@\n%@", PnrRootTime2, entity.time],
+                             [NSString stringWithFormat:@"%@\n%@", PnrRootMethod3, entity.method],
                              
-                             @"head参数:\n",
-                             @"请求参数:\n",
-                             @"返回数据:\n",
+                             [NSString stringWithFormat:@"%@\n", PnrRootHead4],
+                             [NSString stringWithFormat:@"%@\n", PnrRootParameter5],
+                             [NSString stringWithFormat:@"%@\n", PnrRootResponse6],
                              ];
     return titleArray;
 }
@@ -61,7 +63,7 @@
                             [NSNull null],
                             
                             entity.headValue ?:[NSNull null],
-                            entity.requesValue ?:[NSNull null],
+                            entity.parameterValue ?:[NSNull null],
                             entity.responseValue ?:[NSNull null],
                             ];
     

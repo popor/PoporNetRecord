@@ -107,11 +107,11 @@
             //[att addString:[NSString stringWithFormat:@" %@", entity.request] font:cellFont15 color:ColorBlack6];
             
             [att addString:entity.title font:self.config.listFontTitle color:self.config.listColorTitle];
-            [att addString:[NSString stringWithFormat:@" %@", entity.request] font:self.config.listFontRequest color:self.config.listColorRequest];
+            [att addString:[NSString stringWithFormat:@" %@", entity.path] font:self.config.listFontRequest color:self.config.listColorRequest];
             
             cell.requestL.attributedText = att;
         }else{
-            cell.requestL.text      = entity.request;
+            cell.requestL.text      = entity.path;
             cell.requestL.font      = self.config.listFontRequest;
             cell.requestL.textColor = self.config.listColorRequest;
         }

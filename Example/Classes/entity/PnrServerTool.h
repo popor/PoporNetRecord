@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <GCDWebServer/GCDWebServer.h>
 #import "PnrPortEntity.h"
+#import "PnrEntity.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,9 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSArray * titleArray;
 @property (nonatomic, strong) NSArray * jsonArray;
 
-@property (nonatomic, strong, nullable) GCDWebServer * webServer;
+@property (nonatomic, strong, nullable) GCDWebServer * webServer; // get
+@property (nonatomic, strong, nullable) GCDWebServer * updateServer; // post
 
-- (void)startListServer:(NSString *)body;
+- (void)startListServer:(PnrEntity *)pnrEntity;
 
 //- (NSMutableString *)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray;
 

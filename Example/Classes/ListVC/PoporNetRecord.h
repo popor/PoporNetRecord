@@ -23,13 +23,13 @@
 + (instancetype)share;
 
 /**
- headValue:     NSDictionary | NSString
- requestValue:  NSDictionary | NSString
- responseValue: NSDictionary | NSString
+ headValue:      NSDictionary | NSString
+ parameterValue: NSDictionary | NSString
+ responseValue:  NSDictionary | NSString
  */
-+ (void)addUrl:(NSString *)urlString method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue;
++ (void)addUrl:(NSString *)urlString method:(NSString *)method head:(id)headValue parameter:(id)parameterValue response:(id)responseValue;
 
 // 增加title
-+ (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue;
++ (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue parameter:(id)parameterValue response:(id)responseValue;
 
 @end

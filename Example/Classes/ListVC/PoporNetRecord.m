@@ -46,29 +46,34 @@
     return instance;
 }
 
-+ (void)addUrl:(NSString *)urlString method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue
++ (void)addUrl:(NSString *)urlString method:(NSString *)method head:(id)headValue parameter:(id)parameterValue response:(id)responseValue
 {
-    [self addUrl:urlString title:@"--" method:method head:headValue request:requestValue response:responseValue];
+    [self addUrl:urlString title:@"--" method:method head:headValue parameter:parameterValue response:responseValue];
 }
 
-+ (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue request:(id)requestValue response:(id)responseValue
++ (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue parameter:(id)parameterValue response:(id)responseValue
 {
     PoporNetRecord * pnr = [PoporNetRecord share];
     if (pnr.config.isRecord) {
         PnrEntity * entity = [PnrEntity new];
-        entity.title         = title;
-        entity.url           = urlString;
-        entity.method        = method;
-        entity.headValue     = headValue;
-        entity.requesValue   = requestValue;
-        entity.responseValue = responseValue;
-        entity.time          = [NSDate stringFromDate:[NSDate date] formatter:@"HH:mm:ss"];
-        
+        entity.title          = title;
+        entity.url            = urlString;
+        entity.method         = method;
+        entity.headValue      = headValue;
+        entity.parameterValue = parameterValue;
+        entity.responseValue  = responseValue;
+        entity.time           = [NSDate stringFromDate:[NSDate date] formatter:@"HH:mm:ss"];
+
         if (urlString.length>0) {
             NSURL * url = [NSURL URLWithString:urlString];
             entity.domain = [NSString stringWithFormat:@"%@://%@", url.scheme, url.host];
+            
             if (entity.domain.length+1 < urlString.length) {
-                entity.request = [urlString substringFromIndex:entity.domain.length+1];
+                entity.path = [urlString substringFromIndex:entity.domain.length+1];
+                NSString * query = url.query;
+                if (query.length > 0) {
+                    entity.path = [entity.path substringToIndex:entity.path.length-1-query.length];
+                }
             }
         }
         if (pnr.infoArray.count == 0) {
@@ -77,12 +82,10 @@
         }
         [pnr.infoArray addObject:entity];
         
-        
         if (pnr.config.isShowListWeb) {
-            
             [entity createListWebH5:pnr.infoArray.count - 1];
             [pnr.listWebH5 insertString:entity.listWebH5 atIndex:0];
-            [[PnrServerTool share] startListServer:pnr.listWebH5];
+            [[PnrServerTool share] startListServer:pnr];
         }
         
         // 假如在打开界面的时候收到请求,那么刷新数据
