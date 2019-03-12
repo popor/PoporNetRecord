@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) GCDWebServer * webServer;
 
 @property (nonatomic, copy  ) PnrResubmitBlock resubmitBlock;
+@property (nonatomic, strong) NSDictionary * resubmitExtraDic;
 
 - (void)startListServer:(NSMutableString *)listBodyH5;
 - (void)stopServer;

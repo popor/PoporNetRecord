@@ -177,9 +177,11 @@
         NSString * methodStr    = dic[@"method"];
         NSString * headStr      = dic[@"head"];
         NSString * parameterStr = dic[@"parameter"];
+        //NSString * extraStr     = dic[@"extra"];
         
-        [PoporNetRecord addUrl:urlStr title:[NSString stringWithFormat:@"[%@]", pnrEntity.title] method:methodStr head:headStr.toDic parameter:parameterStr.toDic response:@"新的返回数据"];
-    }];
+        NSString * title = [pnrEntity.title hasPrefix:@"["] ? pnrEntity.title:[NSString stringWithFormat:@"[%@]", pnrEntity.title];
+        [PoporNetRecord addUrl:urlStr title:title method:methodStr head:headStr.toDic parameter:parameterStr.toDic response:@"新的返回数据"];
+    } extraDic:@{@"exKey":@"exValue"}];
 }
 
 - (void)pushNetRecordListVC {

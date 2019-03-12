@@ -194,6 +194,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         NSString * headStr      = [self contentString:pnrEntity.headValue];
         NSString * parameterStr = [self contentString:pnrEntity.parameterValue];
         NSString * responseStr  = [self contentString:pnrEntity.responseValue];
+        NSString * extraStr     = self.resubmitExtraDic ? self.resubmitExtraDic.toJsonString : @"{\"extraKey\":\"extraValue\"}";
         
         {
             // 设置 h5Root
@@ -203,7 +204,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             [h5 appendString:@"<html> <head><title>请求详情</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
             // 是否开启了重新提交
             if (self.resubmitBlock) {
-                [h5 appendFormat:@"<p> <a href='/%i/%@'> <button type=\"button\"> 重新请求 </button> </p>", (int)index, PnrPathEdit];
+                [h5 appendFormat:@"<p> <a href='/%i/%@'> <button type='button' style=\"width:200px;\" > 重新请求 </button> </p>", (int)index, PnrPathEdit];
             }
             [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootPath1, colorValue, pnrEntity.path];
             [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootUrl1, colorValue, pnrEntity.url];
@@ -255,8 +256,11 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             // parameter
             [h5 appendFormat:@"<br><font color='%@'>%@</font><br> \
              <textarea id='%@' name='%@' wrap='off' cols='100' rows='5' style='font-size:%ipx;' >%@</textarea> ", colorKey,  PnrRootParameter5, @"parameter", @"parameter", textSize, parameterStr];
+            // 额外参数
+            [h5 appendFormat:@"<br><font color='%@'>%@</font><br> \
+             <textarea id='%@' name='%@' wrap='off' cols='100' rows='1' style='font-size:%ipx;' >%@</textarea> ", colorKey,  @"额外参数", @"extra", @"extra", textSize, extraStr];
             
-            [h5 appendString:@"<br><br><input type=\"submit\" value=\"  提交  \">"];
+            [h5 appendString:@"<br><br><input type=\"submit\" style=\"width:200px;\" value=\"  提交  \"> <br>"];
             
             [h5 appendString:@"</form>"];
             
