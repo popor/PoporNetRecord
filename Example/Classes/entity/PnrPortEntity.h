@@ -10,17 +10,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-static int PoporNetRecordPort = 8080;
+static int PnrPortGet  = 8080;
+static int PnrPortPost = 8081;
 
 @interface PnrPortEntity : NSObject
 
-@property (nonatomic        ) int portInt;
-
+@property (nonatomic        ) int portGetInt;
+@property (nonatomic        ) int portPostInt;
 + (instancetype)share;
 
 #pragma mark - plist
-+ (void)savePort:(NSString *)allPort;
-+ (NSString *)getPort;
++ (void)savePort_get:(int)port;
++ (int)getPort_get;
++ (void)savePort_post:(int)port;
++ (int)getPort_post;
 
 @end
 

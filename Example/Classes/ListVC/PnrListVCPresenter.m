@@ -304,21 +304,26 @@
 
 - (void)editPortAction {
     {
-        PnrPortEntity * port = [PnrPortEntity share];
-        UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:@"端口号" message:@"修改后，下次启动生效" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:nil message:@"Get端口和Post端口\n修改后，下次启动生效" preferredStyle:UIAlertControllerStyleAlert];
         
         [oneAC addTextFieldWithConfigurationHandler:^(UITextField *textField){
             
-            textField.placeholder = [NSString stringWithFormat:@"%i", PoporNetRecordPort];
-            textField.text = [NSString stringWithFormat:@"%i", port.portInt];
+            textField.placeholder = [NSString stringWithFormat:@"%i", PnrPortGet];
+            textField.text = [NSString stringWithFormat:@"%i", [PnrPortEntity getPort_get]];
+        }];
+        [oneAC addTextFieldWithConfigurationHandler:^(UITextField *textField){
+            
+            textField.placeholder = [NSString stringWithFormat:@"%i", PnrPortPost];
+            textField.text = [NSString stringWithFormat:@"%i", [PnrPortEntity getPort_post]];
         }];
         
         UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
         UIAlertAction * changeAction = [UIAlertAction actionWithTitle:@"修改" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            UITextField * nameTF = oneAC.textFields[0];
-            int portInt = nameTF.text.intValue;
-            if (portInt > 0) {
-                [PnrPortEntity savePort:[NSString stringWithFormat:@"%i", portInt]];
+            int portGet  = oneAC.textFields[0].text.intValue;
+            int portPost = oneAC.textFields[1].text.intValue;
+            if (portGet!=0 && portPost!=0 && portGet!=portPost) {
+                [PnrPortEntity savePort_get:portGet];
+                [PnrPortEntity savePort_post:portPost];
             }
         }];
         

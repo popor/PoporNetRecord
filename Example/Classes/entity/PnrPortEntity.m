@@ -7,7 +7,8 @@
 
 #import "PnrPortEntity.h"
 
-static NSString * PoporNetRecord_port = @"PoporNetRecord_port";
+static NSString * PoporNetRecord_port_get  = @"PoporNetRecord_port_get";
+static NSString * PoporNetRecord_port_post = @"PoporNetRecord_port_post";
 
 @implementation PnrPortEntity
 
@@ -29,23 +30,39 @@ static NSString * PoporNetRecord_port = @"PoporNetRecord_port";
 }
 
 - (void)initPort {
-    NSString * portString = [PnrPortEntity getPort];
-    if (portString && portString.length>0) {
-        self.portInt = [portString intValue];
+    int portGet  = [PnrPortEntity getPort_get];
+    int portPost = [PnrPortEntity getPort_post];
+    
+    if (portGet != portPost) {
+        self.portGetInt  = portGet;
+        self.portPostInt = portPost;
     }else{
-        self.portInt = PoporNetRecordPort;
+        self.portGetInt  = PnrPortGet;
+        self.portPostInt = PnrPortPost;
+        [PnrPortEntity savePort_get:PnrPortGet];
+        [PnrPortEntity savePort_post:PnrPortPost];
     }
 }
 
 #pragma mark - plist
-+ (void)savePort:(NSString *)allPort {
-    [[NSUserDefaults standardUserDefaults] setObject:allPort forKey:PoporNetRecord_port];
++ (void)savePort_get:(int)port {
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%i", port] forKey:PoporNetRecord_port_get];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-+ (NSString *)getPort {
-    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_port];
-    return info;
++ (int)getPort_get {
+    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_port_get];
+    return info.intValue;
+}
+
++ (void)savePort_post:(int)port {
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%i", port] forKey:PoporNetRecord_port_post];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (int)getPort_post {
+    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PoporNetRecord_port_post];
+    return info.intValue;
 }
 
 @end

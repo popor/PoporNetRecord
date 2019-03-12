@@ -78,7 +78,6 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         
         [self.webServer addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
             NSString * path = request.URL.path;
-            NSLog(@"跳转:%@", request.URL.absoluteString);
             if (path.length>=2) {
                 path = [path substringFromIndex:1];
                 NSArray * pathArray = [path componentsSeparatedByString:@"/"];
@@ -92,7 +91,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             }
         }];
         PnrPortEntity * port = [PnrPortEntity share];
-        [server startWithPort:port.portInt bonjourName:nil];
+        [server startWithPort:port.portGetInt bonjourName:nil];
     }
     if (!self.updateServer) {
         GCDWebServer * server = [GCDWebServer new];
@@ -100,7 +99,6 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         
         [self.updateServer addDefaultHandlerForMethod:@"POST" requestClass:[GCDWebServerRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
             NSString * path = request.URL.path;
-            NSLog(@"跳转:%@", request.URL.absoluteString);
             if (path.length>=2) {
                 path = [path substringFromIndex:1];
                 NSArray * pathArray = [path componentsSeparatedByString:@"/"];
@@ -114,8 +112,8 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
                 completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
             }
         }];
-        //PnrPortEntity * port = [PnrPortEntity share];
-        [server startWithPort:9000 bonjourName:nil];
+        PnrPortEntity * port = [PnrPortEntity share];
+        [server startWithPort:port.portPostInt bonjourName:nil];
     }
 }
 
