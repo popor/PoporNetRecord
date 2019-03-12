@@ -304,27 +304,32 @@
 
 - (void)editPortAction {
     {
-        UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:nil message:@"Get端口和Post端口\n修改后，下次启动生效" preferredStyle:UIAlertControllerStyleAlert];
+        NSString * message = @"端口修改后，下次启动生效";// @"Get端口和Post端口\n修改后，下次启动生效"
+        UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
         
         [oneAC addTextFieldWithConfigurationHandler:^(UITextField *textField){
             
             textField.placeholder = [NSString stringWithFormat:@"%i", PnrPortGet];
             textField.text = [NSString stringWithFormat:@"%i", [PnrPortEntity getPort_get]];
         }];
-        [oneAC addTextFieldWithConfigurationHandler:^(UITextField *textField){
-            
-            textField.placeholder = [NSString stringWithFormat:@"%i", PnrPortPost];
-            textField.text = [NSString stringWithFormat:@"%i", [PnrPortEntity getPort_post]];
-        }];
+        //        [oneAC addTextFieldWithConfigurationHandler:^(UITextField *textField){
+        //
+        //            textField.placeholder = [NSString stringWithFormat:@"%i", PnrPortPost];
+        //            textField.text = [NSString stringWithFormat:@"%i", [PnrPortEntity getPort_post]];
+        //        }];
         
         UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
         UIAlertAction * changeAction = [UIAlertAction actionWithTitle:@"修改" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             int portGet  = oneAC.textFields[0].text.intValue;
-            int portPost = oneAC.textFields[1].text.intValue;
-            if (portGet!=0 && portPost!=0 && portGet!=portPost) {
+            if (portGet != 0) {
                 [PnrPortEntity savePort_get:portGet];
-                [PnrPortEntity savePort_post:portPost];
             }
+            //            int portGet  = oneAC.textFields[0].text.intValue;
+            //            int portPost = oneAC.textFields[1].text.intValue;
+            //            if (portGet!=0 && portPost!=0 && portGet!=portPost) {
+            //                [PnrPortEntity savePort_get:portGet];
+            //                [PnrPortEntity savePort_post:portPost];
+            //            }
         }];
         
         [oneAC addAction:cancleAction];

@@ -17,6 +17,8 @@
 #import <GCDWebServer/GCDWebServerDataResponse.h>
 #import <GCDWebServer/GCDWebServerPrivate.h>
 
+//#import <GCDWebServer/GCDWebServerDataRequest.h>
+
 #import <PoporFoundation/NSDictionary+tool.h>
 
 static NSString * ErrorUrl    = @"<html> <head><title>错误</title></head> <body><p> URL异常 </p> </body></html>";
@@ -47,9 +49,8 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     dispatch_once(&once, ^{
         instance = [PnrServerTool new];
         instance.h5List     = [NSMutableString new];
-        
         instance.lastIndex  = -1;
-        //[GCDWebServer setLogLevel:kGCDWebServerLoggingLevel_Error];
+        [GCDWebServer setLogLevel:kGCDWebServerLoggingLevel_Error];
     });
     return instance;
 }
@@ -62,13 +63,16 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
 }
 
 #pragma mark - list server
-- (void)startListServer:(PnrEntity *)pnrEntity {
+- (void)startListServer:(NSMutableString *)listBodyH5 {
+    if (!listBodyH5) {
+        return;
+    }
     __weak typeof(self) weakSelf = self;
     
     {
         [self.h5List setString:@""];
         [self.h5List appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
-        [self.h5List appendString:pnrEntity.listWebH5];
+        [self.h5List appendString:listBodyH5];
         [self.h5List appendString:@"</body></html>"];
     }
     
@@ -82,7 +86,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
                 path = [path substringFromIndex:1];
                 NSArray * pathArray = [path componentsSeparatedByString:@"/"];
                 if (pathArray.count == 2) {
-                    [weakSelf analysisIndex:[pathArray[0] integerValue] path:pathArray[1] request:request complete:completionBlock];
+                    [weakSelf analysisGetIndex:[pathArray[0] integerValue] path:pathArray[1] request:request complete:completionBlock];
                 }else{
                     completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
                 }
@@ -90,34 +94,29 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
                 completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.h5List]);
             }
         }];
-        PnrPortEntity * port = [PnrPortEntity share];
-        [server startWithPort:port.portGetInt bonjourName:nil];
-    }
-    if (!self.updateServer) {
-        GCDWebServer * server = [GCDWebServer new];
-        self.updateServer = server;
         
-        [self.updateServer addDefaultHandlerForMethod:@"POST" requestClass:[GCDWebServerRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
+        [self.webServer addDefaultHandlerForMethod:@"POST" requestClass:[GCDWebServerURLEncodedFormRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
             NSString * path = request.URL.path;
             if (path.length>=2) {
                 path = [path substringFromIndex:1];
                 NSArray * pathArray = [path componentsSeparatedByString:@"/"];
                 if (pathArray.count == 2) {
-                    [weakSelf analysisIndex:[pathArray[0] integerValue] path:pathArray[1] request:request complete:completionBlock];
+                    [weakSelf analysisPostIndex:[pathArray[0] integerValue] path:pathArray[1] request:request complete:completionBlock];
                 }else{
                     completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
                 }
             }else{
-                
                 completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
             }
         }];
+        
         PnrPortEntity * port = [PnrPortEntity share];
-        [server startWithPort:port.portPostInt bonjourName:nil];
+        [server startWithPort:port.portGetInt bonjourName:nil];
     }
 }
 
-- (void)analysisIndex:(NSInteger)index path:(NSString *)path request:(GCDWebServerRequest * _Nonnull)request complete:(GCDWebServerCompletionBlock  _Nonnull)complete {
+// get 请求
+- (void)analysisGetIndex:(NSInteger)index path:(NSString *)path request:(GCDWebServerRequest * _Nonnull)request complete:(GCDWebServerCompletionBlock  _Nonnull)complete {
     
     PnrEntity * entity;
     if (self.infoArray.count > index) {
@@ -140,8 +139,34 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             str = self.h5Response;
         }else if([path isEqualToString:PnrPathEdit]){
             str = self.h5Edit;
-        }else if([path isEqualToString:PnrPathUpdate]){
+        }
+        if (str) {
+            complete([GCDWebServerDataResponse responseWithHTML:str]);
+        }else{
+            complete([GCDWebServerDataResponse responseWithHTML:ErrorUnknow]);
+        }
+        
+    }else{
+        complete([GCDWebServerDataResponse responseWithHTML:ErrorEntity]);
+    }
+}
+
+// post 请求
+- (void)analysisPostIndex:(NSInteger)index path:(NSString *)path request:(GCDWebServerRequest * _Nonnull)request complete:(GCDWebServerCompletionBlock  _Nonnull)complete {
+    
+    PnrEntity * entity;
+    if (self.infoArray.count > index) {
+        entity = self.infoArray[index];
+    }
+    if (entity) {
+        if (index != self.lastIndex) {
+            self.lastIndex = index;
+            [self startServerTitle:entity index:index];
+        }
+        NSString * str;
+        if([path isEqualToString:PnrPathResubmit]){
             str = @"<html> <head><title>update</title></head> <body><p> 已经重新提交 </p> </body></html>";
+            [self resubmitEntity:entity request:request];
         }
         if (str) {
             complete([GCDWebServerDataResponse responseWithHTML:str]);
@@ -176,8 +201,10 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             
             h5 = [NSMutableString new];
             [h5 appendString:@"<html> <head><title>请求详情</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
-            [h5 appendFormat:@"<p> <a href='/%i/%@'> <button type=\"button\"> 重新请求 </button> </p>", (int)index, PnrPathEdit];
-            
+            // 是否开启了重新提交
+            if (self.resubmitBlock) {
+                [h5 appendFormat:@"<p> <a href='/%i/%@'> <button type=\"button\"> 重新请求 </button> </p>", (int)index, PnrPathEdit];
+            }
             [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootPath1, colorValue, pnrEntity.path];
             [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootUrl1, colorValue, pnrEntity.url];
             [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootTime2, colorValue, pnrEntity.time];
@@ -206,15 +233,15 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             [h5 appendString:@"</body></html>"];
             self.h5Root = h5;
         }
-        {
+        // 是否开启了重新提交
+        if (self.resubmitBlock) {
             int textSize = 16;
             // 设置 h5Edit
             NSMutableString * h5;
             
             h5 = [NSMutableString new];
             [h5 appendString:@"<html> <head><title>请求详情</title></head> <body>"];
-            //[h5 appendFormat:@"<form action='%@' method='POST' target='myIframe' >", PnrPathUpdate];
-            [h5 appendFormat:@"<form action='%@%i/%@' method='POST' target='myIframe' >", self.updateServer.serverURL.absoluteString, (int)index, PnrPathUpdate];
+            [h5 appendFormat:@"<form action='/%i/%@' method='POST' target='myIframe' >",  (int)index, PnrPathResubmit];
             
             // url
             [h5 appendFormat:@"<font color='%@'>%@</font><br> \
@@ -238,6 +265,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             [h5 appendString:@"</body></html>"];
             self.h5Edit = h5;
         }
+        
     }else{
         AlertToastTitle(@"无法开启服务，titleArray与jsonArray数组不一致");
     }
@@ -273,12 +301,15 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     }
 }
 
+- (void)resubmitEntity:(PnrEntity *)pnrEntity request:(GCDWebServerRequest * _Nonnull)request {
+    if (self.resubmitBlock) {
+        self.resubmitBlock(pnrEntity, (GCDWebServerURLEncodedFormRequest *)request);
+    }
+}
+
 - (void)stopServer {
     [self.webServer stop];
     self.webServer = nil;
-    
-    [self.updateServer stop];
-    self.updateServer = nil;
 }
 
 @end

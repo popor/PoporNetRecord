@@ -9,6 +9,7 @@
 #import <GCDWebServer/GCDWebServer.h>
 #import "PnrPortEntity.h"
 #import "PnrEntity.h"
+#import "PnrPrefix.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,13 +24,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSArray * titleArray;
 @property (nonatomic, strong) NSArray * jsonArray;
 
-@property (nonatomic, strong, nullable) GCDWebServer * webServer; // get
-@property (nonatomic, strong, nullable) GCDWebServer * updateServer; // post
+@property (nonatomic, strong, nullable) GCDWebServer * webServer;
 
-- (void)startListServer:(PnrEntity *)pnrEntity;
+@property (nonatomic, copy  ) PnrResubmitBlock resubmitBlock;
 
-//- (NSMutableString *)startServerTitle:(NSArray *)titleArray json:(NSArray *)jsonArray;
-
+- (void)startListServer:(NSMutableString *)listBodyH5;
 - (void)stopServer;
 
 @end

@@ -85,7 +85,7 @@
         if (pnr.config.isShowListWeb) {
             [entity createListWebH5:pnr.infoArray.count - 1];
             [pnr.listWebH5 insertString:entity.listWebH5 atIndex:0];
-            [[PnrServerTool share] startListServer:pnr];
+            [[PnrServerTool share] startListServer:pnr.listWebH5];
         }
         
         // 假如在打开界面的时候收到请求,那么刷新数据
@@ -93,6 +93,10 @@
             pnr.config.freshBlock();
         }
     }
+}
+
++ (void)setPnrResubmitBlock:(PnrResubmitBlock)block {
+    [PnrServerTool share].resubmitBlock = block;
 }
 
 @end

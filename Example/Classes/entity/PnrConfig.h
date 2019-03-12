@@ -17,7 +17,7 @@ static NSString * PnrPathHead      = @"head";
 static NSString * PnrPathParameter = @"parameter";
 static NSString * PnrPathResponse  = @"response";
 static NSString * PnrPathEdit      = @"edit";
-static NSString * PnrPathUpdate    = @"update";
+static NSString * PnrPathResubmit  = @"resubmit";
 
 typedef NS_ENUM(int, PoporNetRecordType) {
     PoporNetRecordAuto = 1, // 开发环境或者虚拟机环境

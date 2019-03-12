@@ -18,6 +18,8 @@
 #import <PoporUI/UINavigationController+Size.h>
 #import <PoporUI/UIImage+create.h>
 
+#import <PoporFoundation/NSString+Tool.h>
+
 @interface PoporNetRecordViewController ()
 
 @property (nonatomic        ) int netIndex;
@@ -168,7 +170,16 @@
         nc.navigationBar.tintColor = [UIColor whiteColor];
         
     };
-    
+    // 增加重新请求demo
+    [PoporNetRecord setPnrResubmitBlock:^(PnrEntity *pnrEntity, GCDWebServerURLEncodedFormRequest *formRequest) {
+        NSDictionary * dic      = formRequest.arguments;
+        NSString * urlStr       = dic[@"url"];
+        NSString * methodStr    = dic[@"method"];
+        NSString * headStr      = dic[@"head"];
+        NSString * parameterStr = dic[@"parameter"];
+        
+        [PoporNetRecord addUrl:urlStr title:[NSString stringWithFormat:@"[%@]", pnrEntity.title] method:methodStr head:headStr.toDic parameter:parameterStr.toDic response:@"新的返回数据"];
+    }];
 }
 
 - (void)pushNetRecordListVC {
