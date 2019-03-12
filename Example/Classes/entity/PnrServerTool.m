@@ -283,7 +283,8 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
 
 - (void)resubmitEntity:(PnrEntity *)pnrEntity request:(GCDWebServerRequest * _Nonnull)request {
     if (self.resubmitBlock) {
-        self.resubmitBlock(pnrEntity, (GCDWebServerURLEncodedFormRequest *)request);
+        GCDWebServerURLEncodedFormRequest * formRequest= (GCDWebServerURLEncodedFormRequest *)request;
+        self.resubmitBlock(pnrEntity, formRequest.arguments);
     }
 }
 

@@ -171,13 +171,12 @@
         
     };
     // 增加重新请求demo
-    [PoporNetRecord setPnrResubmitBlock:^(PnrEntity *pnrEntity, GCDWebServerURLEncodedFormRequest *formRequest) {
-        NSDictionary * dic      = formRequest.arguments;
-        NSString * urlStr       = dic[@"url"];
-        NSString * methodStr    = dic[@"method"];
-        NSString * headStr      = dic[@"head"];
-        NSString * parameterStr = dic[@"parameter"];
-        //NSString * extraStr     = dic[@"extra"];
+    [PoporNetRecord setPnrResubmitBlock:^(PnrEntity *pnrEntity, NSDictionary * formDic) {
+        NSString * urlStr       = formDic[@"url"];
+        NSString * methodStr    = formDic[@"method"];
+        NSString * headStr      = formDic[@"head"];
+        NSString * parameterStr = formDic[@"parameter"];
+        //NSString * extraStr     = formDic[@"extra"];
         
         NSString * title = [pnrEntity.title hasPrefix:@"["] ? pnrEntity.title:[NSString stringWithFormat:@"[%@]", pnrEntity.title];
         [PoporNetRecord addUrl:urlStr title:title method:methodStr head:headStr.toDic parameter:parameterStr.toDic response:@"新的返回数据"];
