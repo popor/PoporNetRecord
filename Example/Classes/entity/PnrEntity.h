@@ -19,9 +19,11 @@ static NSString * PnrRootParameter5 = @"请求参数:";
 static NSString * PnrRootResponse6  = @"返回数据:";
 
 static int PnrListHeight            = 50;
-static NSString * IframeList        = @"IframeList";
-static NSString * IframeDetail      = @"IframeDetail";
-static NSString * IframeFeedback    = @"IframeFeedback";
+static NSString * PnrIframeList     = @"IframeList";
+static NSString * PnrIframeDetail   = @"IframeDetail";
+static NSString * PnrIframeFeedback = @"IframeFeedback";
+
+static NSString * PnrFormResubmit   = @"formResubmit";
 
 
 static NSString * PnrPathList      = @"list";

@@ -52,8 +52,38 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         {
             NSMutableString * h5 = [NSMutableString new];
             [h5 appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
-            [h5 appendFormat:@"<iframe id='%@' name='%@'  src='/%@' width ='400' height= '94%%' ></iframe>", IframeList, IframeList, PnrPathList];
-            [h5 appendFormat:@"<iframe id='%@' name='%@' width ='100' height= '94%%' ></iframe>", IframeDetail, IframeDetail];
+            
+            [h5 appendString:@"<script>"];
+            
+            // 方便 xcode 查看代码
+            // [h5 appendFormat:@"\
+            //  function detail(row) {\
+            //  var src = '/' +row + '/%@';\
+            //  document.getElementById('%@').src = src;\
+            //  }\
+            //  ", PnrPathDetail, PnrIframeDetail];
+            
+            //[h5 appendFormat:@"\
+            // function resubmit() {\
+            // var form = document.getElementById('%@').contentWindow.document.getElementById('%@');\
+            // form.submit();\
+            // setTimeout(function(){\
+            // document.getElementById('%@').contentWindow.location.reload(true);\
+            // },2000);\
+            // }\
+            // ", PnrIframeDetail, PnrFormResubmit, PnrIframeList];
+            
+            // 方便 浏览器查看 代码
+            [h5 appendFormat:@"\n  function detail(row) {\n  var src = '/' +row + '/%@';\n  document.getElementById('%@').src = src;\n  }", PnrPathDetail, PnrIframeDetail];
+            
+            [h5 appendFormat:@"\n\n  function resubmit() {\n  var form = document.getElementById('%@').contentWindow.document.getElementById('%@');\n  form.submit();\n  setTimeout(function(){\n  document.getElementById('%@').contentWindow.location.reload(true);\n  },2000);\n  }", PnrIframeDetail, PnrFormResubmit, PnrIframeList];
+            
+            [h5 appendFormat:@"\n\n  function freshList() {\n  document.getElementById('%@').contentWindow.location.reload(true);\n  }", PnrIframeList];
+            
+            [h5 appendString:@"\n\n</script>"];
+            
+            [h5 appendFormat:@"<iframe id='%@' name='%@'  src='/%@' width ='400' height= '94%%' ></iframe>", PnrIframeList, PnrIframeList, PnrPathList];
+            [h5 appendFormat:@"<iframe id='%@' name='%@' width ='900' height= '94%%' ></iframe>", PnrIframeDetail, PnrIframeDetail];
             
             [h5 appendString:@"</body></html>"];
             
@@ -102,25 +132,23 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         
         [self.webServer addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
             NSString * path = request.URL.path;
-            NSLog(@"path :'%@'", path);
+            //NSLog(@"path :'%@'", path);
             if (path.length >= 1) {
-                path = [path substringFromIndex:1];
-                if ([path isEqualToString:@""]) {
-                    completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.h5Root]);
-                }else if ([path isEqualToString:PnrPathList]){
-                    completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.h5List]);
-                }else{
-                    completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
-                }
-            }else if (path.length>=2) {
                 path = [path substringFromIndex:1];
                 NSArray * pathArray = [path componentsSeparatedByString:@"/"];
                 if (pathArray.count == 2) {
                     [weakSelf analysisGetIndex:[pathArray[0] integerValue] path:pathArray[1] request:request complete:completionBlock];
-                }else{
-                    completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
+                }else if (pathArray.count == 1){
+                    if ([path isEqualToString:@""]) {
+                        completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.h5Root]);
+                    }else if ([path isEqualToString:PnrPathList]){
+                        completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.h5List]);
+                    }else{
+                        completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
+                    }
                 }
-            }else{
+            }
+            else {
                 completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
             }
         }];
@@ -278,7 +306,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             
             [h5 appendFormat:@"<p> <a href='/%i/%@'> <button type='button' style=\"width:200px;\" > <==返回 </button> </a> </p>", (int)index, PnrPathDetail];
             
-            [h5 appendFormat:@"<form action='/%i/%@' method='POST' target='%@' >",  (int)index, PnrPathResubmit, IframeFeedback];
+            [h5 appendFormat:@"<form id='%@' name='%@' action='/%i/%@' method='POST' target='%@' >", PnrFormResubmit, PnrFormResubmit, (int)index, PnrPathResubmit, PnrIframeFeedback];
             
             void (^ hrefBlock)(NSString*, NSString*, NSString*, int) = ^(NSString* title, NSString* key, NSString* value, int rows){
                 
@@ -295,10 +323,13 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             hrefBlock(PnrRootParameter5, @"parameter", parameterStr, 6);
             hrefBlock(@"额外参数", @"extra", extraStr, 4);
             
-            [h5 appendString:@"<br><input type=\"submit\" style=\"width:200px;\" value=\"  提交  \"> <br><br>"];
+            //[h5 appendString:@"<br><input type=\"submit\" style=\"width:200px;\" value=\"  提交  \"> <br><br>"];
+            [h5 appendFormat:@"<p> <button type='button' style=\"width:200px;\" onclick=\"parent.resubmit()\" > 重新请求 </button>"];
+            [h5 appendFormat:@"&nbsp; <button type='button' style=\"width:200px;\" onclick=\"parent.freshList()\" > 刷新列表 </button> </p>"];
+            
             [h5 appendString:@"</form>"];
             
-            [h5 appendFormat:@"<iframe id='%@' name='%@' width ='400' height='40'></iframe>", IframeFeedback, IframeFeedback];
+            [h5 appendFormat:@"<iframe id='%@' name='%@' width ='400' height='40'></iframe>", PnrIframeFeedback, PnrIframeFeedback];
             
             [h5 appendString:@"</body></html>"];
             self.h5Edit = h5;
