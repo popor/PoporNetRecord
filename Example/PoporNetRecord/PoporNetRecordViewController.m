@@ -64,7 +64,9 @@
 - (void)addOneNetRequest {
     NSString * autoTitle = [NSString stringWithFormat:@"测试数据:%i", self.netIndex++ + 1];
     NSLog(@"auto title : %@ ", autoTitle);
-    [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:@"GET" head:@{@"os":@"iOS"} parameter:@{@"a":@"a", @"b":@"b"} response:@"responseText"];
+    NSString * value = @"responseText_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789";
+    
+    [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:@"GET" head:@{@"os":@"iOS", @"key":value} parameter:@{@"a":@"a", @"b":@"b"} response:@"responseText"];
 }
 
 - (void)Demos {

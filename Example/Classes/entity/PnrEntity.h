@@ -18,6 +18,21 @@ static NSString * PnrRootHead4      = @"head参数:";
 static NSString * PnrRootParameter5 = @"请求参数:";
 static NSString * PnrRootResponse6  = @"返回数据:";
 
+static int PnrListHeight            = 50;
+static NSString * IframeList        = @"IframeList";
+static NSString * IframeDetail      = @"IframeDetail";
+static NSString * IframeFeedback    = @"IframeFeedback";
+
+
+static NSString * PnrPathList      = @"list";
+static NSString * PnrPathDetail    = @"detail";
+static NSString * PnrPathHead      = @"head";
+static NSString * PnrPathParameter = @"parameter";
+static NSString * PnrPathResponse  = @"response";
+static NSString * PnrPathEdit      = @"edit";
+static NSString * PnrPathResubmit  = @"resubmit";
+
+
 @interface PnrEntity : NSObject
 
 @property (nonatomic, strong) NSString * title;

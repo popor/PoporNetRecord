@@ -21,9 +21,20 @@
     NSString * bgColor = index%2==1 ? config.listColorCell0Hex:config.listColorCell1Hex;
     NSMutableString * h5 = [NSMutableString new];
     
-    [h5 appendFormat:@"<div style=\" background:%@; height:50px; position:relative; \" onclick= \"javascript:location.href='/%i/%@'\" >", bgColor, (int)index, PnrPathRoot];
+    //[h5 appendFormat:@"<div style=\" background:%@; height:%ipx; position:relative; \" onclick= \"javascript:location.href='/%i/%@'\" >", bgColor, PnrListHeight, (int)index, PnrPathDetail];
     
-    [h5 appendString:@"<div style=\" position:relative; top:4px; left:5px; \">"];
+    //[h5 appendFormat:@"<div style=\" background:%@; height:%ipx; position:relative; \" onclick= \"%@.location.href='/%i/%@'\" >", bgColor, PnrListHeight, IframeDetail, (int)index, PnrPathDetail];
+    
+    //[h5 appendFormat:@"<div style=\" background:%@; height:%ipx; position:relative; \" onclick= \"parent.document.frames['%@'].location.href='/%i/%@'\" >", bgColor, PnrListHeight, IframeDetail, (int)index, PnrPathDetail];
+    
+    // [h5 appendFormat:@"<div style=\" background:%@; height:%ipx; position:relative; \" onclick= \"window.parent.document.frames['%@'].location.href='/%i/%@'\" >", bgColor, PnrListHeight, IframeDetail, (int)index, PnrPathDetail];
+    
+    [h5 appendFormat:@"<div style=\" background:%@; height:%ipx; position:relative; \" onclick= \"window.parent.document.frames['%@'].location.href='/%i/%@'\" >", bgColor, PnrListHeight, IframeDetail, (int)index, PnrPathDetail];
+    
+    
+    //[h5 appendFormat:@"<div style=\" background:%@; height:%ipx; position:relative; \" onclick= \"window.frames['%@'].location.href='/%i/%@'\" >", bgColor, PnrListHeight, IframeDetail, (int)index, PnrPathDetail];
+    
+    [h5 appendFormat:@"<div style=\" position:relative; top:4px; left:5px; \" href='/%i/%@'>", (int)index, PnrPathDetail];
     
     [h5 appendFormat:@"<font color='%@'>%@ </font> <font color='%@'>%@  </font>", config.listColorTitleHex, self.title , config.listColorRequestHex, [self.path substringToIndex:MIN(self.path.length, 80)]];
     [h5 appendFormat:@"<br/> <font color='%@'>%@  </font> <font color='%@'>%@ </font>", config.listColorTimeHex, self.time, config.listColorDomainHex, self.domain];
@@ -32,8 +43,6 @@
     
     self.listWebH5 = [h5 copy];
 }
-
-
 
 - (NSArray *)titleArray {
     PnrEntity * entity = self;

@@ -28,7 +28,12 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
 
 @interface PnrServerTool ()
 
-@property (nonatomic, strong) NSString * h5Root;
+@property (nonatomic        ) NSInteger lastIndex;
+
+@property (nonatomic, strong) NSMutableString * h5Root;
+@property (nonatomic, strong) NSMutableString * h5List;
+
+@property (nonatomic, strong) NSString * h5Detail;
 @property (nonatomic, strong) NSString * h5Head;
 @property (nonatomic, strong) NSString * h5Request;
 @property (nonatomic, strong) NSString * h5Response;
@@ -43,7 +48,18 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     static PnrServerTool * instance;
     dispatch_once(&once, ^{
         instance = [PnrServerTool new];
-        instance.h5List     = [NSMutableString new];
+        instance.h5List = [NSMutableString new];
+        {
+            NSMutableString * h5 = [NSMutableString new];
+            [h5 appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
+            [h5 appendFormat:@"<iframe id='%@' name='%@'  src='/%@' width ='400' height= '94%%' ></iframe>", IframeList, IframeList, PnrPathList];
+            [h5 appendFormat:@"<iframe id='%@' name='%@' width ='100' height= '94%%' ></iframe>", IframeDetail, IframeDetail];
+            
+            [h5 appendString:@"</body></html>"];
+            
+            instance.h5Root = h5;
+        }
+        
         instance.lastIndex  = -1;
         [GCDWebServer setLogLevel:kGCDWebServerLoggingLevel_Error];
     });
@@ -62,14 +78,23 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     if (!listBodyH5) {
         return;
     }
+    {
+        NSMutableString * h5 = self.h5List;
+        [h5 setString:@""];
+        [h5 appendString:@"<html> <head><title>网络请求</title></head> <body>"];
+        {
+            [h5 appendFormat:@"<div style=\" background-color:#eeeeee; height:100%%; width:400px; float:left; padding:5px; \">"];
+            
+            //[self.h5List appendFormat:@"<div style=\"line-height:%ipx; background-color:#eeeeee; height:100%%; width:500px; float:left; padding:5px; \">", PnrListHeight];
+            
+            [h5 appendString:listBodyH5];
+            [h5 appendString:@"</div>"];
+        }
+        
+        [h5 appendString:@"</body></html>"];
+    }
     __weak typeof(self) weakSelf = self;
     
-    {
-        [self.h5List setString:@""];
-        [self.h5List appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
-        [self.h5List appendString:listBodyH5];
-        [self.h5List appendString:@"</body></html>"];
-    }
     
     if (!self.webServer) {
         GCDWebServer * server = [GCDWebServer new];
@@ -77,7 +102,17 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         
         [self.webServer addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
             NSString * path = request.URL.path;
-            if (path.length>=2) {
+            NSLog(@"path :'%@'", path);
+            if (path.length >= 1) {
+                path = [path substringFromIndex:1];
+                if ([path isEqualToString:@""]) {
+                    completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.h5Root]);
+                }else if ([path isEqualToString:PnrPathList]){
+                    completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.h5List]);
+                }else{
+                    completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
+                }
+            }else if (path.length>=2) {
                 path = [path substringFromIndex:1];
                 NSArray * pathArray = [path componentsSeparatedByString:@"/"];
                 if (pathArray.count == 2) {
@@ -86,7 +121,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
                     completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
                 }
             }else{
-                completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.h5List]);
+                completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
             }
         }];
         
@@ -124,8 +159,10 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             [self startServerUnitEntity:entity index:index];
         }
         NSString * str;
-        if ([path isEqualToString:PnrPathRoot]) {
-            str = self.h5Root;
+        if ([path isEqualToString:PnrPathList]) {
+            str = self.h5List;
+        }else if ([path isEqualToString:PnrPathDetail]) {
+            str = self.h5Detail;
         }else if ([path isEqualToString:PnrPathHead]){
             str = self.h5Head;
         }else if ([path isEqualToString:PnrPathParameter]){
@@ -197,7 +234,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             NSMutableString * h5;
             
             h5 = [NSMutableString new];
-            [h5 appendFormat:@"<html> <head><title>%@ 请求详情</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>", pnrTitle];
+            [h5 appendFormat:@"<html> <head><title>%@ 请求详情</title></head> <body>", pnrTitle];
             // 是否开启了重新提交
             if (self.resubmitBlock) {
                 [h5 appendFormat:@"<p> <a href='/%i/%@'> <button type='button' style=\"width:200px;\" > 重新请求 </button> </a> </p>", (int)index, PnrPathEdit];
@@ -208,7 +245,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootMethod3, colorValue, pnrEntity.method];
             
             void (^ hrefBlock)(NSString*, id, NSString*) = ^(NSString * title, NSString * content, NSString * secondPath){
-                [h5 appendFormat:@"<p><a href='/%i/%@'> <font color='%@'> %@ </font></a> <font color='%@'> %@ </font></p>", (int)index, secondPath, colorKey, title, colorValue, content];
+                [h5 appendFormat:@"<p><a href='/%i/%@' target='_blank'> <font color='%@'> %@ </font></a> <font color='%@'> %@ </font></p>", (int)index, secondPath, colorKey, title, colorValue, content];
             };
             
             NSString * (^ webBlock)(NSString *, id) = ^(NSString * subtitle, NSString * content){
@@ -228,7 +265,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             self.h5Response = webBlock(PnrRootResponse6,  responseStr);
             
             [h5 appendString:@"</body></html>"];
-            self.h5Root = h5;
+            self.h5Detail = h5;
         }
         // 是否开启了重新提交
         if (self.resubmitBlock) {
@@ -238,29 +275,30 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             
             h5 = [NSMutableString new];
             [h5 appendFormat:@"<html> <head><title>%@重新提交</title></head> <body>", pnrTitle];
-            [h5 appendFormat:@"<form action='/%i/%@' method='POST' target='myIframe' >",  (int)index, PnrPathResubmit];
             
-            // url
-            [h5 appendFormat:@"<font color='%@'>%@</font><br> \
-             <textarea id='%@' name='%@' wrap='off' cols='100' rows='2' style='font-size:%ipx;' >%@/%@</textarea> ", colorKey, PnrRootPath1, @"url", @"url", textSize, pnrEntity.domain, pnrEntity.path];
-            // method
-            [h5 appendFormat:@"<br><font color='%@'>%@</font><br> \
-             <textarea id='%@' name='%@' wrap='off' cols='100' rows='1' style='font-size:%ipx;' >%@</textarea> ", colorKey, PnrRootMethod3, @"method", @"method", textSize, pnrEntity.method];
-            // head
-            [h5 appendFormat:@"<br><font color='%@'>%@</font><br> \
-             <textarea id='%@' name='%@' wrap='off' cols='100' rows='3' style='font-size:%ipx;' >%@</textarea> ", colorKey, PnrRootHead4, @"head", @"head", textSize, headStr];
-            // parameter
-            [h5 appendFormat:@"<br><font color='%@'>%@</font><br> \
-             <textarea id='%@' name='%@' wrap='off' cols='100' rows='5' style='font-size:%ipx;' >%@</textarea> ", colorKey,  PnrRootParameter5, @"parameter", @"parameter", textSize, parameterStr];
-            // 额外参数
-            [h5 appendFormat:@"<br><font color='%@'>%@</font><br> \
-             <textarea id='%@' name='%@' wrap='off' cols='100' rows='1' style='font-size:%ipx;' >%@</textarea> ", colorKey,  @"额外参数", @"extra", @"extra", textSize, extraStr];
+            [h5 appendFormat:@"<p> <a href='/%i/%@'> <button type='button' style=\"width:200px;\" > <==返回 </button> </a> </p>", (int)index, PnrPathDetail];
             
-            [h5 appendString:@"<br><br><input type=\"submit\" style=\"width:200px;\" value=\"  提交  \"> <br>"];
+            [h5 appendFormat:@"<form action='/%i/%@' method='POST' target='%@' >",  (int)index, PnrPathResubmit, IframeFeedback];
             
+            void (^ hrefBlock)(NSString*, NSString*, NSString*, int) = ^(NSString* title, NSString* key, NSString* value, int rows){
+                
+                [h5 appendFormat:@"<font color='%@'>%@</font><br> \
+                 <textarea id='%@' name='%@' wrap='on' cols='100' rows='%i' style='font-size:%ipx;' >%@</textarea> <br>", colorKey, title, key, key, rows, textSize, value];
+                
+                //[h5 appendFormat:@"<font color='%@'>%@</font><br> \
+                 <textarea id='%@' name='%@' wrap='off' width='98%%' rows='2' style='font-size:%ipx;' >%@</textarea>  <br>", colorKey, title, key, key, textSize, value];
+            };
+            
+            hrefBlock(PnrRootPath1, @"url", [NSString stringWithFormat:@"%@/%@", pnrEntity.domain, pnrEntity.path], 1);
+            hrefBlock(PnrRootMethod3, @"method", pnrEntity.method, 1);
+            hrefBlock(PnrRootHead4, @"head", headStr, 6);
+            hrefBlock(PnrRootParameter5, @"parameter", parameterStr, 6);
+            hrefBlock(@"额外参数", @"extra", extraStr, 4);
+            
+            [h5 appendString:@"<br><input type=\"submit\" style=\"width:200px;\" value=\"  提交  \"> <br><br>"];
             [h5 appendString:@"</form>"];
             
-            [h5 appendString:@"<iframe id='myIframe' name='myIframe' width ='400' height='40'></iframe>"];
+            [h5 appendFormat:@"<iframe id='%@' name='%@' width ='400' height='40'></iframe>", IframeFeedback, IframeFeedback];
             
             [h5 appendString:@"</body></html>"];
             self.h5Edit = h5;
@@ -296,10 +334,10 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
 - (void)clearListWeb {
     self.lastIndex = -1;
     {
-        [self.h5List setString:@""];
-        [self.h5List appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
-        [self.h5List appendString:@"暂无数据"];
-        [self.h5List appendString:@"</body></html>"];
+        [self.h5Root setString:@""];
+        [self.h5Root appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
+        [self.h5Root appendString:@"暂无数据"];
+        [self.h5Root appendString:@"</body></html>"];
     }
 }
 
