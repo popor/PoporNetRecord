@@ -173,7 +173,8 @@
         
     };
     // 增加重新请求demo
-    [PoporNetRecord setPnrResubmitBlock:^(PnrEntity *pnrEntity, NSDictionary * formDic) {
+    __block int record = 0;
+    [PoporNetRecord setPnrBlockResubmit:^(PnrEntity *pnrEntity, NSDictionary *formDic, PnrBlockFeedback _Nonnull blockFeedback) {
         NSString * urlStr       = formDic[@"url"];
         NSString * methodStr    = formDic[@"method"];
         NSString * headStr      = formDic[@"head"];
@@ -181,7 +182,15 @@
         //NSString * extraStr     = formDic[@"extra"];
         
         NSString * title = [pnrEntity.title hasPrefix:@"["] ? pnrEntity.title:[NSString stringWithFormat:@"[%@]", pnrEntity.title];
-        [PoporNetRecord addUrl:urlStr title:title method:methodStr head:headStr.toDic parameter:parameterStr.toDic response:@"新的返回数据"];
+        NSString * result0 = @"新的返回数据:";
+        result0 = @"新的返回数据_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789";
+        NSString * result = [NSString stringWithFormat:@"%i: %@", record++, result0];
+        [PoporNetRecord addUrl:urlStr title:title method:methodStr head:headStr.toDic parameter:parameterStr.toDic response:result];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            blockFeedback(result);
+        });
+        
     } extraDic:@{@"exKey":@"exValue"}];
 }
 

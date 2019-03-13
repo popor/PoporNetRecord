@@ -54,32 +54,35 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             [h5 appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
             
             [h5 appendString:@"<script>"];
-            
-            // 方便 xcode 查看代码
-            // [h5 appendFormat:@"\
-            //  function detail(row) {\
-            //  var src = '/' +row + '/%@';\
-            //  document.getElementById('%@').src = src;\
-            //  }\
-            //  ", PnrPathDetail, PnrIframeDetail];
-            
-            //[h5 appendFormat:@"\
-            // function resubmit() {\
-            // var form = document.getElementById('%@').contentWindow.document.getElementById('%@');\
-            // form.submit();\
-            // setTimeout(function(){\
-            // document.getElementById('%@').contentWindow.location.reload(true);\
-            // },2000);\
-            // }\
-            // ", PnrIframeDetail, PnrFormResubmit, PnrIframeList];
-            
-            // 方便 浏览器查看 代码
-            [h5 appendFormat:@"\n  function detail(row) {\n  var src = '/' +row + '/%@';\n  document.getElementById('%@').src = src;\n  }", PnrPathDetail, PnrIframeDetail];
-            
-            [h5 appendFormat:@"\n\n  function resubmit() {\n  var form = document.getElementById('%@').contentWindow.document.getElementById('%@');\n  form.submit();\n  setTimeout(function(){\n  document.getElementById('%@').contentWindow.location.reload(true);\n  },2000);\n  }", PnrIframeDetail, PnrFormResubmit, PnrIframeList];
-            
-            [h5 appendFormat:@"\n\n  function freshList() {\n  document.getElementById('%@').contentWindow.location.reload(true);\n  }", PnrIframeList];
-            
+            {
+                // 方便 xcode 查看代码
+                // [h5 appendFormat:@"\
+                //  function detail(row) {\
+                //  var src = '/' +row + '/%@';\
+                //  document.getElementById('%@').src = src;\
+                //  }\
+                //  ", PnrPathDetail, PnrIframeDetail];
+                
+                //[h5 appendFormat:@"\
+                // function resubmit() {\
+                // var form = document.getElementById('%@').contentWindow.document.getElementById('%@');\
+                // form.submit();\
+                // setTimeout(function(){\
+                // document.getElementById('%@').contentWindow.location.reload(true);\
+                // },2000);\
+                // }\
+                // ", PnrIframeDetail, PnrFormResubmit, PnrIframeList];
+            }
+            {
+                // 方便 浏览器查看 代码
+                [h5 appendFormat:@"\n  function detail(row) {\n  var src = '/' +row + '/%@';\n  document.getElementById('%@').src = src;\n  }", PnrPathDetail, PnrIframeDetail];
+                
+                //[h5 appendFormat:@"\n\n  function resubmit() {\n  var form = document.getElementById('%@').contentWindow.document.getElementById('%@');\n  form.submit();\n  setTimeout(function(){\n  document.getElementById('%@').contentWindow.location.reload(true);\n  },2000);\n  }", PnrIframeDetail, PnrFormResubmit, PnrIframeList];
+                
+                [h5 appendFormat:@"\n\n  function resubmit() {\n  var form = document.getElementById('%@').contentWindow.document.getElementById('%@');\n  form.submit();\n }", PnrIframeDetail, PnrFormResubmit];
+                
+                [h5 appendFormat:@"\n\n  function freshList() {\n  document.getElementById('%@').contentWindow.location.reload(true);\n  }", PnrIframeList];
+            }
             [h5 appendString:@"\n\n</script>"];
             
             [h5 appendFormat:@"<iframe id='%@' name='%@'  src='/%@' width ='400' height= '94%%' ></iframe>", PnrIframeList, PnrIframeList, PnrPathList];
@@ -211,7 +214,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     }
 }
 
-// 分析 post 请求
+// MARK: 分析 post 请求
 - (void)analysisPostIndex:(NSInteger)index path:(NSString *)path request:(GCDWebServerRequest * _Nonnull)request complete:(GCDWebServerCompletionBlock  _Nonnull)complete {
     
     PnrEntity * entity;
@@ -226,12 +229,26 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         NSString * str;
         if([path isEqualToString:PnrPathResubmit]){
             str = @"<html> <head><title>update</title></head> <body><p> 已经重新提交 </p> </body></html>";
-            [self resubmitEntity:entity request:request];
-        }
-        if (str) {
-            complete([GCDWebServerDataResponse responseWithHTML:str]);
-        }else{
-            complete([GCDWebServerDataResponse responseWithHTML:ErrorUnknow]);
+            //[self resubmitEntity:entity request:request];
+            if (self.resubmitBlock) {
+                PnrBlockFeedback blockFeedback ;
+                blockFeedback = ^(NSString * feedback) {
+                    NSMutableString * h5 = [NSMutableString new];
+                    [h5 setString:@"<html> <head><title>update</title></head> <body>"];
+                    [h5 appendString:@"<script>\
+                     window.onload=function (){\
+                     parent.parent.freshList();\
+                     }\
+                     </script>"];
+                    [h5 appendFormat:@"<textarea wrap='on' cols='100' rows='10' style='font-size:%ipx;' > %@ </textarea>", 16, feedback];
+                    [h5 appendString:@"</body></html>"];
+                    complete([GCDWebServerDataResponse responseWithHTML:h5]);
+                };
+                GCDWebServerURLEncodedFormRequest * formRequest= (GCDWebServerURLEncodedFormRequest *)request;
+                self.resubmitBlock(entity, formRequest.arguments, blockFeedback);
+            }else{
+                complete([GCDWebServerDataResponse responseWithHTML:str]);
+            }
         }
         
     }else{
@@ -329,7 +346,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             
             [h5 appendString:@"</form>"];
             
-            [h5 appendFormat:@"<iframe id='%@' name='%@' width ='400' height='40'></iframe>", PnrIframeFeedback, PnrIframeFeedback];
+            [h5 appendFormat:@"<iframe id='%@' name='%@' width ='900' height='400'></iframe>", PnrIframeFeedback, PnrIframeFeedback];
             
             [h5 appendString:@"</body></html>"];
             self.h5Edit = h5;
@@ -347,13 +364,6 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         return (NSString *)content;
     }else{
         return @"NULL";
-    }
-}
-
-- (void)resubmitEntity:(PnrEntity *)pnrEntity request:(GCDWebServerRequest * _Nonnull)request {
-    if (self.resubmitBlock) {
-        GCDWebServerURLEncodedFormRequest * formRequest= (GCDWebServerURLEncodedFormRequest *)request;
-        self.resubmitBlock(pnrEntity, formRequest.arguments);
     }
 }
 
