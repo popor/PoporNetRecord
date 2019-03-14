@@ -36,60 +36,6 @@ PODS:
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 0.1.04)
-    - PoporNetRecord/entity (= 0.1.04)
-    - PoporNetRecord/ListVC (= 0.1.04)
-    - PoporUI/IToast
-    - PoporUI/Tool
-    - PoporUI/UIImage
-    - PoporUI/UINavigationController
-    - PoporUI/UITextField
-    - PoporUI/UIView
-  - PoporNetRecord/DetailVC (0.1.04):
-    - GCDWebServer
-    - GCDWebServer/WebDAV
-    - GCDWebServer/WebUploader
-    - JSONSyntaxHighlight
-    - Masonry
-    - PoporAlertBubbleView
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporNetRecord/entity
-    - PoporUI/IToast
-    - PoporUI/Tool
-    - PoporUI/UIImage
-    - PoporUI/UINavigationController
-    - PoporUI/UITextField
-    - PoporUI/UIView
-  - PoporNetRecord/entity (0.1.04):
-    - GCDWebServer
-    - GCDWebServer/WebDAV
-    - GCDWebServer/WebUploader
-    - JSONSyntaxHighlight
-    - Masonry
-    - PoporAlertBubbleView
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporUI/IToast
-    - PoporUI/Tool
-    - PoporUI/UIImage
-    - PoporUI/UINavigationController
-    - PoporUI/UITextField
-    - PoporUI/UIView
-  - PoporNetRecord/ListVC (0.1.04):
-    - GCDWebServer
-    - GCDWebServer/WebDAV
-    - GCDWebServer/WebUploader
-    - JSONSyntaxHighlight
-    - Masonry
-    - PoporAlertBubbleView
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC
-    - PoporNetRecord/entity
     - PoporUI/IToast
     - PoporUI/Tool
     - PoporUI/UIImage
@@ -131,7 +77,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporAlertBubbleView: aea73e383fca9d7dedda533fac160c9e66c720cf
   PoporFoundation: ff5751004f8af89fc0cca19e95abfcc6903a20c5
-  PoporNetRecord: 99787e83a1410bf41bc24ee1ab2a06c2aebd37fd
+  PoporNetRecord: 73fcf9e89f69bb0d6ba000bcea610472a73c4836
   PoporUI: 76f897c3acd3d4a8f90a0b79df444dd14d167d67
 
 PODFILE CHECKSUM: e00cc688498f763e5e96216baf21dedc61801ba7

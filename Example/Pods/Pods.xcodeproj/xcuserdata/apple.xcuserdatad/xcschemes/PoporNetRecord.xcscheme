@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B2AF3B4EB29DED6113BF553A8900FF21"
-               BuildableName = "PoporNetRecord.framework"
+               BuildableName = "PoporNetRecord"
                BlueprintName = "PoporNetRecord"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

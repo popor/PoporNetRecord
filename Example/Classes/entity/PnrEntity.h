@@ -28,16 +28,18 @@ static NSString * PnrFormResubmit   = @"formResubmit";
 
 static NSString * PnrPathList      = @"list";
 static NSString * PnrPathDetail    = @"detail";
-static NSString * PnrPathHead      = @"head";
-static NSString * PnrPathParameter = @"parameter";
-static NSString * PnrPathResponse  = @"response";
 static NSString * PnrPathEdit      = @"edit";
 static NSString * PnrPathResubmit  = @"resubmit";
 
 static NSString * PnrKeyConent     = @"content";
+// post 查看json等
 static NSString * PnrPathJsonXml   = @"jsonXml";
-//static NSString * PnrPathJson      = @"json";
-//static NSString * PnrPathXml       = @"xml";
+static NSString * PnrPathHead      = @"head";
+static NSString * PnrPathParameter = @"parameter";
+static NSString * PnrPathResponse  = @"response";
+
+static NSString * PnrClassTaAutoH  = @"TaAutoH";
+
 
 
 @interface PnrEntity : NSObject
