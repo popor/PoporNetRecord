@@ -35,9 +35,6 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
 @property (nonatomic, strong) NSMutableString * h5List;
 
 @property (nonatomic, strong) NSString * h5Detail;
-@property (nonatomic, strong) NSString * h5Head;
-@property (nonatomic, strong) NSString * h5Request;
-@property (nonatomic, strong) NSString * h5Response;
 @property (nonatomic, strong) NSString * h5Edit;
 
 @end
@@ -218,12 +215,6 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             str = self.h5List;
         }else if ([path isEqualToString:PnrPathDetail]) {
             str = self.h5Detail;
-        }else if ([path isEqualToString:PnrPathHead]){
-            str = self.h5Head;
-        }else if ([path isEqualToString:PnrPathParameter]){
-            str = self.h5Request;
-        }else if ([path isEqualToString:PnrPathResponse]){
-            str = self.h5Response;
         }else if([path isEqualToString:PnrPathEdit]){
             str = self.h5Edit;
         }
@@ -298,7 +289,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         if (str) {
             complete([GCDWebServerDataResponse responseWithHTML:dic[PnrKeyConent]]);
         }else{
-            complete([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
+            complete([GCDWebServerDataResponse responseWithHTML:ErrorEmpty]);
         }
     }else{
         complete([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
@@ -347,9 +338,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootMethod3, colorValue, pnrEntity.method];
             
             void (^ hrefBlock)(NSString*, id, NSString*) = ^(NSString * title, NSString * content, NSString * secondPath){
-                //[h5 appendFormat:@"<p><a href='/%i/%@' target='_blank'> <font color='%@'> %@ </font></a> <font color='%@'> %@ </font></p>", (int)index, secondPath, colorKey, title, colorValue, content];
-                [h5 appendString:[self jsonReadForm:secondPath key:PnrKeyConent name:PnrRootHead4 content:content cols:100 rows:3 textSize:16]];
-                
+                [h5 appendString:[self jsonReadForm:secondPath key:PnrKeyConent name:title content:content cols:100 rows:3 textSize:16 btColor:colorKey]];
             };
             
             //            NSString * (^ webBlock)(NSString *, id) = ^(NSString * subtitle, NSString * content){
@@ -441,10 +430,10 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     
 }
 
-- (NSString *)jsonReadForm:(NSString *)form key:(NSString *)key name:(NSString *)keyName content:(NSString *)content cols:(int)cols rows:(int)rows textSize:(int)textSize {
+- (NSString *)jsonReadForm:(NSString *)form key:(NSString *)key name:(NSString *)keyName content:(NSString *)content cols:(int)cols rows:(int)rows textSize:(int)textSize btColor:(NSString *)btColor {
     
-    return [NSString stringWithFormat:@"\n<form id='%@' method='POST' target='_blank' > \n <button type='button' style=\"width:80px;\" onclick=\"jsonXml('%@')\" > 查看详情 </button> <br> \n <textarea id='%@' class='%@'>%@</textarea> \n</form>",
-            form, form, key, PnrClassTaAutoH, content
+    return [NSString stringWithFormat:@"\n<form id='%@' name='%@' method='POST' target='_blank' > \n <button type='button' style=\"color:%@; width:180px; font-size:16px; \" onclick=\"jsonXml('%@')\" > %@ 查看详情 </button> <br> \n <textarea id='%@' name='%@' class='%@'>%@</textarea> \n</form>",
+            form, form, btColor, form, keyName, key, key, PnrClassTaAutoH, content
             ];
 }
 
@@ -461,7 +450,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     border: 1px solid #eee;\n\
     padding: 5px;\n\
     min-height: 20px;\n\
-    width:98%;\n\
+    width:100%;\n\
     font-size:16px;\n\
     }";
 }
