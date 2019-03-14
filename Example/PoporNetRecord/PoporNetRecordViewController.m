@@ -65,7 +65,7 @@
 - (void)addOneNetRequest {
     NSString * autoTitle = [NSString stringWithFormat:@"测试数据:%i", self.netIndex++ + 1];
     NSLog(@"auto title : %@ ", autoTitle);
-    NSString * value = @"responseText_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789";
+    NSString * value = @"value";
     
     [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:@"GET" head:@{@"os":@"iOS", @"key":value} parameter:@{@"a":@"a", @"b":@"b"} response:@"responseText"];
 }
@@ -185,6 +185,7 @@
         NSString * title = [pnrEntity.title hasPrefix:@"["] ? pnrEntity.title:[NSString stringWithFormat:@"[%@]", pnrEntity.title];
         NSString * result0 = @"新的返回数据:";
         //result0 = @"新的返回数据_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789";
+        
         NSDictionary * resultDic = @{@"key": [NSString stringWithFormat:@"%i: %@", record++, result0]};
         [PoporNetRecord addUrl:urlStr title:title method:methodStr head:headStr.toDic parameter:parameterStr.toDic response:resultDic];
         
