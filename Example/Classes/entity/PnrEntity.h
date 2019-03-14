@@ -34,6 +34,11 @@ static NSString * PnrPathResponse  = @"response";
 static NSString * PnrPathEdit      = @"edit";
 static NSString * PnrPathResubmit  = @"resubmit";
 
+static NSString * PnrKeyConent     = @"content";
+static NSString * PnrPathJsonXml   = @"jsonXml";
+//static NSString * PnrPathJson      = @"json";
+//static NSString * PnrPathXml       = @"xml";
+
 
 @interface PnrEntity : NSObject
 

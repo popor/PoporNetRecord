@@ -23,6 +23,7 @@ static NSString * ErrorUrl    = @"<html> <head><title>错误</title></head> <bod
 static NSString * ErrorEntity = @"<html> <head><title>错误</title></head> <body><p> 无法找到对应请求 </p> </body></html>";
 static NSString * ErrorUnknow = @"<html> <head><title>错误</title></head> <body><p> 未知bug </p> </body></html>";
 static NSString * ErrorEmpty  = @"<html> <head><title>错误</title></head> <body><p> 无 </p> </body></html>";
+//static NSString * JsJsonXml   =
 
 static NSString * PnrWebCode1 = @"PnrWebCode1";
 
@@ -72,6 +73,24 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
                 // },2000);\
                 // }\
                 // ", PnrIframeDetail, PnrFormResubmit, PnrIframeList];
+                
+                //[h5 appendFormat:@"\
+                // function json() {\
+                // var form = document.getElementById('%@').contentWindow.document.getElementById('%@');\
+                // form.submit();\
+                // setTimeout(function(){\
+                // document.getElementById('%@').contentWindow.location.reload(true);\
+                // },2000);\
+                // }\
+                // ", PnrIframeDetail, PnrFormResubmit, PnrIframeList];
+                
+                // [h5 appendFormat:@"\
+                //  function xml(formKey) {\
+                //  var form = document.getElementById('formKey');\
+                //  form.submit();\
+                //  }\
+                //  "];
+                
             }
             {
                 // 方便 浏览器查看 代码
@@ -135,7 +154,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         
         [self.webServer addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
             NSString * path = request.URL.path;
-            //NSLog(@"path :'%@'", path);
+            //NSLog(@"get path :'%@'", path);
             if (path.length >= 1) {
                 path = [path substringFromIndex:1];
                 NSArray * pathArray = [path componentsSeparatedByString:@"/"];
@@ -158,15 +177,20 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         
         [self.webServer addDefaultHandlerForMethod:@"POST" requestClass:[GCDWebServerURLEncodedFormRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
             NSString * path = request.URL.path;
-            if (path.length>=2) {
+            //NSLog(@"post path :'%@'", path);
+            if (path.length>=1) {
                 path = [path substringFromIndex:1];
                 NSArray * pathArray = [path componentsSeparatedByString:@"/"];
-                if (pathArray.count == 2) {
-                    [weakSelf analysisPostIndex:[pathArray[0] integerValue] path:pathArray[1] request:request complete:completionBlock];
+                if (pathArray.count == 1) {
+                    [weakSelf analysisPost1Path:path request:request complete:completionBlock];
+                }
+                else if (pathArray.count == 2) {
+                    [weakSelf analysisPost2Index:[pathArray[0] integerValue] path:pathArray[1] request:request complete:completionBlock];
                 }else{
                     completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
                 }
-            }else{
+            }
+            else{
                 completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
             }
         }];
@@ -214,8 +238,8 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     }
 }
 
-// MARK: 分析 post 请求
-- (void)analysisPostIndex:(NSInteger)index path:(NSString *)path request:(GCDWebServerRequest * _Nonnull)request complete:(GCDWebServerCompletionBlock  _Nonnull)complete {
+// MARK: 分析 post 多层
+- (void)analysisPost2Index:(NSInteger)index path:(NSString *)path request:(GCDWebServerRequest * _Nonnull)request complete:(GCDWebServerCompletionBlock  _Nonnull)complete {
     
     PnrEntity * entity;
     if (self.infoArray.count > index) {
@@ -228,31 +252,51 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         }
         NSString * str;
         if([path isEqualToString:PnrPathResubmit]){
-            str = @"<html> <head><title>update</title></head> <body><p> 已经重新提交 </p> </body></html>";
-            //[self resubmitEntity:entity request:request];
             if (self.resubmitBlock) {
                 PnrBlockFeedback blockFeedback ;
                 blockFeedback = ^(NSString * feedback) {
+                    if (!feedback) {
+                        feedback = @"NULL";
+                    }
                     NSMutableString * h5 = [NSMutableString new];
                     [h5 setString:@"<html> <head><title>update</title></head> <body>"];
                     [h5 appendString:@"<script>\
                      window.onload=function (){\
                      parent.parent.freshList();\
-                     }\
-                     </script>"];
-                    [h5 appendFormat:@"<textarea wrap='on' cols='100' rows='10' style='font-size:%ipx;' > %@ </textarea>", 16, feedback];
+                     } "];
+                    [h5 appendString:[self jsonXmlJs]];
+                    [h5 appendString:@"</script>"];
+                    
+                    [h5 appendString:[self jsonXmlForm:@"feedback" key:PnrKeyConent name:@"返回数据" content:feedback cols:100 rows:10 textSize:16]];
+                    //[h5 appendFormat:@"<textarea wrap='on' cols='100' rows='10' style='font-size:%ipx;' > %@ </textarea>", 16, feedback];
+                    
                     [h5 appendString:@"</body></html>"];
                     complete([GCDWebServerDataResponse responseWithHTML:h5]);
                 };
                 GCDWebServerURLEncodedFormRequest * formRequest= (GCDWebServerURLEncodedFormRequest *)request;
                 self.resubmitBlock(entity, formRequest.arguments, blockFeedback);
             }else{
+                str = @"<html> <head><title>update</title></head> <body><p> 已经重新提交 </p> </body></html>";
                 complete([GCDWebServerDataResponse responseWithHTML:str]);
             }
+        }
+        else{
+            complete([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
         }
         
     }else{
         complete([GCDWebServerDataResponse responseWithHTML:ErrorEntity]);
+    }
+}
+
+- (void)analysisPost1Path:(NSString *)path request:(GCDWebServerRequest * _Nonnull)request complete:(GCDWebServerCompletionBlock  _Nonnull)complete {
+    
+    GCDWebServerURLEncodedFormRequest * formRequest = (GCDWebServerURLEncodedFormRequest *)request;
+    NSDictionary * dic = formRequest.arguments;
+    if ([path isEqualToString:PnrPathJsonXml]) {
+        complete([GCDWebServerDataResponse responseWithHTML:dic[PnrKeyConent]]);
+    }else{
+        complete([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
     }
 }
 
@@ -271,6 +315,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         NSString * pnrTitle     = pnrEntity.title? [NSString stringWithFormat:@"%@: ", pnrEntity.title]: @"";
         NSString * headStr      = [self contentString:pnrEntity.headValue];
         NSString * parameterStr = [self contentString:pnrEntity.parameterValue];
+        //NSLog(@"parameterStr : %@", parameterStr);
         NSString * responseStr  = [self contentString:pnrEntity.responseValue];
         NSString * extraStr     = self.resubmitExtraDic ? self.resubmitExtraDic.toJsonString : @"{\"extraKey\":\"extraValue\"}";
         
@@ -365,6 +410,35 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     }else{
         return @"NULL";
     }
+}
+
+- (NSString *)jsonXmlForm:(NSString *)form key:(NSString *)key name:(NSString *)keyName content:(NSString *)content cols:(int)cols rows:(int)rows textSize:(int)textSize {
+    
+    return [NSString stringWithFormat:@"<form id='%@' name='%@' method='POST' target='_blank' > <button type='button' style=\"width:80px;\" onclick=\"jsonXml('%@')\" > 查看详情 </button> <br> <textarea id='%@' name='%@' wrap='on' cols='%i' rows='%i' style='font-size:%ipx;' >%@</textarea> </form> ",
+            form, form, form, key, key,
+            cols, rows, textSize, content
+            ];
+    //    return [NSString stringWithFormat:@"<form id='%@' name='%@' method='POST' target='_blank' > <button type='button' style=\"width:80px;\" onclick=\"json('%@')\" > Json </button> &nbsp; <button type='button' style=\"width:80px;\" onclick=\"xml('%@')\" > XML </button> <br> <textarea id='%@' name='%@' wrap='on' cols='%i' rows='%i' style='font-size:%ipx;' >%@</textarea> </form> ",
+    //            form, form, form, form, key, key,
+    //            cols, rows, textSize, content
+    //            ];
+}
+
+- (NSString *)jsonXmlJs {
+    return [NSString stringWithFormat: @"\n\
+            function jsonXml(formKey) {\n\
+            var form = document.getElementById(formKey);\n form.action='/%@';\n form.submit();\n\
+            }\n\
+            ", PnrPathJsonXml];
+    
+    //    return [NSString stringWithFormat: @"\n\
+    //            function json(formKey) {\n\
+    //            var form = document.getElementById(formKey);\n form.action='/%@';\n form.submit();\n\
+    //            }\n\
+    //            function xml(formKey) {\n\
+    //            var form = document.getElementById(formKey);\n form.action='/%@';\n form.submit();\n\
+    //            }\n\
+    //            ", PnrPathJson, PnrPathXml];
 }
 
 - (void)stopServer {

@@ -19,6 +19,7 @@
 #import <PoporUI/UIImage+create.h>
 
 #import <PoporFoundation/NSString+Tool.h>
+#import <PoporFoundation/NSDictionary+tool.h>
 
 @interface PoporNetRecordViewController ()
 
@@ -183,12 +184,12 @@
         
         NSString * title = [pnrEntity.title hasPrefix:@"["] ? pnrEntity.title:[NSString stringWithFormat:@"[%@]", pnrEntity.title];
         NSString * result0 = @"新的返回数据:";
-        result0 = @"新的返回数据_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789";
-        NSString * result = [NSString stringWithFormat:@"%i: %@", record++, result0];
-        [PoporNetRecord addUrl:urlStr title:title method:methodStr head:headStr.toDic parameter:parameterStr.toDic response:result];
+        //result0 = @"新的返回数据_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789";
+        NSDictionary * resultDic = @{@"key": [NSString stringWithFormat:@"%i: %@", record++, result0]};
+        [PoporNetRecord addUrl:urlStr title:title method:methodStr head:headStr.toDic parameter:parameterStr.toDic response:resultDic];
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            blockFeedback(result);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            blockFeedback(resultDic.toJsonString);
         });
         
     } extraDic:@{@"exKey":@"exValue"}];
