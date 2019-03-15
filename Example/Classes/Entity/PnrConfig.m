@@ -7,7 +7,6 @@
 
 #import "PnrConfig.h"
 
-#import "PnrServerTool.h"
 #import <PoporFoundation/PrefixFun.h>
 
 @interface PnrConfig ()
@@ -116,7 +115,6 @@
                     _showListWeb = YES;
                 }else{
                     _showListWeb = NO;
-                    [self stopListWebEvent];
                 }
 #endif
                 break;
@@ -126,7 +124,6 @@
                 
             case PoporNetRecordDisable:
                 _showListWeb = NO;
-                [self stopListWebEvent];
                 break;
                 
             default:
@@ -134,11 +131,6 @@
         }
         
     }
-}
-
-- (void)stopListWebEvent {
-    PnrServerTool * serverTool = [PnrServerTool share];
-    [serverTool stopServer];
 }
 
 - (BOOL)isRecord {

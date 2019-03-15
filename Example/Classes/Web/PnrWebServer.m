@@ -5,7 +5,7 @@
 //  Created by apple on 2018/12/18.
 //
 
-#import "PnrServerTool.h"
+#import "PnrWebServer.h"
 
 #import "PnrEntity.h"
 #import "PnrPortEntity.h"
@@ -17,7 +17,7 @@
 #import <GCDWebServer/GCDWebServerDataResponse.h>
 #import <GCDWebServer/GCDWebServerPrivate.h>
 
-@interface PnrServerTool ()
+@interface PnrWebServer ()
 
 @property (nonatomic        ) NSInteger lastIndex;
 
@@ -28,13 +28,13 @@
 
 @end
 
-@implementation PnrServerTool
+@implementation PnrWebServer
 
 + (instancetype)share {
     static dispatch_once_t once;
-    static PnrServerTool * instance;
+    static PnrWebServer * instance;
     dispatch_once(&once, ^{
-        instance = [PnrServerTool new];
+        instance = [PnrWebServer new];
         instance.h5List = [NSMutableString new];
         instance.h5Root = [PnrWebBody rootBody];
         

@@ -75,12 +75,20 @@
     },
     {
       "name": "Web",
+      "dependencies": {
+        "PoporNetRecord/Entity": [
+
+        ]
+      },
       "source_files": "Example/Classes/Web/*.{h,m}"
     },
     {
       "name": "DetailVC",
       "dependencies": {
         "PoporNetRecord/Entity": [
+
+        ],
+        "PoporNetRecord/Web": [
 
         ]
       },
@@ -100,6 +108,24 @@
         ]
       },
       "source_files": "Example/Classes/ListVC/*.{h,m}"
+    },
+    {
+      "name": "Record",
+      "dependencies": {
+        "PoporNetRecord/Entity": [
+
+        ],
+        "PoporNetRecord/Web": [
+
+        ],
+        "PoporNetRecord/DetailVC": [
+
+        ],
+        "PoporNetRecord/ListVC": [
+
+        ]
+      },
+      "source_files": "Example/Classes/Record/*.{h,m}"
     }
   ]
 }

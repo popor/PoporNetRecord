@@ -1,5 +1,5 @@
 //
-//  PnrServerTool.h
+//  PnrWebServer.h
 //  PoporNetRecord
 //
 //  Created by apple on 2018/12/18.
@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PnrServerTool : NSObject
+@interface PnrWebServer : NSObject
 
 + (instancetype)share;
 
