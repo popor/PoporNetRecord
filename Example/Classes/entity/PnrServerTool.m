@@ -456,18 +456,30 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             ", PnrPathJsonXml];
 }
 
-// MARK: 动态的查看json js代码
+// MARK: 动态的查看json js代码, 生成新的form,并且submit.
 - (NSString *)jsJsonDynamic {
+    // http://www.cnblogs.com/haoqipeng/p/create-form-with-js.html
     return [NSString stringWithFormat: @"\n\
             function jsonDynamic(formKey, contentkey) {\n\
-            var valueFrom =  document.forms[formKey].elements[contentkey].value;\n\
-            var formNew =  new FormData();\n\
-            formNew.append(%@, valueFrom);\n\
-            formNew.method='post';\n\
-            formNew.action='/%@';\n\
-            formNew.submit();\n\
+            var valueFrom = document.forms[formKey].elements[contentkey].value;\n\
+            \n\
+            var dlform = document.createElement('form');\n\
+            dlform.style = 'display:none;';\n\
+            dlform.method = 'POST';\n\
+            dlform.action = '/%@';\n\
+            dlform.target = '_blank';\n\
+            \n\
+            var hdnFilePath = document.createElement('input');\n\
+            hdnFilePath.type = 'hidden';\n\
+            hdnFilePath.name = '%@';\n\
+            hdnFilePath.value = valueFrom;\n\
+            dlform.appendChild(hdnFilePath);\n\
+            \n\
+            document.body.appendChild(dlform);\n\
+            dlform.submit();\n\
+            document.body.removeChild(dlform);\n\
             }\n\
-            ", PnrKeyConent, PnrPathJsonXml];
+            ", PnrPathJsonXml, PnrKeyConent];
 }
 
 - (NSString *)cssTextarea {
