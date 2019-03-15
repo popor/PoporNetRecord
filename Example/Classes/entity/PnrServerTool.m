@@ -49,9 +49,9 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
         instance.h5List = [NSMutableString new];
         {
             NSMutableString * h5 = [NSMutableString new];
-            [h5 appendString:@"<html> <head><title>网络请求</title></head> <body><p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
+            [h5 appendString:@"<html> <head><title>网络请求</title></head> \n<body>\n<p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
             
-            [h5 appendString:@"<script>"];
+            [h5 appendString:@"\n<script>"];
             {
                 // 方便 xcode 查看代码
                 // [h5 appendFormat:@"\
@@ -93,18 +93,16 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
                 // 方便 浏览器查看 代码
                 [h5 appendFormat:@"\n  function detail(row) {\n  var src = '/' +row + '/%@';\n  document.getElementById('%@').src = src;\n  }", PnrPathDetail, PnrIframeDetail];
                 
-                //[h5 appendFormat:@"\n\n  function resubmit() {\n  var form = document.getElementById('%@').contentWindow.document.getElementById('%@');\n  form.submit();\n  setTimeout(function(){\n  document.getElementById('%@').contentWindow.location.reload(true);\n  },2000);\n  }", PnrIframeDetail, PnrFormResubmit, PnrIframeList];
-                
                 [h5 appendFormat:@"\n\n  function resubmit() {\n  var form = document.getElementById('%@').contentWindow.document.getElementById('%@');\n  form.submit();\n }", PnrIframeDetail, PnrFormResubmit];
                 
                 [h5 appendFormat:@"\n\n  function freshList() {\n  document.getElementById('%@').contentWindow.location.reload(true);\n  }", PnrIframeList];
             }
-            [h5 appendString:@"\n\n</script>"];
+            [h5 appendString:@"\n\n</script>\n"];
             
-            [h5 appendFormat:@"<iframe id='%@' name='%@'  src='/%@' width ='400' height= '94%%' ></iframe>", PnrIframeList, PnrIframeList, PnrPathList];
-            [h5 appendFormat:@"<iframe id='%@' name='%@' width ='900' height= '94%%' ></iframe>", PnrIframeDetail, PnrIframeDetail];
+            [h5 appendFormat:@"\n<iframe id='%@' name='%@'  src='/%@' style=\"width:28%%; height:94%%; frameborder:0; border:1; marginwidth:0; marginheight:0; \" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList];
+            [h5 appendFormat:@"\n<iframe id='%@' name='%@' style=\"width:68%%; height:94%%;\" ></iframe>", PnrIframeDetail, PnrIframeDetail];
             
-            [h5 appendString:@"</body></html>"];
+            [h5 appendString:@"\n\n</body></html>"];
             
             instance.h5Root = h5;
         }
@@ -130,17 +128,20 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
     {
         NSMutableString * h5 = self.h5List;
         [h5 setString:@""];
-        [h5 appendString:@"<html> <head><title>网络请求</title></head> <body>"];
+        [h5 appendString:@"<html> <head><title>网络请求</title></head> \n<body>"];
         {
-            [h5 appendFormat:@"<div style=\" background-color:#eeeeee; height:100%%; width:400px; float:left; padding:5px; \">"];
-            
-            //[self.h5List appendFormat:@"<div style=\"line-height:%ipx; background-color:#eeeeee; height:100%%; width:500px; float:left; padding:5px; \">", PnrListHeight];
-            
+            // css
+            [h5 appendString:@"\n<style type='text/css'>"];
+            [h5 appendString:[self cssDivWordOneLine]];
+            [h5 appendString:@"\n</style>"];
+        }
+        {
+            [h5 appendFormat:@"\n <div style=\" background-color:#eeeeee; height:100%%; width:100%%; float:left; \">"];
             [h5 appendString:listBodyH5];
-            [h5 appendString:@"</div>"];
+            [h5 appendString:@"\n </div>"];
         }
         
-        [h5 appendString:@"</body></html>"];
+        [h5 appendString:@"\n </body></html>"];
     }
     __weak typeof(self) weakSelf = self;
     
@@ -413,7 +414,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             [h5 appendFormat:@"&nbsp; <button type='button' onclick=\"parent.freshList()\" > 刷新列表 </button> </p>"];
             [h5 appendString:@"</form>"];
             
-            [h5 appendFormat:@"<iframe id='%@' name='%@' width ='800' height='400'></iframe>", PnrIframeFeedback, PnrIframeFeedback];
+            [h5 appendFormat:@"<iframe id='%@' name='%@' width ='100%%' height='400'></iframe>", PnrIframeFeedback, PnrIframeFeedback];
             
             // js
             [h5 appendFormat:@"\n<script> \n%@", [self jsJsonDynamic]];
@@ -482,8 +483,16 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
             ", PnrPathJsonXml, PnrKeyConent];
 }
 
+- (NSString *)cssDivWordOneLine {
+    return @"\n div.oneLine {\n\
+    white-space:nowrap;\n\
+    overflow:hidden;\n\
+    text-overflow:ellipsis;\n\
+    }";
+}
+
 - (NSString *)cssTextarea {
-    return @"\ntextarea {\n\
+    return @"\n textarea {\n\
     border: 1px solid #eee;\n\
     padding: 5px;\n\
     min-height: 20px;\n\
