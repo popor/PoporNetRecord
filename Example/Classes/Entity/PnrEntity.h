@@ -10,13 +10,15 @@
 
 typedef void(^PnrEntityBlock) (NSArray *titleArray, NSArray *jsonArray, NSMutableArray *cellAttArray);
 
-static NSString * PnrRootPath1      = @"路径:";
-static NSString * PnrRootUrl1       = @"链接:";
-static NSString * PnrRootTime2      = @"时间:";
-static NSString * PnrRootMethod3    = @"方法:";
-static NSString * PnrRootHead4      = @"head参数:";
-static NSString * PnrRootParameter5 = @"请求参数:";
-static NSString * PnrRootResponse6  = @"返回数据:";
+static NSString * PnrRootTitle0     = @"名称:";
+static NSString * PnrRootPath1      = @"接口:";
+static NSString * PnrRootUrl2       = @"链接:";
+static NSString * PnrRootTime3      = @"时间:";
+static NSString * PnrRootMethod4    = @"方法:";
+static NSString * PnrRootHead5      = @"head参数:";
+static NSString * PnrRootParameter6 = @"请求参数:";
+static NSString * PnrRootResponse7  = @"返回数据:";
+static NSString * PnrRootExtra8     = @"额外参数:";
 
 static int PnrListHeight            = 50;
 static NSString * PnrIframeList     = @"IframeList";

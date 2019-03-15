@@ -1,6 +1,6 @@
 {
   "name": "PoporNetRecord",
-  "version": "0.1.06",
+  "version": "0.1.07",
   "summary": "PoporNetRecord will record net request only in debug configuration",
   "homepage": "https://github.com/popor/PoporNetRecord",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/popor/PoporNetRecord.git",
-    "tag": "0.1.06"
+    "tag": "0.1.07"
   },
   "platforms": {
     "ios": "8.0"
@@ -70,13 +70,17 @@
   },
   "subspecs": [
     {
-      "name": "entity",
-      "source_files": "Example/Classes/entity/*.{h,m}"
+      "name": "Entity",
+      "source_files": "Example/Classes/Entity/*.{h,m}"
+    },
+    {
+      "name": "Web",
+      "source_files": "Example/Classes/Web/*.{h,m}"
     },
     {
       "name": "DetailVC",
       "dependencies": {
-        "PoporNetRecord/entity": [
+        "PoporNetRecord/Entity": [
 
         ]
       },
@@ -85,7 +89,10 @@
     {
       "name": "ListVC",
       "dependencies": {
-        "PoporNetRecord/entity": [
+        "PoporNetRecord/Entity": [
+
+        ],
+        "PoporNetRecord/Web": [
 
         ],
         "PoporNetRecord/DetailVC": [

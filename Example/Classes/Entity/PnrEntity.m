@@ -42,13 +42,13 @@
         title = [NSString stringWithFormat:@" \n%@",entity.path];
     }
     NSArray * titleArray = @[[NSString stringWithFormat:@"%@\n%@", PnrRootPath1, title],
-                             [NSString stringWithFormat:@"%@\n%@", PnrRootUrl1, entity.url],
-                             [NSString stringWithFormat:@"%@\n%@", PnrRootTime2, entity.time],
-                             [NSString stringWithFormat:@"%@\n%@", PnrRootMethod3, entity.method],
+                             [NSString stringWithFormat:@"%@\n%@", PnrRootUrl2, entity.url],
+                             [NSString stringWithFormat:@"%@\n%@", PnrRootTime3, entity.time],
+                             [NSString stringWithFormat:@"%@\n%@", PnrRootMethod4, entity.method],
                              
-                             [NSString stringWithFormat:@"%@\n", PnrRootHead4],
-                             [NSString stringWithFormat:@"%@\n", PnrRootParameter5],
-                             [NSString stringWithFormat:@"%@\n", PnrRootResponse6],
+                             [NSString stringWithFormat:@"%@\n", PnrRootHead5],
+                             [NSString stringWithFormat:@"%@\n", PnrRootParameter6],
+                             [NSString stringWithFormat:@"%@\n", PnrRootResponse7],
                              ];
     return titleArray;
 }

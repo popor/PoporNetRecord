@@ -21,9 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak  ) NSMutableArray * infoArray; // PoporNetRecord.infoArray
 
 #pragma mark - server
-@property (nonatomic, strong) NSArray * titleArray;
-@property (nonatomic, strong) NSArray * jsonArray;
-
 @property (nonatomic, strong, nullable) GCDWebServer * webServer;
 
 @property (nonatomic, copy  ) PnrBlockResubmit resubmitBlock;
