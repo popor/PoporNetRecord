@@ -399,7 +399,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
                  ];
                 //[h5 appendFormat:@"\n <br><font color='%@'>%@</font><br>",
                 //colorKey, title];
-                [h5 appendFormat:@"\n <textarea id='%@' name='%@' class='%@'>%@</textarea>",
+                [h5 appendFormat:@"\n <textarea id='%@' name='%@' class='%@'>%@</textarea> <br>",
                  key, key, PnrClassTaAutoH, value];
             };
             
@@ -493,7 +493,7 @@ static NSString * PnrWebCode1 = @"PnrWebCode1";
 
 - (NSString *)cssTextarea {
     return @"\n textarea {\n\
-    border: 1px solid #eee;\n\
+    border: 1px solid #909090;\n\
     padding: 5px;\n\
     min-height: 20px;\n\
     width:100%;\n\
