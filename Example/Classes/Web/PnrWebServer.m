@@ -167,8 +167,7 @@
                 GCDWebServerURLEncodedFormRequest * formRequest= (GCDWebServerURLEncodedFormRequest *)request;
                 self.resubmitBlock(entity, formRequest.arguments, blockFeedback);
             }else{
-                str = @"<html> <head><title>update</title></head> <body><p> 已经重新提交 </p> </body></html>";
-                complete([GCDWebServerDataResponse responseWithHTML:str]);
+                complete([GCDWebServerDataResponse responseWithHTML:ErrorResubmit]);
             }
         }else{
             complete([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);

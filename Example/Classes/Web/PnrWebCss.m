@@ -8,6 +8,8 @@
 
 #import "PnrWebCss.h"
 
+#import "PnrConfig.h"
+
 @implementation PnrWebCss
 
 + (NSString *)cssDivWordOneLine {
@@ -28,13 +30,19 @@
     }";
 }
 
-+ (NSString *)cssButton:(NSString *)btColor {
-    return [NSString stringWithFormat:@"\n button.w180 {\n\
++ (NSString *)cssButton {
+    PnrConfig * config      = [PnrConfig share];
+    NSString * colorKey     = config.rootColorKeyHex;
+    
+    return [NSString stringWithFormat:@"\n button.w180Green {\n\
+            color:%@; width:180px; font-size:16px;\
+            }\n\
+            \n button.w180Red {\n\
             color:%@; width:180px; font-size:16px;\
             }\n\
             \n button.w100p {\n\
             color:%@; width:100%%; font-size:16px;\
-            }\n", btColor, btColor];
+            }\n", colorKey, @"#d7534a", colorKey];
 }
 
 @end

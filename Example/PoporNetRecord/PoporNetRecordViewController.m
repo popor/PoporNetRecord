@@ -74,21 +74,6 @@
                                        @{@"a":@"a111111111111", @"b":@"b2222222222222"},
                                        @{@"a":@"a111111111111", @"b":@"b2222222222222"},
                                        @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
-                                       @{@"a":@"a111111111111", @"b":@"b2222222222222"},
                                        ]};
     [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:@"GET" head:@{@"os":@"iOS", @"key":value} parameter:pDic response:@"responseText"];
 }
@@ -203,20 +188,18 @@
         NSString * methodStr    = formDic[@"method"];
         NSString * headStr      = formDic[@"head"];
         NSString * parameterStr = formDic[@"parameter"];
-        //NSString * extraStr     = formDic[@"extra"];
+        //NSString * extraStr   = formDic[@"extra"];
+        NSString * title        = [pnrEntity.title hasPrefix:@"["] ? pnrEntity.title:[NSString stringWithFormat:@"[%@]",  pnrEntity.title];
         
-        NSString * title = [pnrEntity.title hasPrefix:@"["] ? pnrEntity.title:[NSString stringWithFormat:@"[%@]", pnrEntity.title];
-        NSString * result0 = @"新的返回数据:";
-        //result0 = @"新的返回数据_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789";
-        
-        NSDictionary * resultDic = @{@"key": [NSString stringWithFormat:@"%i: %@", record++, result0]};
+        // 将新的网络请求 数据存储到PoporNetRecord
+        NSDictionary * resultDic = @{@"key": [NSString stringWithFormat:@"%i: %@", record++, @"新的返回数据:"]};
         [PoporNetRecord addUrl:urlStr title:title method:methodStr head:headStr.toDic parameter:parameterStr.toDic response:resultDic];
         
+        // 结果反馈给PoporNetRecord
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             blockFeedback(resultDic.toJsonString);
         });
-        
-    } extraDic:@{@"exKey":@"exValue"}];
+    } extraDic:@{@"exKey":@"exValue"}]; 
 }
 
 - (void)pushNetRecordListVC {

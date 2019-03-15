@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 自动变换高度
 + (NSString *)cssTextarea;
 // button
-+ (NSString *)cssButton:(NSString *)btColor;
++ (NSString *)cssButton;
 
 @end
 

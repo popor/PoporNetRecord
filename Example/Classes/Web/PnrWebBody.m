@@ -17,7 +17,7 @@
 @implementation PnrWebBody
 
 + (NSString *)jsonReadForm:(NSString *)form key:(NSString *)key name:(NSString *)keyName content:(NSString *)content {
-    return [NSString stringWithFormat:@"\n<form id='%@' name='%@' method='POST' target='_blank' > \n <button class=\"w180\" type='button' \" onclick=\"jsonStatic('%@')\" > %@ 查看详情 </button> <br> \n <textarea id='%@' name='%@' class='%@'>%@</textarea> \n</form>",
+    return [NSString stringWithFormat:@"\n<form id='%@' name='%@' method='POST' target='_blank' > \n <button class=\"w180Green\" type='button' \" onclick=\"jsonStatic('%@')\" > %@ 查看详情 </button> <br> \n <textarea id='%@' name='%@' class='%@'>%@</textarea> \n</form>",
             form, form, form, keyName, key, key, PnrClassTaAutoH, content
             ];
 }
@@ -48,15 +48,12 @@
     static NSString * h5_head;
     static NSString * h5_tail;
     if (!h5_head) {
-        PnrConfig * config      = [PnrConfig share];
-        NSString * colorKey     = config.rootColorKeyHex;
-        
         NSMutableString * html = [NSMutableString new];
         [html appendString:@"<html> <head><title>网络请求</title></head> \n<body>"];
         // css
         [html appendString:@"\n<style type='text/css'> \n"];
         [html appendString:[PnrWebCss cssDivWordOneLine]];
-        [html appendString:[PnrWebCss cssButton:colorKey]];
+        [html appendString:[PnrWebCss cssButton]];
         [html appendString:@"\n</style>"];
 
         [html appendFormat:@"\n <button class='w100p' type='button' onclick='location.reload();' > 刷新列表 </button>"];
@@ -96,7 +93,7 @@
             // css
             [h5 appendString:@"\n<style type='text/css'>"];
             [h5 appendString:[PnrWebCss cssTextarea]];
-            [h5 appendString:[PnrWebCss cssButton:colorKey]];
+            [h5 appendString:[PnrWebCss cssButton]];
             [h5 appendString:@"\n</style>"];
             
             // body
@@ -123,20 +120,19 @@
             // css
             [h5 appendString:@"\n<style type='text/css'>"];
             [h5 appendString:[PnrWebCss cssTextarea]];
-            [h5 appendString:[PnrWebCss cssButton:colorKey]];
+            [h5 appendString:[PnrWebCss cssButton]];
             [h5 appendString:@"\n</style>"];
             
             // body
             [h5 appendString:@"\n<body>"];
-            
             
             h5_resubmit_head = h5;
         }
         // MARK: 重新提交 尾
         {
             NSMutableString * h5 = [NSMutableString new];
-            [h5 appendString:@"<p> <button class=\"w180\" type='button' onclick=\"parent.resubmit()\" > 重新请求 </button>"];
-            [h5 appendString:@"&nbsp; <button class=\"w180\" type='button' onclick=\"parent.freshList()\" > 刷新列表 </button> </p>"];
+            [h5 appendString:@"<p> <button class=\"w180Red\" type='button' onclick=\"parent.resubmit()\" > 重新请求 </button>"];
+            [h5 appendString:@"&nbsp; <button class=\"w180Green\" type='button' onclick=\"parent.freshList()\" > 刷新列表 </button> </p>"];
             [h5 appendString:@"</form>"];
             
             [h5 appendFormat:@"<iframe id='%@' name='%@' width ='100%%' height='400'></iframe>", PnrIframeFeedback, PnrIframeFeedback];
@@ -161,7 +157,7 @@
     {
         NSMutableString * h5 = [NSMutableString new];
         
-        [h5 appendFormat:@"<p> <a href='/%i/%@'> <button class=\"w180\" type='button' > 重新请求 </button> </a> </p>", (int)index, PnrPathEdit];
+        [h5 appendFormat:@"<p> <a href='/%i/%@'> <button class=\"w180Green\" type='button' > 重新请求 </button> </a> </p>", (int)index, PnrPathEdit];
         
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootTitle0, colorValue, pnrEntity.title];
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootTime3, colorValue, pnrEntity.time];
@@ -184,12 +180,12 @@
     {
         NSMutableString * h5 = [NSMutableString new];
         
-        [h5 appendFormat:@"<p> <a href='/%i/%@'> <button class=\"w180\" type='button' > <==返回 </button> </a> </p>", (int)index, PnrPathDetail];
+        [h5 appendFormat:@"<p> <a href='/%i/%@'> <button class=\"w180Green\" type='button' > <==返回 </button> </a> </p>", (int)index, PnrPathDetail];
         [h5 appendFormat:@"<form id='%@' name='%@' action='/%i/%@' method='POST' target='%@' >", PnrFormResubmit, PnrFormResubmit, (int)index, PnrPathResubmit, PnrIframeFeedback];
         
         void (^ hrefBlock)(NSString*, NSString*, NSString*) = ^(NSString* title, NSString* key, NSString* value){
             
-            [h5 appendFormat:@"\n<br> <button class=\"w180\" type='button' \" onclick=\"jsonDynamic('%@', '%@')\" > %@ 查看详情 </button> ",
+            [h5 appendFormat:@"\n<br> <button class=\"w180Green\" type='button' \" onclick=\"jsonDynamic('%@', '%@')\" > %@ 查看详情 </button> ",
              PnrFormResubmit, key, title
              ];
             [h5 appendFormat:@"\n <textarea id='%@' name='%@' class='%@'>%@</textarea> <br>",
@@ -230,7 +226,7 @@
         // css
         [h5 appendString:@"\n<style type='text/css'>"];
         [h5 appendString:[PnrWebCss cssTextarea]];
-        [h5 appendString:[PnrWebCss cssButton:colorKey]];
+        [h5 appendString:[PnrWebCss cssButton]];
         [h5 appendString:@"\n</style>"];
         
         // body
