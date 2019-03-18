@@ -23,8 +23,10 @@
 }
 
 + (NSString *)rootBody {
+    PnrConfig * config = [PnrConfig share];
+    
     NSMutableString * h5 = [NSMutableString new];
-    [h5 appendString:@"<html> <head><title>网络请求</title></head> \n<body>\n<p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>"];
+    [h5 appendFormat:@"<html> <head><title>%@</title></head> \n<body>\n<p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>", config.webRootTitle];
     
     [h5 appendString:@"\n<script>"];
     {
@@ -37,7 +39,7 @@
     }
     [h5 appendString:@"\n\n </script>\n"];
     
-    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:28%%; height:94%%; frameborder:0; border:1; marginwidth:0; marginheight:0; \" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList];
+    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:28%%; height:94%%;\" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList];
     [h5 appendFormat:@"\n <iframe id='%@' name='%@' style=\"width:68%%; height:94%%;\" ></iframe>", PnrIframeDetail, PnrIframeDetail];
     
     [h5 appendString:@"\n\n </body></html>"];
@@ -217,9 +219,6 @@
     static NSString * h5_head;
     static NSString * h5_tail;
     if (!h5_head) {
-        PnrConfig * config      = [PnrConfig share];
-        NSString * colorKey     = config.rootColorKeyHex;
-        
         NSMutableString * h5 = [NSMutableString new];
         [h5 setString:@"<html> <head><title>update</title></head>"];
         

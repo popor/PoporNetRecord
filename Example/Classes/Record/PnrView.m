@@ -139,7 +139,7 @@
             weakSelf.closeBlock();
         }
     };
-    UIViewController * vc = [PnrListVCRouter vcWithDic:@{@"title":@"网络请求", @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock}];
+    UIViewController * vc = [PnrListVCRouter vcWithDic:@{@"title":self.config.vcRootTitle, @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock}];
     
     return vc;
 }

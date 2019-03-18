@@ -29,10 +29,6 @@
 
 @implementation PnrDetailVCPresenter
 
-- (void)dealloc {
-    [self.serverTool stopServer];
-}
-
 - (id)init {
     if (self = [super init]) {
         [self initInteractors];

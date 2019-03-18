@@ -154,7 +154,6 @@
             self.lastIndex = index;
             [self startServerUnitEntity:entity index:index];
         }
-        NSString * str;
         if([path isEqualToString:PnrPathResubmit]){
             if (self.resubmitBlock) {
                 PnrBlockFeedback blockFeedback ;

@@ -145,7 +145,10 @@
 
 - (void)addPnrSettings {
     PnrConfig * config = [PnrConfig share];
-    
+    {
+        config.webRootTitle = @"PnrTest";
+        config.vcRootTitle  = @"PnrTest";
+    }
     {
         //config.listFontTitle   = [UIFont systemFontOfSize:16];
         //config.listFontRequest = [UIFont systemFontOfSize:14];
