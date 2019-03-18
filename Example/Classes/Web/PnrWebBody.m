@@ -159,7 +159,7 @@
     {
         NSMutableString * h5 = [NSMutableString new];
         
-        [h5 appendFormat:@"<p> <a href='/%i/%@'> <button class=\"w180Green\" type='button' > 重新请求 </button> </a> </p>", (int)index, PnrPathEdit];
+        [h5 appendFormat:@"<p> <a href='/%i/%@'> <button class=\"w180Red\" type='button' > 重新请求 </button> </a> </p>", (int)index, PnrPathEdit];
         
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootTitle0, colorValue, pnrEntity.title];
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootTime3, colorValue, pnrEntity.time];
@@ -182,7 +182,7 @@
     {
         NSMutableString * h5 = [NSMutableString new];
         
-        [h5 appendFormat:@"<p> <a href='/%i/%@'> <button class=\"w180Green\" type='button' > <==返回 </button> </a> </p>", (int)index, PnrPathDetail];
+        [h5 appendFormat:@"<p> <a href='/%i/%@'> <button class=\"w180Red\" type='button' > <==返回 </button> </a> </p>", (int)index, PnrPathDetail];
         [h5 appendFormat:@"<form id='%@' name='%@' action='/%i/%@' method='POST' target='%@' >", PnrFormResubmit, PnrFormResubmit, (int)index, PnrPathResubmit, PnrIframeFeedback];
         
         void (^ hrefBlock)(NSString*, NSString*, NSString*) = ^(NSString* title, NSString* key, NSString* value){
@@ -194,6 +194,7 @@
              key, key, PnrClassTaAutoH, value];
         };
         
+        hrefBlock(PnrRootTitle0,     @"title",     pnrEntity.title);
         hrefBlock(PnrRootPath1,      @"url", [NSString stringWithFormat:@"%@/%@", pnrEntity.domain, pnrEntity.path]);
         hrefBlock(PnrRootMethod4,    @"method",    pnrEntity.method);
         hrefBlock(PnrRootHead5,      @"head",      headStr);

@@ -25,14 +25,14 @@
     border: 1px solid #909090;\n\
     padding: 5px;\n\
     min-height: 20px;\n\
-    width:100%;\n\
+    width:98%;\n\
     font-size:16px;\n\
     }";
 }
 
 + (NSString *)cssButton {
-    PnrConfig * config      = [PnrConfig share];
-    NSString * colorKey     = config.rootColorKeyHex;
+    PnrConfig * config  = [PnrConfig share];
+    NSString * colorKey = config.rootColorKeyHex;
     
     return [NSString stringWithFormat:@"\n button.w180Green {\n\
             color:%@; width:180px; font-size:16px;\
