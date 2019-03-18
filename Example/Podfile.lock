@@ -26,7 +26,7 @@ PODS:
   - PoporFoundation/PrefixCore (0.0.34):
     - PoporFoundation/PrefixOs
   - PoporFoundation/PrefixOs (0.0.34)
-  - PoporNetRecord (0.1.09):
+  - PoporNetRecord (0.1.10):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -36,18 +36,18 @@ PODS:
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 0.1.09)
-    - PoporNetRecord/Entity (= 0.1.09)
-    - PoporNetRecord/ListVC (= 0.1.09)
-    - PoporNetRecord/Record (= 0.1.09)
-    - PoporNetRecord/Web (= 0.1.09)
+    - PoporNetRecord/DetailVC (= 0.1.10)
+    - PoporNetRecord/Entity (= 0.1.10)
+    - PoporNetRecord/ListVC (= 0.1.10)
+    - PoporNetRecord/Record (= 0.1.10)
+    - PoporNetRecord/Web (= 0.1.10)
     - PoporUI/IToast
     - PoporUI/Tool
     - PoporUI/UIImage
     - PoporUI/UINavigationController
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (0.1.09):
+  - PoporNetRecord/DetailVC (0.1.10):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -65,7 +65,7 @@ PODS:
     - PoporUI/UINavigationController
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/Entity (0.1.09):
+  - PoporNetRecord/Entity (0.1.10):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -81,7 +81,7 @@ PODS:
     - PoporUI/UINavigationController
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/ListVC (0.1.09):
+  - PoporNetRecord/ListVC (0.1.10):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -100,7 +100,7 @@ PODS:
     - PoporUI/UINavigationController
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/Record (0.1.09):
+  - PoporNetRecord/Record (0.1.10):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -120,7 +120,7 @@ PODS:
     - PoporUI/UINavigationController
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/Web (0.1.09):
+  - PoporNetRecord/Web (0.1.10):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -172,9 +172,9 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporAlertBubbleView: aea73e383fca9d7dedda533fac160c9e66c720cf
   PoporFoundation: ff5751004f8af89fc0cca19e95abfcc6903a20c5
-  PoporNetRecord: 5975e895172f7155362d4aca24a1f20fe1ce252b
+  PoporNetRecord: b3f38bdf64948b152951f0b1cdf7e81fe838adeb
   PoporUI: 76f897c3acd3d4a8f90a0b79df444dd14d167d67
 
 PODFILE CHECKSUM: e00cc688498f763e5e96216baf21dedc61801ba7
 
-COCOAPODS: 1.7.0.beta.1
+COCOAPODS: 1.7.0.beta.2
