@@ -77,6 +77,7 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 
 @property (nonatomic, strong) NSString * vcRootTitle;// VC标题
 @property (nonatomic, strong) NSString * webRootTitle;// 网页标题
+@property (nonatomic, strong) NSData   * webIconData;
 
 //------------------------------------------------------------------------------
 @property (nonatomic        ) PoporNetRecordType recordType;//监测类型

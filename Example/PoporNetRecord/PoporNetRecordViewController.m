@@ -148,6 +148,11 @@
     {
         config.webRootTitle = @"PnrTest";
         config.vcRootTitle  = @"PnrTest";
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"favicon" ofType:@"ico"];
+        path = [[NSBundle mainBundle] pathForResource:@"favicon2" ofType:@"ico"];
+        NSData *data   = [[NSData alloc] initWithContentsOfFile:path];
+        config.webIconData = data;
     }
     {
         //config.listFontTitle   = [UIFont systemFontOfSize:16];

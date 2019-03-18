@@ -10,6 +10,7 @@
 #import "PnrEntity.h"
 #import "PnrPortEntity.h"
 #import "PnrWebBody.h"
+#import "PnrConfig.h"
 
 #import <PoporUI/IToastKeyboard.h>
 
@@ -18,6 +19,8 @@
 #import <GCDWebServer/GCDWebServerPrivate.h>
 
 @interface PnrWebServer ()
+
+@property (nonatomic, weak  ) PnrConfig * config;
 
 @property (nonatomic        ) NSInteger lastIndex;
 
@@ -39,6 +42,7 @@
         instance.h5Root = [PnrWebBody rootBody];
         
         instance.lastIndex  = -1;
+        instance.config     = [PnrConfig share];
         [GCDWebServer setLogLevel:kGCDWebServerLoggingLevel_Error];
     });
     return instance;
@@ -65,7 +69,7 @@
         
         [self.webServer addDefaultHandlerForMethod:@"GET" requestClass:[GCDWebServerRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
             NSString * path = request.URL.path;
-            //NSLog(@"get path :'%@'", path);
+            //NSLog(@"__get path :'%@'", path);
             if (path.length >= 1) {
                 path = [path substringFromIndex:1];
                 NSArray * pathArray = [path componentsSeparatedByString:@"/"];
@@ -76,7 +80,12 @@
                         completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.h5Root]);
                     }else if ([path isEqualToString:PnrPathList]){
                         completionBlock([GCDWebServerDataResponse responseWithHTML:weakSelf.h5List]);
-                    }else{
+                    }else if ([path isEqualToString:@"favicon.ico"]){
+                        if (weakSelf.config.webIconData) {
+                            completionBlock([GCDWebServerDataResponse responseWithData:weakSelf.config.webIconData contentType:@"image/x-icon"]);
+                        }
+                    }
+                    else{
                         completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
                     }
                 }
@@ -88,7 +97,7 @@
         
         [self.webServer addDefaultHandlerForMethod:@"POST" requestClass:[GCDWebServerURLEncodedFormRequest class] asyncProcessBlock:^(__kindof GCDWebServerRequest * _Nonnull request, GCDWebServerCompletionBlock  _Nonnull completionBlock) {
             NSString * path = request.URL.path;
-            //NSLog(@"post path :'%@'", path);
+            //NSLog(@"__post path :'%@'", path);
             if (path.length>=1) {
                 path = [path substringFromIndex:1];
                 NSArray * pathArray = [path componentsSeparatedByString:@"/"];
@@ -188,7 +197,12 @@
         }else{
             complete([GCDWebServerDataResponse responseWithHTML:ErrorEmpty]);
         }
-    }else{
+    }else if ([path isEqualToString:@"favicon.ico"]){
+        if (self.config.webIconData) {
+            complete([GCDWebServerDataResponse responseWithData:self.config.webIconData contentType:@"image/x-icon"]);
+        }
+    }
+    else{
         complete([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
     }
 }

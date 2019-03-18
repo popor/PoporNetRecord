@@ -19,6 +19,8 @@
 		1811971E2235EA9000450770 /* PnrDetailVCRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 181197092235EA9000450770 /* PnrDetailVCRouter.m */; };
 		1811971F2235EA9000450770 /* PnrDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1811970A2235EA9000450770 /* PnrDetailVC.m */; };
 		181197202235EA9000450770 /* PnrDetailVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1811970C2235EA9000450770 /* PnrDetailVCPresenter.m */; };
+		185879FD223F844600B5B9CA /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 185879FC223F844600B5B9CA /* favicon.ico */; };
+		185879FF223F91EC00B5B9CA /* favicon2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 185879FE223F91EC00B5B9CA /* favicon2.ico */; };
 		18DDDA7B223B77F400307E32 /* PnrWebJs.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA75223B77F400307E32 /* PnrWebJs.m */; };
 		18DDDA7C223B77F400307E32 /* PnrWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA76223B77F400307E32 /* PnrWebServer.m */; };
 		18DDDA7D223B77F400307E32 /* PnrWebCss.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA77223B77F400307E32 /* PnrWebCss.m */; };
@@ -83,6 +85,8 @@
 		1811970E2235EA9000450770 /* PnrDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrDetailCell.h; sourceTree = "<group>"; };
 		1811970F2235EA9000450770 /* PnrDetailVCRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrDetailVCRouter.h; sourceTree = "<group>"; };
 		1811972122364DA900450770 /* PnrPrefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrPrefix.h; sourceTree = "<group>"; };
+		185879FC223F844600B5B9CA /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
+		185879FE223F91EC00B5B9CA /* favicon2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon2.ico; sourceTree = "<group>"; };
 		18D5508B21B62E7D00C62BB8 /* PoporNetRecord_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoporNetRecord_Example.entitlements; sourceTree = SOURCE_ROOT; };
 		18DDDA75223B77F400307E32 /* PnrWebJs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrWebJs.m; sourceTree = "<group>"; };
 		18DDDA76223B77F400307E32 /* PnrWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrWebServer.m; sourceTree = "<group>"; };
@@ -296,6 +300,8 @@
 		6003F593195388D20070C39A /* Example for PoporNetRecord */ = {
 			isa = PBXGroup;
 			children = (
+				185879FE223F91EC00B5B9CA /* favicon2.ico */,
+				185879FC223F844600B5B9CA /* favicon.ico */,
 				18E6E71820EF585F002CA49B /* other */,
 				6003F5A5195388D20070C39A /* PoporNetRecordViewController.h */,
 				6003F5A6195388D20070C39A /* PoporNetRecordViewController.m */,
@@ -447,6 +453,8 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				185879FD223F844600B5B9CA /* favicon.ico in Resources */,
+				185879FF223F91EC00B5B9CA /* favicon2.ico in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
