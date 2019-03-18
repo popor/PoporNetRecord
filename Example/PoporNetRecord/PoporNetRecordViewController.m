@@ -187,6 +187,7 @@
     // 增加重新请求demo
     __block int record = 0;
     [PoporNetRecord setPnrBlockResubmit:^(PnrEntity *pnrEntity, NSDictionary *formDic, PnrBlockFeedback _Nonnull blockFeedback) {
+        NSLog(@"dic: %@", formDic);
         NSString * urlStr       = formDic[@"url"];
         NSString * methodStr    = formDic[@"method"];
         NSString * headStr      = formDic[@"head"];

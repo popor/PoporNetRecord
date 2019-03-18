@@ -196,7 +196,21 @@
         
         hrefBlock(PnrRootTitle0,     @"title",     pnrEntity.title);
         hrefBlock(PnrRootPath1,      @"url", [NSString stringWithFormat:@"%@/%@", pnrEntity.domain, pnrEntity.path]);
-        hrefBlock(PnrRootMethod4,    @"method",    pnrEntity.method);
+        
+        if ([pnrEntity.method.lowercaseString isEqualToString:@"post"]) {
+            [h5 appendFormat:@"\n <br> <button class=\"w180Green\" type='button' \" > %@ </button> \n\
+             <input type='radio' name='method' id='methodGet'  value='GET'          /><label for='methodGet'>GET</label>\n\
+             <input type='radio' name='method' id='methodPost' value='POST' checked /><label for='methodPost'>POST</label>\n\
+             <br>\n ", PnrRootMethod4];
+        }else if ([pnrEntity.method.lowercaseString isEqualToString:@"get"]) {
+            [h5 appendFormat:@"\n <br> <button class=\"w180Green\" type='button' \" > %@ </button> \n\
+             <input type='radio' name='method' id='methodGet'  value='GET'  checked /><label for='methodGet'>GET</label>\n\
+             <input type='radio' name='method' id='methodPost' value='POST'         /><label for='methodPost'>POST</label>\n\
+             <br>\n ", PnrRootMethod4];
+        }else{
+            hrefBlock(PnrRootMethod4, @"method", pnrEntity.method);
+        }
+        
         hrefBlock(PnrRootHead5,      @"head",      headStr);
         hrefBlock(PnrRootParameter6, @"parameter", parameterStr);
         hrefBlock(PnrRootExtra8,     @"extra",     extraStr);
@@ -216,7 +230,7 @@
     }
 }
 
-+ (NSString *)resubmitH5:(NSString *)body {
++ (NSString *)feedbackH5:(NSString *)body {
     static NSString * h5_head;
     static NSString * h5_tail;
     if (!h5_head) {

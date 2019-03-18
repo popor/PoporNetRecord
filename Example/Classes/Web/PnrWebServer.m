@@ -161,7 +161,7 @@
                     if (!feedback) {
                         feedback = @"NULL";
                     }
-                    complete([GCDWebServerDataResponse responseWithHTML:[PnrWebBody resubmitH5:feedback]]);
+                    complete([GCDWebServerDataResponse responseWithHTML:[PnrWebBody feedbackH5:feedback]]);
                 };
                 GCDWebServerURLEncodedFormRequest * formRequest= (GCDWebServerURLEncodedFormRequest *)request;
                 self.resubmitBlock(entity, formRequest.arguments, blockFeedback);

@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)deatilEntity:(PnrEntity *)pnrEntity index:(NSInteger)index extra:(NSDictionary *)extraDic finish:(void (^ __nullable)(NSString * detail, NSString * resubmit))finish;
 
-+ (NSString *)resubmitH5:(NSString *)body;
++ (NSString *)feedbackH5:(NSString *)body;
 
 @end
 
