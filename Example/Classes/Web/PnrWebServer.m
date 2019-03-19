@@ -43,7 +43,11 @@
         
         instance.lastIndex  = -1;
         instance.config     = [PnrConfig share];
-        [GCDWebServer setLogLevel:kGCDWebServerLoggingLevel_Error];
+        
+        // GCDWebServer 这个配置要求在主线程中执行
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [GCDWebServer setLogLevel:kGCDWebServerLoggingLevel_Error];
+        });
     });
     return instance;
 }

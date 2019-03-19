@@ -16,14 +16,11 @@
 #import "PnrConfig.h"
 #import "PnrDetailCell.h"
 
-#import "PnrWebServer.h"
-
 @interface PnrDetailVCPresenter ()
 
 @property (nonatomic, weak  ) id<PnrDetailVCProtocol> view;
 @property (nonatomic, strong) PnrDetailVCInteractor * interactor;
 @property (nonatomic, weak  ) PnrConfig  * config;
-@property (nonatomic, weak  ) PnrWebServer         * serverTool;
 
 @end
 
@@ -33,7 +30,6 @@
     if (self = [super init]) {
         [self initInteractors];
         self.config = [PnrConfig share];
-        self.serverTool = [PnrWebServer share];
     }
     return self;
 }
