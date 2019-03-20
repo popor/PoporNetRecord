@@ -86,7 +86,25 @@
               }\n\
               }\n\
               \n\
-              xmlhttp.send(new FormData(form)); \n\
+              var text = '';\n\
+              for (var i = 0; i < form.elements.length; i++) {\n\
+                  var filed = form.elements[i];\n\
+                  var type = filed.type;\n\
+                  switch (filed.type) {\n\
+                      case 'textarea': {\n\
+                          text = text + '&' + filed.name + '=' + filed.value;\n\
+                          break;\n\
+                      }\n\
+                      case 'radio': {\n\
+                          if (filed.checked) {\n\
+                              text = text + '&' + filed.name + '=' + filed.value;\n\
+                          }\n\
+                          break;\n\
+                      }\n\
+                  }\n\
+              }\n\
+              \n\
+              xmlhttp.send(text.substr(1)); \n\
               }\n", PnrFormFeedback, PnrKeyConent, PnrPathResubmit];
     }
     return js;
