@@ -15,6 +15,6 @@
 typedef void(^PnrBlockPVoid) (void);
 typedef void(^PnrBlockPPnrEntity) (PnrEntity * pnrEntity);
 typedef void(^PnrBlockFeedback) (NSString * feedback);
-typedef void(^PnrBlockResubmit) (PnrEntity * pnrEntity, NSDictionary * formDic, PnrBlockFeedback _Nonnull blockFeedback);
+typedef void(^PnrBlockResubmit) (NSDictionary * formDic, PnrBlockFeedback _Nonnull blockFeedback);
 
 #endif /* PnrPrefix_h */

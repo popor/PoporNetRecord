@@ -67,50 +67,5 @@
     "GCDWebServer/WebDAV": [
 
     ]
-  },
-  "subspecs": [
-    {
-      "name": "Entity",
-      "source_files": "Example/Classes/Entity/*.{h,m}"
-    },
-    {
-      "name": "Web",
-      "dependencies": {
-        "PoporNetRecord/Entity": [
-
-        ]
-      },
-      "source_files": "Example/Classes/Web/*.{h,m}"
-    },
-    {
-      "name": "DetailVC",
-      "dependencies": {
-        "PoporNetRecord/Entity": [
-
-        ]
-      },
-      "source_files": "Example/Classes/DetailVC/*.{h,m}"
-    },
-    {
-      "name": "ListVC",
-      "dependencies": {
-        "PoporNetRecord/Web": [
-
-        ],
-        "PoporNetRecord/DetailVC": [
-
-        ]
-      },
-      "source_files": "Example/Classes/ListVC/*.{h,m}"
-    },
-    {
-      "name": "Record",
-      "dependencies": {
-        "PoporNetRecord/ListVC": [
-
-        ]
-      },
-      "source_files": "Example/Classes/Record/*.{h,m}"
-    }
-  ]
+  }
 }

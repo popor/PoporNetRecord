@@ -23,13 +23,13 @@ static NSString * ErrorResubmit = @"<pre>\
 \n\
 // 增加重新请求demo\n\
 __block int record = 0;\n\
-[PoporNetRecord setPnrBlockResubmit:^(PnrEntity *pnrEntity, NSDictionary *formDic, PnrBlockFeedback _Nonnull blockFeedback) {\n\
+[PoporNetRecord setPnrBlockResubmit:^(NSDictionary *formDic, PnrBlockFeedback _Nonnull blockFeedback) {\n\
+&#9; NSString * title        = formDic[@\"title\"];\n\
 &#9; NSString * urlStr       = formDic[@\"url\"];\n\
 &#9; NSString * methodStr    = formDic[@\"method\"];\n\
 &#9; NSString * headStr      = formDic[@\"head\"];\n\
 &#9; NSString * parameterStr = formDic[@\"parameter\"];\n\
 &#9; //NSString * extraStr   = formDic[@\"extra\"];\n\
-&#9; NSString * title        = [pnrEntity.title hasPrefix:@\"[\"] ? pnrEntity.title:[NSString stringWithFormat:@\"[%@]\",  pnrEntity.title];\n\
 &#9; \n\
 &#9; // 将新的网络请求 数据存储到PoporNetRecord \n\
 &#9; NSDictionary * resultDic = @{@\"key\": [NSString stringWithFormat:@\"%i: %@\", record++, @\"新的返回数据:\"]};\n\
@@ -45,13 +45,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PnrWebBody : NSObject
 
-+ (NSString *)jsonReadForm:(NSString *)form key:(NSString *)key name:(NSString *)keyName content:(NSString *)content;
++ (NSString *)jsonReadForm:(NSString *)formIdName taIdName:(NSString *)taIdName btName:(NSString *)btName taValue:(NSString *)taValue;
 
 + (NSString *)rootBody;
 + (NSString *)listH5:(NSString *)body;
 
 + (void)deatilEntity:(PnrEntity *)pnrEntity index:(NSInteger)index extra:(NSDictionary *)extraDic finish:(void (^ __nullable)(NSString * detail, NSString * resubmit))finish;
 
+// 弃用了
 + (NSString *)feedbackH5:(NSString *)body;
 
 @end

@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)textareaAutoHeightFuntion;
 + (NSString *)textareaAuhoHeigtEventClass:(NSString *)className;
 
+// MARK: ajax 刷新增加
++ (NSString *)ajaxResubmit;
+
 @end
 
 NS_ASSUME_NONNULL_END

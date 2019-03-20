@@ -191,17 +191,27 @@
     };
     // 增加重新请求demo
     __block int record = 0;
-    [PoporNetRecord setPnrBlockResubmit:^(PnrEntity *pnrEntity, NSDictionary *formDic, PnrBlockFeedback _Nonnull blockFeedback) {
-        NSLog(@"dic: %@", formDic);
+    [PoporNetRecord setPnrBlockResubmit:^(NSDictionary *formDic, PnrBlockFeedback _Nonnull blockFeedback) {
+        NSLog(@"resubmit request dic: %@", formDic);
+        
+        NSString * title        = formDic[@"title"];
         NSString * urlStr       = formDic[@"url"];
         NSString * methodStr    = formDic[@"method"];
         NSString * headStr      = formDic[@"head"];
         NSString * parameterStr = formDic[@"parameter"];
         //NSString * extraStr   = formDic[@"extra"];
-        NSString * title        = [pnrEntity.title hasPrefix:@"["] ? pnrEntity.title:[NSString stringWithFormat:@"[%@]",  pnrEntity.title];
         
         // 将新的网络请求 数据存储到PoporNetRecord
         NSDictionary * resultDic = @{@"key": [NSString stringWithFormat:@"%i: %@", record++, @"新的返回数据:"]};
+        resultDic = @{@"array":@[
+                               @{@"a":@"a111111111111", @"b":@"b2222222222222"},
+                               @{@"a":@"a111111111111", @"b":@"b2222222222222"},
+                               @{@"a":@"a111111111111", @"b":@"b2222222222222"},
+                               @{@"a":@"a111111111111", @"b":@"b2222222222222"},
+                               @{@"a":@"a111111111111", @"b":@"b2222222222222"},
+                               @{@"a":@"a111111111111", @"b":@"b2222222222222"},
+                               @{@"a":@"a111111111111", @"b":@"b2222222222222"},
+                               ]};
         [PoporNetRecord addUrl:urlStr title:title method:methodStr head:headStr.toDic parameter:parameterStr.toDic response:resultDic];
         
         // 结果反馈给PoporNetRecord

@@ -23,9 +23,9 @@ static NSString * PnrRootExtra8     = @"额外参数:  ";
 static int PnrListHeight            = 50;
 static NSString * PnrIframeList     = @"IframeList";
 static NSString * PnrIframeDetail   = @"IframeDetail";
-static NSString * PnrIframeFeedback = @"IframeFeedback";
 
 static NSString * PnrFormResubmit   = @"formResubmit";
+static NSString * PnrFormFeedback   = @"formFeedback";
 
 
 static NSString * PnrPathList      = @"list";
