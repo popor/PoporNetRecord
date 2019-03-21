@@ -60,7 +60,7 @@
 // MARK: 高度自适应的textarea
 + (NSString *)textareaAutoHeightFuntion {
     // http://caibaojian.com/textarea-autoheight.html
-    return @" function makeExpandingArea(el) { var setStyle = function (el) { el.style.height = 'auto'; el.style.height = el.scrollHeight + 'px'; }; var delayedResize = function (el) { window.setTimeout(function () { setStyle(el); }, 0); }; if (el.addEventListener) { el.addEventListener('input', function () { setStyle(el) }, false); setStyle(el); } else if (el.attachEvent) { el.attachEvent('onpropertychange', function () { setStyle(el); }); setStyle(el); } if (window.VBArray && window.addEventListener) { el.attachEvent('onkeydown', function () { var key = window.event.keyCode; if (key == 8 || key == 46) {delayedResize(el);} }); el.attachEvent('oncut', function () { delayedResize(el); }); } } ";
+    return @"\n function makeExpandingArea(el) { var setStyle = function (el) { el.style.height = 'auto'; el.style.height = el.scrollHeight + 'px'; }; var delayedResize = function (el) { window.setTimeout(function () { setStyle(el); }, 0); }; if (el.addEventListener) { el.addEventListener('input', function () { setStyle(el) }, false); setStyle(el); } else if (el.attachEvent) { el.attachEvent('onpropertychange', function () { setStyle(el); }); setStyle(el); } if (window.VBArray && window.addEventListener) { el.attachEvent('onkeydown', function () { var key = window.event.keyCode; if (key == 8 || key == 46) {delayedResize(el);} }); el.attachEvent('oncut', function () { delayedResize(el); }); } } ";
 }
 
 + (NSString *)textareaAuhoHeigtEventClass:(NSString *)className {
@@ -123,13 +123,26 @@
 }
 
 + (NSString *)getRootUrl {
-    return @"function getRoot() {\n\
+    return @"\n function getRoot() {\n\
     var hostname = location.hostname;\n\
     var pathname = location.pathname;\n\
     var contextPath = pathname.split('/')[1];\n\
     var port = location.port;\n\
     var protocol = location.protocol;\n\
     return protocol + '//' + hostname + ':' + port + '/' + contextPath;\n\
+    }";
+}
+
++ (NSString *)copyInnerText {
+    return @"\n function copyInnerText(idName) {\n\
+    var text = document.getElementById(idName).innerText;\n\
+    var oInput = document.createElement('input');\n\
+    oInput.value = text;\n\
+    document.body.appendChild(oInput);\n\
+    oInput.select();\n\
+    document.execCommand(\"Copy\");\n\
+    oInput.className = 'oInput';\n\
+    oInput.style.display = 'none';\n\
     }";
 }
 

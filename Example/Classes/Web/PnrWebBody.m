@@ -129,7 +129,7 @@
     
     if (!isInit) {
         isInit = YES;
-        // MARK: 设置 detail 头
+        // MARK: detail 头
         {
             NSMutableString * h5 = [NSMutableString new];
             [h5 appendFormat:@"<html> <head><title>请求详情</title></head>"];
@@ -145,15 +145,16 @@
             
             h5_detail_head = h5;
         }
-        // MARK: 设置 detail 尾
+        // MARK: detail 尾
         {
             NSMutableString * h5 = [NSMutableString new];
             // js
             [h5 appendFormat:@"\n<script> %@", [PnrWebJs jsJsonStatic]];
             [h5 appendFormat:@"\n %@ %@", [PnrWebJs textareaAutoHeightFuntion], [PnrWebJs textareaAuhoHeigtEventClass:PnrClassTaAutoH]];
             
-            [h5 appendFormat:@"\n %@", [PnrWebJs getRootUrl]];
-            [h5 appendFormat:@"\n %@", [PnrWebJs updateShareUrl]];
+            [h5 appendString:[PnrWebJs getRootUrl]];
+            [h5 appendString:[PnrWebJs updateShareUrl]];
+            [h5 appendString:[PnrWebJs copyInnerText]];
             [h5 appendString:@"\n </script>"];
             
             [h5 appendString:@"</body></html>"];
@@ -168,6 +169,7 @@
             [h5 appendString:@"\n<style type='text/css'>"];
             [h5 appendString:[PnrWebCss cssTextarea]];
             [h5 appendString:[PnrWebCss cssButton]];
+            
             [h5 appendString:@"\n</style>"];
             
             // body
@@ -216,7 +218,7 @@
         [h5 appendFormat:@"<p> <a style=\"text-decoration: none;\" href='/%i/%@'> <button class=\"w180Red\" type='button' > 重新请求 </button> </a> <font color='#d7534a'> 请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。 </font> </p>", (int)index, PnrPathEdit];
         
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%i.  %@</font>", colorKey, PnrRootTitle0, colorValue, (int)index, pnrEntity.title];
-        [h5 appendFormat:@"<font color='%@'> &nbsp;%@ </font>  <font id='%@' name='%@' color='%@'></font> </p>", colorKey, PnrRootShare9, PnrIdShare, PnrIdShare, colorValue];
+        [h5 appendFormat:@"<font color='%@'> &nbsp;%@ </font>  <font id='%@' name='%@' color='%@'></font> <a > <button onclick=\"copyInnerText('%@')\" >点击复制</button></p>", colorKey, PnrRootShare9, PnrIdShare, PnrIdShare, colorValue,  PnrIdShare];
         
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootTime3, colorValue, pnrEntity.time];
         

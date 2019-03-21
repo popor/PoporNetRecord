@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)updateShareUrl;
 
++ (NSString *)copyInnerText;
+
 @end
 
 NS_ASSUME_NONNULL_END
