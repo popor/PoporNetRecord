@@ -26,8 +26,10 @@
     PnrConfig * config = [PnrConfig share];
     
     NSMutableString * h5 = [NSMutableString new];
-    [h5 appendFormat:@"<html> <head><title>%@</title></head> \n<body>\n<p>请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。</p>", config.webRootTitle];
+    [h5 appendFormat:@"<html> <head><title>%@</title></head>", config.webRootTitle];
     
+    [h5 appendString:@"\n\n<body style=\" TEXT-ALIGN:center; \" >\n"]; // style=\" margin:auto; \"
+    // TEXT-ALIGN: center;}
     [h5 appendString:@"\n<script>"];
     {
         // 方便 浏览器查看 代码
@@ -39,8 +41,8 @@
     }
     [h5 appendString:@"\n\n </script>\n"];
     
-    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:28%%; height:94%%;\" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList];
-    [h5 appendFormat:@"\n <iframe id='%@' name='%@' style=\"width:68%%; height:94%%;\" ></iframe>", PnrIframeDetail, PnrIframeDetail];
+    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:26%%; height:97%%;\" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList];
+    [h5 appendFormat:@"\n <iframe id='%@' name='%@' style=\"width:70%%; height:97%%;\" ></iframe>", PnrIframeDetail, PnrIframeDetail];
     
     [h5 appendString:@"\n\n </body></html>"];
     return h5;
@@ -182,7 +184,7 @@
         // 请求详情
         NSMutableString * h5 = [NSMutableString new];
         
-        [h5 appendFormat:@"<p> <a href='/%i/%@'> <button class=\"w180Red\" type='button' > 重新请求 </button> </a> </p>", (int)index, PnrPathEdit];
+        [h5 appendFormat:@"<p> <a style=\"text-decoration: none;\" href='/%i/%@'> <button class=\"w180Red\" type='button' > 重新请求 </button> </a> <font color='#d7534a'> 请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。 </font> </p>", (int)index, PnrPathEdit];
         
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootTitle0, colorValue, pnrEntity.title];
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootTime3, colorValue, pnrEntity.time];
@@ -202,7 +204,7 @@
         // 重新提交
         NSMutableString * h5 = [NSMutableString new];
         
-        [h5 appendFormat:@"<p> <a href='/%i/%@'> <button class=\"w180Red\" type='button' > <==返回 </button> </a> </p>", (int)index, PnrPathDetail];
+        [h5 appendFormat:@"<p> <a style=\"text-decoration: none;\" href='/%i/%@'> <button class=\"w180Red\" type='button' > <==返回 </button> </a> <font color='#d7534a'> 请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。 </font> </p>", (int)index, PnrPathDetail];
         
         [h5 appendFormat:@"<form id='%@' name='%@' >", PnrFormResubmit, PnrFormResubmit];
         

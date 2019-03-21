@@ -25,8 +25,10 @@
     border: 1px solid #909090;\n\
     padding: 5px;\n\
     min-height: 20px;\n\
-    width:98%;\n\
+    width:100%;\n\
     font-size:16px;\n\
+    resize:none;\n\
+    overflow-y:hidden;\n\
     }";
 }
 
