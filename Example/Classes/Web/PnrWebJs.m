@@ -88,20 +88,20 @@
               \n\
               var text = '';\n\
               for (var i = 0; i < form.elements.length; i++) {\n\
-                  var filed = form.elements[i];\n\
-                  var type = filed.type;\n\
-                  switch (filed.type) {\n\
-                      case 'textarea': {\n\
-                          text = text + '&' + filed.name + '=' + filed.value;\n\
-                          break;\n\
-                      }\n\
-                      case 'radio': {\n\
-                          if (filed.checked) {\n\
-                              text = text + '&' + filed.name + '=' + filed.value;\n\
-                          }\n\
-                          break;\n\
-                      }\n\
-                  }\n\
+              var filed = form.elements[i];\n\
+              var type = filed.type;\n\
+              switch (filed.type) {\n\
+              case 'textarea': {\n\
+              text = text + '&' + filed.name + '=' + filed.value;\n\
+              break;\n\
+              }\n\
+              case 'radio': {\n\
+              if (filed.checked) {\n\
+              text = text + '&' + filed.name + '=' + filed.value;\n\
+              }\n\
+              break;\n\
+              }\n\
+              }\n\
               }\n\
               \n\
               xmlhttp.send(text.substr(1)); \n\
@@ -110,5 +110,27 @@
     return js;
     // https://developer.mozilla.org/zh-CN/docs/Web/API/FormData/Using_FormData_Objects
 };
+
+// https://blog.csdn.net/wild46cat/article/details/52718545
++ (NSString *)updateShareUrl {
+    static NSString * js;
+    if (!js) {
+        js = [NSString stringWithFormat:@"\n window.onload=function (){\n\
+              document.getElementById('%@').innerText = getRoot(); \n\
+              } \n", PnrIdShare];
+    }
+    return js;
+}
+
++ (NSString *)getRootUrl {
+    return @"function getRoot() {\n\
+    var hostname = location.hostname;\n\
+    var pathname = location.pathname;\n\
+    var contextPath = pathname.split('/')[1];\n\
+    var port = location.port;\n\
+    var protocol = location.protocol;\n\
+    return protocol + '//' + hostname + ':' + port + '/' + contextPath;\n\
+    }";
+}
 
 @end

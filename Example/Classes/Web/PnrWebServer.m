@@ -90,7 +90,12 @@
                         }
                     }
                     else{
-                        completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
+                        int index = [path intValue];
+                        if ([path isEqualToString:[NSString stringWithFormat:@"%i", index]]) {
+                            completionBlock([GCDWebServerDataResponse responseWithHTML:[PnrWebBody rootBodyIndex:index]]);                            
+                        }else{
+                            completionBlock([GCDWebServerDataResponse responseWithHTML:ErrorUrl]);
+                        }
                     }
                 }
             }

@@ -25,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 // MARK: ajax 刷新增加
 + (NSString *)ajaxResubmit;
 
+// https://blog.csdn.net/wild46cat/article/details/52718545
++ (NSString *)getRootUrl;
+
++ (NSString *)updateShareUrl;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -48,6 +48,32 @@
     return h5;
 }
 
++ (NSString *)rootBodyIndex:(int)index {
+    PnrConfig * config = [PnrConfig share];
+    
+    NSMutableString * h5 = [NSMutableString new];
+    [h5 appendFormat:@"<html> <head><title>%@</title></head>", config.webRootTitle];
+    
+    [h5 appendString:@"\n\n<body style=\" TEXT-ALIGN:center; \" >\n"]; // style=\" margin:auto; \"
+    // TEXT-ALIGN: center;}
+    [h5 appendString:@"\n<script>"];
+    {
+        // 方便 浏览器查看 代码
+        [h5 appendFormat:@"\n function detail(row) {\n var src = '/' +row + '/%@';\n  document.getElementById('%@').src = src;\n }", PnrPathDetail, PnrIframeDetail];
+        
+        [h5 appendFormat:@"\n\n function resubmit() {\n var form = document.getElementById('%@').contentWindow.document.getElementById('%@');\n form.submit();\n }", PnrIframeDetail, PnrFormResubmit];
+        
+        [h5 appendFormat:@"\n\n function freshList() {\n  document.getElementById('%@').contentWindow.location.reload(true);\n  }", PnrIframeList];
+    }
+    [h5 appendString:@"\n\n </script>\n"];
+    
+    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:26%%; height:97%%;\" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList];
+    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%i/%@'  style=\"width:70%%; height:97%%;\" ></iframe>", PnrIframeDetail, PnrIframeDetail, index, PnrPathDetail];
+    
+    [h5 appendString:@"\n\n </body></html>"];
+    return h5;
+}
+
 + (NSString *)listH5:(NSString *)body {
     static NSString * h5_head;
     static NSString * h5_tail;
@@ -125,7 +151,10 @@
             // js
             [h5 appendFormat:@"\n<script> %@", [PnrWebJs jsJsonStatic]];
             [h5 appendFormat:@"\n %@ %@", [PnrWebJs textareaAutoHeightFuntion], [PnrWebJs textareaAuhoHeigtEventClass:PnrClassTaAutoH]];
-            [h5 appendString:@"</script>"];
+            
+            [h5 appendFormat:@"\n %@", [PnrWebJs getRootUrl]];
+            [h5 appendFormat:@"\n %@", [PnrWebJs updateShareUrl]];
+            [h5 appendString:@"\n </script>"];
             
             [h5 appendString:@"</body></html>"];
             h5_detail_tail = h5;
@@ -186,7 +215,9 @@
         
         [h5 appendFormat:@"<p> <a style=\"text-decoration: none;\" href='/%i/%@'> <button class=\"w180Red\" type='button' > 重新请求 </button> </a> <font color='#d7534a'> 请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。 </font> </p>", (int)index, PnrPathEdit];
         
-        [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootTitle0, colorValue, pnrEntity.title];
+        [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%i.  %@</font>", colorKey, PnrRootTitle0, colorValue, (int)index, pnrEntity.title];
+        [h5 appendFormat:@"<font color='%@'> &nbsp;%@ </font>  <font id='%@' name='%@' color='%@'></font> </p>", colorKey, PnrRootShare9, PnrIdShare, PnrIdShare, colorValue];
+        
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootTime3, colorValue, pnrEntity.time];
         
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootPath1, colorValue, pnrEntity.path];
