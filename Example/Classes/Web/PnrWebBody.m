@@ -120,10 +120,10 @@
     
     void (^ btTaBlock)(NSMutableString*, NSString*, NSString*, NSString*) = ^(NSMutableString* html, NSString* btTitle, NSString* taIdName, NSString* taValue){
         
-        [html appendFormat:@"\n<br> <button class=\"w180Green\" type='button' \" onclick=\"jsonDynamic('%@', '%@')\" > %@ 查看详情 </button> ",
+        [html appendFormat:@"\n <p> <button class=\"w180Green\" type='button' \" onclick=\"jsonDynamic('%@', '%@')\" > %@ 查看详情 </button> ",
          PnrFormResubmit, taIdName, btTitle
          ];
-        [html appendFormat:@"\n <textarea id='%@' name='%@' class='%@'>%@</textarea> <br>",
+        [html appendFormat:@"\n <textarea id='%@' name='%@' class='%@'>%@</textarea> </p>",
          taIdName, taIdName, PnrClassTaAutoH, taValue];
     };
     
@@ -138,6 +138,7 @@
             [h5 appendString:@"\n<style type='text/css'>"];
             [h5 appendString:[PnrWebCss cssTextarea]];
             [h5 appendString:[PnrWebCss cssButton]];
+            [h5 appendString:[PnrWebCss cssPMarginPadding]];
             [h5 appendString:@"\n</style>"];
             
             // body
@@ -169,7 +170,7 @@
             [h5 appendString:@"\n<style type='text/css'>"];
             [h5 appendString:[PnrWebCss cssTextarea]];
             [h5 appendString:[PnrWebCss cssButton]];
-            
+            [h5 appendString:[PnrWebCss cssPMarginPadding]];
             [h5 appendString:@"\n</style>"];
             
             // body
@@ -180,14 +181,10 @@
         // MARK: 重新提交 尾
         {
             NSMutableString * h5 = [NSMutableString new];
-            
-            //[h5 appendString:@"<p> <button class=\"w180Red\" type='button' onclick=\"parent.resubmit()\" > 重新请求 </button>"];
-            
-            [h5 appendFormat:@"<p> <button class=\"w180Red\" type='button' onclick=\"ajaxResubmit(%@)\" > 重新请求 </button>", PnrFormResubmit];
-            
-            [h5 appendString:@"&nbsp; <button class=\"w180Green\" type='button' onclick=\"parent.freshList()\" > 刷新列表 </button> </p>"];
+            [h5 appendFormat:@"<p> <button class=\"w180Red\" type='button' onclick=\"ajaxResubmit(%@)\" > 重新请求 </button> </p>", PnrFormResubmit];
             [h5 appendString:@"</form>"];
             
+            // 返回数据
             formBtTaBlock(h5, PnrRootResponse7, @"--", PnrFormFeedback);
             
             // js
@@ -221,7 +218,6 @@
         [h5 appendFormat:@"<font color='%@'> &nbsp;%@ </font>  <font id='%@' name='%@' color='%@'></font> <a > <button onclick=\"copyInnerText('%@')\" >点击复制</button></p>", colorKey, PnrRootShare9, PnrIdShare, PnrIdShare, colorValue,  PnrIdShare];
         
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootTime3, colorValue, pnrEntity.time];
-        
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootPath1, colorValue, pnrEntity.path];
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootUrl2, colorValue, pnrEntity.url];
         [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootMethod4, colorValue, pnrEntity.method];
@@ -245,15 +241,15 @@
         btTaBlock(h5, PnrRootPath1,      @"url", [NSString stringWithFormat:@"%@/%@", pnrEntity.domain, pnrEntity.path]);
         
         if ([pnrEntity.method.lowercaseString isEqualToString:@"post"]) {
-            [h5 appendFormat:@"\n <br> <button class=\"w180Green\" type='button' \" > %@ </button> \n\
+            [h5 appendFormat:@"\n <p> <button class=\"w180Green\" type='button' \" > %@ </button> \n\
              <input type='radio' name='method' id='methodGet'  value='GET'          /><label for='methodGet'>GET</label>\n\
              <input type='radio' name='method' id='methodPost' value='POST' checked /><label for='methodPost'>POST</label>\n\
-             <br>\n ", PnrRootMethod4];
+             </p>\n ", PnrRootMethod4];
         }else if ([pnrEntity.method.lowercaseString isEqualToString:@"get"]) {
-            [h5 appendFormat:@"\n <br> <button class=\"w180Green\" type='button' \" > %@ </button> \n\
+            [h5 appendFormat:@"\n <p> <button class=\"w180Green\" type='button' \" > %@ </button> \n\
              <input type='radio' name='method' id='methodGet'  value='GET'  checked /><label for='methodGet'>GET</label>\n\
              <input type='radio' name='method' id='methodPost' value='POST'         /><label for='methodPost'>POST</label>\n\
-             <br>\n ", PnrRootMethod4];
+             </p>\n ", PnrRootMethod4];
         }else{
             btTaBlock(h5, PnrRootMethod4, @"method", pnrEntity.method);
         }

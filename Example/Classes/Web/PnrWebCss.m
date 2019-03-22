@@ -12,6 +12,13 @@
 
 @implementation PnrWebCss
 
++ (NSString *)cssPMarginPadding {
+    return @"\n p {\n\
+    margin:0;\n\
+    padding:0 0 7 0;\n\
+    }";
+}
+
 + (NSString *)cssDivWordOneLine {
     return @"\n div.oneLine {\n\
     white-space:nowrap;\n\
