@@ -54,10 +54,19 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 // -----
 @property (nonatomic, strong) UIColor * listColorCell0;// 列表偶数行背景色
 @property (nonatomic, strong) UIColor * listColorCell1;// 列表奇数行背景色
+
+@property (nonatomic        ) int       listWebWidth;// 推荐为 20 - 30 之间
+@property (nonatomic, strong) UIColor * listWebColorCellBg;// web列表背景色
+@property (nonatomic, strong) UIColor * listWebColorCell0;// web列表偶数行背景色
+@property (nonatomic, strong) UIColor * listWebColorCell1;// web列表奇数行背景色
 @property (nonatomic, strong) UIColor * listWebColorBg;// web查看页面颜色
 // ▽
 @property (nonatomic, strong) NSString * listColorCell0Hex;
 @property (nonatomic, strong) NSString * listColorCell1Hex;
+
+@property (nonatomic, strong) NSString * listWebColorCellBgHex;
+@property (nonatomic, strong) NSString * listWebColorCell0Hex;
+@property (nonatomic, strong) NSString * listWebColorCell1Hex;
 @property (nonatomic, strong) NSString * listWebColorBgHex;
 
 

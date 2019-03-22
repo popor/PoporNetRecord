@@ -53,22 +53,27 @@
         {
             // instance.listCellHeight = 55;
 
-            instance.listFontTitle    = [UIFont systemFontOfSize:16];
-            instance.listFontRequest  = [UIFont systemFontOfSize:14];
-            instance.listFontDomain   = [UIFont systemFontOfSize:15];
-            instance.listFontTime     = [UIFont systemFontOfSize:15];
+            instance.listFontTitle      = [UIFont systemFontOfSize:16];
+            instance.listFontRequest    = [UIFont systemFontOfSize:14];
+            instance.listFontDomain     = [UIFont systemFontOfSize:15];
+            instance.listFontTime       = [UIFont systemFontOfSize:15];
 
-            instance.listColorTitle   = PnrColorGreen;
-            instance.listColorRequest = PnrColorRed;
-            instance.listColorDomain  = ColorBlack3;
-            instance.listColorTime    = ColorBlack6;
+            instance.listColorTitle     = PnrColorGreen;
+            instance.listColorRequest   = PnrColorRed;
+            instance.listColorDomain    = ColorBlack3;
+            instance.listColorTime      = ColorBlack6;
 
-            instance.listColorCell0   = [UIColor whiteColor];
-            instance.listColorCell1   = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
-            instance.listWebColorBg   = RGB16(0XF3F3F3);
-            
-            instance.rootColorKey     = PnrColorGreen;
-            instance.rootColorValue   = PnrColorRed;
+            instance.listColorCell0     = [UIColor whiteColor];
+            instance.listColorCell1     = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
+
+            instance.listWebWidth       = 25;
+            instance.listWebColorCellBg = RGB16(0XEEEEEE);
+            instance.listWebColorCell0  = RGB16(0XE2E2E2);
+            instance.listWebColorCell1  = RGB16(0XF2F2F2);
+            instance.listWebColorBg     = RGB16(0XFFFFFF);
+
+            instance.rootColorKey       = PnrColorGreen;
+            instance.rootColorValue     = PnrColorRed;
             [instance updateListCellHeight];
         }
     });
@@ -179,6 +184,21 @@
 - (void)setListColorCell1:(UIColor *)listColorCell1 {
     _listColorCell1 = listColorCell1;
     _listColorCell1Hex = [self hexStringColorNoAlpha:listColorCell1];
+}
+
+- (void)setListWebColorCellBg:(UIColor *)listWebColorCellBg {
+    _listWebColorCellBg = listWebColorCellBg;
+    _listWebColorCellBgHex = [self hexStringColorNoAlpha:listWebColorCellBg];
+}
+
+- (void)setListWebColorCell0:(UIColor *)listWebColorCell0 {
+    _listWebColorCell0 = listWebColorCell0;
+    _listWebColorCell0Hex = [self hexStringColorNoAlpha:listWebColorCell0];
+}
+
+- (void)setListWebColorCell1:(UIColor *)listWebColorCell1 {
+    _listWebColorCell1 = listWebColorCell1;
+    _listWebColorCell1Hex = [self hexStringColorNoAlpha:listWebColorCell1];
 }
 
 - (void)setListWebColorBg:(UIColor *)listWebColorBg {

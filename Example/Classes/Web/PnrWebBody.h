@@ -47,7 +47,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)jsonReadForm:(NSString *)formIdName taIdName:(NSString *)taIdName btName:(NSString *)btName taValue:(NSString *)taValue;
 
-+ (NSString *)rootBody;
 + (NSString *)rootBodyIndex:(int)index;
 + (NSString *)listH5:(NSString *)body;
 

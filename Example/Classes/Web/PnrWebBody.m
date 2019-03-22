@@ -22,32 +22,6 @@
             ];
 }
 
-+ (NSString *)rootBody {
-    PnrConfig * config = [PnrConfig share];
-    
-    NSMutableString * h5 = [NSMutableString new];
-    [h5 appendFormat:@"<html> <head><title>%@</title></head>", config.webRootTitle];
-    
-    [h5 appendString:@"\n\n<body style=\" TEXT-ALIGN:center; \" >\n"]; // style=\" margin:auto; \"
-    // TEXT-ALIGN: center;}
-    [h5 appendString:@"\n<script>"];
-    {
-        // 方便 浏览器查看 代码
-        [h5 appendFormat:@"\n function detail(row) {\n var src = '/' +row + '/%@';\n  document.getElementById('%@').src = src;\n }", PnrPathDetail, PnrIframeDetail];
-        
-        [h5 appendFormat:@"\n\n function resubmit() {\n var form = document.getElementById('%@').contentWindow.document.getElementById('%@');\n form.submit();\n }", PnrIframeDetail, PnrFormResubmit];
-        
-        [h5 appendFormat:@"\n\n function freshList() {\n  document.getElementById('%@').contentWindow.location.reload(true);\n  }", PnrIframeList];
-    }
-    [h5 appendString:@"\n\n </script>\n"];
-    
-    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:26%%; height:97%%; marginwidth:0;  background-color:%@; \" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList, config.listWebColorBgHex];
-    [h5 appendFormat:@"\n <iframe id='%@' name='%@' style=\"width:70%%; height:97%%;\" ></iframe>", PnrIframeDetail, PnrIframeDetail];
-    
-    [h5 appendString:@"\n\n </body></html>"];
-    return h5;
-}
-
 + (NSString *)rootBodyIndex:(int)index {
     PnrConfig * config = [PnrConfig share];
     
@@ -67,8 +41,13 @@
     }
     [h5 appendString:@"\n\n </script>\n"];
     
-    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:26%%; height:97%%; background-color:%@; \" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList, config.listWebColorBgHex];
-    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%i/%@'  style=\"width:70%%; height:97%%;\" ></iframe>", PnrIframeDetail, PnrIframeDetail, index, PnrPathDetail];
+    if (index == 0) {
+        [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:%i%%; height:97%%; marginwidth:0;  background-color:%@; \" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList, config.listWebWidth, config.listWebColorBgHex];
+        [h5 appendFormat:@"\n <iframe id='%@' name='%@' style=\"width:%i%%; height:97%%;\" ></iframe>", PnrIframeDetail, PnrIframeDetail, 100 - config.listWebWidth - 4];
+    }else{
+        [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:%i%%; height:97%%; background-color:%@; \" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList, config.listWebWidth, config.listWebColorBgHex];
+        [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%i/%@'  style=\"width:%i%%; height:97%%;\" ></iframe>", PnrIframeDetail, PnrIframeDetail, index, PnrPathDetail, 100 - config.listWebWidth - 4];
+    }
     
     [h5 appendString:@"\n\n </body></html>"];
     return h5;
@@ -78,6 +57,8 @@
     static NSString * h5_head;
     static NSString * h5_tail;
     if (!h5_head) {
+        PnrConfig * config = [PnrConfig share];
+        
         NSMutableString * html = [NSMutableString new];
         [html appendString:@"<html> <head><title>网络请求</title></head> \n<body>"];
         // css
@@ -86,8 +67,8 @@
         [html appendString:[PnrWebCss cssButton]];
         [html appendString:@"\n</style>"];
 
-        [html appendFormat:@"\n <div style=\" background-color:#eeeeee; height:100%%; width:100%%; float:left; \">"];
-        [html appendFormat:@"\n <button class='w100p' type='button' onclick='location.reload();' > 刷新列表 </button>"];
+        [html appendFormat:@"\n <div style=\" background-color:%@; height:100%%; width:100%%; float:left; \">", config.listWebColorCellBgHex];
+        [html appendString:@"\n <button class='w100p' type='button' onclick='location.reload();' > 刷新列表 </button>"];
         
         h5_head = html;
     }
@@ -214,13 +195,13 @@
         
         [h5 appendFormat:@"<p> <a style=\"text-decoration: none;\" href='/%i/%@'> <button class=\"w180Red\" type='button' > 重新请求 </button> </a> <font color='#d7534a'> 请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。 </font> </p>", (int)index, PnrPathEdit];
         
-        [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%i.  %@</font>", colorKey, PnrRootTitle0, colorValue, (int)index, pnrEntity.title];
+        [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%i.  %@</font>", colorKey, PnrRootTitle0, colorValue, (int)index, pnrEntity.title];
         [h5 appendFormat:@"<font color='%@'> &nbsp;%@ </font>  <font id='%@' name='%@' color='%@'></font> <a > <button onclick=\"copyInnerText('%@')\" >点击复制</button></p>", colorKey, PnrRootShare9, PnrIdShare, PnrIdShare, colorValue,  PnrIdShare];
         
-        [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootTime3, colorValue, pnrEntity.time];
-        [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootPath1, colorValue, pnrEntity.path];
-        [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootUrl2, colorValue, pnrEntity.url];
-        [h5 appendFormat:@"<p><font color='%@'>%@</font><font color='%@'>%@</font></p>", colorKey, PnrRootMethod4, colorValue, pnrEntity.method];
+        [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%@</font></p>", colorKey, PnrRootTime3, colorValue, pnrEntity.time];
+        [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%@</font></p>", colorKey, PnrRootPath1, colorValue, pnrEntity.path];
+        [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%@</font></p>", colorKey, PnrRootUrl2, colorValue, pnrEntity.url];
+        [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%@</font></p>", colorKey, PnrRootMethod4, colorValue, pnrEntity.method];
         
         formBtTaBlock(h5, PnrRootHead5,      headStr,      PnrPathHead);
         formBtTaBlock(h5, PnrRootParameter6, parameterStr, PnrPathParameter);

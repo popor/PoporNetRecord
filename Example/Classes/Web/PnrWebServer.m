@@ -39,7 +39,7 @@
     dispatch_once(&once, ^{
         instance = [PnrWebServer new];
         instance.h5List = [NSMutableString new];
-        instance.h5Root = [PnrWebBody rootBody];
+        instance.h5Root = [PnrWebBody rootBodyIndex:0];
         
         instance.lastIndex  = -1;
         instance.config     = [PnrConfig share];

@@ -18,7 +18,7 @@
 - (void)createListWebH5:(NSInteger)index {
     PnrConfig * config = [PnrConfig share];
 
-    NSString * bgColor = index%2==1 ? config.listColorCell0Hex:config.listColorCell1Hex;
+    NSString * bgColor = index%2==1 ? config.listWebColorCell0Hex:config.listWebColorCell1Hex;
     NSMutableString * h5 = [NSMutableString new];
     
     [h5 appendFormat:@"\n\n <div style=\" background:%@; width:100%%; height:%ipx; position:relative; \" onclick= \"parent.detail(%i);\" >", bgColor, PnrListHeight, (int)index];
