@@ -47,12 +47,8 @@ pod 'PoporNetRecord'
 ```
 <p>
 <img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/web1.png" width="100%" height="100%">
-
-</p>
-
-<p>
 <img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/web2.png" width="100%" height="100%">
-
+<img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/web3.png" width="100%" height="100%">
 </p>
 
 ## Author
