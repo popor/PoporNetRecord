@@ -65,6 +65,7 @@
 
             instance.listColorCell0   = [UIColor whiteColor];
             instance.listColorCell1   = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
+            instance.listWebColorBg   = RGB16(0XF3F3F3);
             
             instance.rootColorKey     = PnrColorGreen;
             instance.rootColorValue   = PnrColorRed;
@@ -178,6 +179,11 @@
 - (void)setListColorCell1:(UIColor *)listColorCell1 {
     _listColorCell1 = listColorCell1;
     _listColorCell1Hex = [self hexStringColorNoAlpha:listColorCell1];
+}
+
+- (void)setListWebColorBg:(UIColor *)listWebColorBg {
+    _listWebColorBg = listWebColorBg;
+    _listWebColorBgHex = [self hexStringColorNoAlpha:listWebColorBg];
 }
 
 - (void)setRootColorKey:(UIColor *)rootColorKey {

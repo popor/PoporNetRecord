@@ -41,7 +41,7 @@
     }
     [h5 appendString:@"\n\n </script>\n"];
     
-    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:26%%; height:97%%;\" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList];
+    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:26%%; height:97%%; marginwidth:0;  background-color:%@; \" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList, config.listWebColorBgHex];
     [h5 appendFormat:@"\n <iframe id='%@' name='%@' style=\"width:70%%; height:97%%;\" ></iframe>", PnrIframeDetail, PnrIframeDetail];
     
     [h5 appendString:@"\n\n </body></html>"];
@@ -67,7 +67,7 @@
     }
     [h5 appendString:@"\n\n </script>\n"];
     
-    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:26%%; height:97%%;\" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList];
+    [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%@' style=\"width:26%%; height:97%%; background-color:%@; \" ></iframe>", PnrIframeList, PnrIframeList, PnrPathList, config.listWebColorBgHex];
     [h5 appendFormat:@"\n <iframe id='%@' name='%@' src='/%i/%@'  style=\"width:70%%; height:97%%;\" ></iframe>", PnrIframeDetail, PnrIframeDetail, index, PnrPathDetail];
     
     [h5 appendString:@"\n\n </body></html>"];
@@ -86,8 +86,8 @@
         [html appendString:[PnrWebCss cssButton]];
         [html appendString:@"\n</style>"];
 
-        [html appendFormat:@"\n <button class='w100p' type='button' onclick='location.reload();' > 刷新列表 </button>"];
         [html appendFormat:@"\n <div style=\" background-color:#eeeeee; height:100%%; width:100%%; float:left; \">"];
+        [html appendFormat:@"\n <button class='w100p' type='button' onclick='location.reload();' > 刷新列表 </button>"];
         
         h5_head = html;
     }

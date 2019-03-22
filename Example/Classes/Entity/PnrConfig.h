@@ -54,9 +54,12 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 // -----
 @property (nonatomic, strong) UIColor * listColorCell0;// 列表偶数行背景色
 @property (nonatomic, strong) UIColor * listColorCell1;// 列表奇数行背景色
+@property (nonatomic, strong) UIColor * listWebColorBg;// web查看页面颜色
 // ▽
 @property (nonatomic, strong) NSString * listColorCell0Hex;
 @property (nonatomic, strong) NSString * listColorCell1Hex;
+@property (nonatomic, strong) NSString * listWebColorBgHex;
+
 
 // -----
 @property (nonatomic, strong) UIColor * rootColorKey;
