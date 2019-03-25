@@ -11,7 +11,7 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-思路模仿自LLDebugTool,https://github.com/HDB-Li/LLDebugTool.git,但是我只需要监测所有的网络请求,另外其他需求也不一致,所以有了本framework.
+思路模仿自LLDebugTool, https://github.com/HDB-Li/LLDebugTool.git ,但是我只需要监测所有的网络请求,另外其他需求也不一致,所以有了本framework.
 
 ```
 若想在Web页面显示 WIFI 名称，需要针对iOS12在Xcode中设置。
