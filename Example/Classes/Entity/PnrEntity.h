@@ -20,6 +20,7 @@ static NSString * PnrRootParameter6 = @"请求参数:";
 static NSString * PnrRootResponse7  = @"返回数据:";
 static NSString * PnrRootExtra8     = @"额外参数:";
 static NSString * PnrRootShare9     = @"分享:";
+static NSString * PnrRootLog10      = @"日志:";
 
 static int PnrListHeight            = 50;
 static NSString * PnrIframeList     = @"IframeList";
@@ -48,6 +49,10 @@ static NSString * PnrClassTaAutoH  = @"TaAutoH";
 
 @interface PnrEntity : NSObject
 
+// 日志模式
+@property (nonatomic, strong) NSString * log; // 如果此参数不为空,那么就是log模式
+
+// 网路请求模式
 @property (nonatomic, strong) NSString * title;
 @property (nonatomic, strong) NSString * url;
 @property (nonatomic, strong) NSString * domain;

@@ -102,22 +102,30 @@
         }
         PnrEntity * entity = self.view.weakInfoArray[self.view.weakInfoArray.count -  indexPath.row - 1];
         
-        if (entity.title) {
+        if (entity.log) {
             NSMutableAttributedString * att = [NSMutableAttributedString new];
-            //[att addString:entity.title font:cellFont15 color:ColorBlack3];
-            //[att addString:[NSString stringWithFormat:@" %@", entity.request] font:cellFont15 color:ColorBlack6];
-            
             [att addString:entity.title font:self.config.listFontTitle color:self.config.listColorTitle];
-            [att addString:[NSString stringWithFormat:@" %@", entity.path] font:self.config.listFontRequest color:self.config.listColorRequest];
-            
             cell.requestL.attributedText = att;
+            
+            cell.domainL.text  = entity.log;
         }else{
-            cell.requestL.text      = entity.path;
-            cell.requestL.font      = self.config.listFontRequest;
-            cell.requestL.textColor = self.config.listColorRequest;
+            if (entity.title) {
+                NSMutableAttributedString * att = [NSMutableAttributedString new];
+                //[att addString:entity.title font:cellFont15 color:ColorBlack3];
+                //[att addString:[NSString stringWithFormat:@" %@", entity.request] font:cellFont15 color:ColorBlack6];
+                
+                [att addString:entity.title font:self.config.listFontTitle color:self.config.listColorTitle];
+                [att addString:[NSString stringWithFormat:@" %@", entity.path] font:self.config.listFontRequest color:self.config.listColorRequest];
+                
+                cell.requestL.attributedText = att;
+            }else{
+                cell.requestL.text      = entity.path;
+                cell.requestL.font      = self.config.listFontRequest;
+                cell.requestL.textColor = self.config.listColorRequest;
+            }
+            cell.domainL.text  = entity.domain;
         }
         cell.timeL.text    = entity.time;
-        cell.domainL.text  = entity.domain;
         
         if (indexPath.row%2 == 0) {
             cell.backgroundColor = [UIColor whiteColor];

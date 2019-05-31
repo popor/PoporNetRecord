@@ -22,6 +22,7 @@
 
 + (instancetype)share;
 
+// 网络请求部分
 /**
  headValue:      NSDictionary | NSString
  parameterValue: NSDictionary | NSString
@@ -33,5 +34,8 @@
 + (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id)headValue parameter:(id)parameterValue response:(id)responseValue;
 
 + (void)setPnrBlockResubmit:(PnrBlockResubmit)block extraDic:(NSDictionary *)dic;
+
+// Log 部分
++ (void)addLog:(NSString *)log;
 
 @end

@@ -45,10 +45,11 @@
     // pnr 设置
     [self addPnrSettings];
     
+    int gap = 30;
     {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame =  CGRectMake(0, 0, 140, 44);
-        button.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size .height/2);
+        button.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size .height/2 - gap);
         [button setTitle:@"New Request" forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageFromColor:[UIColor brownColor] size:CGSizeMake(1, 1)] forState:UIControlStateNormal];
@@ -59,7 +60,22 @@
         
         [button addTarget:self action:@selector(addOneNetRequest) forControlEvents:UIControlEventTouchUpInside];
     }
+    {
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame =  CGRectMake(0, 0, 140, 44);
+        button.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size .height/2 + gap);
+        [button setTitle:@"New Log" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageFromColor:[UIColor brownColor] size:CGSizeMake(1, 1)] forState:UIControlStateNormal];
+        
+        button.layer.cornerRadius = 5;
+        button.clipsToBounds = YES;
+        [self.view addSubview:button];
+        
+        [button addTarget:self action:@selector(addOneLog) forControlEvents:UIControlEventTouchUpInside];
+    }
     [self addOneNetRequest];
+    [self addOneLog];
 }
 
 - (void)addOneNetRequest {
@@ -76,6 +92,10 @@
                                        @{@"a":@"a111111111111", @"b":@"b2222222222222"},
                                        ]};
     [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:@"GET" head:@{@"os":@"iOS", @"key":value} parameter:pDic response:@"responseText"];
+}
+
+- (void)addOneLog {
+    [PoporNetRecord addLog:@"new log, 1111111111, 2222222222, 3333333333, 4444444444, 5555555555."];
 }
 
 - (void)Demos {

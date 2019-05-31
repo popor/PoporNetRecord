@@ -189,8 +189,21 @@
     
     NSMutableString * detail   = [NSMutableString new];
     NSMutableString * resubmit = [NSMutableString new];
-    {
-        // 请求详情
+    if (pnrEntity.log) {
+        // 请求详情:log
+        NSMutableString * h5 = [NSMutableString new];
+        
+        //[h5 appendFormat:@"<p> <a style=\"text-decoration: none;\" href='/%i/%@'> <button class=\"w180Red\" type='button' > 重新请求 </button> </a> <font color='#d7534a'> 请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。 </font> </p>", (int)index, PnrPathEdit];
+        
+        [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%i.  %@</font>", colorKey, PnrRootTitle0, colorValue, (int)index, pnrEntity.title];
+        [h5 appendFormat:@"<font color='%@'> &nbsp;%@ </font>  <font id='%@' name='%@' color='%@'></font> <a > <button onclick=\"copyInnerText('%@')\" >点击复制</button></p>", colorKey, PnrRootShare9, PnrIdShare, PnrIdShare, colorValue,  PnrIdShare];
+        
+        [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%@</font></p>", colorKey, PnrRootTime3, colorValue, pnrEntity.time];
+        [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%@</font></p>", colorKey, PnrRootLog10, colorValue, pnrEntity.log];
+        
+        [detail appendFormat:@"%@ \n %@ \n %@", h5_detail_head, h5, h5_detail_tail];
+    }else{
+        // 请求详情:网路求情
         NSMutableString * h5 = [NSMutableString new];
         
         [h5 appendFormat:@"<p> <a style=\"text-decoration: none;\" href='/%i/%@'> <button class=\"w180Red\" type='button' > 重新请求 </button> </a> <font color='#d7534a'> 请使用chrome核心浏览器，并且安装JSON-handle插件查看JSON详情页。 </font> </p>", (int)index, PnrPathEdit];

@@ -251,8 +251,6 @@
 		18E6E71820EF585F002CA49B /* other */ = {
 			isa = PBXGroup;
 			children = (
-				6003F59C195388D20070C39A /* PoporNetRecordAppDelegate.h */,
-				6003F59D195388D20070C39A /* PoporNetRecordAppDelegate.m */,
 				18D5508B21B62E7D00C62BB8 /* PoporNetRecord_Example.entitlements */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
@@ -303,6 +301,8 @@
 				185879FE223F91EC00B5B9CA /* favicon2.ico */,
 				185879FC223F844600B5B9CA /* favicon.ico */,
 				18E6E71820EF585F002CA49B /* other */,
+				6003F59C195388D20070C39A /* PoporNetRecordAppDelegate.h */,
+				6003F59D195388D20070C39A /* PoporNetRecordAppDelegate.m */,
 				6003F5A5195388D20070C39A /* PoporNetRecordViewController.h */,
 				6003F5A6195388D20070C39A /* PoporNetRecordViewController.m */,
 			);
@@ -430,6 +430,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
