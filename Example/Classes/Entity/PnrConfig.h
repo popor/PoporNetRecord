@@ -12,12 +12,6 @@
 #import "PnrPrefix.h"
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(int, PoporNetRecordType) {
-    PoporNetRecordAuto = 1, // 开发环境或者虚拟机环境
-    PoporNetRecordEnable, // 全部监测
-    PoporNetRecordDisable, // 全部忽略
-};
-
 typedef void(^PoporNetRecordNcBlock) (UINavigationController * nc);
 typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 
@@ -98,7 +92,8 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 @property (nonatomic, copy  ) BlockPVoid            freshBlock;
 @property (nonatomic, copy  ) PoporNetRecordNcBlock presentNCBlock;// 用户更新 presentViewController NC的状态
 
-@property (nonatomic        ) BOOL jsonViewColorBlack;// json详情页面是否使用黑白.
+@property (nonatomic        ) PnrListType jsonViewColorBlack;// json详情页面是否使用黑白.
+@property (nonatomic        ) PnrListType jsonViewLogDetail;// Log日志是否显示详情.
 
 // 自定义ballBT可见度, 假如为YES,那么ballBT第一次显示会设置为hidden=YES.
 @property (nonatomic, getter=isCustomBallBtVisible) BOOL customBallBtVisible;
@@ -112,6 +107,10 @@ typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 - (BOOL)isShowListWeb;
 
 - (void)updateListCellHeight;
+
+- (void)updateTextColorBlack:(int)color;
+
+- (void)updateLogDetail:(int)detail;
 
 @end
 

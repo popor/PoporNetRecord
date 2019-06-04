@@ -21,6 +21,7 @@
 		181197202235EA9000450770 /* PnrDetailVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1811970C2235EA9000450770 /* PnrDetailVCPresenter.m */; };
 		185879FD223F844600B5B9CA /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 185879FC223F844600B5B9CA /* favicon.ico */; };
 		185879FF223F91EC00B5B9CA /* favicon2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 185879FE223F91EC00B5B9CA /* favicon2.ico */; };
+		18AC5E8122A6043100C64B29 /* PnrCellEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AC5E8022A6043100C64B29 /* PnrCellEntity.m */; };
 		18DDDA7B223B77F400307E32 /* PnrWebJs.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA75223B77F400307E32 /* PnrWebJs.m */; };
 		18DDDA7C223B77F400307E32 /* PnrWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA76223B77F400307E32 /* PnrWebServer.m */; };
 		18DDDA7D223B77F400307E32 /* PnrWebCss.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA77223B77F400307E32 /* PnrWebCss.m */; };
@@ -87,6 +88,8 @@
 		1811972122364DA900450770 /* PnrPrefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrPrefix.h; sourceTree = "<group>"; };
 		185879FC223F844600B5B9CA /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
 		185879FE223F91EC00B5B9CA /* favicon2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon2.ico; sourceTree = "<group>"; };
+		18AC5E7F22A6043100C64B29 /* PnrCellEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrCellEntity.h; sourceTree = "<group>"; };
+		18AC5E8022A6043100C64B29 /* PnrCellEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PnrCellEntity.m; sourceTree = "<group>"; };
 		18D5508B21B62E7D00C62BB8 /* PoporNetRecord_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoporNetRecord_Example.entitlements; sourceTree = SOURCE_ROOT; };
 		18DDDA75223B77F400307E32 /* PnrWebJs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrWebJs.m; sourceTree = "<group>"; };
 		18DDDA76223B77F400307E32 /* PnrWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrWebServer.m; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 				181196FE2235EA9000450770 /* PnrPortEntity.m */,
 				181196FD2235EA9000450770 /* PnrEntity.h */,
 				181197012235EA9000450770 /* PnrEntity.m */,
+				18AC5E7F22A6043100C64B29 /* PnrCellEntity.h */,
+				18AC5E8022A6043100C64B29 /* PnrCellEntity.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -555,6 +560,7 @@
 				181197132235EA9000450770 /* PnrListVCInteractor.m in Sources */,
 				6003F5A7195388D20070C39A /* PoporNetRecordViewController.m in Sources */,
 				181197112235EA9000450770 /* PnrListVCCell.m in Sources */,
+				18AC5E8122A6043100C64B29 /* PnrCellEntity.m in Sources */,
 				181197152235EA9000450770 /* PnrListVCRouter.m in Sources */,
 				181197162235EA9000450770 /* PnrListVCPresenter.m in Sources */,
 				18DDDA8D223B9BBB00307E32 /* PnrView.m in Sources */,

@@ -9,6 +9,9 @@
 
 #import <PoporFoundation/PrefixFun.h>
 
+static NSString * KeyTextColor = @"PoporNetRecord_textColor";
+static NSString * KeyLog       = @"PoporNetRecord_logDetail";
+
 @interface PnrConfig ()
 // 是否开启监测
 @property (nonatomic) BOOL record;
@@ -71,10 +74,13 @@
             instance.listWebColorCell0  = RGB16(0XE2E2E2);
             instance.listWebColorCell1  = RGB16(0XF2F2F2);
             instance.listWebColorBg     = RGB16(0XFFFFFF);
-
+            
             instance.rootColorKey       = PnrColorGreen;
             instance.rootColorValue     = PnrColorRed;
             [instance updateListCellHeight];
+            
+            instance.jsonViewColorBlack = [PnrConfig get__textColor];
+            instance.jsonViewLogDetail  = [PnrConfig get__logDetail];
         }
     });
     return instance;
@@ -249,5 +255,43 @@
 //        return [NSString stringWithFormat:@"#%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255)];
 //    }
 //}
+
+- (void)updateTextColorBlack:(int)color {
+    [PnrConfig save__textColor:color];
+    self.jsonViewColorBlack = color;
+}
+
++ (void)save__textColor:(int)textColor {
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%i", textColor] forKey:KeyTextColor];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (int)get__textColor {
+    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:KeyTextColor];
+    if (info) {
+        return [info intValue];
+    }else{
+        return PnrListTypeTextColor;
+    }
+}
+
+- (void)updateLogDetail:(int)detail {
+    [PnrConfig save__logDetail:detail];
+    self.jsonViewLogDetail = detail;
+}
+
++ (void)save__logDetail:(int)detail {
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%i", detail] forKey:KeyLog];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (int)get__logDetail {
+    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:KeyLog];
+    if (info) {
+        return [info intValue];
+    }else{
+        return PnrListTypeLogDetail;
+    }
+}
 
 @end

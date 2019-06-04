@@ -60,7 +60,7 @@
     if (tableView == self.view.infoTV) {
         return self.view.weakInfoArray.count;
     }else{
-        return 2;
+        return self.view.rightBarArray.count;
     }
 }
 
@@ -70,7 +70,36 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.view.infoTV) {
-        return self.config.listCellHeight;
+        PnrEntity * entity = self.view.weakInfoArray[self.view.weakInfoArray.count -  indexPath.row - 1];
+        if (entity.log) {
+            switch (self.config.jsonViewLogDetail) {
+                case PnrListTypeLogDetail:{
+                    if (entity.logDetailH == 0) {
+                        entity.logDetailH = [PnrListVCCell cellLogH:entity.log];
+                    }
+                    return entity.logDetailH;
+                    break;
+                }
+                case PnrListTypeLogSimply:{
+                    return self.config.listCellHeight;
+                    break;
+                }
+                case PnrListTypeLogNull:{
+                    return 0.1;
+                    break;
+                }
+                default:{
+                    return self.config.listCellHeight;
+                    break;
+                }
+            }
+        }else{
+            if (self.config.jsonViewColorBlack == PnrListTypeTextNull) {
+                return 0.1;
+            }else{
+                return self.config.listCellHeight;
+            }
+        }
     }else{
         return 44;
     }
@@ -98,34 +127,47 @@
         PnrListVCCell * cell = [tableView dequeueReusableCellWithIdentifier:CellID];
         if (!cell) {
             cell = [[PnrListVCCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellID];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
         PnrEntity * entity = self.view.weakInfoArray[self.view.weakInfoArray.count -  indexPath.row - 1];
         
         if (entity.log) {
-            NSMutableAttributedString * att = [NSMutableAttributedString new];
-            [att addString:entity.title font:self.config.listFontTitle color:self.config.listColorTitle];
-            cell.requestL.attributedText = att;
-            
-            cell.domainL.text  = entity.log;
-        }else{
-            if (entity.title) {
-                NSMutableAttributedString * att = [NSMutableAttributedString new];
-                //[att addString:entity.title font:cellFont15 color:ColorBlack3];
-                //[att addString:[NSString stringWithFormat:@" %@", entity.request] font:cellFont15 color:ColorBlack6];
-                
-                [att addString:entity.title font:self.config.listFontTitle color:self.config.listColorTitle];
-                [att addString:[NSString stringWithFormat:@" %@", entity.path] font:self.config.listFontRequest color:self.config.listColorRequest];
-                
-                cell.requestL.attributedText = att;
+            if (self.config.jsonViewLogDetail == PnrListTypeLogNull) {
+                cell.hidden = YES;
+                cell.accessoryType = UITableViewCellAccessoryNone;
             }else{
-                cell.requestL.text      = entity.path;
-                cell.requestL.font      = self.config.listFontRequest;
-                cell.requestL.textColor = self.config.listColorRequest;
+                cell.hidden = NO;
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                
+                NSMutableAttributedString * att = [NSMutableAttributedString new];
+                [att addString:entity.title font:self.config.listFontTitle color:self.config.listColorTitle];
+                cell.requestL.attributedText = att;
+                
+                cell.domainL.text = entity.log;
             }
-            cell.domainL.text  = entity.domain;
+        }else{
+            if (self.config.jsonViewColorBlack == PnrListTypeTextNull) {
+                cell.hidden = YES;
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }else{
+                cell.hidden = NO;
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                
+                if (entity.title) {
+                    NSMutableAttributedString * att = [NSMutableAttributedString new];
+                    
+                    [att addString:entity.title font:self.config.listFontTitle color:self.config.listColorTitle];
+                    [att addString:[NSString stringWithFormat:@" %@", entity.path] font:self.config.listFontRequest color:self.config.listColorRequest];
+                    
+                    cell.requestL.attributedText = att;
+                }else{
+                    cell.requestL.text      = entity.path;
+                    cell.requestL.font      = self.config.listFontRequest;
+                    cell.requestL.textColor = self.config.listColorRequest;
+                }
+                cell.domainL.text  = entity.domain;
+            }
         }
-        cell.timeL.text    = entity.time;
+        cell.timeL.text = entity.time;
         
         if (indexPath.row%2 == 0) {
             cell.backgroundColor = [UIColor whiteColor];
@@ -143,21 +185,40 @@
             cell.textLabel.textColor = [UIColor whiteColor];
             cell.tintColor           = [UIColor whiteColor];
         }
-        if (indexPath.row == 0) {
-            cell.textLabel.text = @"彩色:高内存";
-            if (self.config.jsonViewColorBlack) {
-                cell.accessoryType = UITableViewCellAccessoryNone;
-            }else{
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        PnrCellEntity * cellEntity = self.view.rightBarArray[indexPath.row];
+        
+        cell.textLabel.text = cellEntity.title;
+        
+        switch (cellEntity.type) {
+            case PnrListTypeClear:{
+                break;
             }
-        }else{
-            cell.textLabel.text = @"黑色:低内存";
-            if (self.config.jsonViewColorBlack) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            }else{
-                cell.accessoryType = UITableViewCellAccessoryNone;
+            case PnrListTypeTextColor:
+            case PnrListTypeTextBlack:
+            case PnrListTypeTextNull:{
+                if (self.config.jsonViewColorBlack == cellEntity.type) {
+                    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                }else{
+                    cell.accessoryType = UITableViewCellAccessoryNone;
+                }
+                break;
             }
+                
+            case PnrListTypeLogDetail:
+            case PnrListTypeLogSimply:
+            case PnrListTypeLogNull:{
+                if (self.config.jsonViewLogDetail == cellEntity.type) {
+                    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                }else{
+                    cell.accessoryType = UITableViewCellAccessoryNone;
+                }
+                break;
+            }
+                
+            default:
+                break;
         }
+        
         return cell;
     }
 }
@@ -181,12 +242,31 @@
         }];
        
     }else{
-        if (indexPath.row == 0) {
-            [self save__textColor:PoporNetRecordTextColorColors];
-        }else if (indexPath.row == 1) {
-            [self save__textColor:PoporNetRecordTextColorBlack];
+        PnrCellEntity * cellEntity = self.view.rightBarArray[indexPath.row];
+        switch (cellEntity.type) {
+            case PnrListTypeClear:{
+                [self clearAction];
+                break;
+            }
+            case PnrListTypeTextColor:
+            case PnrListTypeTextBlack:
+            case PnrListTypeTextNull:{
+                [self.config updateTextColorBlack:cellEntity.type];
+                //[self.view.infoTV reloadData];
+                break;
+            }
+                
+            case PnrListTypeLogDetail:
+            case PnrListTypeLogSimply:
+            case PnrListTypeLogNull:{
+                [self.config updateLogDetail:cellEntity.type];
+                //[self.view.infoTV reloadData];
+                break;
+            }
+            default:
+                break;
         }
-        [self setRightBarAction];
+        [self.view.infoTV reloadData];
         [self.view.alertBubbleView closeEvent];
     }
     
@@ -214,7 +294,7 @@
     [[PnrWebServer share] clearListWeb];
 }
 
-- (void)setTextColorAction:(UIBarButtonItem *)sender event:(UIEvent *)event {
+- (void)settingAction:(UIBarButtonItem *)sender event:(UIEvent *)event {
     //CGRect fromRect = [[event.allTouches anyObject] view].frame;
     UITouch * touch = [event.allTouches anyObject];
     //UIWindow * window = [[UIApplication sharedApplication] keyWindow];
@@ -248,37 +328,10 @@
     [self.view.alertBubbleView showCustomView:self.view.alertBubbleTV around:fromRect close:nil];
 }
 
-- (NSString *)textColorText {
-    NSString * textColor = [self get__textColor];
-    if (!textColor) {
-        textColor = PoporNetRecordTextColorColors;
-        [self save__textColor:PoporNetRecordTextColorColors];
-    }
-    // MARK: 设置json字体颜色单例变量
-    {
-        if ([textColor isEqualToString:PoporNetRecordTextColorColors]) {
-            self.config.jsonViewColorBlack = NO;
-        }else{
-            self.config.jsonViewColorBlack = YES;
-        }
-    }
-    return textColor;
-}
-
-- (void)save__textColor:(NSString *)textColor {
-    [[NSUserDefaults standardUserDefaults] setObject:textColor forKey:@"PoporNetRecord_textColor"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (NSString *)get__textColor {
-    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:@"PoporNetRecord_textColor"];
-    return info;
-}
-
 - (void)setRightBarAction {
-    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:[self textColorText] style:UIBarButtonItemStylePlain target:self action:@selector(setTextColorAction:event:)];
-    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"清空" style:UIBarButtonItemStylePlain target:self action:@selector(clearAction)];
-    self.view.vc.navigationItem.rightBarButtonItems = @[item2, item1];
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:PoporNetRecordSet style:UIBarButtonItemStylePlain target:self action:@selector(settingAction:event:)];
+    //UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"清空" style:UIBarButtonItemStylePlain target:self action:@selector(clearAction)];
+    self.view.vc.navigationItem.rightBarButtonItems = @[item1];
 }
 
 - (void)updateServerBT {

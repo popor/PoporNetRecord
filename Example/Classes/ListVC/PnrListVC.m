@@ -29,10 +29,24 @@
 @synthesize alertBubbleTV;
 @synthesize alertBubbleTVColor;
 
+@synthesize rightBarArray;
+
 - (instancetype)initWithDic:(NSDictionary *)dic {
     if (self = [super init]) {
         if (dic) {
             self.title         = dic[@"title"];
+            
+            self.rightBarArray =
+            @[
+              [PnrCellEntity type:PnrListTypeClear 		title:@"清空"],
+              [PnrCellEntity type:PnrListTypeTextColor 	title:@"Net彩色:高内存"],
+              [PnrCellEntity type:PnrListTypeTextBlack 	title:@"Net黑色:低内存"],
+              [PnrCellEntity type:PnrListTypeTextNull 	title:@"Net:无"],
+              [PnrCellEntity type:PnrListTypeLogDetail	title:@"Log:详细"],
+              [PnrCellEntity type:PnrListTypeLogSimply  title:@"Log:简化"],
+              [PnrCellEntity type:PnrListTypeLogNull 	title:@"Log:无"]
+              ];
+            
             self.weakInfoArray = dic[@"weakInfoArray"];
             self.closeBlock    = dic[@"closeBlock"];
         }
@@ -67,7 +81,7 @@
     }
     
     if (!self.alertBubbleTVColor) {
-        self.alertBubbleTVColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+        self.alertBubbleTVColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];
     }
     [self addViews];
     
@@ -134,7 +148,7 @@
 }
 
 - (UITableView *)alertBubbleTV {
-    UITableView * oneTV = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 150, 88) style:UITableViewStylePlain];
+    UITableView * oneTV = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 170, 44*self.rightBarArray.count) style:UITableViewStylePlain];
     
     oneTV.delegate   = self.present;
     oneTV.dataSource = self.present;

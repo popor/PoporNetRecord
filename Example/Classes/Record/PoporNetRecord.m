@@ -103,12 +103,17 @@
 }
 
 // Log 部分
+
 + (void)addLog:(NSString *)log {
+    [self addLog:log title:@"日志"];
+}
+
++ (void)addLog:(NSString *)log title:(NSString *)title {
     PoporNetRecord * pnr = [PoporNetRecord share];
     if (pnr.config.isRecord) {
         PnrEntity * entity = [PnrEntity new];
         entity.log   = log;
-        entity.title = @"日志";
+        entity.title = title;
         entity.time  = [NSDate stringFromDate:[NSDate date] formatter:@"HH:mm:ss"];
         
         if (pnr.infoArray.count == 0) {

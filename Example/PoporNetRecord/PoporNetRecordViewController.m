@@ -17,6 +17,7 @@
 
 #import <PoporUI/UINavigationController+Size.h>
 #import <PoporUI/UIImage+create.h>
+#import <PoporUI/IToastKeyboard.h>
 
 #import <PoporFoundation/NSString+Tool.h>
 #import <PoporFoundation/NSDictionary+tool.h>
@@ -92,10 +93,13 @@
                                        @{@"a":@"a111111111111", @"b":@"b2222222222222"},
                                        ]};
     [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:@"GET" head:@{@"os":@"iOS", @"key":value} parameter:pDic response:@"responseText"];
+    AlertToastTitle(@"增加网路请求");
 }
 
 - (void)addOneLog {
     [PoporNetRecord addLog:@"new log, 1111111111, 2222222222, 3333333333, 4444444444, 5555555555."];
+    
+    AlertToastTitle(@"增加日志");
 }
 
 - (void)Demos {

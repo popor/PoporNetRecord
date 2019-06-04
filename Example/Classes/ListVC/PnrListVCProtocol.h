@@ -7,11 +7,9 @@
 
 #import <Foundation/Foundation.h>
 #import "PnrEntity.h"
+#import "PnrCellEntity.h"
 #import <PoporFoundation/PrefixBlock.h>
 #import <PoporAlertBubbleView/AlertBubbleView.h>
-
-static NSString * PoporNetRecordTextColorBlack  = @"黑色";
-static NSString * PoporNetRecordTextColorColors = @"彩色";
 
 // 对外接口
 @protocol PnrListVCProtocol <NSObject>
@@ -27,7 +25,7 @@ static NSString * PoporNetRecordTextColorColors = @"彩色";
 @property (nonatomic, strong) AlertBubbleView * alertBubbleView;
 @property (nonatomic, strong) UITableView     * alertBubbleTV;
 @property (nonatomic, strong) UIColor         * alertBubbleTVColor;
-
+@property (nonatomic, strong) NSArray         * rightBarArray;
 // inject : 外部注入的
 @property (nonatomic, weak  ) NSMutableArray<PnrEntity *> * weakInfoArray;
 
@@ -50,6 +48,5 @@ static NSString * PoporNetRecordTextColorColors = @"彩色";
 - (void)editPortAction;
 
 - (void)setRightBarAction;
-- (void)setTextColorAction:(UIBarButtonItem *)sender event:(UIEvent *)event;
 
 @end

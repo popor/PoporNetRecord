@@ -16,6 +16,7 @@
 #import "PnrDetailVCPresenter.h"
 #import "PnrDetailVCProtocol.h"
 #import "PnrDetailVCRouter.h"
+#import "PnrCellEntity.h"
 #import "PnrConfig.h"
 #import "PnrEntity.h"
 #import "PnrPortEntity.h"

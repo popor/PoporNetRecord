@@ -37,5 +37,7 @@
 
 // Log 部分
 + (void)addLog:(NSString *)log;
++ (void)addLog:(NSString *)log title:(NSString *)title;
+
 
 @end

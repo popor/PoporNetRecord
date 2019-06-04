@@ -51,6 +51,7 @@ static NSString * PnrClassTaAutoH  = @"TaAutoH";
 
 // 日志模式
 @property (nonatomic, strong) NSString * log; // 如果此参数不为空,那么就是log模式
+@property (nonatomic        ) int      logDetailH;// 详细模式下log cell 高度.
 
 // 网路请求模式
 @property (nonatomic, strong) NSString * title;
