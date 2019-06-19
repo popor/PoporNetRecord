@@ -7,13 +7,11 @@
 
 #import "PnrDetailVC.h"
 #import "PnrDetailVCPresenter.h"
-#import "PnrDetailVCRouter.h"
 
 #import <Masonry/Masonry.h>
 #import <PoporFoundation/NSDictionary+tool.h>
 #import <PoporFoundation/PrefixColor.h>
 #import <PoporUI/IToastKeyboard.h>
-#import <PoporUI/UINavigationController+Size.h>
 
 #import "PnrPortEntity.h"
 
@@ -62,7 +60,9 @@
     }
     self.view.backgroundColor = [UIColor whiteColor];
     if (!self.present) {
-        [PnrDetailVCRouter setVCPresent:self];
+        PnrDetailVCPresenter * present = [PnrDetailVCPresenter new];
+        self.present = present;
+        [present setMyView:self];
     }
     
     [self addViews];
@@ -80,10 +80,6 @@
 #pragma mark - VCProtocol
 - (UIViewController *)vc {
     return self;
-}
-
-- (void)setMyPresent:(id)present {
-    self.present = present;
 }
 
 #pragma mark - views

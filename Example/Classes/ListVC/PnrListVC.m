@@ -7,11 +7,9 @@
 
 #import "PnrListVC.h"
 #import "PnrListVCPresenter.h"
-#import "PnrListVCRouter.h"
 
 #import "PnrConfig.h"
 #import <Masonry/Masonry.h>
-#import <PoporUI/UINavigationController+Size.h>
 
 @interface PnrListVC ()
 
@@ -74,10 +72,11 @@
         self.title = @"PnrListVC";
     }
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.topMargin = [self.navigationController getTopMargin];
     
     if (!self.present) {
-        [PnrListVCRouter setVCPresent:self];
+        PnrListVCPresenter * present = [PnrListVCPresenter new];
+        self.present = present;
+        [present setMyView:self];
     }
     
     if (!self.alertBubbleTVColor) {
@@ -105,10 +104,6 @@
 #pragma mark - VCProtocol
 - (UIViewController *)vc {
     return self;
-}
-
-- (void)setMyPresent:(id)present {
-    self.present = present;
 }
 
 #pragma mark - views
@@ -189,7 +184,7 @@
     
     [self.serverBT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
-        make.top.mas_equalTo(self.navigationController.topMargin);
+        make.top.mas_equalTo(0);
         
         make.right.mas_equalTo(0);
         make.height.mas_equalTo(self.serverBT.frame.size.height);

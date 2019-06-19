@@ -65,12 +65,21 @@
         l.numberOfLines = 0;
     }
     l.frame = CGRectMake(0, 0, width-30, 10);
-    if (self.config.jsonViewColorBlack) {
-        l.text = att.string;
-    }else{
-        l.attributedText = att;
-        //NSLog(@"att : %@", att.string);
+    
+    switch (self.config.jsonViewColorBlack) {
+        case PnrListTypeTextColor: {
+            l.attributedText = att;
+            break;
+        }
+        case PnrListTypeTextBlack: {
+            l.text = att.string;
+            break;
+        }
+        default:{
+            break;
+        }
     }
+    
     [l sizeToFit];
     
     return l.frame.size.height + 20;
@@ -93,10 +102,19 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     NSMutableAttributedString * att = self.view.cellAttArray[indexPath.row];
-    if (self.config.jsonViewColorBlack) {
-        cell.textL.text = att.string;
-    }else{
-        cell.textL.attributedText = att;
+        
+    switch (self.config.jsonViewColorBlack) {
+        case PnrListTypeTextColor: {
+            cell.textL.attributedText = att;
+            break;
+        }
+        case PnrListTypeTextBlack: {
+            cell.textL.text = att.string;
+            break;
+        }
+        default:{
+            break;
+        }
     }
     
     return cell;

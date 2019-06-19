@@ -24,8 +24,6 @@
 #import "UIImage+read.h"
 #import "UIImage+save.h"
 #import "UIImage+Tool.h"
-#import "UINavigationController+remove.h"
-#import "UINavigationController+Size.h"
 #import "UIInsetsTextField.h"
 #import "UITextField+format.h"
 #import "UITextField+MaxLength.h"

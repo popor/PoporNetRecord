@@ -10,7 +10,7 @@
 #import "PnrEntity.h"
 #import "PnrWebServer.h"
 
-#import "PnrListVCRouter.h"
+#import "PnrListVC.h"
 #import <PoporUI/UIView+Extension.h>
 #import <PoporFoundation/PrefixFun.h>
 #import <PoporFoundation/NSDate+Tool.h>
@@ -137,7 +137,7 @@
             weakSelf.closeBlock();
         }
     };
-    UIViewController * vc = [PnrListVCRouter vcWithDic:@{@"title":self.config.vcRootTitle, @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock}];
+    UIViewController * vc = [[PnrListVC alloc] initWithDic:@{@"title":self.config.vcRootTitle, @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock}];
     
     return vc;
 }

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name     = 'PoporNetRecord'
-  s.version  = '0.1.17'
+  s.version  = '0.1.18'
   s.summary  = 'PoporNetRecord will record net request only in debug configuration'
   
   s.homepage = 'https://github.com/popor/PoporNetRecord'
@@ -51,7 +51,6 @@ Pod::Spec.new do |s|
   s.dependency 'PoporUI/UIView'
   s.dependency 'PoporUI/UIImage'
   s.dependency 'PoporUI/UITextField'
-  s.dependency 'PoporUI/UINavigationController'
   
   s.dependency 'PoporFoundation/NSDictionary'
   s.dependency 'PoporFoundation/NSString'

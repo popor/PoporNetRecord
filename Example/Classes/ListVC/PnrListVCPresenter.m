@@ -11,7 +11,7 @@
 #import "PnrWebServer.h"
 #import "PnrConfig.h"
 
-#import "PnrDetailVCRouter.h"
+#import "PnrDetailVC.h"
 #import "PnrListVCCell.h"
 #import <PoporFoundation/NSString+format.h>
 #import <PoporUI/UIDevice+Tool.h>
@@ -238,7 +238,7 @@
                                      @"titleArray":titleArray,
                                      @"cellAttArray":cellAttArray,
                                      };
-            [weakSelf.view.vc.navigationController pushViewController:[PnrDetailVCRouter vcWithDic:vcDic] animated:YES];
+            [weakSelf.view.vc.navigationController pushViewController:[[PnrDetailVC alloc] initWithDic:vcDic] animated:YES];
         }];
        
     }else{

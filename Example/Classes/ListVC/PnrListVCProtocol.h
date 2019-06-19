@@ -15,7 +15,6 @@
 @protocol PnrListVCProtocol <NSObject>
 
 - (UIViewController *)vc;
-- (void)setMyPresent:(id)present;
 
 // self   : 自己的
 @property (nonatomic, strong) UITableView     * infoTV;

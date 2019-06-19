@@ -8,14 +8,12 @@
 
 #import "PoporNetRecordViewController.h"
 
-//#import <PoporNetRecord/PoporNetRecord.h>
 #import "PoporNetRecord.h"
 
 #import <CoreGraphics/CoreGraphics.h>
 #import <JSONSyntaxHighlight/JSONSyntaxHighlight.h>
 #import <PoporFoundation/PrefixColor.h>
 
-#import <PoporUI/UINavigationController+Size.h>
 #import <PoporUI/UIImage+create.h>
 #import <PoporUI/IToastKeyboard.h>
 
