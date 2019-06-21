@@ -61,6 +61,11 @@
 
 #pragma mark - list server
 - (void)startListServer:(NSMutableString *)listBodyH5 {
+    [self startListServerAsyn:listBodyH5];
+}
+
+// 异步执行, GCDWebServer初始化会和主线程冲突.
+- (void)startListServerAsyn:(NSMutableString *)listBodyH5 {
     if (!listBodyH5) {
         return;
     }
