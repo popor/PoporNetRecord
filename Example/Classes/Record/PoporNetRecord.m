@@ -66,14 +66,19 @@
 
         if (urlString.length>0) {
             NSURL * url = [NSURL URLWithString:urlString];
-            entity.domain = [NSString stringWithFormat:@"%@://%@", url.scheme, url.host];
-            
-            if (entity.domain.length+1 < urlString.length) {
-                entity.path = [urlString substringFromIndex:entity.domain.length+1];
-                NSString * query = url.query;
-                if (query.length > 0) {
-                    entity.path = [entity.path substringToIndex:entity.path.length-1-query.length];
+            if (url.baseURL) {
+                entity.domain = [NSString stringWithFormat:@"%@://%@", url.scheme, url.host];
+                
+                if (entity.domain.length+1 < urlString.length) {
+                    entity.path = [urlString substringFromIndex:entity.domain.length+1];
+                    NSString * query = url.query;
+                    if (query.length > 0) {
+                        entity.path = [entity.path substringToIndex:entity.path.length-1-query.length];
+                    }
                 }
+            }else{
+                entity.domain = urlString;
+                entity.path   = @"";
             }
         }
         if (pnr.infoArray.count == 0) {
