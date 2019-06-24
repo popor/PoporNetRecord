@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class PnrEntity;
 
 static NSString * ErrorUrl    = @"<html> <head><title>错误</title></head> <body><p> URL异常 </p> </body></html>";
@@ -40,8 +42,6 @@ __block int record = 0;\n\
 &#9; &#9; blockFeedback(resultDic.toJsonString);\n\
 &#9; });\n\
 } extraDic:@{@\"exKey\":@\"exValue\"}]; </pre> \n ";
-
-NS_ASSUME_NONNULL_BEGIN
 
 @interface PnrWebBody : NSObject
 
