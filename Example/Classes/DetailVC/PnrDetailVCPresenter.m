@@ -28,20 +28,22 @@
 
 - (id)init {
     if (self = [super init]) {
-        [self initInteractors];
         self.config = [PnrConfig share];
+        
     }
     return self;
 }
 
-- (void)setMyView:(id<PnrDetailVCProtocol>)view {
-    self.view = view;
+// 初始化数据处理
+- (void)setMyInteractor:(PnrDetailVCInteractor *)interactor {
+    self.interactor = interactor;
+    
 }
 
-- (void)initInteractors {
-    if (!self.interactor) {
-        self.interactor = [PnrDetailVCInteractor new];
-    }
+// 很多操作,需要在设置了view之后才可以执行.
+- (void)setMyView:(id<PnrDetailVCProtocol>)view {
+    self.view = view;
+    
 }
 
 #pragma mark - VC_DataSource

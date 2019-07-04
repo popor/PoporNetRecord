@@ -12,6 +12,8 @@
 #import "PnrView.h"
 #import "PnrEntity.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface PoporNetRecord : NSObject
 
 @property (nonatomic, weak  ) PnrConfig * config;
@@ -39,5 +41,7 @@
 + (void)addLog:(NSString *)log;
 + (void)addLog:(NSString *)log title:(NSString *)title;
 
-
 @end
+
+NS_ASSUME_NONNULL_END
+

@@ -7,6 +7,7 @@
 
 #import "PnrDetailVC.h"
 #import "PnrDetailVCPresenter.h"
+#import "PnrDetailVCInteractor.h"
 
 #import <Masonry/Masonry.h>
 #import <PoporFoundation/NSDictionary+tool.h>
@@ -54,18 +55,13 @@
 }
 
 - (void)viewDidLoad {
+    [self assembleViper];
     [super viewDidLoad];
+    
     if (!self.title) {
         self.title = @"PnrDetailVC";
     }
     self.view.backgroundColor = [UIColor whiteColor];
-    if (!self.present) {
-        PnrDetailVCPresenter * present = [PnrDetailVCPresenter new];
-        self.present = present;
-        [present setMyView:self];
-    }
-    
-    [self addViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,6 +79,19 @@
 }
 
 #pragma mark - views
+- (void)assembleViper {
+    if (!self.present) {
+        PnrDetailVCPresenter * present = [PnrDetailVCPresenter new];
+        PnrDetailVCInteractor * interactor = [PnrDetailVCInteractor new];
+        
+        self.present = present;
+        [present setMyInteractor:interactor];
+        [present setMyView:self];
+        
+        [self addViews];
+    }
+}
+
 - (void)addViews {
     self.infoTV = [self addTVs];
     self.infoTV.separatorInset = UIEdgeInsetsMake(0, 14, 0, 14);

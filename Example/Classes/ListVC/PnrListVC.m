@@ -7,6 +7,7 @@
 
 #import "PnrListVC.h"
 #import "PnrListVCPresenter.h"
+#import "PnrListVCInteractor.h"
 
 #import "PnrConfig.h"
 #import <Masonry/Masonry.h>
@@ -67,29 +68,13 @@
 }
 
 - (void)viewDidLoad {
+    [self assembleViper];
     [super viewDidLoad];
+    
     if (!self.title) {
         self.title = @"PnrListVC";
     }
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    if (!self.present) {
-        PnrListVCPresenter * present = [PnrListVCPresenter new];
-        self.present = present;
-        [present setMyView:self];
-    }
-    
-    if (!self.alertBubbleTVColor) {
-        self.alertBubbleTVColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];
-    }
-    [self addViews];
-    
-    __weak typeof(self) weakSelf = self;
-    [PnrConfig share].freshBlock = ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.infoTV reloadData];
-        });
-    };
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,14 +92,40 @@
 }
 
 #pragma mark - views
+- (void)assembleViper {
+    if (!self.present) {
+        PnrListVCPresenter * present = [PnrListVCPresenter new];
+        PnrListVCInteractor * interactor = [PnrListVCInteractor new];
+        
+        self.present = present;
+        [present setMyInteractor:interactor];
+        [present setMyView:self];
+        
+        [self addViews];
+    }
+}
+
 - (void)addViews {
+    if (!self.alertBubbleTVColor) {
+        self.alertBubbleTVColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];
+    }
+    
     [self addServerBT];
     self.infoTV   = [self addTVs];
     if ([self.navigationController.viewControllers indexOfObject:self] == 0) {
         UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self.present action:@selector(closeAction)];
         self.navigationItem.leftBarButtonItems = @[item1];
     }
+    
     [self.present setRightBarAction];
+    
+    __weak typeof(self) weakSelf = self;
+    [PnrConfig share].freshBlock = ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.infoTV reloadData];
+        });
+    };
+    
 }
 
 - (UITableView *)addTVs {

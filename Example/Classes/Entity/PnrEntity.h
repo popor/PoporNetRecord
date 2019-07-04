@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef void(^PnrEntityBlock) (NSArray *titleArray, NSArray *jsonArray, NSMutableArray *cellAttArray);
 
 static NSString * PnrRootTitle0     = @"名称:";
@@ -78,3 +80,6 @@ static NSString * PnrClassTaAutoH  = @"TaAutoH";
 - (void)getJsonArrayBlock:(PnrEntityBlock)finish;
 
 @end
+
+NS_ASSUME_NONNULL_END
+
