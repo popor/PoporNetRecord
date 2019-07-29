@@ -102,7 +102,7 @@
     }
 }
 
-+ (void)setPnrBlockResubmit:(PnrBlockResubmit)block extraDic:(NSDictionary *)dic {
++ (void)setPnrBlockResubmit:(PnrBlockResubmit _Nullable)block extraDic:(NSDictionary * _Nullable)dic {
     [PnrWebServer share].resubmitBlock = block;
     [PnrWebServer share].resubmitExtraDic = dic;
 }

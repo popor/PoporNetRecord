@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 增加title
 + (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id _Nullable)headValue parameter:(id _Nullable)parameterValue response:(id _Nullable)responseValue;
 
-+ (void)setPnrBlockResubmit:(PnrBlockResubmit)block extraDic:(NSDictionary *)dic;
++ (void)setPnrBlockResubmit:(PnrBlockResubmit _Nullable)block extraDic:(NSDictionary * _Nullable)dic;
 
 // Log 部分
 + (void)addLog:(NSString *)log;
