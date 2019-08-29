@@ -32,7 +32,7 @@ typedef NS_ENUM(int, NetStatusType)
  * 获取ios设备状态栏网络状态，检测2G、3G、4G、wifi都是正常的。
  */
 + (NSString *)getIOSStatusBarNetWorkTypeStr;
-+ (int)getIOSStatusBarNetWorkTypeInt;
++ (NetStatusType)getIOSStatusBarNetWorkTypeInt;
 
 + (NSString *)getAppName;
 
@@ -47,10 +47,22 @@ typedef NS_ENUM(int, NetStatusType)
  */
 + (NSString *)getAppVersion_build;
 
-+ (NSString*)devicePlatform;
++ (NSString *)devicePlatform;
 + (BOOL)isIPhone6SOrNewer;
 + (BOOL)isIPhone5S;
 
 + (NSString *)getWifiName;
+
+#pragma mark [获取设备版本号]
++ (NSString *)getDeviceNormalPlatform;
+
+/**
+ * 获取当前可用内存
+ */
++ (long long)getAvailableMemorySize;
+
+#pragma mark 【获取人性化容量】
++ (NSString *)getHumanSize:(float)fileSizeFloat;
+
 
 @end
