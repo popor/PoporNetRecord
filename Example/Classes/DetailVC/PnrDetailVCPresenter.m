@@ -9,9 +9,9 @@
 #import "PnrDetailVCInteractor.h"
 
 #import <PoporUI/IToastKeyboard.h>
-#import <PoporFoundation/NSString+Size.h>
-#import <PoporFoundation/NSString+format.h>
-#import <PoporFoundation/PrefixColor.h>
+#import <PoporFoundation/NSString+pSize.h>
+#import <PoporFoundation/NSString+pAtt.h>
+#import <PoporFoundation/Color+pPrefix.h>
 
 #import "PnrConfig.h"
 #import "PnrDetailCell.h"

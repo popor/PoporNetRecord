@@ -7,8 +7,8 @@
 //
 
 #import "PnrListVCCell.h"
-#import <PoporFoundation/PrefixColor.h>
-#import <PoporFoundation/NSString+Size.h>
+#import <PoporFoundation/Color+pPrefix.h>
+#import <PoporFoundation/NSString+pSize.h>
 #import <Masonry/Masonry.h>
 #import "PnrConfig.h"
 

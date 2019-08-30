@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "PnrEntity.h"
 #import "PnrCellEntity.h"
-#import <PoporFoundation/PrefixBlock.h>
+#import <PoporFoundation/Block+pPrefix.h>
 #import <PoporAlertBubbleView/AlertBubbleView.h>
 
 // 对外接口

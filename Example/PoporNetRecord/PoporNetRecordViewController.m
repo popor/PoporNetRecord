@@ -12,13 +12,13 @@
 
 #import <CoreGraphics/CoreGraphics.h>
 #import <JSONSyntaxHighlight/JSONSyntaxHighlight.h>
-#import <PoporFoundation/PrefixColor.h>
+#import <PoporFoundation/Color+pPrefix.h>
 
-#import <PoporUI/UIImage+create.h>
+#import <PoporUI/UIImage+pCreate.h>
 #import <PoporUI/IToastKeyboard.h>
 
-#import <PoporFoundation/NSString+Tool.h>
-#import <PoporFoundation/NSDictionary+tool.h>
+#import <PoporFoundation/NSString+pTool.h>
+#import <PoporFoundation/NSDictionary+pTool.h>
 
 @interface PoporNetRecordViewController ()
 
@@ -158,7 +158,7 @@
     //[self.navigationBar setBarTintColor:RGB16(0X4077ED)];
     //[self.navigationBar setBarTintColor:ColorNCBar];
     //RGB16(0X68D3FF)
-    [nc.navigationBar setBackgroundImage:[self gradientImageWithBounds:CGRectMake(0, 0, self.view.frame.size.width, 1) andColors:@[RGB16(0X68D3FF), RGB16(0X4585F5)] gradientHorizon:YES] forBarMetrics:UIBarMetricsDefault];
+    [nc.navigationBar setBackgroundImage:[self gradientImageWithBounds:CGRectMake(0, 0, self.view.frame.size.width, 1) andColors:@[PRGB16(0X68D3FF), PRGB16(0X4585F5)] gradientHorizon:YES] forBarMetrics:UIBarMetricsDefault];
     
     // 设置返回按钮字体颜色.
     //[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -210,7 +210,7 @@
         //[self.navigationBar setBarTintColor:RGB16(0X4077ED)];
         //[self.navigationBar setBarTintColor:ColorNCBar];
         //RGB16(0X68D3FF)
-        [nc.navigationBar setBackgroundImage:[weakSelf gradientImageWithBounds:CGRectMake(0, 0, self.view.frame.size.width, 1) andColors:@[RGB16(0X68D3FF), RGB16(0X4585F5)] gradientHorizon:YES] forBarMetrics:UIBarMetricsDefault];
+        [nc.navigationBar setBackgroundImage:[weakSelf gradientImageWithBounds:CGRectMake(0, 0, self.view.frame.size.width, 1) andColors:@[PRGB16(0X68D3FF), PRGB16(0X4585F5)] gradientHorizon:YES] forBarMetrics:UIBarMetricsDefault];
         
         // 设置返回按钮字体颜色.
         //[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];

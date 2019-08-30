@@ -6,8 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <PoporFoundation/PrefixBlock.h>
-#import <PoporFoundation/PrefixColor.h>
+#import <PoporFoundation/Block+pPrefix.h>
+#import <PoporFoundation/Color+pPrefix.h>
 
 #import "PnrPrefix.h"
 NS_ASSUME_NONNULL_BEGIN
@@ -15,8 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void(^PoporNetRecordNcBlock) (UINavigationController * nc);
 typedef void(^PoporNetRecordRecordTypeBlock) (PoporNetRecordType type);
 
-#define PnrColorGreen  RGB16(0x4BB748)
-#define PnrColorRed    RGB16(0xF76738)
+#define PnrColorGreen  PRGB16(0x4BB748)
+#define PnrColorRed    PRGB16(0xF76738)
 #define PnrListCellGap 7
 
 @interface PnrConfig : NSObject

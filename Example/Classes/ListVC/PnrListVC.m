@@ -203,7 +203,7 @@
     
     {
         UIView * lineView = [UIView new];
-        lineView.backgroundColor = ColorTV_separator;
+        lineView.backgroundColor = PRGB16(0XE3E3E3);
         
         [self.serverBT addSubview:lineView];
         

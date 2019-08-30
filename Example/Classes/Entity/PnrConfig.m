@@ -7,8 +7,8 @@
 
 #import "PnrConfig.h"
 
-#import <PoporFoundation/PrefixFun.h>
-
+#import <PoporFoundation/Fun+pPrefix.h>
+#import <PoporFoundation/Color+pPrefix.h>
 static NSString * KeyTextColor = @"PoporNetRecord_textColor";
 static NSString * KeyLog       = @"PoporNetRecord_logDetail";
 
@@ -63,17 +63,17 @@ static NSString * KeyLog       = @"PoporNetRecord_logDetail";
 
             instance.listColorTitle     = PnrColorGreen;
             instance.listColorRequest   = PnrColorRed;
-            instance.listColorDomain    = ColorBlack3;
-            instance.listColorTime      = ColorBlack6;
+            instance.listColorDomain    = PColorBlack3;
+            instance.listColorTime      = PColorBlack6;
 
             instance.listColorCell0     = [UIColor whiteColor];
             instance.listColorCell1     = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
 
             instance.listWebWidth       = 25;
-            instance.listWebColorCellBg = RGB16(0XEEEEEE);
-            instance.listWebColorCell0  = RGB16(0XE2E2E2);
-            instance.listWebColorCell1  = RGB16(0XF2F2F2);
-            instance.listWebColorBg     = RGB16(0XFFFFFF);
+            instance.listWebColorCellBg = PRGB16(0XEEEEEE);
+            instance.listWebColorCell0  = PRGB16(0XE2E2E2);
+            instance.listWebColorCell1  = PRGB16(0XF2F2F2);
+            instance.listWebColorBg     = PRGB16(0XFFFFFF);
             
             instance.rootColorKey       = PnrColorGreen;
             instance.rootColorValue     = PnrColorRed;

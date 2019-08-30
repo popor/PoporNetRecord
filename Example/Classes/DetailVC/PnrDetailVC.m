@@ -10,8 +10,8 @@
 #import "PnrDetailVCInteractor.h"
 
 #import <Masonry/Masonry.h>
-#import <PoporFoundation/NSDictionary+tool.h>
-#import <PoporFoundation/PrefixColor.h>
+#import <PoporFoundation/NSDictionary+pTool.h>
+#import <PoporFoundation/Color+pPrefix.h>
 #import <PoporUI/IToastKeyboard.h>
 
 #import "PnrPortEntity.h"

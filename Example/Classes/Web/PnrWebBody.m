@@ -12,7 +12,7 @@
 #import "PnrWebCss.h"
 #import "PnrWebJs.h"
 
-#import <PoporFoundation/NSDictionary+tool.h>
+#import <PoporFoundation/NSDictionary+pTool.h>
 
 @implementation PnrWebBody
 
