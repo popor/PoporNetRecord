@@ -25,7 +25,7 @@ PODS:
   - PoporFoundation/Os (1.04)
   - PoporFoundation/Prefix (1.04):
     - PoporFoundation/Os
-  - PoporNetRecord (1.01):
+  - PoporNetRecord (1.02):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -35,17 +35,17 @@ PODS:
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 1.01)
-    - PoporNetRecord/Entity (= 1.01)
-    - PoporNetRecord/ListVC (= 1.01)
-    - PoporNetRecord/Record (= 1.01)
-    - PoporNetRecord/Web (= 1.01)
+    - PoporNetRecord/DetailVC (= 1.02)
+    - PoporNetRecord/Entity (= 1.02)
+    - PoporNetRecord/ListVC (= 1.02)
+    - PoporNetRecord/Record (= 1.02)
+    - PoporNetRecord/Web (= 1.02)
     - PoporUI/IToast
     - PoporUI/UIDevice
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (1.01):
+  - PoporNetRecord/DetailVC (1.02):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -61,7 +61,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/Entity (1.01):
+  - PoporNetRecord/Entity (1.02):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -76,7 +76,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/ListVC (1.01):
+  - PoporNetRecord/ListVC (1.02):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -93,7 +93,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/Record (1.01):
+  - PoporNetRecord/Record (1.02):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -109,7 +109,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/Web (1.01):
+  - PoporNetRecord/Web (1.02):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -157,7 +157,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporAlertBubbleView: f1b48e79767045630efd422eacefa24c0ce249c1
   PoporFoundation: f2d6a1484ed875024bcf5ab6fd404a0d7c485d10
-  PoporNetRecord: be71947e8586cafdb23ae46464b9852dd439540b
+  PoporNetRecord: 3b34b0b3ee3d2fad001704f7747c583cc524739a
   PoporUI: f6e8c424e4c59b489e9315e5116c9dd55f476df9
 
 PODFILE CHECKSUM: e00cc688498f763e5e96216baf21dedc61801ba7
