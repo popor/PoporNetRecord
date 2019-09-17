@@ -25,18 +25,24 @@ static NSString * PnrRootShare9     = @"分享:";
 static NSString * PnrRootLog10      = @"日志:";
 
 static int PnrListHeight            = 50;
+
+// 新窗口
 static NSString * PnrIframeList     = @"IframeList";
 static NSString * PnrIframeDetail   = @"IframeDetail";
 
+// 表单
 static NSString * PnrFormResubmit   = @"formResubmit";
 static NSString * PnrFormFeedback   = @"formFeedback";
 
+// 分享url
 static NSString * PnrIdShare        = @"idShare";
 
+// 路径
 static NSString * PnrPathList      = @"list";
 static NSString * PnrPathDetail    = @"detail";
 static NSString * PnrPathEdit      = @"edit";
 static NSString * PnrPathResubmit  = @"resubmit";
+static NSString * PnrPathClear     = @"clear";
 
 static NSString * PnrKeyConent     = @"content";
 // post 查看json等
