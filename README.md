@@ -40,6 +40,7 @@ pod 'PoporNetRecord'
 
 PnrConfig * config = [PnrConfig share];
 config.presentNCBlock = ^(UINavigationController *nc) {
+    // ... other
     nc.modalPresentationStyle = UIModalPresentationFullScreen;
 }
 
