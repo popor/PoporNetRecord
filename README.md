@@ -35,6 +35,16 @@ it, simply add the following line to your Podfile:
 pod 'PoporNetRecord'
 ```
 
+```
+修改弹出方式
+
+PnrConfig * config = [PnrConfig share];
+config.presentNCBlock = ^(UINavigationController *nc) {
+    nc.modalPresentationStyle = UIModalPresentationFullScreen;
+}
+
+```
+
 <p>
 <img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/root.png" width="30%" height="30%">
 <img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/list.png" width="30%" height="30%">
