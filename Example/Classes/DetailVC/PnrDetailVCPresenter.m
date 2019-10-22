@@ -8,7 +8,7 @@
 #import "PnrDetailVCPresenter.h"
 #import "PnrDetailVCInteractor.h"
 
-#import <PoporUI/IToastKeyboard.h>
+#import <PoporUI/IToastPTool.h>
 #import <PoporFoundation/NSString+pSize.h>
 #import <PoporFoundation/NSString+pAtt.h>
 #import <PoporFoundation/Color+pPrefix.h>

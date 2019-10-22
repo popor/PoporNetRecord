@@ -11,21 +11,21 @@ PODS:
   - PoporAlertBubbleView (1.01):
     - PoporFoundation/NSAssistant
     - PoporUI/UIView
-  - PoporFoundation/NSAssistant (1.04):
+  - PoporFoundation/NSAssistant (1.09):
     - PoporFoundation/Os
     - PoporFoundation/Prefix
-  - PoporFoundation/NSDate (1.04):
+  - PoporFoundation/NSDate (1.09):
     - PoporFoundation/NSString
-  - PoporFoundation/NSDictionary (1.04):
+  - PoporFoundation/NSDictionary (1.09):
     - PoporFoundation/NSObject
     - PoporFoundation/Prefix
-  - PoporFoundation/NSObject (1.04)
-  - PoporFoundation/NSString (1.04):
+  - PoporFoundation/NSObject (1.09)
+  - PoporFoundation/NSString (1.09):
     - PoporFoundation/Os
-  - PoporFoundation/Os (1.04)
-  - PoporFoundation/Prefix (1.04):
+  - PoporFoundation/Os (1.09)
+  - PoporFoundation/Prefix (1.09):
     - PoporFoundation/Os
-  - PoporNetRecord (1.03):
+  - PoporNetRecord (1.04):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -35,17 +35,17 @@ PODS:
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 1.03)
-    - PoporNetRecord/Entity (= 1.03)
-    - PoporNetRecord/ListVC (= 1.03)
-    - PoporNetRecord/Record (= 1.03)
-    - PoporNetRecord/Web (= 1.03)
+    - PoporNetRecord/DetailVC (= 1.04)
+    - PoporNetRecord/Entity (= 1.04)
+    - PoporNetRecord/ListVC (= 1.04)
+    - PoporNetRecord/Record (= 1.04)
+    - PoporNetRecord/Web (= 1.04)
     - PoporUI/IToast
     - PoporUI/UIDevice
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (1.03):
+  - PoporNetRecord/DetailVC (1.04):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -61,7 +61,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/Entity (1.03):
+  - PoporNetRecord/Entity (1.04):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -76,7 +76,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/ListVC (1.03):
+  - PoporNetRecord/ListVC (1.04):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -93,7 +93,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/Record (1.03):
+  - PoporNetRecord/Record (1.04):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -109,7 +109,7 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/Web (1.03):
+  - PoporNetRecord/Web (1.04):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
@@ -125,21 +125,22 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporUI/IToast (1.01):
+  - PoporUI/IToast (1.10):
     - PoporFoundation/NSString
-  - PoporUI/UIDevice (1.01):
+  - PoporUI/UIDevice (1.10):
     - PoporFoundation/NSString
     - PoporUI/IToast
-  - PoporUI/UIImage (1.01)
-  - PoporUI/UITextField (1.01):
+  - PoporUI/UIImage (1.10)
+  - PoporUI/UITextField (1.10):
+    - PoporFoundation/NSObject
     - PoporFoundation/NSString
-  - PoporUI/UIView (1.01)
+  - PoporUI/UIView (1.10)
 
 DEPENDENCIES:
   - PoporNetRecord (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - GCDWebServer
     - JSONSyntaxHighlight
     - Masonry
@@ -156,10 +157,10 @@ SPEC CHECKSUMS:
   JSONSyntaxHighlight: 8685d8ad0259b909dc97a829fdfbefbec363f449
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporAlertBubbleView: f1b48e79767045630efd422eacefa24c0ce249c1
-  PoporFoundation: f2d6a1484ed875024bcf5ab6fd404a0d7c485d10
-  PoporNetRecord: e430f15c83a190e555155f3fe3323ad2aa7590e1
-  PoporUI: f6e8c424e4c59b489e9315e5116c9dd55f476df9
+  PoporFoundation: f080da19da868487426639289bd3a263a7c65aea
+  PoporNetRecord: 2253e93f6b0d40d3867519aa676a7ceb8837ba8f
+  PoporUI: 3479332df777422196b57bf6c46c431d087df8da
 
 PODFILE CHECKSUM: e00cc688498f763e5e96216baf21dedc61801ba7
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4
