@@ -180,7 +180,6 @@
 - (void)addServerBT {
     self.serverBT = ({
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(0, 0, 0, 40);
         [button setBackgroundColor:[UIColor whiteColor]];
         button.titleLabel.font = [UIFont systemFontOfSize:15];
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -195,10 +194,14 @@
     
     [self.serverBT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
-        make.top.mas_equalTo(0);
+        if (self.navigationController.navigationBar.translucent) {
+            make.top.mas_equalTo([self fetchTopMargin]);
+        } else {
+            make.top.mas_equalTo(0);
+        }
         
         make.right.mas_equalTo(0);
-        make.height.mas_equalTo(self.serverBT.frame.size.height);
+        make.height.mas_equalTo(40);
     }];
     
     {
@@ -215,6 +218,26 @@
         }];
     }
     [self.present updateServerBT];
+}
+
+- (int)fetchTopMargin {
+    int top;
+    if (self.navigationController.navigationBar.translucent) {
+        if (@available(iOS 11.0, *)) {
+            UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+            if (mainWindow.safeAreaInsets.top > 20.0) {
+                top = self.navigationController.navigationBar.frame.size.height + mainWindow.safeAreaInsets.top;
+            }else{
+                top = 64;
+            }
+            
+        }else{
+            top = 64;
+        }
+    }else{
+        top = 0;
+    }
+    return top;
 }
 
 @end
