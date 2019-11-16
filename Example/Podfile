@@ -6,6 +6,8 @@ target 'PoporNetRecord_Example' do
   # 忽略pod第三方库文件警告
   inhibit_all_warnings!
   
+  pod 'PoporAFN'
+  
   target 'PoporNetRecord_Tests' do
     inherit! :search_paths
     
