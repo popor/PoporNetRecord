@@ -85,6 +85,8 @@ static NSString * PnrClassTaAutoH  = @"TaAutoH";
 
 - (void)getJsonArrayBlock:(PnrEntityBlock)finish;
 
+- (NSDictionary *)desDic;
+
 @end
 
 NS_ASSUME_NONNULL_END

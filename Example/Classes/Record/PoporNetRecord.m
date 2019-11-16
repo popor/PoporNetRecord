@@ -53,6 +53,11 @@
 
 + (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id _Nullable)headValue parameter:(id _Nullable)parameterValue response:(id _Nullable)responseValue
 {
+    [self addUrl:urlString title:title method:method head:headValue parameter:parameterValue response:responseValue finish:nil];
+}
+
++ (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id _Nullable)headValue parameter:(id _Nullable)parameterValue response:(id _Nullable)responseValue finish:(BlockPnr_PnrEntity _Nullable)finish
+{
     PoporNetRecord * pnr = [PoporNetRecord share];
     if (pnr.config.isRecord) {
         PnrEntity * entity = [PnrEntity new];
@@ -99,6 +104,9 @@
         if (pnr.config.freshBlock) {
             pnr.config.freshBlock();
         }
+        if (finish) {
+            finish(entity);
+        }
     }
 }
 
@@ -114,6 +122,10 @@
 }
 
 + (void)addLog:(NSString *)log title:(NSString *)title {
+    [self addLog:log title:title finish:nil];
+}
+
++ (void)addLog:(NSString *)log title:(NSString *)title finish:(BlockPnr_PnrEntity _Nullable)finish {
     PoporNetRecord * pnr = [PoporNetRecord share];
     if (pnr.config.isRecord) {
         PnrEntity * entity = [PnrEntity new];
@@ -138,6 +150,9 @@
         // 假如在打开界面的时候收到请求,那么刷新数据
         if (pnr.config.freshBlock) {
             pnr.config.freshBlock();
+        }
+        if (finish) {
+            finish(entity);
         }
     }
 }

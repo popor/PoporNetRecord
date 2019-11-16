@@ -19,6 +19,7 @@
 
 #import <PoporFoundation/NSString+pTool.h>
 #import <PoporFoundation/NSDictionary+pTool.h>
+#import <PoporAFN/PoporAFN.h>
 
 @interface PoporNetRecordViewController ()
 
@@ -96,13 +97,18 @@
       @"a":@"a",
       @"x":@"x",
       };
-    [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:@"GET" head:@{@"os":@"iOS", @"key":value} parameter:pDic response:@"responseText"];
+    [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:@"GET" head:@{@"os":@"iOS", @"key":value} parameter:pDic response:@"responseText" finish:^(PnrEntity * _Nonnull entity) {
+        
+        [[PoporAFN new] title:@"" url:@"http://192.168.0.63:9010/add" method:PoporMethodPost parameters:entity.desDic afnManager:nil success:nil failure:nil];
+    }];
     AlertToastTitle(@"增加网路请求");
 }
 
 - (void)addOneLog {
-    [PoporNetRecord addLog:@"new log, 1111111111, 2222222222, 3333333333, 4444444444, 5555555555."];
-    
+    [PoporNetRecord addLog:@"new log, 1111111111, 2222222222, 3333333333, 4444444444, 5555555555." title:@"test" finish:^(PnrEntity * _Nonnull entity) {
+        
+        [[PoporAFN new] title:@"" url:@"http://192.168.0.63:9010/add" method:PoporMethodPost parameters:entity.desDic afnManager:nil success:nil failure:nil];
+    }];
     AlertToastTitle(@"增加日志");
 }
 
