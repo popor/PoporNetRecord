@@ -191,9 +191,12 @@
     {
         // 额外的回调
         [PoporNetRecord share].blockExtraRecord = ^(PnrEntity * entity){
-            NSString * url1 = [NSString stringWithFormat:@"%@/add", [PnrExtraEntity share].selectUrlPort];
-            
-            [[PoporAFN new] title:@"" url:url1 method:PoporMethodPost parameters:entity.desDic afnManager:nil success:nil failure:nil];
+            PnrExtraEntity * e = [PnrExtraEntity share];
+            if (e.forward) {
+                NSString * url1 = [NSString stringWithFormat:@"%@/add", e.selectUrlPort];
+                
+                [[PoporAFN new] title:@"" url:url1 method:PoporMethodPost parameters:entity.desDic afnManager:nil success:nil failure:nil];
+            }
         };
     }
     {

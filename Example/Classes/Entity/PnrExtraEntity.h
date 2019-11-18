@@ -30,6 +30,7 @@ typedef NS_ENUM(int, PnrExtraUrlPortEntityType) {
 @interface PnrExtraEntity : NSObject
 
 @property (nonatomic        ) NSInteger selectNum;
+@property (nonatomic        ) BOOL      forward; // 是否转发
 @property (nonatomic, strong) NSString * selectUrlPort;
 
 @property (nonatomic, strong) NSMutableArray<PnrExtraUrlPortEntity *> * urlPortArray;
@@ -39,6 +40,8 @@ typedef NS_ENUM(int, PnrExtraUrlPortEntityType) {
 - (void)saveArray;
 
 - (void)saveSelectNum:(NSInteger)selectNum;
+
+- (void)saveForward;
 
 @end
 

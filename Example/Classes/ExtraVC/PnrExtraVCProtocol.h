@@ -6,6 +6,7 @@
 //  Copyright © 2019 wangkq. All rights reserved.
 
 #import <UIKit/UIKit.h>
+#import <PoporFoundation/Color+pPrefix.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // MARK: 自己的
 @property (nonatomic, strong) UITableView * infoTV;
+@property (nonatomic, strong) UIButton * serverBT;
 
 // MARK: 外部注入的
 
@@ -30,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol PnrExtraVCEventHandler <NSObject>
 
 - (void)addUrlPortAction;
+- (void)forwardAction;
 
 @end
 

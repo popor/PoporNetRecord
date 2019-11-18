@@ -24,6 +24,7 @@
 		185879FD223F844600B5B9CA /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 185879FC223F844600B5B9CA /* favicon.ico */; };
 		185879FF223F91EC00B5B9CA /* favicon2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 185879FE223F91EC00B5B9CA /* favicon2.ico */; };
 		18AC5E8122A6043100C64B29 /* PnrCellEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AC5E8022A6043100C64B29 /* PnrCellEntity.m */; };
+		18DA9CDF238294BA001A8D11 /* PnrUITool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DA9CDE238294BA001A8D11 /* PnrUITool.m */; };
 		18DDDA7B223B77F400307E32 /* PnrWebJs.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA75223B77F400307E32 /* PnrWebJs.m */; };
 		18DDDA7C223B77F400307E32 /* PnrWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA76223B77F400307E32 /* PnrWebServer.m */; };
 		18DDDA7D223B77F400307E32 /* PnrWebCss.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA77223B77F400307E32 /* PnrWebCss.m */; };
@@ -98,6 +99,8 @@
 		18AC5E7F22A6043100C64B29 /* PnrCellEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrCellEntity.h; sourceTree = "<group>"; };
 		18AC5E8022A6043100C64B29 /* PnrCellEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PnrCellEntity.m; sourceTree = "<group>"; };
 		18D5508B21B62E7D00C62BB8 /* PoporNetRecord_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoporNetRecord_Example.entitlements; sourceTree = SOURCE_ROOT; };
+		18DA9CDD238294BA001A8D11 /* PnrUITool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrUITool.h; sourceTree = "<group>"; };
+		18DA9CDE238294BA001A8D11 /* PnrUITool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PnrUITool.m; sourceTree = "<group>"; };
 		18DDDA75223B77F400307E32 /* PnrWebJs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrWebJs.m; sourceTree = "<group>"; };
 		18DDDA76223B77F400307E32 /* PnrWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrWebServer.m; sourceTree = "<group>"; };
 		18DDDA77223B77F400307E32 /* PnrWebCss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrWebCss.m; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				18AC5E8022A6043100C64B29 /* PnrCellEntity.m */,
 				1820D516237F973900ADE193 /* PnrExtraEntity.h */,
 				1820D517237F973900ADE193 /* PnrExtraEntity.m */,
+				18DA9CDD238294BA001A8D11 /* PnrUITool.h */,
+				18DA9CDE238294BA001A8D11 /* PnrUITool.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -576,6 +581,7 @@
 				18DDDA80223B78B200307E32 /* PnrWebBody.m in Sources */,
 				1820D523237FA49200ADE193 /* PnrExtraVCPresenter.m in Sources */,
 				1811971C2235EA9000450770 /* PnrDetailVCInteractor.m in Sources */,
+				18DA9CDF238294BA001A8D11 /* PnrUITool.m in Sources */,
 				18DDDA7D223B77F400307E32 /* PnrWebCss.m in Sources */,
 				1820D522237FA49200ADE193 /* PnrExtraVC.m in Sources */,
 				18DDDA86223B976200307E32 /* PnrConfig.m in Sources */,

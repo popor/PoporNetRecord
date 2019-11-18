@@ -8,7 +8,10 @@
 #import "PnrExtraVCPresenter.h"
 #import "PnrExtraVCInteractor.h"
 
+#import "PnrConfig.h"
 #import "PnrExtraEntity.h"
+#import <PoporFoundation/NSString+pAtt.h>
+#import <PoporUI/UIImage+pCreate.h>
 
 @interface PnrExtraVCPresenter ()
 
@@ -42,7 +45,7 @@
 // 开始执行事件,比如获取网络数据
 - (void)startEvent {
     
-    
+    [self updateServerTitle];
 }
 
 #pragma mark - VC_DataSource
@@ -60,7 +63,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 10;
+    return 0.1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -275,6 +278,46 @@
         [self.view.vc presentViewController:oneAC animated:YES completion:nil];
     }
     
+}
+
+- (void)forwardAction {
+    PnrExtraEntity * e = [PnrExtraEntity share];
+    NSString * title = e.forward ? @"关闭":@"打开" ;
+    __weak typeof(self) weakSelf = self;
+    {
+        UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:@"提醒" message:[NSString stringWithFormat:@"确认%@吗?", title] preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction * okAction = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            e.forward = !e.forward;
+            
+            [e saveForward];
+            [weakSelf updateServerTitle];
+        }];
+        
+        [oneAC addAction:cancleAction];
+        [oneAC addAction:okAction];
+        
+        [self.view.vc presentViewController:oneAC animated:YES completion:nil];
+    }
+}
+
+- (void)updateServerTitle {
+    PnrExtraEntity * e = [PnrExtraEntity share];
+    NSString * title = e.forward ? @"已打开":@"已关闭";
+    UIColor * color  = e.forward ? PnrColorGreen:PnrColorRed;
+    {
+        UIImage * image = [UIImage imageFromColor:color size:CGSizeMake(10, 10) corner:5];
+        [self.view.serverBT setImage:image forState:UIControlStateNormal];
+    }
+    {
+        NSMutableAttributedString * att = [NSMutableAttributedString new];
+        [att addString:[NSString stringWithFormat:@"  %@ ", title] font:[UIFont systemFontOfSize:15] color:color];
+        
+        [att addString:@"转发请求开关" font:[UIFont systemFontOfSize:15] color:[UIColor blackColor]];
+        
+        [self.view.serverBT setAttributedTitle:att forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark - Interactor_EventHandler

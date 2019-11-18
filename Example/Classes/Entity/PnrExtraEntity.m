@@ -8,8 +8,9 @@
 
 #import "PnrExtraEntity.h"
 
-static NSString * PnrExtraUrlPortEntityKey = @"PnrExtraUrlPortEntityKey";
-static NSString * PnrExtraUrlPortSelectKey = @"PnrExtraUrlPortSelectKey";
+static NSString * PnrExtraUrlPortEntityKey  = @"PnrExtraUrlPortEntityKey";
+static NSString * PnrExtraUrlPortSelectKey  = @"PnrExtraUrlPortSelectKey";
+static NSString * PnrExtraUrlPortForwardKey = @"PnrExtraUrlPortForwardKey";
 
 @implementation PnrExtraUrlPortEntity
 
@@ -29,7 +30,7 @@ static NSString * PnrExtraUrlPortSelectKey = @"PnrExtraUrlPortSelectKey";
         instance.urlPortArray = [NSMutableArray<PnrExtraUrlPortEntity *> new];
         [instance updateArray];
         instance.selectNum = [instance getSelectNum];
-        
+        instance.forward = [instance get__forward];
         [instance updateSelectUrlPort];
     });
     return instance;
@@ -97,5 +98,17 @@ static NSString * PnrExtraUrlPortSelectKey = @"PnrExtraUrlPortSelectKey";
     PnrExtraUrlPortEntity * entity = self.urlPortArray[self.selectNum];
     self.selectUrlPort = [NSString stringWithFormat:@"%@:%@", entity.url, entity.port];
 }
+
+- (void)saveForward {
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@(self.forward) forKey:PnrExtraUrlPortForwardKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BOOL)get__forward {
+    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:PnrExtraUrlPortForwardKey];
+    return [info boolValue];
+}
+
 
 @end

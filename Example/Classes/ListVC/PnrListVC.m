@@ -11,6 +11,7 @@
 
 #import "PnrConfig.h"
 #import <Masonry/Masonry.h>
+#import "PnrUITool.h"
 
 @interface PnrListVC ()
 
@@ -196,7 +197,7 @@
     
     [self.serverBT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
-        make.top.mas_equalTo([self fetchTopMargin]);
+        make.top.mas_equalTo([PnrUITool fetchTopMargin:self.navigationController]);
         
         make.right.mas_equalTo(0);
         make.height.mas_equalTo(40);
@@ -216,26 +217,6 @@
         }];
     }
     [self.present updateServerBT];
-}
-
-- (int)fetchTopMargin {
-    int top;
-    if (self.navigationController.navigationBar.translucent) {
-        if (@available(iOS 11.0, *)) {
-            UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
-            if (mainWindow.safeAreaInsets.top > 20.0) {
-                top = self.navigationController.navigationBar.frame.size.height + mainWindow.safeAreaInsets.top;
-            }else{
-                top = 64;
-            }
-            
-        }else{
-            top = 64;
-        }
-    }else{
-        top = 0;
-    }
-    return top;
 }
 
 @end
