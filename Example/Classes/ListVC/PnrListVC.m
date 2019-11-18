@@ -43,7 +43,9 @@
               [PnrCellEntity type:PnrListTypeTextNull 	title:@"Net:无"],
               [PnrCellEntity type:PnrListTypeLogDetail	title:@"Log:详细"],
               [PnrCellEntity type:PnrListTypeLogSimply  title:@"Log:简化"],
-              [PnrCellEntity type:PnrListTypeLogNull 	title:@"Log:无"]
+              [PnrCellEntity type:PnrListTypeLogNull 	title:@"Log:无"],
+              [PnrCellEntity type:PnrListTypeExtra      title:@"额外设置"],
+              
               ];
             
             self.weakInfoArray = dic[@"weakInfoArray"];
@@ -194,11 +196,7 @@
     
     [self.serverBT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
-        if (self.navigationController.navigationBar.translucent) {
-            make.top.mas_equalTo([self fetchTopMargin]);
-        } else {
-            make.top.mas_equalTo(0);
-        }
+        make.top.mas_equalTo([self fetchTopMargin]);
         
         make.right.mas_equalTo(0);
         make.height.mas_equalTo(40);

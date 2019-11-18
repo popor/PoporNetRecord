@@ -12,6 +12,7 @@
 #import "PnrConfig.h"
 
 #import "PnrDetailVC.h"
+#import "PnrExtraVC.h"
 #import "PnrListVCCell.h"
 #import <PoporFoundation/NSString+pAtt.h>
 #import <PoporUI/UIDevice+pTool.h>
@@ -191,7 +192,8 @@
         cell.textLabel.text = cellEntity.title;
         
         switch (cellEntity.type) {
-            case PnrListTypeClear:{
+            case PnrListTypeClear:
+            case PnrListTypeExtra:{
                 break;
             }
             case PnrListTypeTextColor:
@@ -262,6 +264,10 @@
             case PnrListTypeLogNull:{
                 [self.config updateLogDetail:cellEntity.type];
                 //[self.view.infoTV reloadData];
+                break;
+            }
+            case PnrListTypeExtra:{
+                [self.view.vc.navigationController pushViewController:[PnrExtraVC new] animated:YES];
                 break;
             }
             default:

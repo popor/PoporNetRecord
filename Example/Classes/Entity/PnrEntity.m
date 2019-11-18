@@ -145,6 +145,8 @@
     
     [dic setValue:self.time           forKey:@"time"];
     
+    [dic setValue:self.deviceName     forKey:@"deviceName"];
+    
     return dic;
 }
 

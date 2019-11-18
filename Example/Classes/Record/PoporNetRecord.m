@@ -53,11 +53,6 @@
 
 + (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id _Nullable)headValue parameter:(id _Nullable)parameterValue response:(id _Nullable)responseValue
 {
-    [self addUrl:urlString title:title method:method head:headValue parameter:parameterValue response:responseValue finish:nil];
-}
-
-+ (void)addUrl:(NSString *)urlString title:(NSString *)title method:(NSString *)method head:(id _Nullable)headValue parameter:(id _Nullable)parameterValue response:(id _Nullable)responseValue finish:(BlockPnr_PnrEntity _Nullable)finish
-{
     PoporNetRecord * pnr = [PoporNetRecord share];
     if (pnr.config.isRecord) {
         PnrEntity * entity = [PnrEntity new];
@@ -104,8 +99,9 @@
         if (pnr.config.freshBlock) {
             pnr.config.freshBlock();
         }
-        if (finish) {
-            finish(entity);
+        if (pnr.blockExtraRecord) {
+            entity.deviceName = [[UIDevice currentDevice] name];
+            pnr.blockExtraRecord(entity);
         }
     }
 }
@@ -121,11 +117,8 @@
     [self addLog:log title:@"日志"];
 }
 
-+ (void)addLog:(NSString *)log title:(NSString *)title {
-    [self addLog:log title:title finish:nil];
-}
-
-+ (void)addLog:(NSString *)log title:(NSString *)title finish:(BlockPnr_PnrEntity _Nullable)finish {
++ (void)addLog:(NSString *)log title:(NSString *)title
+{
     PoporNetRecord * pnr = [PoporNetRecord share];
     if (pnr.config.isRecord) {
         PnrEntity * entity = [PnrEntity new];
@@ -151,8 +144,9 @@
         if (pnr.config.freshBlock) {
             pnr.config.freshBlock();
         }
-        if (finish) {
-            finish(entity);
+        if (pnr.blockExtraRecord) {
+            entity.deviceName = [[UIDevice currentDevice] name];
+            pnr.blockExtraRecord(entity);
         }
     }
 }

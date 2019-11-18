@@ -21,6 +21,8 @@
 #import <PoporFoundation/NSDictionary+pTool.h>
 #import <PoporAFN/PoporAFN.h>
 
+#import "PnrExtraEntity.h"
+
 @interface PoporNetRecordViewController ()
 
 @property (nonatomic        ) int netIndex;
@@ -32,6 +34,10 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    {
+        [PnrExtraEntity share];
+        
+    }
     self.title = @"PoporNetRecord";
     {
         UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
@@ -97,18 +103,12 @@
       @"a":@"a",
       @"x":@"x",
       };
-    [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:@"GET" head:@{@"os":@"iOS", @"key":value} parameter:pDic response:@"responseText" finish:^(PnrEntity * _Nonnull entity) {
-        
-        [[PoporAFN new] title:@"" url:@"http://192.168.0.63:9010/add" method:PoporMethodPost parameters:entity.desDic afnManager:nil success:nil failure:nil];
-    }];
+    [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:@"GET" head:@{@"os":@"iOS", @"key":value} parameter:pDic response:@"responseText"];
     AlertToastTitle(@"增加网路请求");
 }
 
 - (void)addOneLog {
-    [PoporNetRecord addLog:@"new log, 1111111111, 2222222222, 3333333333, 4444444444, 5555555555." title:@"test" finish:^(PnrEntity * _Nonnull entity) {
-        
-        [[PoporAFN new] title:@"" url:@"http://192.168.0.63:9010/add" method:PoporMethodPost parameters:entity.desDic afnManager:nil success:nil failure:nil];
-    }];
+    [PoporNetRecord addLog:@"new log, 1111111111, 2222222222, 3333333333, 4444444444, 5555555555." title:@"test"];
     AlertToastTitle(@"增加日志");
 }
 
@@ -187,6 +187,14 @@
         path = [[NSBundle mainBundle] pathForResource:@"favicon2" ofType:@"ico"];
         NSData *data   = [[NSData alloc] initWithContentsOfFile:path];
         config.webIconData = data;
+    }
+    {
+        // 额外的回调
+        [PoporNetRecord share].blockExtraRecord = ^(PnrEntity * entity){
+            NSString * url1 = [NSString stringWithFormat:@"%@/add", [PnrExtraEntity share].selectUrlPort];
+            
+            [[PoporAFN new] title:@"" url:url1 method:PoporMethodPost parameters:entity.desDic afnManager:nil success:nil failure:nil];
+        };
     }
     {
         //config.listFontTitle   = [UIFont systemFontOfSize:16];

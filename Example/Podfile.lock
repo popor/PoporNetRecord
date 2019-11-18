@@ -54,6 +54,7 @@ PODS:
     - PoporFoundation/NSString
     - PoporNetRecord/DetailVC (= 1.04)
     - PoporNetRecord/Entity (= 1.04)
+    - PoporNetRecord/ExtraVC (= 1.04)
     - PoporNetRecord/ListVC (= 1.04)
     - PoporNetRecord/Record (= 1.04)
     - PoporNetRecord/Web (= 1.04)
@@ -93,6 +94,22 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
+  - PoporNetRecord/ExtraVC (1.04):
+    - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
+    - JSONSyntaxHighlight
+    - Masonry
+    - PoporAlertBubbleView
+    - PoporFoundation/NSDate
+    - PoporFoundation/NSDictionary
+    - PoporFoundation/NSString
+    - PoporNetRecord/Entity
+    - PoporUI/IToast
+    - PoporUI/UIDevice
+    - PoporUI/UIImage
+    - PoporUI/UITextField
+    - PoporUI/UIView
   - PoporNetRecord/ListVC (1.04):
     - GCDWebServer
     - GCDWebServer/WebDAV
@@ -104,6 +121,7 @@ PODS:
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
     - PoporNetRecord/DetailVC
+    - PoporNetRecord/ExtraVC
     - PoporNetRecord/Web
     - PoporUI/IToast
     - PoporUI/UIDevice
@@ -180,7 +198,7 @@ SPEC CHECKSUMS:
   PoporAFN: 81a1806c70329e70d697bbbb6255efc3582eed02
   PoporAlertBubbleView: f1b48e79767045630efd422eacefa24c0ce249c1
   PoporFoundation: f080da19da868487426639289bd3a263a7c65aea
-  PoporNetRecord: 2253e93f6b0d40d3867519aa676a7ceb8837ba8f
+  PoporNetRecord: de0a186f473812c0d5238b9f47ce3d5f6d4dff8e
   PoporUI: 3479332df777422196b57bf6c46c431d087df8da
 
 PODFILE CHECKSUM: 23a67e2956c2604b87c07729ec3d52219b227d2f
