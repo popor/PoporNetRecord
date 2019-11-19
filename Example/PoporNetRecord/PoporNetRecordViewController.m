@@ -188,18 +188,19 @@
         NSData *data   = [[NSData alloc] initWithContentsOfFile:path];
         config.webIconData = data;
     }
-    {
-        // 额外的回调
-        [PoporNetRecord share].blockExtraRecord = ^(PnrEntity * entity){
-            PnrExtraEntity * e = [PnrExtraEntity share];
-            if (e.forward) {
-                NSString * url1 = [NSString stringWithFormat:@"%@/add", e.selectUrlPort];
-                if (![url1 isEqualToString:entity.url]) {
-                    [[PoporAFN new] title:@"" url:url1 method:PoporMethodPost parameters:entity.desDic afnManager:nil success:nil failure:nil];
-                }
+    
+    __block NSString * pnrExtraForwadUrl;
+    // 额外的回调
+    [PoporNetRecord share].blockExtraRecord = ^(PnrEntity * entity){
+        PnrExtraEntity * e = [PnrExtraEntity share];
+        if (e.forward) {
+            pnrExtraForwadUrl = [NSString stringWithFormat:@"%@/add", e.selectUrlPort];
+            if (![pnrExtraForwadUrl isEqualToString:entity.url]) {
+                [[PoporAFN new] title:@"" url:pnrExtraForwadUrl method:PoporMethodPost parameters:entity.desDic afnManager:nil success:nil failure:nil];
             }
-        };
-    }
+        }
+    };
+    
     {
         //config.listFontTitle   = [UIFont systemFontOfSize:16];
         //config.listFontRequest = [UIFont systemFontOfSize:14];
