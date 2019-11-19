@@ -194,8 +194,9 @@
             PnrExtraEntity * e = [PnrExtraEntity share];
             if (e.forward) {
                 NSString * url1 = [NSString stringWithFormat:@"%@/add", e.selectUrlPort];
-                
-                [[PoporAFN new] title:@"" url:url1 method:PoporMethodPost parameters:entity.desDic afnManager:nil success:nil failure:nil];
+                if (![url1 isEqualToString:entity.url]) {
+                    [[PoporAFN new] title:@"" url:url1 method:PoporMethodPost parameters:entity.desDic afnManager:nil success:nil failure:nil];
+                }
             }
         };
     }
