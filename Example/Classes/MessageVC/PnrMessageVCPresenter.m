@@ -10,6 +10,7 @@
 
 #import "PnrEntity.h"
 #import <PoporFoundation/NSDate+pTool.h>
+#import <PoporUI/IToastPTool.h>
 
 @interface PnrMessageVCPresenter ()
 
@@ -54,6 +55,8 @@
         pnrEntity.log = self.view.textTV.text;
         pnrEntity.deviceName = [[UIDevice currentDevice] name];;
         self.view.blockExtraRecord(pnrEntity);
+        
+        AlertToastTitle(@"已转发");
     }
     
 }
