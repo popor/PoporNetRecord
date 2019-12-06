@@ -1,6 +1,6 @@
 {
   "name": "PoporNetRecord",
-  "version": "1.07",
+  "version": "1.08",
   "summary": "PoporNetRecord will record net request only in debug configuration",
   "homepage": "https://github.com/popor/PoporNetRecord",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/popor/PoporNetRecord.git",
-    "tag": "1.07"
+    "tag": "1.08"
   },
   "platforms": {
     "ios": "8.0"
@@ -78,6 +78,15 @@
         ]
       },
       "source_files": "Example/Classes/Web/*.{h,m}"
+    },
+    {
+      "name": "MessageVC",
+      "dependencies": {
+        "PoporNetRecord/Entity": [
+
+        ]
+      },
+      "source_files": "Example/Classes/MessageVC/*.{h,m}"
     },
     {
       "name": "DetailVC",

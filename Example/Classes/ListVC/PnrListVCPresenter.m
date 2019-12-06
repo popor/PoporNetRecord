@@ -13,6 +13,7 @@
 
 #import "PnrDetailVC.h"
 #import "PnrExtraVC.h"
+#import "PnrMessageVC.h"
 #import "PnrListVCCell.h"
 #import <PoporFoundation/NSString+pAtt.h>
 #import <PoporUI/UIDevice+pTool.h>
@@ -339,8 +340,12 @@
 
 - (void)setRightBarAction {
     UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:PoporNetRecordSet style:UIBarButtonItemStylePlain target:self action:@selector(settingAction:event:)];
-    //UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"清空" style:UIBarButtonItemStylePlain target:self action:@selector(clearAction)];
-    self.view.vc.navigationItem.rightBarButtonItems = @[item1];
+    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"转发" style:UIBarButtonItemStylePlain target:self action:@selector(forwardeTextAction)];
+    if (self.view.blockExtraRecord) {
+        self.view.vc.navigationItem.rightBarButtonItems = @[item1, item2];
+    } else {
+        self.view.vc.navigationItem.rightBarButtonItems = @[item1];
+    }
 }
 
 - (void)updateServerBT {
@@ -411,6 +416,13 @@
         
         [self.view.vc presentViewController:oneAC animated:YES completion:nil];
     }
+}
+
+- (void)forwardeTextAction {
+    PnrMessageVC * vc   = [PnrMessageVC new];
+    vc.blockExtraRecord = self.view.blockExtraRecord;
+    
+    [self.view.vc.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - Interactor_EventHandler

@@ -28,6 +28,11 @@ Pod::Spec.new do |s|
     ss.source_files = 'Example/Classes/Web/*.{h,m}'
   end
   
+  s.subspec 'MessageVC' do |ss|
+    ss.dependency 'PoporNetRecord/Entity'
+    ss.source_files = 'Example/Classes/MessageVC/*.{h,m}'
+  end
+  
   s.subspec 'DetailVC' do |ss|
     ss.dependency 'PoporNetRecord/Entity'
     ss.source_files = 'Example/Classes/DetailVC/*.{h,m}'

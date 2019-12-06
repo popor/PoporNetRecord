@@ -32,6 +32,9 @@
 		18DDDA86223B976200307E32 /* PnrConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA85223B976200307E32 /* PnrConfig.m */; };
 		18DDDA8C223B9BBB00307E32 /* PoporNetRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA89223B9BBB00307E32 /* PoporNetRecord.m */; };
 		18DDDA8D223B9BBB00307E32 /* PnrView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA8A223B9BBB00307E32 /* PnrView.m */; };
+		18F1E336239A2D7B00A360EA /* PnrMessageVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1E331239A2D7A00A360EA /* PnrMessageVCInteractor.m */; };
+		18F1E337239A2D7B00A360EA /* PnrMessageVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1E333239A2D7B00A360EA /* PnrMessageVCPresenter.m */; };
+		18F1E338239A2D7B00A360EA /* PnrMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1E334239A2D7B00A360EA /* PnrMessageVC.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -115,6 +118,13 @@
 		18DDDA89223B9BBB00307E32 /* PoporNetRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoporNetRecord.m; sourceTree = "<group>"; };
 		18DDDA8A223B9BBB00307E32 /* PnrView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrView.m; sourceTree = "<group>"; };
 		18DDDA8B223B9BBB00307E32 /* PoporNetRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoporNetRecord.h; sourceTree = "<group>"; };
+		18F1E32F239A2D7A00A360EA /* PnrMessageVCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrMessageVCProtocol.h; sourceTree = "<group>"; };
+		18F1E330239A2D7A00A360EA /* PnrMessageVCInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrMessageVCInteractor.h; sourceTree = "<group>"; };
+		18F1E331239A2D7A00A360EA /* PnrMessageVCInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrMessageVCInteractor.m; sourceTree = "<group>"; };
+		18F1E332239A2D7A00A360EA /* PnrMessageVCPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrMessageVCPresenter.h; sourceTree = "<group>"; };
+		18F1E333239A2D7B00A360EA /* PnrMessageVCPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrMessageVCPresenter.m; sourceTree = "<group>"; };
+		18F1E334239A2D7B00A360EA /* PnrMessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrMessageVC.m; sourceTree = "<group>"; };
+		18F1E335239A2D7B00A360EA /* PnrMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrMessageVC.h; sourceTree = "<group>"; };
 		24374E9BC3CE466EB155DAC4 /* Pods_PoporNetRecord_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporNetRecord_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E592CE1D5F5896002C41A91 /* Pods-PoporNetRecord_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporNetRecord_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoporNetRecord_Tests/Pods-PoporNetRecord_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* PoporNetRecord_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoporNetRecord_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +186,7 @@
 		181196E92235EA9000450770 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				18F1E328239A2D1400A360EA /* MessageVC */,
 				1820D519237FA46600ADE193 /* ExtraVC */,
 				18DDDA87223B9BBB00307E32 /* Record */,
 				181196EA2235EA9000450770 /* ListVC */,
@@ -288,6 +299,20 @@
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = other;
+			sourceTree = "<group>";
+		};
+		18F1E328239A2D1400A360EA /* MessageVC */ = {
+			isa = PBXGroup;
+			children = (
+				18F1E335239A2D7B00A360EA /* PnrMessageVC.h */,
+				18F1E334239A2D7B00A360EA /* PnrMessageVC.m */,
+				18F1E330239A2D7A00A360EA /* PnrMessageVCInteractor.h */,
+				18F1E331239A2D7A00A360EA /* PnrMessageVCInteractor.m */,
+				18F1E332239A2D7A00A360EA /* PnrMessageVCPresenter.h */,
+				18F1E333239A2D7B00A360EA /* PnrMessageVCPresenter.m */,
+				18F1E32F239A2D7A00A360EA /* PnrMessageVCProtocol.h */,
+			);
+			path = MessageVC;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -581,11 +606,14 @@
 				18DDDA80223B78B200307E32 /* PnrWebBody.m in Sources */,
 				1820D523237FA49200ADE193 /* PnrExtraVCPresenter.m in Sources */,
 				1811971C2235EA9000450770 /* PnrDetailVCInteractor.m in Sources */,
+				18F1E337239A2D7B00A360EA /* PnrMessageVCPresenter.m in Sources */,
 				18DA9CDF238294BA001A8D11 /* PnrUITool.m in Sources */,
+				18F1E338239A2D7B00A360EA /* PnrMessageVC.m in Sources */,
 				18DDDA7D223B77F400307E32 /* PnrWebCss.m in Sources */,
 				1820D522237FA49200ADE193 /* PnrExtraVC.m in Sources */,
 				18DDDA86223B976200307E32 /* PnrConfig.m in Sources */,
 				181197202235EA9000450770 /* PnrDetailVCPresenter.m in Sources */,
+				18F1E336239A2D7B00A360EA /* PnrMessageVCInteractor.m in Sources */,
 				1820D521237FA49200ADE193 /* PnrExtraVCInteractor.m in Sources */,
 				18DDDA7B223B77F400307E32 /* PnrWebJs.m in Sources */,
 				6003F59E195388D20070C39A /* PoporNetRecordAppDelegate.m in Sources */,
