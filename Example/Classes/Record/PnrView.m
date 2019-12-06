@@ -9,6 +9,7 @@
 #import "PnrView.h"
 #import "PnrEntity.h"
 #import "PnrWebServer.h"
+#import "PoporNetRecord.h"
 
 #import "PnrListVC.h"
 #import <PoporUI/UIView+pExtension.h>
@@ -137,7 +138,8 @@
             weakSelf.closeBlock();
         }
     };
-    UIViewController * vc = [[PnrListVC alloc] initWithDic:@{@"title":self.config.vcRootTitle, @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock}];
+    PoporNetRecord * pnr  = [PoporNetRecord share];
+    UIViewController * vc = [[PnrListVC alloc] initWithDic:@{@"title":self.config.vcRootTitle, @"weakInfoArray":self.infoArray, @"closeBlock":closeBlock, @"blockExtraRecord":pnr.blockExtraRecord}];
     
     return vc;
 }

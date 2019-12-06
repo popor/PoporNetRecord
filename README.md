@@ -62,6 +62,9 @@ config.presentNCBlock = ^(UINavigationController *nc) {
 <img src="https://github.com/popor/PoporNetRecord/blob/master/Example/PoporNetRecord/image/web3.png" width="100%" height="100%">
 </p>
 
+1.07
+详情页面增加再次转发功能
+
 ## Author
 
 wangkq, 908891024@qq.com

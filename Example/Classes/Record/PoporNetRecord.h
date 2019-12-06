@@ -15,8 +15,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^BlockPnr_PnrEntity) (PnrEntity * entity);
-
 @interface PoporNetRecord : NSObject
 
 @property (nonatomic, weak  ) PnrConfig * config;
@@ -25,7 +23,7 @@ typedef void(^BlockPnr_PnrEntity) (PnrEntity * entity);
 @property (nonatomic, strong) NSMutableArray * infoArray;
 @property (nonatomic, weak  ) UINavigationController * nc;
 
-@property (nonatomic, copy  ) BlockPnr_PnrEntity blockExtraRecord; // 转发完成之后的回调
+@property (nonatomic, copy  ) PnrBlockPPnrEntity blockExtraRecord; // 转发完成之后的回调
 
 + (instancetype)share;
 

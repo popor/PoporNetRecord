@@ -236,11 +236,13 @@
         [entity getJsonArrayBlock:^(NSArray *titleArray, NSArray *jsonArray, NSMutableArray *cellAttArray) {
             
             NSDictionary * vcDic = @{
-                                     @"title":@"请求详情",
-                                     @"jsonArray":jsonArray,
-                                     @"titleArray":titleArray,
-                                     @"cellAttArray":cellAttArray,
-                                     };
+                @"title":@"请求详情",
+                @"jsonArray":jsonArray,
+                @"titleArray":titleArray,
+                @"cellAttArray":cellAttArray,
+                @"blockExtraRecord":self.view.blockExtraRecord,
+                @"weakPnrEntity":entity,
+            };
             [weakSelf.view.vc.navigationController pushViewController:[[PnrDetailVC alloc] initWithDic:vcDic] animated:YES];
         }];
        

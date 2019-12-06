@@ -30,6 +30,7 @@
 @synthesize alertBubbleTVColor;
 
 @synthesize rightBarArray;
+@synthesize blockExtraRecord;
 
 - (instancetype)initWithDic:(NSDictionary *)dic {
     if (self = [super init]) {
@@ -49,8 +50,9 @@
               
               ];
             
-            self.weakInfoArray = dic[@"weakInfoArray"];
-            self.closeBlock    = dic[@"closeBlock"];
+            self.weakInfoArray    = dic[@"weakInfoArray"];
+            self.closeBlock       = dic[@"closeBlock"];
+            self.blockExtraRecord = dic[@"blockExtraRecord"];
         }
     }
     return self;

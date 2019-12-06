@@ -157,6 +157,12 @@
     }
 }
 
+- (void)forwardeAction {
+    if (self.view.blockExtraRecord) {
+        self.view.blockExtraRecord(self.view.weakPnrEntity);
+    }
+}
+
 #pragma mark - Interactor_EventHandler
 
 @end
