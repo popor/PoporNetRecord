@@ -117,6 +117,9 @@
         ],
         "PoporNetRecord/ExtraVC": [
 
+        ],
+        "PoporNetRecord/MessageVC": [
+
         ]
       },
       "source_files": "Example/Classes/ListVC/*.{h,m}"

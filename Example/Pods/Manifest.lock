@@ -123,6 +123,7 @@ PODS:
     - PoporFoundation/NSString
     - PoporNetRecord/DetailVC
     - PoporNetRecord/ExtraVC
+    - PoporNetRecord/MessageVC
     - PoporNetRecord/Web
     - PoporUI/IToast
     - PoporUI/UIDevice
@@ -215,7 +216,7 @@ SPEC CHECKSUMS:
   PoporAFN: 81a1806c70329e70d697bbbb6255efc3582eed02
   PoporAlertBubbleView: f1b48e79767045630efd422eacefa24c0ce249c1
   PoporFoundation: f080da19da868487426639289bd3a263a7c65aea
-  PoporNetRecord: e660485225b5de919eff83e3aa043205eb5560ab
+  PoporNetRecord: b8c22818b4727c76e76330a9516ae99c7ffa9fd2
   PoporUI: 3479332df777422196b57bf6c46c431d087df8da
 
 PODFILE CHECKSUM: 23a67e2956c2604b87c07729ec3d52219b227d2f

@@ -47,6 +47,8 @@ Pod::Spec.new do |s|
     ss.dependency 'PoporNetRecord/Web'
     ss.dependency 'PoporNetRecord/DetailVC'
     ss.dependency 'PoporNetRecord/ExtraVC'
+    ss.dependency 'PoporNetRecord/MessageVC'
+    
     ss.source_files = 'Example/Classes/ListVC/*.{h,m}'
   end
   
