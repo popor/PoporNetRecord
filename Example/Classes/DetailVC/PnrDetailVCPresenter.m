@@ -160,6 +160,8 @@
 - (void)forwardeAction {
     if (self.view.blockExtraRecord) {
         self.view.blockExtraRecord(self.view.weakPnrEntity);
+        
+        AlertToastTitle(@"已转发");
     }
 }
 

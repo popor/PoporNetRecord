@@ -128,15 +128,15 @@
         __weak typeof(self) weakSelf = self;
         
         UITableViewRowAction *action00 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"标题" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-            [weakSelf updateEntity:ue type:0];
+            [weakSelf updateEntity:ue type:0 indexPath:indexPath];
         }];
         
         UITableViewRowAction *action01 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"域名" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-            [weakSelf updateEntity:ue type:1];
+            [weakSelf updateEntity:ue type:1 indexPath:indexPath];
         }];
         
         UITableViewRowAction *action02 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"端口" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-            [weakSelf updateEntity:ue type:2];
+            [weakSelf updateEntity:ue type:2 indexPath:indexPath];
         }];
         
         action00.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
@@ -158,7 +158,7 @@
     }
 }
 
-- (void)updateEntity:(PnrExtraUrlPortEntity *)ue type:(PnrExtraUrlPortEntityType)type {
+- (void)updateEntity:(PnrExtraUrlPortEntity *)ue type:(PnrExtraUrlPortEntityType)type indexPath:(NSIndexPath *)indexPath {
     NSString * title;
     NSString * text;
     switch (type) {
@@ -193,7 +193,7 @@
         UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
         UIAlertAction * changeAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             UITextField * tf = oneAC.textFields[0];
-            
+            PnrExtraEntity * pee = [PnrExtraEntity share];
             switch (type) {
                 case PnrExtraUrlPortEntityType_title: {
                     ue.title = tf.text;
@@ -211,9 +211,23 @@
                     return;
             }
             
-            [[PnrExtraEntity share] saveArray];
+            [pee saveArray];
             
             [weakSelf.view.infoTV reloadData];
+            
+            // 刷新数据: 如果编辑的是选择
+            switch (type) {
+                case PnrExtraUrlPortEntityType_url: {
+                case PnrExtraUrlPortEntityType_port: {
+                    if (indexPath.row == pee.selectNum) {
+                        [pee updateSelectUrlPort];
+                    }
+                    break;
+                }
+                default:
+                    break;
+                }
+            }
         }];
         
         [oneAC addAction:cancleAction];

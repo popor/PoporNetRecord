@@ -43,6 +43,8 @@ typedef NS_ENUM(int, PnrExtraUrlPortEntityType) {
 
 - (void)saveForward;
 
+- (void)updateSelectUrlPort;
+
 @end
 
 NS_ASSUME_NONNULL_END
