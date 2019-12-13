@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy  ) PnrBlockPVoid openBlock;
 @property (nonatomic, copy  ) PnrBlockPVoid closeBlock;
 
+@property (nonatomic, copy  ) PnrBlockPVoid viewDidloadBlock; // 方便设定ballBT属性
+
 + (instancetype)share;
 
 - (void)addViews;

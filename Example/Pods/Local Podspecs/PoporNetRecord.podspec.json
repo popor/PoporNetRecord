@@ -1,6 +1,6 @@
 {
   "name": "PoporNetRecord",
-  "version": "1.08",
+  "version": "1.09",
   "summary": "PoporNetRecord will record net request only in debug configuration",
   "homepage": "https://github.com/popor/PoporNetRecord",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/popor/PoporNetRecord.git",
-    "tag": "1.08"
+    "tag": "1.09"
   },
   "platforms": {
     "ios": "8.0"

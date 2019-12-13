@@ -65,6 +65,9 @@ config.presentNCBlock = ^(UINavigationController *nc) {
 1.07
 详情页面增加再次转发功能
 
+1.09
+增加PnrBlockPVoid viewDidloadBlock; 方便设定ballBT属性
+
 ## Author
 
 wangkq, 908891024@qq.com

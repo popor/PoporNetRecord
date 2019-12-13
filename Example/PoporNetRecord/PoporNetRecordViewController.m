@@ -202,6 +202,18 @@
     };
     
     {
+        // 修改 ballBT 属性.
+        [PnrView share].viewDidloadBlock = ^{
+            float width = 60;
+            UIButton * ballBT = [PnrView share].ballBT;
+            ballBT.frame = CGRectMake(ballBT.frame.origin.x, ballBT.frame.origin.y, width, width);
+            ballBT.layer.cornerRadius = width/2;
+            
+            [ballBT setTitle:nil forState:UIControlStateNormal];
+        };
+        
+    }
+    {
         //config.listFontTitle   = [UIFont systemFontOfSize:16];
         //config.listFontRequest = [UIFont systemFontOfSize:14];
         //[config updateListCellHeight];

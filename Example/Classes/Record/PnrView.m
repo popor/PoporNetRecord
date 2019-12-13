@@ -72,6 +72,9 @@
             
             button;
         });
+        if (self.viewDidloadBlock) {
+            self.viewDidloadBlock();
+        }
         NSString * pointString = [self getBallPoint];
         if (pointString) {
             self.ballBT.center = CGPointFromString(pointString);
