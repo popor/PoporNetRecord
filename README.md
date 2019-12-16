@@ -68,6 +68,10 @@ config.presentNCBlock = ^(UINavigationController *nc) {
 1.09
 增加PnrBlockPVoid viewDidloadBlock; 方便设定ballBT属性
 
+1.10
+防止iPhoneX屏幕, bt位于屏幕正上方无法点击
+autoFixIphoneXFrame : 默认为YES, 防止ballBT位于在屏幕上方出现, iPhoneX机型可能无法点击到ballBT.
+
 ## Author
 
 wangkq, 908891024@qq.com
