@@ -24,10 +24,10 @@
 
 @property (nonatomic        ) NSInteger lastIndex;
 
-@property (nonatomic, strong) NSString * h5Root;
-@property (nonatomic, strong) NSString * h5List;
-@property (nonatomic, strong) NSString * h5Detail;
-@property (nonatomic, strong) NSString * h5Resubmit;
+@property (nonatomic, copy  ) NSString * h5Root;
+@property (nonatomic, copy  ) NSString * h5List;
+@property (nonatomic, copy  ) NSString * h5Detail;
+@property (nonatomic, copy  ) NSString * h5Resubmit;
 
 @end
 

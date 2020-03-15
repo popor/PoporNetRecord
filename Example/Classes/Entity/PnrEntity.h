@@ -58,26 +58,26 @@ static NSString * PnrClassTaAutoH  = @"TaAutoH";
 @interface PnrEntity : NSObject
 
 // 日志模式
-@property (nonatomic, strong) NSString * log; // 如果此参数不为空,那么就是log模式
+@property (nonatomic, copy  ) NSString * log; // 如果此参数不为空,那么就是log模式
 @property (nonatomic        ) int      logDetailH;// 详细模式下log cell 高度.
 
 // 网路请求模式
-@property (nonatomic, strong) NSString * title;
-@property (nonatomic, strong) NSString * url;
-@property (nonatomic, strong) NSString * domain;
-@property (nonatomic, strong) NSString * path;
-@property (nonatomic, strong) NSString * method;// post get
+@property (nonatomic, copy  ) NSString * title;
+@property (nonatomic, copy  ) NSString * url;
+@property (nonatomic, copy  ) NSString * domain;
+@property (nonatomic, copy  ) NSString * path;
+@property (nonatomic, copy  ) NSString * method;// post get
 
 @property (nonatomic, strong) id       headValue;
 @property (nonatomic, strong) id       parameterValue;
 @property (nonatomic, strong) id       responseValue;
 
-@property (nonatomic, strong) NSString * time;
+@property (nonatomic, copy  ) NSString * time;
 
-@property (nonatomic, strong) NSString * listWebH5; // 列表网页html5代码
+@property (nonatomic, copy  ) NSString * listWebH5; // 列表网页html5代码
 
 //@property (nonatomic        ) float cellH;
-@property (nonatomic, strong) NSString * deviceName;
+@property (nonatomic, copy  ) NSString * deviceName;
 
 - (void)createListWebH5:(NSInteger)index;
 

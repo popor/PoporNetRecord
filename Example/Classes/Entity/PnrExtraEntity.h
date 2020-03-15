@@ -20,9 +20,9 @@ typedef NS_ENUM(int, PnrExtraUrlPortEntityType) {
 // 转发接口
 @interface PnrExtraUrlPortEntity : NSObject
 
-@property (nonatomic, strong) NSString * title;
-@property (nonatomic, strong) NSString * url;
-@property (nonatomic, strong) NSString * port;
+@property (nonatomic, copy  ) NSString * title;
+@property (nonatomic, copy  ) NSString * url;
+@property (nonatomic, copy  ) NSString * port;
 
 @end
 
@@ -31,7 +31,7 @@ typedef NS_ENUM(int, PnrExtraUrlPortEntityType) {
 
 @property (nonatomic        ) NSInteger selectNum;
 @property (nonatomic        ) BOOL      forward; // 是否转发
-@property (nonatomic, strong) NSString * selectUrlPort;
+@property (nonatomic, copy  ) NSString * selectUrlPort;
 
 @property (nonatomic, strong) NSMutableArray<PnrExtraUrlPortEntity *> * urlPortArray;
 
