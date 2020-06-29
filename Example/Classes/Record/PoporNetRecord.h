@@ -33,10 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
  parameterValue: NSDictionary | NSString
  responseValue:  NSDictionary | NSString
  */
-+ (void)addUrl:(NSString *)urlString method:(PoporMethod)method head:(id _Nullable)headValue parameter:(id _Nullable)parameterValue response:(id _Nullable)responseValue;
++ (void)addUrl:(NSString *)urlString method:(PnrMethod)method head:(id _Nullable)headValue parameter:(id _Nullable)parameterValue response:(id _Nullable)responseValue;
 
 // 增加title
-+ (void)addUrl:(NSString *)urlString title:(NSString *)title method:(PoporMethod)method head:(id _Nullable)headValue parameter:(id _Nullable)parameterValue response:(id _Nullable)responseValue;
++ (void)addUrl:(NSString *)urlString title:(NSString *)title method:(PnrMethod)method head:(id _Nullable)headValue parameter:(id _Nullable)parameterValue response:(id _Nullable)responseValue;
 
 + (void)setPnrBlockResubmit:(PnrBlockResubmit _Nullable)block extraDic:(NSDictionary * _Nullable)dic;
 

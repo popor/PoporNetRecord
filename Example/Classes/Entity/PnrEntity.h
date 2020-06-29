@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <PoporAFN/PoporAFNConfig.h>
-
+//#import <PoporAFN/PoporAFNConfig.h>
+//#本来想引用的PoporAFN里面的method,可是cocoapods经过了好几年,都无法使用另一个pod里面的变量作为switch.很坑.
+typedef NS_ENUM(NSInteger, PnrMethod) {
+    PnrMethodGet,
+    PnrMethodPost,
+    PnrMethodFormData,
+};
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -68,7 +73,7 @@ static NSString * PnrClassTaAutoH  = @"TaAutoH";
 @property (nonatomic, copy  ) NSString * url;
 @property (nonatomic, copy  ) NSString * domain;
 @property (nonatomic, copy  ) NSString * path;
-@property (nonatomic        ) PoporMethod method;
+@property (nonatomic        ) PnrMethod method;
 
 @property (nonatomic, strong) id       headValue;
 @property (nonatomic, strong) id       parameterValue;

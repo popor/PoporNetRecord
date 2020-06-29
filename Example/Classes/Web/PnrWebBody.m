@@ -226,14 +226,23 @@
         [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%@</font></p>", colorKey, PnrRootUrl2, colorValue, pnrEntity.url];
         
         NSString * methodName;
-        if (pnrEntity.method == PoporMethodGet) {
-            methodName = @"Get";
-        } else if (pnrEntity.method == PoporMethodPost) {
-            methodName = @"Post(Json)";
-        } else if (pnrEntity.method == PoporMethodFormData) {
-            methodName = @"Post(Form-Data)";
-        } else {
-            methodName = [NSString stringWithFormat:@"未知(%li)", pnrEntity.method];
+        switch (pnrEntity.method) {
+            case PnrMethodGet:{
+                methodName = @"Get";
+                break;
+            }
+            case PnrMethodPost: {
+                methodName = @"Post(Json)";
+                break;
+            }
+            case PnrMethodFormData: {
+                methodName = @"Post(Form-Data)";
+                break;
+            }
+            default: {
+                methodName = [NSString stringWithFormat:@"未知(%li)", pnrEntity.method];
+                break;
+            }
         }
         
         [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%@</font></p>", colorKey, PnrRootMethod4, colorValue, methodName];
@@ -259,19 +268,28 @@
         NSString * checkGet      = @"";
         NSString * checkPost     = @"";
         NSString * checkFormData = @"";
-        if (pnrEntity.method == PoporMethodGet) {
-           checkGet = @"checked";
-        } else if (pnrEntity.method == PoporMethodPost) {
-            checkPost = @"checked";
-        } else if (pnrEntity.method == PoporMethodFormData) {
-            checkFormData = @"checked";
-        } else {}
-        
+        switch (pnrEntity.method) {
+            case PnrMethodGet: {
+                checkGet = @"checked";
+                break;
+            }
+            case PnrMethodPost: {
+                checkPost = @"checked";
+                break;
+            }
+            case PnrMethodFormData: {
+                checkFormData = @"checked";
+                break;
+            }
+            default: {
+                break;
+            }
+        }
         [h5 appendFormat:@"\n <p> <button class=\"w180Green\" type='button' \" > %@ </button> \n\
          <input type='radio' name='method' id='methodGet'      value='%li' %@ /><label for='methodGet'>GET</label>\n\
          <input type='radio' name='method' id='methodPost'     value='%li' %@ /><label for='methodPost'>POST(Json)</label>\n\
          <input type='radio' name='method' id='methodFormData' value='%li' %@ /><label for='methodFormData'>Post(FormData)</label>\n\
-         </p>\n ", PnrRootMethod4, PoporMethodGet, checkGet, PoporMethodPost, checkPost, PoporMethodFormData, checkFormData];
+         </p>\n ", PnrRootMethod4, PnrMethodGet, checkGet, PnrMethodPost, checkPost, PnrMethodFormData, checkFormData];
         
         btTaBlock(h5, PnrRootHead5,      @"head",      headStr);
         btTaBlock(h5, PnrRootParameter6, @"parameter", parameterStr);

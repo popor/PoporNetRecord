@@ -44,69 +44,34 @@ PODS:
   - PoporFoundation/Os (1.17)
   - PoporFoundation/Prefix (1.17):
     - PoporFoundation/Os
-  - PoporNetRecord (1.12):
+  - PoporNetRecord (1.13):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
     - JSONSyntaxHighlight
     - Masonry
-    - PoporAFN
     - PoporAlertBubbleView
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
     - PoporFoundation/NSString
-    - PoporNetRecord/DetailVC (= 1.12)
-    - PoporNetRecord/Entity (= 1.12)
-    - PoporNetRecord/ExtraVC (= 1.12)
-    - PoporNetRecord/ListVC (= 1.12)
-    - PoporNetRecord/MessageVC (= 1.12)
-    - PoporNetRecord/Record (= 1.12)
-    - PoporNetRecord/Web (= 1.12)
+    - PoporNetRecord/DetailVC (= 1.13)
+    - PoporNetRecord/Entity (= 1.13)
+    - PoporNetRecord/ExtraVC (= 1.13)
+    - PoporNetRecord/ListVC (= 1.13)
+    - PoporNetRecord/MessageVC (= 1.13)
+    - PoporNetRecord/Record (= 1.13)
+    - PoporNetRecord/Web (= 1.13)
     - PoporUI/IToast
     - PoporUI/UIDevice
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/DetailVC (1.12):
+  - PoporNetRecord/DetailVC (1.13):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
     - JSONSyntaxHighlight
     - Masonry
-    - PoporAFN
-    - PoporAlertBubbleView
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporNetRecord/Entity
-    - PoporUI/IToast
-    - PoporUI/UIDevice
-    - PoporUI/UIImage
-    - PoporUI/UITextField
-    - PoporUI/UIView
-  - PoporNetRecord/Entity (1.12):
-    - GCDWebServer
-    - GCDWebServer/WebDAV
-    - GCDWebServer/WebUploader
-    - JSONSyntaxHighlight
-    - Masonry
-    - PoporAFN
-    - PoporAlertBubbleView
-    - PoporFoundation/NSDate
-    - PoporFoundation/NSDictionary
-    - PoporFoundation/NSString
-    - PoporUI/IToast
-    - PoporUI/UIDevice
-    - PoporUI/UIImage
-    - PoporUI/UITextField
-    - PoporUI/UIView
-  - PoporNetRecord/ExtraVC (1.12):
-    - GCDWebServer
-    - GCDWebServer/WebDAV
-    - GCDWebServer/WebUploader
-    - JSONSyntaxHighlight
-    - Masonry
-    - PoporAFN
     - PoporAlertBubbleView
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
@@ -117,13 +82,43 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/ListVC (1.12):
+  - PoporNetRecord/Entity (1.13):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
     - JSONSyntaxHighlight
     - Masonry
-    - PoporAFN
+    - PoporAlertBubbleView
+    - PoporFoundation/NSDate
+    - PoporFoundation/NSDictionary
+    - PoporFoundation/NSString
+    - PoporUI/IToast
+    - PoporUI/UIDevice
+    - PoporUI/UIImage
+    - PoporUI/UITextField
+    - PoporUI/UIView
+  - PoporNetRecord/ExtraVC (1.13):
+    - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
+    - JSONSyntaxHighlight
+    - Masonry
+    - PoporAlertBubbleView
+    - PoporFoundation/NSDate
+    - PoporFoundation/NSDictionary
+    - PoporFoundation/NSString
+    - PoporNetRecord/Entity
+    - PoporUI/IToast
+    - PoporUI/UIDevice
+    - PoporUI/UIImage
+    - PoporUI/UITextField
+    - PoporUI/UIView
+  - PoporNetRecord/ListVC (1.13):
+    - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
+    - JSONSyntaxHighlight
+    - Masonry
     - PoporAlertBubbleView
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
@@ -137,13 +132,12 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/MessageVC (1.12):
+  - PoporNetRecord/MessageVC (1.13):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
     - JSONSyntaxHighlight
     - Masonry
-    - PoporAFN
     - PoporAlertBubbleView
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
@@ -154,13 +148,12 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/Record (1.12):
+  - PoporNetRecord/Record (1.13):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
     - JSONSyntaxHighlight
     - Masonry
-    - PoporAFN
     - PoporAlertBubbleView
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
@@ -171,13 +164,12 @@ PODS:
     - PoporUI/UIImage
     - PoporUI/UITextField
     - PoporUI/UIView
-  - PoporNetRecord/Web (1.12):
+  - PoporNetRecord/Web (1.13):
     - GCDWebServer
     - GCDWebServer/WebDAV
     - GCDWebServer/WebUploader
     - JSONSyntaxHighlight
     - Masonry
-    - PoporAFN
     - PoporAlertBubbleView
     - PoporFoundation/NSDate
     - PoporFoundation/NSDictionary
@@ -226,7 +218,7 @@ SPEC CHECKSUMS:
   PoporAFN: 5800e9adca375b1d564f047645ab8884403027c7
   PoporAlertBubbleView: f1b48e79767045630efd422eacefa24c0ce249c1
   PoporFoundation: 7fabad9a5c7b6ff98b54bd97b57d6452a9ec9d72
-  PoporNetRecord: b473e48e7bab6b39293a807d51c9bb25262d5bf9
+  PoporNetRecord: 19c5a54ddbbca4dc15e00bd33d8f11cc1e3bf7ff
   PoporUI: 93e9eae0e36af2465b671947bbec7a4f21305305
 
 PODFILE CHECKSUM: 0f253fec8ebdb4836015ac8432ff4a9d69519bfd
