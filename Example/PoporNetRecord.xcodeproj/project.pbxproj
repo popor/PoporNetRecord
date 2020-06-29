@@ -7,34 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		181197102235EA9000450770 /* PnrListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 181196EB2235EA9000450770 /* PnrListVC.m */; };
-		181197112235EA9000450770 /* PnrListVCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181196EC2235EA9000450770 /* PnrListVCCell.m */; };
-		181197132235EA9000450770 /* PnrListVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 181196F52235EA9000450770 /* PnrListVCInteractor.m */; };
-		181197162235EA9000450770 /* PnrListVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 181196F92235EA9000450770 /* PnrListVCPresenter.m */; };
-		181197182235EA9000450770 /* PnrPortEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 181196FE2235EA9000450770 /* PnrPortEntity.m */; };
-		181197192235EA9000450770 /* PnrEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 181197012235EA9000450770 /* PnrEntity.m */; };
-		1811971C2235EA9000450770 /* PnrDetailVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 181197062235EA9000450770 /* PnrDetailVCInteractor.m */; };
-		1811971D2235EA9000450770 /* PnrDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181197082235EA9000450770 /* PnrDetailCell.m */; };
-		1811971F2235EA9000450770 /* PnrDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1811970A2235EA9000450770 /* PnrDetailVC.m */; };
-		181197202235EA9000450770 /* PnrDetailVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1811970C2235EA9000450770 /* PnrDetailVCPresenter.m */; };
-		1820D518237F973900ADE193 /* PnrExtraEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D517237F973900ADE193 /* PnrExtraEntity.m */; };
-		1820D521237FA49200ADE193 /* PnrExtraVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D51B237FA49200ADE193 /* PnrExtraVCInteractor.m */; };
-		1820D522237FA49200ADE193 /* PnrExtraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D51E237FA49200ADE193 /* PnrExtraVC.m */; };
-		1820D523237FA49200ADE193 /* PnrExtraVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D520237FA49200ADE193 /* PnrExtraVCPresenter.m */; };
 		185879FD223F844600B5B9CA /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 185879FC223F844600B5B9CA /* favicon.ico */; };
 		185879FF223F91EC00B5B9CA /* favicon2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 185879FE223F91EC00B5B9CA /* favicon2.ico */; };
-		18AC5E8122A6043100C64B29 /* PnrCellEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AC5E8022A6043100C64B29 /* PnrCellEntity.m */; };
-		18DA9CDF238294BA001A8D11 /* PnrUITool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DA9CDE238294BA001A8D11 /* PnrUITool.m */; };
-		18DDDA7B223B77F400307E32 /* PnrWebJs.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA75223B77F400307E32 /* PnrWebJs.m */; };
-		18DDDA7C223B77F400307E32 /* PnrWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA76223B77F400307E32 /* PnrWebServer.m */; };
-		18DDDA7D223B77F400307E32 /* PnrWebCss.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA77223B77F400307E32 /* PnrWebCss.m */; };
-		18DDDA80223B78B200307E32 /* PnrWebBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA7F223B78B200307E32 /* PnrWebBody.m */; };
-		18DDDA86223B976200307E32 /* PnrConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA85223B976200307E32 /* PnrConfig.m */; };
-		18DDDA8C223B9BBB00307E32 /* PoporNetRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA89223B9BBB00307E32 /* PoporNetRecord.m */; };
-		18DDDA8D223B9BBB00307E32 /* PnrView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDDA8A223B9BBB00307E32 /* PnrView.m */; };
-		18F1E336239A2D7B00A360EA /* PnrMessageVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1E331239A2D7A00A360EA /* PnrMessageVCInteractor.m */; };
-		18F1E337239A2D7B00A360EA /* PnrMessageVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1E333239A2D7B00A360EA /* PnrMessageVCPresenter.m */; };
-		18F1E338239A2D7B00A360EA /* PnrMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1E334239A2D7B00A360EA /* PnrMessageVC.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -65,66 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		181196EB2235EA9000450770 /* PnrListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrListVC.m; sourceTree = "<group>"; };
-		181196EC2235EA9000450770 /* PnrListVCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrListVCCell.m; sourceTree = "<group>"; };
-		181196EF2235EA9000450770 /* PnrListVCInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrListVCInteractor.h; sourceTree = "<group>"; };
-		181196F02235EA9000450770 /* PnrListVCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrListVCProtocol.h; sourceTree = "<group>"; };
-		181196F12235EA9000450770 /* PnrListVCPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrListVCPresenter.h; sourceTree = "<group>"; };
-		181196F32235EA9000450770 /* PnrListVCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrListVCCell.h; sourceTree = "<group>"; };
-		181196F42235EA9000450770 /* PnrListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrListVC.h; sourceTree = "<group>"; };
-		181196F52235EA9000450770 /* PnrListVCInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrListVCInteractor.m; sourceTree = "<group>"; };
-		181196F92235EA9000450770 /* PnrListVCPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrListVCPresenter.m; sourceTree = "<group>"; };
-		181196FD2235EA9000450770 /* PnrEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrEntity.h; sourceTree = "<group>"; };
-		181196FE2235EA9000450770 /* PnrPortEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrPortEntity.m; sourceTree = "<group>"; };
-		181197002235EA9000450770 /* PnrPortEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrPortEntity.h; sourceTree = "<group>"; };
-		181197012235EA9000450770 /* PnrEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrEntity.m; sourceTree = "<group>"; };
-		181197052235EA9000450770 /* PnrDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrDetailVC.h; sourceTree = "<group>"; };
-		181197062235EA9000450770 /* PnrDetailVCInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrDetailVCInteractor.m; sourceTree = "<group>"; };
-		181197072235EA9000450770 /* PnrDetailVCPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrDetailVCPresenter.h; sourceTree = "<group>"; };
-		181197082235EA9000450770 /* PnrDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrDetailCell.m; sourceTree = "<group>"; };
-		1811970A2235EA9000450770 /* PnrDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrDetailVC.m; sourceTree = "<group>"; };
-		1811970B2235EA9000450770 /* PnrDetailVCInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrDetailVCInteractor.h; sourceTree = "<group>"; };
-		1811970C2235EA9000450770 /* PnrDetailVCPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrDetailVCPresenter.m; sourceTree = "<group>"; };
-		1811970D2235EA9000450770 /* PnrDetailVCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrDetailVCProtocol.h; sourceTree = "<group>"; };
-		1811970E2235EA9000450770 /* PnrDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrDetailCell.h; sourceTree = "<group>"; };
-		1811972122364DA900450770 /* PnrPrefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrPrefix.h; sourceTree = "<group>"; };
-		1820D516237F973900ADE193 /* PnrExtraEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrExtraEntity.h; sourceTree = "<group>"; };
-		1820D517237F973900ADE193 /* PnrExtraEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PnrExtraEntity.m; sourceTree = "<group>"; };
-		1820D51A237FA49200ADE193 /* PnrExtraVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrExtraVC.h; sourceTree = "<group>"; };
-		1820D51B237FA49200ADE193 /* PnrExtraVCInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PnrExtraVCInteractor.m; sourceTree = "<group>"; };
-		1820D51C237FA49200ADE193 /* PnrExtraVCPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrExtraVCPresenter.h; sourceTree = "<group>"; };
-		1820D51D237FA49200ADE193 /* PnrExtraVCProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrExtraVCProtocol.h; sourceTree = "<group>"; };
-		1820D51E237FA49200ADE193 /* PnrExtraVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PnrExtraVC.m; sourceTree = "<group>"; };
-		1820D51F237FA49200ADE193 /* PnrExtraVCInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrExtraVCInteractor.h; sourceTree = "<group>"; };
-		1820D520237FA49200ADE193 /* PnrExtraVCPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PnrExtraVCPresenter.m; sourceTree = "<group>"; };
 		185879FC223F844600B5B9CA /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
 		185879FE223F91EC00B5B9CA /* favicon2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon2.ico; sourceTree = "<group>"; };
-		18AC5E7F22A6043100C64B29 /* PnrCellEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrCellEntity.h; sourceTree = "<group>"; };
-		18AC5E8022A6043100C64B29 /* PnrCellEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PnrCellEntity.m; sourceTree = "<group>"; };
 		18D5508B21B62E7D00C62BB8 /* PoporNetRecord_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoporNetRecord_Example.entitlements; sourceTree = SOURCE_ROOT; };
-		18DA9CDD238294BA001A8D11 /* PnrUITool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrUITool.h; sourceTree = "<group>"; };
-		18DA9CDE238294BA001A8D11 /* PnrUITool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PnrUITool.m; sourceTree = "<group>"; };
-		18DDDA75223B77F400307E32 /* PnrWebJs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrWebJs.m; sourceTree = "<group>"; };
-		18DDDA76223B77F400307E32 /* PnrWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrWebServer.m; sourceTree = "<group>"; };
-		18DDDA77223B77F400307E32 /* PnrWebCss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrWebCss.m; sourceTree = "<group>"; };
-		18DDDA78223B77F400307E32 /* PnrWebJs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrWebJs.h; sourceTree = "<group>"; };
-		18DDDA79223B77F400307E32 /* PnrWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrWebServer.h; sourceTree = "<group>"; };
-		18DDDA7A223B77F400307E32 /* PnrWebCss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrWebCss.h; sourceTree = "<group>"; };
-		18DDDA7E223B78B200307E32 /* PnrWebBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PnrWebBody.h; sourceTree = "<group>"; };
-		18DDDA7F223B78B200307E32 /* PnrWebBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PnrWebBody.m; sourceTree = "<group>"; };
-		18DDDA84223B976200307E32 /* PnrConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrConfig.h; sourceTree = "<group>"; };
-		18DDDA85223B976200307E32 /* PnrConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrConfig.m; sourceTree = "<group>"; };
-		18DDDA88223B9BBB00307E32 /* PnrView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrView.h; sourceTree = "<group>"; };
-		18DDDA89223B9BBB00307E32 /* PoporNetRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoporNetRecord.m; sourceTree = "<group>"; };
-		18DDDA8A223B9BBB00307E32 /* PnrView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrView.m; sourceTree = "<group>"; };
-		18DDDA8B223B9BBB00307E32 /* PoporNetRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoporNetRecord.h; sourceTree = "<group>"; };
-		18F1E32F239A2D7A00A360EA /* PnrMessageVCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrMessageVCProtocol.h; sourceTree = "<group>"; };
-		18F1E330239A2D7A00A360EA /* PnrMessageVCInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrMessageVCInteractor.h; sourceTree = "<group>"; };
-		18F1E331239A2D7A00A360EA /* PnrMessageVCInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrMessageVCInteractor.m; sourceTree = "<group>"; };
-		18F1E332239A2D7A00A360EA /* PnrMessageVCPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrMessageVCPresenter.h; sourceTree = "<group>"; };
-		18F1E333239A2D7B00A360EA /* PnrMessageVCPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrMessageVCPresenter.m; sourceTree = "<group>"; };
-		18F1E334239A2D7B00A360EA /* PnrMessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PnrMessageVC.m; sourceTree = "<group>"; };
-		18F1E335239A2D7B00A360EA /* PnrMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PnrMessageVC.h; sourceTree = "<group>"; };
 		24374E9BC3CE466EB155DAC4 /* Pods_PoporNetRecord_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporNetRecord_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E592CE1D5F5896002C41A91 /* Pods-PoporNetRecord_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporNetRecord_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoporNetRecord_Tests/Pods-PoporNetRecord_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* PoporNetRecord_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoporNetRecord_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,112 +100,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		181196E92235EA9000450770 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				18F1E328239A2D1400A360EA /* MessageVC */,
-				1820D519237FA46600ADE193 /* ExtraVC */,
-				18DDDA87223B9BBB00307E32 /* Record */,
-				181196EA2235EA9000450770 /* ListVC */,
-				181197042235EA9000450770 /* DetailVC */,
-				18DDDA74223B77F400307E32 /* Web */,
-				181196FA2235EA9000450770 /* Entity */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		181196EA2235EA9000450770 /* ListVC */ = {
-			isa = PBXGroup;
-			children = (
-				181196F42235EA9000450770 /* PnrListVC.h */,
-				181196EB2235EA9000450770 /* PnrListVC.m */,
-				181196F02235EA9000450770 /* PnrListVCProtocol.h */,
-				181196F32235EA9000450770 /* PnrListVCCell.h */,
-				181196EC2235EA9000450770 /* PnrListVCCell.m */,
-				181196F12235EA9000450770 /* PnrListVCPresenter.h */,
-				181196F92235EA9000450770 /* PnrListVCPresenter.m */,
-				181196EF2235EA9000450770 /* PnrListVCInteractor.h */,
-				181196F52235EA9000450770 /* PnrListVCInteractor.m */,
-			);
-			path = ListVC;
-			sourceTree = "<group>";
-		};
-		181196FA2235EA9000450770 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				1811972122364DA900450770 /* PnrPrefix.h */,
-				18DDDA84223B976200307E32 /* PnrConfig.h */,
-				18DDDA85223B976200307E32 /* PnrConfig.m */,
-				181197002235EA9000450770 /* PnrPortEntity.h */,
-				181196FE2235EA9000450770 /* PnrPortEntity.m */,
-				181196FD2235EA9000450770 /* PnrEntity.h */,
-				181197012235EA9000450770 /* PnrEntity.m */,
-				18AC5E7F22A6043100C64B29 /* PnrCellEntity.h */,
-				18AC5E8022A6043100C64B29 /* PnrCellEntity.m */,
-				1820D516237F973900ADE193 /* PnrExtraEntity.h */,
-				1820D517237F973900ADE193 /* PnrExtraEntity.m */,
-				18DA9CDD238294BA001A8D11 /* PnrUITool.h */,
-				18DA9CDE238294BA001A8D11 /* PnrUITool.m */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		181197042235EA9000450770 /* DetailVC */ = {
-			isa = PBXGroup;
-			children = (
-				181197052235EA9000450770 /* PnrDetailVC.h */,
-				1811970A2235EA9000450770 /* PnrDetailVC.m */,
-				1811970D2235EA9000450770 /* PnrDetailVCProtocol.h */,
-				1811970E2235EA9000450770 /* PnrDetailCell.h */,
-				181197082235EA9000450770 /* PnrDetailCell.m */,
-				181197072235EA9000450770 /* PnrDetailVCPresenter.h */,
-				1811970C2235EA9000450770 /* PnrDetailVCPresenter.m */,
-				1811970B2235EA9000450770 /* PnrDetailVCInteractor.h */,
-				181197062235EA9000450770 /* PnrDetailVCInteractor.m */,
-			);
-			path = DetailVC;
-			sourceTree = "<group>";
-		};
-		1820D519237FA46600ADE193 /* ExtraVC */ = {
-			isa = PBXGroup;
-			children = (
-				1820D51A237FA49200ADE193 /* PnrExtraVC.h */,
-				1820D51E237FA49200ADE193 /* PnrExtraVC.m */,
-				1820D51D237FA49200ADE193 /* PnrExtraVCProtocol.h */,
-				1820D51C237FA49200ADE193 /* PnrExtraVCPresenter.h */,
-				1820D520237FA49200ADE193 /* PnrExtraVCPresenter.m */,
-				1820D51F237FA49200ADE193 /* PnrExtraVCInteractor.h */,
-				1820D51B237FA49200ADE193 /* PnrExtraVCInteractor.m */,
-			);
-			path = ExtraVC;
-			sourceTree = "<group>";
-		};
-		18DDDA74223B77F400307E32 /* Web */ = {
-			isa = PBXGroup;
-			children = (
-				18DDDA79223B77F400307E32 /* PnrWebServer.h */,
-				18DDDA76223B77F400307E32 /* PnrWebServer.m */,
-				18DDDA7E223B78B200307E32 /* PnrWebBody.h */,
-				18DDDA7F223B78B200307E32 /* PnrWebBody.m */,
-				18DDDA78223B77F400307E32 /* PnrWebJs.h */,
-				18DDDA75223B77F400307E32 /* PnrWebJs.m */,
-				18DDDA7A223B77F400307E32 /* PnrWebCss.h */,
-				18DDDA77223B77F400307E32 /* PnrWebCss.m */,
-			);
-			path = Web;
-			sourceTree = "<group>";
-		};
-		18DDDA87223B9BBB00307E32 /* Record */ = {
-			isa = PBXGroup;
-			children = (
-				18DDDA88223B9BBB00307E32 /* PnrView.h */,
-				18DDDA8A223B9BBB00307E32 /* PnrView.m */,
-				18DDDA8B223B9BBB00307E32 /* PoporNetRecord.h */,
-				18DDDA89223B9BBB00307E32 /* PoporNetRecord.m */,
-			);
-			path = Record;
-			sourceTree = "<group>";
-		};
 		18E6E71820EF585F002CA49B /* other */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,24 +112,9 @@
 			name = other;
 			sourceTree = "<group>";
 		};
-		18F1E328239A2D1400A360EA /* MessageVC */ = {
-			isa = PBXGroup;
-			children = (
-				18F1E335239A2D7B00A360EA /* PnrMessageVC.h */,
-				18F1E334239A2D7B00A360EA /* PnrMessageVC.m */,
-				18F1E330239A2D7A00A360EA /* PnrMessageVCInteractor.h */,
-				18F1E331239A2D7A00A360EA /* PnrMessageVCInteractor.m */,
-				18F1E332239A2D7A00A360EA /* PnrMessageVCPresenter.h */,
-				18F1E333239A2D7B00A360EA /* PnrMessageVCPresenter.m */,
-				18F1E32F239A2D7A00A360EA /* PnrMessageVCProtocol.h */,
-			);
-			path = MessageVC;
-			sourceTree = "<group>";
-		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				181196E92235EA9000450770 /* Classes */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for PoporNetRecord */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -602,35 +398,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18DDDA7C223B77F400307E32 /* PnrWebServer.m in Sources */,
-				18DDDA80223B78B200307E32 /* PnrWebBody.m in Sources */,
-				1820D523237FA49200ADE193 /* PnrExtraVCPresenter.m in Sources */,
-				1811971C2235EA9000450770 /* PnrDetailVCInteractor.m in Sources */,
-				18F1E337239A2D7B00A360EA /* PnrMessageVCPresenter.m in Sources */,
-				18DA9CDF238294BA001A8D11 /* PnrUITool.m in Sources */,
-				18F1E338239A2D7B00A360EA /* PnrMessageVC.m in Sources */,
-				18DDDA7D223B77F400307E32 /* PnrWebCss.m in Sources */,
-				1820D522237FA49200ADE193 /* PnrExtraVC.m in Sources */,
-				18DDDA86223B976200307E32 /* PnrConfig.m in Sources */,
-				181197202235EA9000450770 /* PnrDetailVCPresenter.m in Sources */,
-				18F1E336239A2D7B00A360EA /* PnrMessageVCInteractor.m in Sources */,
-				1820D521237FA49200ADE193 /* PnrExtraVCInteractor.m in Sources */,
-				18DDDA7B223B77F400307E32 /* PnrWebJs.m in Sources */,
 				6003F59E195388D20070C39A /* PoporNetRecordAppDelegate.m in Sources */,
-				1820D518237F973900ADE193 /* PnrExtraEntity.m in Sources */,
-				181197132235EA9000450770 /* PnrListVCInteractor.m in Sources */,
 				6003F5A7195388D20070C39A /* PoporNetRecordViewController.m in Sources */,
-				181197112235EA9000450770 /* PnrListVCCell.m in Sources */,
-				18AC5E8122A6043100C64B29 /* PnrCellEntity.m in Sources */,
-				181197162235EA9000450770 /* PnrListVCPresenter.m in Sources */,
-				18DDDA8D223B9BBB00307E32 /* PnrView.m in Sources */,
-				18DDDA8C223B9BBB00307E32 /* PoporNetRecord.m in Sources */,
-				181197182235EA9000450770 /* PnrPortEntity.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				181197102235EA9000450770 /* PnrListVC.m in Sources */,
-				1811971D2235EA9000450770 /* PnrDetailCell.m in Sources */,
-				1811971F2235EA9000450770 /* PnrDetailVC.m in Sources */,
-				181197192235EA9000450770 /* PnrEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

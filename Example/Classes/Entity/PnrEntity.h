@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <PoporAFN/PoporAFN.h>
+#import <PoporAFN/PoporAFNConfig.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
