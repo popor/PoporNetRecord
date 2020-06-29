@@ -227,18 +227,22 @@
         
         NSString * methodName;
         switch (pnrEntity.method) {
-            case PoporMethodGet:
+            case PoporMethodGet:{
                 methodName = @"Get";
                 break;
-            case PoporMethodPost:
+            }
+            case PoporMethodPost: {
                 methodName = @"Post(Json)";
                 break;
-            case PoporMethodFormData:
+            }
+            case PoporMethodFormData: {
                 methodName = @"Post(Form-Data)";
                 break;
-            default:
+            }
+            default: {
                 methodName = [NSString stringWithFormat:@"未知(%li)", pnrEntity.method];
                 break;
+            }
         }
         
         [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%@</font></p>", colorKey, PnrRootMethod4, colorValue, methodName];
@@ -265,18 +269,21 @@
         NSString * checkPost     = @"";
         NSString * checkFormData = @"";
         switch (pnrEntity.method) {
-            case PoporMethodGet:
+            case PoporMethodGet: {
                 checkGet = @"checked";
                 break;
-            case PoporMethodPost:
+            }
+            case PoporMethodPost: {
                 checkPost = @"checked";
                 break;
-            case PoporMethodFormData:
+            }
+            case PoporMethodFormData: {
                 checkFormData = @"checked";
                 break;
-                
-            default:
+            }
+            default: {
                 break;
+            }
         }
         [h5 appendFormat:@"\n <p> <button class=\"w180Green\" type='button' \" > %@ </button> \n\
          <input type='radio' name='method' id='methodGet'      value='%li' %@ /><label for='methodGet'>GET</label>\n\
