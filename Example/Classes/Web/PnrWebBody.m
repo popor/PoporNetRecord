@@ -226,23 +226,14 @@
         [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%@</font></p>", colorKey, PnrRootUrl2, colorValue, pnrEntity.url];
         
         NSString * methodName;
-        switch (pnrEntity.method) {
-            case PoporMethodGet:{
-                methodName = @"Get";
-                break;
-            }
-            case PoporMethodPost: {
-                methodName = @"Post(Json)";
-                break;
-            }
-            case PoporMethodFormData: {
-                methodName = @"Post(Form-Data)";
-                break;
-            }
-            default: {
-                methodName = [NSString stringWithFormat:@"未知(%li)", pnrEntity.method];
-                break;
-            }
+        if (pnrEntity.method == PoporMethodGet) {
+            methodName = @"Get";
+        } else if (pnrEntity.method == PoporMethodPost) {
+            methodName = @"Post(Json)";
+        } else if (pnrEntity.method == PoporMethodFormData) {
+            methodName = @"Post(Form-Data)";
+        } else {
+            methodName = [NSString stringWithFormat:@"未知(%li)", pnrEntity.method];
         }
         
         [h5 appendFormat:@"<p><font color='%@'>%@&nbsp;</font><font color='%@'>%@</font></p>", colorKey, PnrRootMethod4, colorValue, methodName];
@@ -268,23 +259,14 @@
         NSString * checkGet      = @"";
         NSString * checkPost     = @"";
         NSString * checkFormData = @"";
-        switch (pnrEntity.method) {
-            case PoporMethodGet: {
-                checkGet = @"checked";
-                break;
-            }
-            case PoporMethodPost: {
-                checkPost = @"checked";
-                break;
-            }
-            case PoporMethodFormData: {
-                checkFormData = @"checked";
-                break;
-            }
-            default: {
-                break;
-            }
-        }
+        if (pnrEntity.method == PoporMethodGet) {
+           checkGet = @"checked";
+        } else if (pnrEntity.method == PoporMethodPost) {
+            checkPost = @"checked";
+        } else if (pnrEntity.method == PoporMethodFormData) {
+            checkFormData = @"checked";
+        } else {}
+        
         [h5 appendFormat:@"\n <p> <button class=\"w180Green\" type='button' \" > %@ </button> \n\
          <input type='radio' name='method' id='methodGet'      value='%li' %@ /><label for='methodGet'>GET</label>\n\
          <input type='radio' name='method' id='methodPost'     value='%li' %@ /><label for='methodPost'>POST(Json)</label>\n\
