@@ -77,6 +77,5 @@ Pod::Spec.new do |s|
   s.dependency 'GCDWebServer/WebUploader'
   s.dependency 'GCDWebServer/WebDAV'
   
-  s.dependency 'PoporAFN', #本来想引用的PoporAFN里面的method,可是cocoapods经过了好几年,都无法使用另一个pod里面的变量作为switch.很坑.
-  
+  s.dependency 'PoporAFN'
 end
