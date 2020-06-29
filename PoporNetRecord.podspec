@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name     = 'PoporNetRecord'
-  s.version  = '1.11'
+  s.version  = '1.12'
   s.summary  = 'PoporNetRecord will record net request only in debug configuration'
   
   s.homepage = 'https://github.com/popor/PoporNetRecord'
@@ -76,5 +76,7 @@ Pod::Spec.new do |s|
   s.dependency 'GCDWebServer'
   s.dependency 'GCDWebServer/WebUploader'
   s.dependency 'GCDWebServer/WebDAV'
+  
+  s.dependency 'PoporAFN'
   
 end

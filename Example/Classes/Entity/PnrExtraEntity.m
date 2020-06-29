@@ -56,7 +56,7 @@ static NSString * PnrExtraUrlPortForwardKey = @"PnrExtraUrlPortForwardKey";
         NSArray * array = [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
         
         for (NSDictionary * dic in array) {
-            NSLog(@"one d: %@", dic);
+            //NSLog(@"one d: %@", dic);
             PnrExtraUrlPortEntity * entity = [PnrExtraUrlPortEntity new];
             entity.title = dic[@"title"]; //@"本地";
             entity.url   = dic[@"url"];   //@"http://127.0.0.1";

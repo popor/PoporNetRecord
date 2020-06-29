@@ -66,6 +66,17 @@ config.recordBlock = ^(NSString *url, NSString *title, NSString *method, id head
 };
 
 ```
+```
+1.02: 应对AFN 4.0 最低iOS9.0
+
+```
+
+1.03: 注释了过期代码
+修改之前仓促的修改, 允许单独设置header或者使用默认的manger.header.
+更新接口.
+
+1.04: 增加了form-data请求类型 和 progress 接口.
+鉴于种类太多,  修改了PoporAfnRecordBlock的method的定义
 
 ## Author
 

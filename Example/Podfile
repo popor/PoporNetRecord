@@ -6,7 +6,11 @@ target 'PoporNetRecord_Example' do
   # 忽略pod第三方库文件警告
   inhibit_all_warnings!
   
-  pod 'PoporAFN'
+  # 推荐继续使用 传统的 pod
+  #  source 'https://github.com/CocoaPods/Specs.git'
+  #source 'https://cdn.cocoapods.org/'
+  
+  pod 'PoporAFN', '1.05'  #,:path => '../../PoporAFN'
   
   target 'PoporNetRecord_Tests' do
     inherit! :search_paths

@@ -7,6 +7,7 @@
 //
 
 #import "UITextField+pMaxLength.h"
+#import "UITextField+pTextRange.h"
 
 @implementation UITextField (pMaxLength)
 
@@ -30,14 +31,14 @@
     [[NSNotificationCenter defaultCenter] removeObserver:target name:UITextFieldTextDidChangeNotification object:nil];
 }
 
-- (void)textFieldMaxLength:(int)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock
+- (void)textFieldMaxLength:(NSInteger)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self delayML:maxLength block:textFieldBlock];
     });
 }
 
-- (void)delayML:(int)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock
+- (void)delayML:(NSInteger)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock
 {
     NSString *toBeString = self.text;
     
@@ -71,31 +72,6 @@
             textFieldBlock(NO, NO);
         }
     }
-}
-
-- (NSRange) selectedRange
-{
-    UITextPosition* beginning = self.beginningOfDocument;
-    
-    UITextRange* selectedRange = self.selectedTextRange;
-    UITextPosition* selectionStart = selectedRange.start;
-    UITextPosition* selectionEnd = selectedRange.end;
-    
-    const NSInteger location = [self offsetFromPosition:beginning toPosition:selectionStart];
-    const NSInteger length = [self offsetFromPosition:selectionStart toPosition:selectionEnd];
-    
-    return NSMakeRange(location, length);
-}
-
-- (void) setSelectedRange:(NSRange) range  // 备注：UITextField必须为第一响应者才有效
-{
-    UITextPosition* beginning = self.beginningOfDocument;
-    
-    UITextPosition* startPosition = [self positionFromPosition:beginning offset:range.location];
-    UITextPosition* endPosition = [self positionFromPosition:beginning offset:range.location + range.length];
-    UITextRange* selectionRange = [self textRangeFromPosition:startPosition toPosition:endPosition];
-    
-    [self setSelectedTextRange:selectionRange];
 }
 
 @end

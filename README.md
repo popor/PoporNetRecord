@@ -85,6 +85,9 @@ autoFixIphoneXFrame : 默认为YES, 防止ballBT位于在屏幕上方出现, iPh
 
 @property (nonatomic, strong) NSString => @property (nonatomic, copy  ) NSString
 
+1.12
+pod 更新 poporAFN, 增加formData
+
 ## Author
 
 wangkq, 908891024@qq.com

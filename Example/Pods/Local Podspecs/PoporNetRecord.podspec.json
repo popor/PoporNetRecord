@@ -1,6 +1,6 @@
 {
   "name": "PoporNetRecord",
-  "version": "1.11",
+  "version": "1.12",
   "summary": "PoporNetRecord will record net request only in debug configuration",
   "homepage": "https://github.com/popor/PoporNetRecord",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/popor/PoporNetRecord.git",
-    "tag": "1.11"
+    "tag": "1.12"
   },
   "platforms": {
     "ios": "8.0"
@@ -62,6 +62,9 @@
 
     ],
     "GCDWebServer/WebDAV": [
+
+    ],
+    "PoporAFN": [
 
     ]
   },

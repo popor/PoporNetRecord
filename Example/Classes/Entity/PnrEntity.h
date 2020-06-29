@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <PoporAFN/PoporAFN.h>
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -66,7 +68,7 @@ static NSString * PnrClassTaAutoH  = @"TaAutoH";
 @property (nonatomic, copy  ) NSString * url;
 @property (nonatomic, copy  ) NSString * domain;
 @property (nonatomic, copy  ) NSString * path;
-@property (nonatomic, copy  ) NSString * method;// post get
+@property (nonatomic        ) PoporMethod method;
 
 @property (nonatomic, strong) id       headValue;
 @property (nonatomic, strong) id       parameterValue;
