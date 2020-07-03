@@ -10,7 +10,8 @@ target 'PoporNetRecord_Example' do
   #  source 'https://github.com/CocoaPods/Specs.git'
   #source 'https://cdn.cocoapods.org/'
   
-  pod 'PoporAFN', '1.05'  #,:path => '../../PoporAFN'
+  pod 'PoporAFN', '1.07'  #,:path => '../../PoporAFN'
+  #pod 'PoporAFN', :path => '../../PoporAFN'
   
   target 'PoporNetRecord_Tests' do
     inherit! :search_paths

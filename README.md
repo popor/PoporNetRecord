@@ -89,6 +89,9 @@ autoFixIphoneXFrame : 默认为YES, 防止ballBT位于在屏幕上方出现, iPh
 afn 增加formData, 
 请求方法method和poporAFN中的一致, 但是pod不支持直接使用, 所以重新命名了一套变量
 
+1.14
+更新请求接口UI
+
 ## Author
 
 wangkq, 908891024@qq.com

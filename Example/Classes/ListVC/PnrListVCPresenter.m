@@ -10,6 +10,7 @@
 
 #import "PnrWebServer.h"
 #import "PnrConfig.h"
+#import "PnrExtraEntity.h"
 
 #import "PnrDetailVC.h"
 #import "PnrExtraVC.h"
@@ -381,9 +382,30 @@
     }
 }
 
+- (void)updateTransmitBT {
+    PnrExtraEntity * e = [PnrExtraEntity share];
+    NSString * title   = e.forward ? @"已打开转发":@"已关闭转发";
+    UIColor * color    = e.forward ? PnrColorGreen:PnrColorRed;
+    UIButton * bt      = self.view.transmitBT;
+    {
+        UIImage * image = [UIImage imageFromColor:color size:CGSizeMake(10, 10) corner:5];
+        [bt setImage:image forState:UIControlStateNormal];
+    }
+    {
+        PnrExtraEntity * e = [PnrExtraEntity share];
+        
+        NSMutableAttributedString * att = [NSMutableAttributedString new];
+        [att addString:[NSString stringWithFormat:@"  %@ ", title] font:[UIFont systemFontOfSize:15] color:color];
+        
+        [att addString:e.selectUrlPort font:[UIFont systemFontOfSize:15] color:[UIColor blackColor]];
+        
+        [bt setAttributedTitle:att forState:UIControlStateNormal];
+    }
+}
+
 - (void)editPortAction {
     {
-        NSString * message = @"端口修改后，下次启动生效";// @"Get端口和Post端口\n修改后，下次启动生效"
+        NSString * message = @"日志端口修改后，下次启动生效";// @"Get端口和Post端口\n修改后，下次启动生效"
         UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
         
         [oneAC addTextFieldWithConfigurationHandler:^(UITextField *textField){
@@ -413,6 +435,28 @@
         
         [oneAC addAction:cancleAction];
         [oneAC addAction:changeAction];
+        
+        [self.view.vc presentViewController:oneAC animated:YES completion:nil];
+    }
+}
+
+- (void)transmitBTAction {
+    PnrExtraEntity * e = [PnrExtraEntity share];
+    NSString * title = e.forward ? @"关闭":@"打开" ;
+    __weak typeof(self) weakSelf = self;
+    {
+        UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:@"提醒" message:[NSString stringWithFormat:@"确认%@转发功能吗?", title] preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction * okAction = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            e.forward = !e.forward;
+            
+            [e saveForward];
+            [weakSelf updateTransmitBT];
+        }];
+        
+        [oneAC addAction:cancleAction];
+        [oneAC addAction:okAction];
         
         [self.view.vc presentViewController:oneAC animated:YES completion:nil];
     }

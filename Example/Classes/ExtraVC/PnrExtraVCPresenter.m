@@ -84,7 +84,7 @@
     }
     PnrExtraUrlPortEntity * ue = self.extraEntity.urlPortArray[indexPath.row];
     cell.textLabel.text        = ue.title;
-    cell.detailTextLabel.text  = [NSString stringWithFormat:@"%@:%@", ue.url, ue.port];
+    cell.detailTextLabel.text  = [NSString stringWithFormat:@"%@:%@/%@", ue.url, ue.port, ue.api];
     
     if (self.extraEntity.selectNum == indexPath.row) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -128,15 +128,18 @@
         __weak typeof(self) weakSelf = self;
         
         UITableViewRowAction *action00 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"标题" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-            [weakSelf updateEntity:ue type:0 indexPath:indexPath];
+            [weakSelf updateEntity:ue type:PnrExtraUrlPortEntityType_title indexPath:indexPath];
         }];
         
         UITableViewRowAction *action01 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"域名" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-            [weakSelf updateEntity:ue type:1 indexPath:indexPath];
+            [weakSelf updateEntity:ue type:PnrExtraUrlPortEntityType_url indexPath:indexPath];
         }];
         
         UITableViewRowAction *action02 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"端口" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-            [weakSelf updateEntity:ue type:2 indexPath:indexPath];
+            [weakSelf updateEntity:ue type:PnrExtraUrlPortEntityType_port indexPath:indexPath];
+        }];
+        UITableViewRowAction *action03 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"接口" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+            [weakSelf updateEntity:ue type:PnrExtraUrlPortEntityType_api indexPath:indexPath];
         }];
         
         action00.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
@@ -148,9 +151,9 @@
             [weakSelf deleteEntity:ue];
         }];
         if (indexPath.row == 0) {
-            return @[action01];
+            return @[action03, action02, action01];
         } else {
-            return @[action1, action02, action01, action00];
+            return @[action1, action03, action02, action01, action00];
         }
         
     }else{
@@ -175,6 +178,11 @@
         case PnrExtraUrlPortEntityType_port: {
             title = @"端口";
             text = ue.port;
+            break;
+        }
+        case PnrExtraUrlPortEntityType_api: {
+            title = @"接口";
+            text = ue.api;
             break;
         }
         default:
@@ -207,6 +215,10 @@
                     ue.port = tf.text;
                     break;
                 }
+                case PnrExtraUrlPortEntityType_api: {
+                    ue.api = tf.text;
+                    break;
+                }
                 default:
                     return;
             }
@@ -218,7 +230,8 @@
             // 刷新数据: 如果编辑的是选择
             switch (type) {
                 case PnrExtraUrlPortEntityType_url: {
-                case PnrExtraUrlPortEntityType_port: {
+                case PnrExtraUrlPortEntityType_port:
+                case PnrExtraUrlPortEntityType_api:{
                     if (indexPath.row == pee.selectNum) {
                         [pee updateSelectUrlPort];
                     }

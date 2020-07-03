@@ -20,6 +20,7 @@
 // self   : 自己的
 @property (nonatomic, strong) UITableView     * infoTV;
 @property (nonatomic, strong) UIButton        * serverBT;
+@property (nonatomic, strong) UIButton        * transmitBT; // 转发
 @property (nonatomic, copy  ) BlockPVoid      closeBlock;
 
 @property (nonatomic, strong) AlertBubbleView * alertBubbleView;
@@ -45,6 +46,8 @@
 - (void)closeAction;
 - (void)clearAction;
 - (void)updateServerBT;
+- (void)updateTransmitBT;
+- (void)transmitBTAction;
 
 - (void)editPortAction;
 

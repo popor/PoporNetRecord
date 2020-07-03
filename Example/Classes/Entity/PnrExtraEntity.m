@@ -40,7 +40,7 @@ static NSString * PnrExtraUrlPortForwardKey = @"PnrExtraUrlPortForwardKey";
     NSMutableString * json = [NSMutableString new];
     [json appendString:@"["];
     for (PnrExtraUrlPortEntity * e in self.urlPortArray) {
-        [json appendFormat:@"{\"title\":\"%@\",\"url\":\"%@\",\"port\":\"%@\"},", e.title, e.url, e.port];
+        [json appendFormat:@"{\"title\":\"%@\",\"url\":\"%@\",\"port\":\"%@\",\"api\":\"%@\"},", e.title, e.url, e.port, e.api];
     }
     [json deleteCharactersInRange:(NSRange){json.length-1, 1}];
     [json appendString:@"]"];
@@ -61,7 +61,7 @@ static NSString * PnrExtraUrlPortForwardKey = @"PnrExtraUrlPortForwardKey";
             entity.title = dic[@"title"]; //@"本地";
             entity.url   = dic[@"url"];   //@"http://127.0.0.1";
             entity.port  = dic[@"port"];  //@"9000";
-            
+            entity.api   = dic[@"api"];;
             [self.urlPortArray addObject:entity];
         }
         
@@ -70,6 +70,7 @@ static NSString * PnrExtraUrlPortForwardKey = @"PnrExtraUrlPortForwardKey";
         entity.title = @"本地";
         entity.url   = @"http://127.0.0.1";
         entity.port  = @"9000";
+        entity.api   = @"api";
         
         [self.urlPortArray addObject:entity];
         
@@ -96,7 +97,7 @@ static NSString * PnrExtraUrlPortForwardKey = @"PnrExtraUrlPortForwardKey";
 
 - (void)updateSelectUrlPort {
     PnrExtraUrlPortEntity * entity = self.urlPortArray[self.selectNum];
-    self.selectUrlPort = [NSString stringWithFormat:@"%@:%@", entity.url, entity.port];
+    self.selectUrlPort = [NSString stringWithFormat:@"%@:%@/%@", entity.url, entity.port, entity.api];
 }
 
 - (void)saveForward {

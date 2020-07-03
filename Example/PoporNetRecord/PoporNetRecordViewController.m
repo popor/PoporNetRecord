@@ -103,7 +103,7 @@
       @"a":@"a",
       @"x":@"x",
       };
-    [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:PoporMethodGet head:@{@"os":@"iOS", @"key":value} parameter:pDic response:@"responseText"];
+    [PoporNetRecord addUrl:@"http://www.baidu.com/auto?a=a&b=b" title:autoTitle method:PnrMethodGet head:@{@"os":@"iOS", @"key":value} parameter:pDic response:@"responseText"];
     AlertToastTitle(@"增加网路请求");
 }
 
@@ -118,33 +118,33 @@
     //NSDictionary * responseDic = @{@"success":@"true", @"child":@{@"name":@"abc", @"age":@(100)}, @"food":@[@"apple", @"orange"], @"device":@[@"bicyle", @"car",]};
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson1" title:@"测试数据" method:PoporMethodPost head:@{@"os":@"iOS"} parameter:@{@"name":@"popor"} response:responseDic];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson1" title:@"测试数据" method:PnrMethodPost head:@{@"os":@"iOS"} parameter:@{@"name":@"popor"} response:responseDic];
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson2" method:PoporMethodPost head:@{@"os":@"iOS"} parameter:@{@"name":@"popor"} response:responseDic];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson2" method:PnrMethodPost head:@{@"os":@"iOS"} parameter:@{@"name":@"popor"} response:responseDic];
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson3" method:PoporMethodPost head:@{@"os":@"iOS"} parameter:@{@"name":@"popor"} response:responseDic];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson3" method:PnrMethodPost head:@{@"os":@"iOS"} parameter:@{@"name":@"popor"} response:responseDic];
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson4" method:PoporMethodGet head:@{@"os":@"iOS"} parameter:nil response:responseDic];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/testJson4" method:PnrMethodGet head:@{@"os":@"iOS"} parameter:nil response:responseDic];
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText12345678901234567890" title:@"测试数据" method:PoporMethodGet head:@{@"os":@"iOS"} parameter:nil response:@"responseText"];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText12345678901234567890" title:@"测试数据" method:PnrMethodGet head:@{@"os":@"iOS"} parameter:nil response:@"responseText"];
     });
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText2232423234?a=32&b=1234567890" title:@"测试数据" method:PoporMethodGet head:@"head" parameter:@"request" response:@"responseText"];
+        [PoporNetRecord addUrl:@"http://www.baidu.com/TestText2232423234?a=32&b=1234567890" title:@"测试数据" method:PnrMethodGet head:@"head" parameter:@"request" response:@"responseText"];
     });
     
     for (int i=0; i<8; i++) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((2+ i*1) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSString * autoTitle = [NSString stringWithFormat:@"测试数据:%i", i+1];
             NSLog(@"auto title : %@ ", autoTitle);
-            [PoporNetRecord addUrl:@"http://www.baidu.com/auto_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890" title:autoTitle method:PoporMethodGet head:@{@"os":@"iOS"} parameter:@"request" response:@"responseText"];
+            [PoporNetRecord addUrl:@"http://www.baidu.com/auto_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890_1234567890" title:autoTitle method:PnrMethodGet head:@{@"os":@"iOS"} parameter:@"request" response:@"responseText"];
         });
     }
     
@@ -194,9 +194,9 @@
     [PoporNetRecord share].blockExtraRecord = ^(PnrEntity * entity){
         PnrExtraEntity * e = [PnrExtraEntity share];
         if (e.forward) {
-            pnrExtraForwadUrl = [NSString stringWithFormat:@"%@/add", e.selectUrlPort];
+            pnrExtraForwadUrl = e.selectUrlPort;
             if (![pnrExtraForwadUrl isEqualToString:entity.url]) {
-                [PoporAFNTool title:@"" url:pnrExtraForwadUrl method:PoporMethodPost parameters:entity.desDic afnManager:nil header:nil progress:nil success:nil failure:nil];
+                [PoporAFNTool title:@"" url:pnrExtraForwadUrl method:PoporMethodPost parameters:entity.desDic success:nil failure:nil];
             }
         }
     };

@@ -14,6 +14,7 @@ typedef NS_ENUM(int, PnrExtraUrlPortEntityType) {
     PnrExtraUrlPortEntityType_title ,
     PnrExtraUrlPortEntityType_url ,
     PnrExtraUrlPortEntityType_port ,
+    PnrExtraUrlPortEntityType_api ,
 };
 
 
@@ -23,6 +24,7 @@ typedef NS_ENUM(int, PnrExtraUrlPortEntityType) {
 @property (nonatomic, copy  ) NSString * title;
 @property (nonatomic, copy  ) NSString * url;
 @property (nonatomic, copy  ) NSString * port;
+@property (nonatomic, copy  ) NSString * api;
 
 @end
 
