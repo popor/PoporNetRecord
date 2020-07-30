@@ -51,6 +51,7 @@
     if (self.view.blockExtraRecord) {
         PnrEntity * pnrEntity = [PnrEntity new];
         pnrEntity.title = @"转发文本";
+        pnrEntity.url   = @"";// 防止提交数据时候非空判断,导致无法传递.
         pnrEntity.time  = [NSDate stringFromDate:[NSDate date] formatter:@"HH:mm:ss"];
         pnrEntity.log = self.view.textTV.text;
         pnrEntity.deviceName = [[UIDevice currentDevice] name];;
