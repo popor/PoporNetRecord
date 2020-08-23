@@ -191,4 +191,20 @@
     return (NSInteger)([secondTime integerValue]/3600);
 }
 
+#pragma mark - 时钟text
++ (NSString *)clockText:(NSTimeInterval)time {
+    NSInteger hour = floor(time / 3600);
+    CGFloat minute = fmod(floor(time/60), 60);
+    CGFloat second = fmod(time, 60);
+    
+    if (hour < 0 || minute < 0 || second < 0) {
+        return @"00:00";
+    }
+    if (hour > 0) {
+        return [NSString stringWithFormat:@"%02li:%02.0f:%02.0f", hour, minute, second];
+    } else {
+        return [NSString stringWithFormat:@"%02.0f:%02.0f", minute, second];
+    }
+}
+
 @end

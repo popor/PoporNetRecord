@@ -16,7 +16,7 @@
 #import "PnrExtraVC.h"
 #import "PnrMessageVC.h"
 #import "PnrListVCCell.h"
-#import <PoporFoundation/NSString+pAtt.h>
+#import <PoporFoundation/NSMutableAttributedString+pAtt.h>
 #import <PoporUI/UIDevice+pTool.h>
 #import <PoporUI/UIImage+pCreate.h>
 

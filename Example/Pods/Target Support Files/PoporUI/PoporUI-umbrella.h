@@ -18,6 +18,7 @@
 #import "UIDevice+pTool.h"
 #import "UIImage+pColorAtPixel.h"
 #import "UIImage+pCreate.h"
+#import "UIImage+pEffects.h"
 #import "UIImage+pGradient.h"
 #import "UIImage+pRead.h"
 #import "UIImage+pSave.h"

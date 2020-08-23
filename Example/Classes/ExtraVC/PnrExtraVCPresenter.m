@@ -10,7 +10,7 @@
 
 #import "PnrConfig.h"
 #import "PnrExtraEntity.h"
-#import <PoporFoundation/NSString+pAtt.h>
+#import <PoporFoundation/NSMutableAttributedString+pAtt.h>
 #import <PoporUI/UIImage+pCreate.h>
 
 @interface PnrExtraVCPresenter ()

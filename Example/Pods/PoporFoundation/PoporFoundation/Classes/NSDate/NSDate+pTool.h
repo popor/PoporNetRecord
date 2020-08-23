@@ -81,6 +81,10 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 获取时差
 + (NSInteger)getZoneHour;
 
+#pragma mark - 时钟text
+// 时间为负数的话, 显示为 00:00
++ (NSString *)clockText:(NSTimeInterval)time;
+
 @end
 
 NS_ASSUME_NONNULL_END

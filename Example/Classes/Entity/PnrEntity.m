@@ -11,7 +11,7 @@
 #import "PnrConfig.h"
 #import "PnrPortEntity.h"
 #import <JSONSyntaxHighlight/JSONSyntaxHighlight.h>
-#import <PoporFoundation/NSString+pAtt.h>
+#import <PoporFoundation/NSMutableAttributedString+pAtt.h>
 
 @implementation PnrEntity
 
