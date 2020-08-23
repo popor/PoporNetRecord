@@ -12,6 +12,8 @@
 #import <PoporAlertBubbleView/AlertBubbleView.h>
 #import "PnrPrefix.h"
 
+static CGFloat PnrListVCConfigCellHeight = 50;
+
 // 对外接口
 @protocol PnrListVCProtocol <NSObject>
 

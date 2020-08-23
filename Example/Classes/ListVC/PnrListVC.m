@@ -159,7 +159,7 @@
     
     [oneTV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
-        make.top.mas_equalTo(self.transmitBT.mas_bottom);
+        make.top.mas_equalTo(0);
         make.right.mas_equalTo(0);
         make.bottom.mas_equalTo(0);
     }];
@@ -194,6 +194,7 @@
 - (void)addServerBT {
     self.serverBT = ({
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(0, 0, self.view.frame.size.width, PnrListVCConfigCellHeight);
         [button setBackgroundColor:[UIColor whiteColor]];
         button.titleLabel.font = [UIFont systemFontOfSize:15];
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -202,11 +203,11 @@
         button.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         
         [button addTarget:self.present action:@selector(editPortAction) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
         button;
     });
     self.transmitBT = ({
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(0, 0, self.view.frame.size.width, PnrListVCConfigCellHeight);
         [button setBackgroundColor:[UIColor whiteColor]];
         button.titleLabel.font = [UIFont systemFontOfSize:15];
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -215,51 +216,8 @@
         button.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         
         [button addTarget:self.present action:@selector(transmitBTAction) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
         button;
     });
-    
-    [self.serverBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.top.mas_equalTo([PnrUITool fetchTopMargin:self.navigationController]);
-        
-        make.right.mas_equalTo(0);
-        make.height.mas_equalTo(40);
-    }];
-    [self.transmitBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.top.mas_equalTo(self.serverBT.mas_bottom);
-        
-        make.right.mas_equalTo(0);
-        make.height.mas_equalTo(40);
-    }];
-    
-    {
-        UIView * lineView = [UIView new];
-        lineView.backgroundColor = PRGB16(0XE3E3E3);
-        
-        [self.serverBT addSubview:lineView];
-        
-        [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(0);
-            make.right.mas_equalTo(0);
-            make.height.mas_equalTo(0.5);
-            make.bottom.mas_equalTo(0);
-        }];
-    }
-    {
-        UIView * lineView = [UIView new];
-        lineView.backgroundColor = PRGB16(0XE3E3E3);
-        
-        [self.transmitBT addSubview:lineView];
-        
-        [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(0);
-            make.right.mas_equalTo(0);
-            make.height.mas_equalTo(0.5);
-            make.bottom.mas_equalTo(0);
-        }];
-    }
 }
 
 @end
