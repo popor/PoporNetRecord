@@ -264,7 +264,7 @@
 				ORGANIZATIONNAME = wangkq;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = 6SK6RQ8S8Q;
+						DevelopmentTeam = 7DUQZP3WD7;
 						SystemCapabilities = {
 							com.apple.AccessWiFi = {
 								enabled = 1;
@@ -529,12 +529,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PoporNetRecord_Example.entitlements;
-				DEVELOPMENT_TEAM = 6SK6RQ8S8Q;
+				DEVELOPMENT_TEAM = 7DUQZP3WD7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PoporNetRecord/PoporNetRecord-Prefix.pch";
 				INFOPLIST_FILE = "PoporNetRecord/PoporNetRecord-Info.plist";
+				MARKETING_VERSION = 1.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ifcar99.wkq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyeduzj.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -546,12 +547,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PoporNetRecord_Example.entitlements;
-				DEVELOPMENT_TEAM = 6SK6RQ8S8Q;
+				DEVELOPMENT_TEAM = 7DUQZP3WD7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PoporNetRecord/PoporNetRecord-Prefix.pch";
 				INFOPLIST_FILE = "PoporNetRecord/PoporNetRecord-Info.plist";
+				MARKETING_VERSION = 1.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ifcar99.wkq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyeduzj.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

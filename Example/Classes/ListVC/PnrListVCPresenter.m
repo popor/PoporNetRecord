@@ -27,6 +27,8 @@
 @property (nonatomic, weak  ) PnrConfig * config;
 @property (nonatomic, weak  ) PnrExtraEntity * extraEntity;
 
+@property (nonatomic, weak  ) PnrListVCCell * lastSelectCell;
+@property (nonatomic, strong) UIImageView * viewImageView;
 @end
 
 @implementation PnrListVCPresenter
@@ -35,6 +37,10 @@
     if (self = [super init]) {
         self.config = [PnrConfig share];
         self.extraEntity = [PnrExtraEntity share];
+        
+        self.viewImageView = [UIImageView new];
+        self.viewImageView.image = [UIImage imageFromColor:PnrColorGreen size:CGSizeMake(10, 10) corner:5];
+        self.viewImageView.frame = CGRectMake(0, 0, 10, 10);
     }
     return self;
 }
@@ -188,16 +194,17 @@
                 PnrListVCCell * cell = [tableView dequeueReusableCellWithIdentifier:CellID];
                 if (!cell) {
                     cell = [[PnrListVCCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellID];
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 }
                 PnrEntity * entity = self.view.weakInfoArray[self.view.weakInfoArray.count -  indexPath.row - 1];
                 
                 if (entity.log) {
                     if (self.config.jsonViewLogDetail == PnrListTypeLogNull) {
                         cell.hidden = YES;
-                        cell.accessoryType = UITableViewCellAccessoryNone;
+                        //cell.accessoryType = UITableViewCellAccessoryNone;
                     }else{
                         cell.hidden = NO;
-                        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                        //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                         
                         NSMutableAttributedString * att = [NSMutableAttributedString new];
                         [att addString:entity.title font:self.config.listFontTitle color:self.config.listColorTitle];
@@ -208,10 +215,10 @@
                 }else{
                     if (self.config.jsonViewColorBlack == PnrListTypeTextNull) {
                         cell.hidden = YES;
-                        cell.accessoryType = UITableViewCellAccessoryNone;
+                        //cell.accessoryType = UITableViewCellAccessoryNone;
                     }else{
                         cell.hidden = NO;
-                        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                        //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                         
                         if (entity.title) {
                             NSMutableAttributedString * att = [NSMutableAttributedString new];
@@ -292,23 +299,31 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.view.infoTV) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        
-        PnrEntity * entity = self.view.weakInfoArray[self.view.weakInfoArray.count -  indexPath.row - 1];
-        
-        __weak typeof(self) weakSelf = self;
-        [entity getJsonArrayBlock:^(NSArray *titleArray, NSArray *jsonArray, NSMutableArray *cellAttArray) {
+        if (indexPath.section == 1) {
+            PnrListVCCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+            if (self.lastSelectCell != cell) {
+                self.lastSelectCell.accessoryView = nil;
+                self.lastSelectCell = cell;
+                self.lastSelectCell.accessoryView = self.viewImageView;
+            }
             
-            NSDictionary * vcDic = @{
-                @"title":@"请求详情",
-                @"jsonArray":jsonArray,
-                @"titleArray":titleArray,
-                @"cellAttArray":cellAttArray,
-                @"blockExtraRecord":self.view.blockExtraRecord,
-                @"weakPnrEntity":entity,
-            };
-            [weakSelf.view.vc.navigationController pushViewController:[[PnrDetailVC alloc] initWithDic:vcDic] animated:YES];
-        }];
-       
+            PnrEntity * entity = self.view.weakInfoArray[self.view.weakInfoArray.count -  indexPath.row - 1];
+            
+            __weak typeof(self) weakSelf = self;
+            [entity getJsonArrayBlock:^(NSArray *titleArray, NSArray *jsonArray, NSMutableArray *cellAttArray) {
+                
+                NSDictionary * vcDic = @{
+                    @"title":@"请求详情",
+                    @"jsonArray":jsonArray,
+                    @"titleArray":titleArray,
+                    @"cellAttArray":cellAttArray,
+                    @"blockExtraRecord":self.view.blockExtraRecord,
+                    @"weakPnrEntity":entity,
+                };
+                [weakSelf.view.vc.navigationController pushViewController:[[PnrDetailVC alloc] initWithDic:vcDic] animated:YES];
+            }];
+        }
+        
     }else{
         PnrCellEntity * cellEntity = self.view.rightBarArray[indexPath.row];
         switch (cellEntity.type) {
@@ -343,6 +358,19 @@
     }
     
 }
+
+//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (tableView == self.view.infoTV) {
+//        if (indexPath.section == 1) {
+//            PnrListVCCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+//
+//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//        }
+//
+//
+//    }
+//}
+
 
 #pragma mark - cell 侧滑功能
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
