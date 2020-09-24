@@ -35,7 +35,7 @@
     [super viewDidLoad];
     
     {
-        [PnrExtraEntity share];
+       
         
     }
     self.title = @"PoporNetRecord";
@@ -178,6 +178,17 @@
 }
 
 - (void)addPnrSettings {
+    
+    [PnrExtraEntity shareConfig:^(PnrExtraEntity * _Nonnull pnrExtraEntity) {
+
+        pnrExtraEntity.defaultForward = YES;// 默认是否转发
+        pnrExtraEntity.defaultTitle   = @"默认本地:自定义";
+        pnrExtraEntity.defaultUrl     = @"http://127.0.0.1";
+        pnrExtraEntity.defaultPort    = @"9000";
+        pnrExtraEntity.defaultApi     = @"api";
+        
+    }];
+    
     PnrConfig * config = [PnrConfig share];
     {
         config.webRootTitle = @"PnrTest";
@@ -187,6 +198,12 @@
         path = [[NSBundle mainBundle] pathForResource:@"favicon2" ofType:@"ico"];
         NSData *data   = [[NSData alloc] initWithContentsOfFile:path];
         config.webIconData = data;
+        
+        //        config.extraDefaultTitle = @"默认本地";
+        //        config.extraDefaultUrl   = @"http://127.0.0.1";
+        //        config.extraDefaultPort  = @"9000";
+        //        config.extraDefaultApi   = @"api";
+
     }
     
     __block NSString * pnrExtraForwadUrl;

@@ -28,6 +28,8 @@ typedef NS_ENUM(int, PnrExtraUrlPortEntityType) {
 
 @end
 
+@class PnrExtraEntity;
+typedef void(^PnrExtraEntityBlock)(PnrExtraEntity * pnrExtraEntity);
 
 @interface PnrExtraEntity : NSObject
 
@@ -37,7 +39,29 @@ typedef NS_ENUM(int, PnrExtraUrlPortEntityType) {
 
 @property (nonatomic, strong) NSMutableArray<PnrExtraUrlPortEntity *> * urlPortArray;
 
-+ (instancetype)share;
+//// 额外的的默认参数
+@property (nonatomic        ) BOOL       defaultForward;// 默认是否转发
+@property (nonatomic, copy  ) NSString * defaultTitle;
+@property (nonatomic, copy  ) NSString * defaultUrl;
+@property (nonatomic, copy  ) NSString * defaultPort;
+@property (nonatomic, copy  ) NSString * defaultApi;
+
+/**
+ 这个获取单例, 只需要执行一次, 可以在block中初始化一些默认参数:
+ 
+ defaultForward;// 默认是否转发
+ defaultTitle;
+ defaultUrl;
+ defaultPort;
+ defaultApi;
+ 
+ */
++ (instancetype)shareConfig:(PnrExtraEntityBlock)block; // 包含初始化单例和数据.
+
+// 普通获取 单例
++ (instancetype)share; // 包含初始化单例, 0.2后, 假如发现没有初始化数据, 则自动初始化数据.
+
+- (void)initData;
 
 - (void)saveArray;
 

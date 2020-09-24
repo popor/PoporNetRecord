@@ -2622,7 +2622,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView.modulemap";
 				PRODUCT_MODULE_NAME = PoporAlertBubbleView;
@@ -2842,7 +2842,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PoporUI/PoporUI-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PoporUI/PoporUI-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PoporUI/PoporUI.modulemap";
 				PRODUCT_MODULE_NAME = PoporUI;
@@ -2873,7 +2873,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PoporNetRecord/PoporNetRecord-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PoporNetRecord/PoporNetRecord-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PoporNetRecord/PoporNetRecord.modulemap";
 				PRODUCT_MODULE_NAME = PoporNetRecord;
@@ -2903,7 +2903,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PoporFoundation/PoporFoundation-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PoporFoundation/PoporFoundation-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PoporFoundation/PoporFoundation.modulemap";
 				PRODUCT_MODULE_NAME = PoporFoundation;
@@ -2967,7 +2967,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/GCDWebServer/GCDWebServer-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GCDWebServer/GCDWebServer-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/GCDWebServer/GCDWebServer.modulemap";
 				PRODUCT_MODULE_NAME = GCDWebServer;
@@ -3095,7 +3095,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
 				PRODUCT_MODULE_NAME = Masonry;
@@ -3125,7 +3125,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight.modulemap";
 				PRODUCT_MODULE_NAME = JSONSyntaxHighlight;
@@ -3155,7 +3155,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PoporUI/PoporUI-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PoporUI/PoporUI-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PoporUI/PoporUI.modulemap";
 				PRODUCT_MODULE_NAME = PoporUI;
@@ -3185,7 +3185,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView.modulemap";
 				PRODUCT_MODULE_NAME = PoporAlertBubbleView;
@@ -3278,7 +3278,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
 				PRODUCT_MODULE_NAME = Masonry;
@@ -3309,7 +3309,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/GCDWebServer/GCDWebServer-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GCDWebServer/GCDWebServer-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/GCDWebServer/GCDWebServer.modulemap";
 				PRODUCT_MODULE_NAME = GCDWebServer;
@@ -3339,7 +3339,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PoporFoundation/PoporFoundation-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PoporFoundation/PoporFoundation-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PoporFoundation/PoporFoundation.modulemap";
 				PRODUCT_MODULE_NAME = PoporFoundation;
@@ -3369,7 +3369,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight.modulemap";
 				PRODUCT_MODULE_NAME = JSONSyntaxHighlight;
@@ -3400,7 +3400,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PoporNetRecord/PoporNetRecord-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PoporNetRecord/PoporNetRecord-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PoporNetRecord/PoporNetRecord.modulemap";
 				PRODUCT_MODULE_NAME = PoporNetRecord;
