@@ -124,6 +124,7 @@
         PnrEntity * entity = [PnrEntity new];
         entity.log   = log;
         entity.title = title;
+        entity.url   = @"无链接";
         entity.time  = [NSDate stringFromDate:[NSDate date] formatter:@"HH:mm:ss"];
         
         if (pnr.infoArray.count == 0) {
