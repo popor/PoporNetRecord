@@ -63,7 +63,7 @@
         NSArray * titleArray = @[[NSString stringWithFormat:@"%@\n%@", PnrRootPath1, title],
                                  [NSString stringWithFormat:@"%@\n%@", PnrRootUrl2, entity.url],
                                  [NSString stringWithFormat:@"%@\n%@", PnrRootTime3, entity.time],
-                                 [NSString stringWithFormat:@"%@\n%li", PnrRootMethod4, entity.method],
+                                 [NSString stringWithFormat:@"%@\n%li", PnrRootMethod4, (long)entity.method],
                                  
                                  [NSString stringWithFormat:@"%@\n", PnrRootHead5],
                                  [NSString stringWithFormat:@"%@\n", PnrRootParameter6],

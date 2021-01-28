@@ -103,7 +103,7 @@ static NSString * PnrExtraUrlPortForwardKey = @"PnrExtraUrlPortForwardKey";
 
 - (void)saveSelectNum:(NSInteger)selectNum {
     self.selectNum = selectNum;
-    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%li", selectNum] forKey:PnrExtraUrlPortSelectKey];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%li", (long)selectNum] forKey:PnrExtraUrlPortSelectKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self updateSelectUrlPort];

@@ -240,7 +240,7 @@
                 break;
             }
             default: {
-                methodName = [NSString stringWithFormat:@"未知(%li)", pnrEntity.method];
+                methodName = [NSString stringWithFormat:@"未知(%li)", (long)pnrEntity.method];
                 break;
             }
         }
@@ -289,7 +289,7 @@
          <input type='radio' name='method' id='methodGet'      value='%li' %@ /><label for='methodGet'>GET</label>\n\
          <input type='radio' name='method' id='methodPost'     value='%li' %@ /><label for='methodPost'>POST(Json)</label>\n\
          <input type='radio' name='method' id='methodFormData' value='%li' %@ /><label for='methodFormData'>Post(FormData)</label>\n\
-         </p>\n ", PnrRootMethod4, PnrMethodGet, checkGet, PnrMethodPost, checkPost, PnrMethodFormData, checkFormData];
+         </p>\n ", PnrRootMethod4, (long)PnrMethodGet, checkGet, (long)PnrMethodPost, checkPost, (long)PnrMethodFormData, checkFormData];
         
         btTaBlock(h5, PnrRootHead5,      @"head",      headStr);
         btTaBlock(h5, PnrRootParameter6, @"parameter", parameterStr);

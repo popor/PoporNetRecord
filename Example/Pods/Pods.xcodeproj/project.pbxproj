@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0211C162648EC48C4793A3A0E97B3855 /* PnrPortEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = EA87BCAB66F60F4630916FABD7A2F9DD /* PnrPortEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02131E914CD548E4B2B9513871D94C08 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AEA037AD80C58261FAC197B91EAA35 /* NSArray+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		02B6D06605845C9DBBA05EFCC2BD7858 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */; };
 		058C510D30128CEF4C7D82A4C5F2AA6E /* UITextField+pInsets.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D1B86BB26394D6083D7E8D2C98B25B3 /* UITextField+pInsets.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05A040F35BF1C88F869404E1A940B493 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D41CE59EFF822BFD6631C7A0C91F6DB5 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05EA1447EEA0EB669F8DEE73964A7C60 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B7926FF57F5F0437F7F88E4DE9AF477 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,9 +19,11 @@
 		0AF1AD35706D90B1A91F291B899EF8C0 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C43AEE15909365EAE3E1E2F7751B581 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0BBF8318D682957E68EAF751612F5101 /* GCDWebServerDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 383F530BC3F681A180A4F5FC459B0F02 /* GCDWebServerDataRequest.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0C834DBE73C7D78BD061B3086C183097 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29730C0848B39B6DA61C8291BE5177CB /* AFHTTPSessionManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0DCC520366BFAAC41DF8F3422242BCAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */; };
 		0E7FF8C6F624558702E00178BC97E84A /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = E292B50A05143EC752957DB58606595E /* MASViewAttribute.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		10B2135578DC45DA06E6EEB3CA9766D4 /* PoporAFN-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE6991ACBA373A95B12076E30CC27ED /* PoporAFN-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		119803720E02832EB8AD779E156CA301 /* PnrDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE7D68F23C3E0024D9061BC5CD3DDC7 /* PnrDetailVC.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1265940E6F208C395AACF2DE5A928EFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */; };
 		12E263CAE24019CFE3D33943B079439A /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 64EA12A10A9D3A251366CD2AD2E254AA /* MASConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		13B6123B90AAC170D341C22D794A6E49 /* NSDictionary+pTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CF660691D935AD761DFA90AF727DDA06 /* NSDictionary+pTool.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		141D480033FFF362E456086BDAF2E902 /* GCDWebServerResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 289763412ABC52C6D0497EBD5F87C2AD /* GCDWebServerResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,12 +42,12 @@
 		25C45B9D8F9ED5F12721C3B2D14D1146 /* JSONSyntaxHighlight-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8253C71FB3AA710698576610BD31E3B4 /* JSONSyntaxHighlight-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26416EFDD882611148F45741C6BCD5D8 /* Pods-PoporNetRecord_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 025A6BBA98F087D88408E6986F10FFF8 /* Pods-PoporNetRecord_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2657AB4F1D04803DABFE7DDF80C0EF7F /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = FC55394970ED38697AAB8985ACFB0BBF /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		27256E913790A1EC111854E3D10E67F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */; };
 		2777CAA3EE9771F9FB9121CAAD3AAE91 /* PoporNetRecord-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B08DE589F2BB54469EF3E29B973EA25 /* PoporNetRecord-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		280C319529E763F6EBB6C9CED9CBDFAD /* GCDWebServerFileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8305F7C2024456E61F5660FDAB083E /* GCDWebServerFileRequest.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		280D36330BAC5715615FF4A8B42D60D6 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = FEF98CA987028329CFB84D91676C36DF /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29E9C118A0D599D6C59ADF56E8113BA7 /* UIDevice+pScreenSize.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E5EAA20EC7C7D1F7EF1DB96BBC7953 /* UIDevice+pScreenSize.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2AB5C7D99BD529942B2C81AB0CD8A600 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EB280E5B9C5960C511F983FAE3BD4D05 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2AC412DFC6F9F0FA398731C398309BB7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2CB56B916033799770D8ECC08C5E62 /* CFNetwork.framework */; };
 		2B1434C7AFC4C1B29C833B965BCCCE60 /* UITextField+pInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D464D171686D4B41E0AB3ACB232D7E6 /* UITextField+pInsets.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2C43817529EB28E5896C72C9BE82A2FA /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A259BD56F9CE7D91C898BCF20C066 /* ViewController+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2C49A48E21C739F42F7F79953E7022BA /* NSString+pIDCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C79FBAB067E23BD61E1E663F11B739 /* NSString+pIDCard.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -57,6 +60,7 @@
 		352E1E48DB21EAB8B05F1ACE5D315DCA /* NSString+pAtt.h in Headers */ = {isa = PBXBuildFile; fileRef = F354DD30003CF4BB8463249DE1100AC6 /* NSString+pAtt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		361163A8288BD113F7B1A6B62F059439 /* NSAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2B5A582E3CA05EFEF84569BD53DD2 /* NSAssistant.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3635945C8010811BF4CAC715495DE0C8 /* IToastPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD6ACEAE958E5CD140A87B6984D4F1F /* IToastPTool.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		367522503E1451A5AAC8333D897951B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1159E252A3D7672F5E47A388096D3F80 /* UIKit.framework */; };
 		3758C7466CF4539520FE9ECD024E86A8 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C145EEA6FC285ADF1C272C5DA78F9C /* AFNetworkReachabilityManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		37DF9189CE91D297739D3D0882F6ED2F /* UIImage+pCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = D51DBFE4E781B91607A2876709572CF7 /* UIImage+pCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3815CF83AE352B4A0BB0837B13E57A2E /* PnrDetailVCPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6D8F79B412D2C0446757C550017504 /* PnrDetailVCPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -93,26 +97,28 @@
 		505A0529CDF3A5A2E694D0CE0BA81EDE /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B222FB0EFA37D12E08BF6FBD1140E3B2 /* View+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		51535C5E8B9B8BACD5DAE52FEF8501B3 /* PnrListVCPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A131302E65589A2B77ACF28E0B9C08C /* PnrListVCPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5461D95BD8B9024FE8FAEFFBFF18F43E /* NSString+pAtt.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A846C44074A956E78C4DA62C378049 /* NSString+pAtt.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		558419C90B0169B1AE0AEEDFCE351662 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */; };
 		57A68BC1588FD2695C93FE185F83B9D5 /* AlertBubbleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 852C3E5BAAE673909E7F3F742D0252ED /* AlertBubbleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		581F9804E65EC2166129C3109306EB80 /* UIDevice+pPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = A14944FDD39BA5965A31AF5F08BDA870 /* UIDevice+pPermission.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58AF805046CFD9986EFEAACCBA61F9BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */; };
 		58F90D363D0B57AA96BE11F4ED07E684 /* GCDWebServerFileRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9DA791633F6A54505864E646498029 /* GCDWebServerFileRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AE0F3D55BF5DF3D20D6C5054537EF92 /* GCDWebServerMultiPartFormRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = EA41900E970149638B0BA8B66A552CA4 /* GCDWebServerMultiPartFormRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D5AB502D85BF8E27246A5964F6B3E9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1159E252A3D7672F5E47A388096D3F80 /* UIKit.framework */; };
 		5D68AE9155078459C44BC89D19637DB6 /* IToastPTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 569D401B8E4FA683B31BCAE685B1FE39 /* IToastPTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DBBECF371AB3ED78F2456EBA3FE5F17 /* AlertBubbleFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 155AE86704DEBE5ED431C25B2BBC9F10 /* AlertBubbleFrame.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		5E47A6F1A58205037A9A90B1F2D2C43E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF12D3399F981C9301BD040DBBE4B8 /* UIKit.framework */; };
-		5EFD1E430603BDFAA441CB716C1203CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF12D3399F981C9301BD040DBBE4B8 /* UIKit.framework */; };
 		5F02C77CED4E053EAA76646D040C12AF /* NSAssistant.h in Headers */ = {isa = PBXBuildFile; fileRef = E52A5EA6F2CADDA78CC968E3383D8897 /* NSAssistant.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60D237B4C8F7C08B174589FF05A5A3A0 /* NSMutableParagraphStyle+pAtt.h in Headers */ = {isa = PBXBuildFile; fileRef = B4A85DC50EB5DBEBE909BCB48594A00F /* NSMutableParagraphStyle+pAtt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		610B3E025D42EF6EADB3DB91B91AAB28 /* UIImage+pColorAtPixel.h in Headers */ = {isa = PBXBuildFile; fileRef = C8D86AB878FFD85EF3131F058CC273C2 /* UIImage+pColorAtPixel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6257220AAE6E89D07B2D527F33CB6BD7 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E76DB85B803994E1730E1D6D0D2760C /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		638F27B5E47BFDA00F96517DA51DBA28 /* PoporAlertBubbleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0422AFA4B55231012B01DC53B298CE5D /* PoporAlertBubbleView.framework */; };
-		64790CF280E02B447EFC96CDC4546F8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF12D3399F981C9301BD040DBBE4B8 /* UIKit.framework */; };
+		644A85BF845D65EFD3A36AD2197533AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */; };
 		650C32A9C63B4A54F5914A4DBE3D7481 /* PnrWebBody.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EE90F32F48DB0D7394C5855DFA67FDE /* PnrWebBody.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65260F75CDAFDF23E731A5E01864DAF8 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E19BD98E702F7EB730A072529584EC04 /* UIRefreshControl+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6A6AD3A5BBDBFD0B4AF936BD518EC0B1 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 514A9265E873C176E14B555B92C4A695 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6CE65242438638D03CD011183A861848 /* NSString+pTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F59F48012617F7BCC3C49BE45A1797B5 /* NSString+pTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E2B4DF4F2DEDFDE2176C3924F5AAC38 /* PnrWebJs.h in Headers */ = {isa = PBXBuildFile; fileRef = C2752FB4E54D633A8D0895A043330C26 /* PnrWebJs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6EE482EF823C5090378A600998A120F9 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = A414305BEC7A26CC12FB39288DAF6F78 /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F6E3AA36B85ED5D8B83D5BE8697B276 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */; };
 		715F5BC805726862490ED9BDA679BF0F /* UIImage+pTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 151EE55DAF44A8A04EF4C9DB75FC128B /* UIImage+pTool.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		722EC0191A173ECB2121618467D32DF4 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 946F28ED02FE052E51F9A43CFFA15FFD /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		725397E961830CBDD98B43058066BC8A /* PoporNetRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = CC705201A47FAEF344BA24AACBC5BEE6 /* PoporNetRecord.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -129,6 +135,7 @@
 		7ED1C6501FCE11DF80876108B3AE2F60 /* PnrPortEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E55472792C03E141BB4AC2E7179A98 /* PnrPortEntity.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7FABC50154A5FB979BB87379CE0E890C /* PnrExtraVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 27E07EF708B610F253F4B9C4BCDDF094 /* PnrExtraVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81AE46A36CBFDD2519A02EADA988C006 /* PnrMessageVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A8B812676BE0089BC168271F8F3761 /* PnrMessageVCPresenter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		81FE47ED166B842B21830E893DE39B06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1159E252A3D7672F5E47A388096D3F80 /* UIKit.framework */; };
 		825827D3158E2DCE1E91FD463D36F3B0 /* PnrMessageVCProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = DABE58C43C0A0740AD3F1D5C01957765 /* PnrMessageVCProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		833CDB05FAA81D14121F362C0C621193 /* PoporAFN.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9CA5AE5E5B07F62D29DBB6465E49AA /* PoporAFN.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8343D236668058C696596A0A7E6A9CDC /* GCDWebDAVServer.h in Headers */ = {isa = PBXBuildFile; fileRef = EDB575BF84B14868A34924D5BE3A2B02 /* GCDWebDAVServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -143,8 +150,8 @@
 		8D4D1F6E4709EBB13974E95DC1059DDC /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 8706F23F0F3E2610CCB7060F3D74CC59 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D65CE579E516BDD5FB36CAA21D693F6 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 41E37E8EF5693054506EECE3BC061479 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D97DCFBBAF29C376CCFDE672A596EE8 /* NSObject+pAssign.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E9B3573A22BEA43F0AEC45FDD05983 /* NSObject+pAssign.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8F15A5799BB97B7F7A94B864CD40D388 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592C239AFEBB44FA03F68F6D9F0F265F /* MobileCoreServices.framework */; };
 		8F31576562E76EB48DE1BFCC02BA8435 /* PnrListVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8530073A1960CB36BA801CBD11B7E940 /* PnrListVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8FC45EDBF4874D340E0707199540AFBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */; };
 		8FEF6CFDB15E5A153324625C382FAF3E /* AlertBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 256DD510234030710EF741831A06EC1D /* AlertBubbleView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		915FE0EBE919421DC526FE3A8824141A /* UITextField+pFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B6D15883D277DAF3B673B60C3E7F2B5 /* UITextField+pFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91D0EE76FF6F38BD0FEAD79B2A4E6B0D /* JSONSyntaxHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853C138604693469A65C963647664A1 /* JSONSyntaxHighlight.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -158,14 +165,11 @@
 		99D5749744D472D210032552BC07A716 /* Fun+pPrefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BFB4528EF713099FC97DA65ED222919 /* Fun+pPrefix.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99FE6E6D05D519EB377EEE2B9394B2E5 /* UIImage+pCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D34273734F4D2070B9D4EABFB4F06D2 /* UIImage+pCreate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9A065306F940851BD0B81188D6A8C3CA /* NSString+pEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FD978A93B54E727206D690434016ED /* NSString+pEmail.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		9A941632244DAD3AC0F71A3F6875951A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */; };
 		9A9C6298E121864FE1946D295B7EABF1 /* PoporAlertBubbleView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B4F156356E774E82D3A962570170FF /* PoporAlertBubbleView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9AA5276ECA89B76A1228D47AD5123175 /* NSString+pSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A6122B5995AA71CE2EBF5F6B01FB3E3 /* NSString+pSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9AD8A260B1A5F310D2484DF1EB63DEFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */; };
 		9AFB97A5CF1035C3DE8A8557D0CF9AC4 /* GCDWebServerDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C8BA84D9BF19A0AED468CDC796E99E71 /* GCDWebServerDataResponse.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9B2301AB932BCD453AA03F141134E9BE /* UIDevice+pTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A1116F758337B688980851D3FE0633 /* UIDevice+pTool.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9D546E1168C04B0B2EAE005D9275D18B /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 092BE5CA44AA3ACC4AA6BC00E3A2BBBD /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9DAC530356685D877B7C5D13591371A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */; };
 		9EB54D8ABB0A64B663DF68277840B156 /* UIImage+pColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = D43907E4263290A2DDE9B8F4B848CE46 /* UIImage+pColorAtPixel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9F5D0D62AD2815F0F7939809D9E3188C /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2887F220204D5B00F240A991E70CD27D /* UIButton+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9F5EB697AE9D4867E93F0D6177074823 /* NSString+pTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F51EBAD1FD994570341D2E8D84846 /* NSString+pTool.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -178,7 +182,6 @@
 		A58D4438D44105A5712884180F50BF23 /* GCDWebServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 615DB495AB30DFA7DAD853801FEF1383 /* GCDWebServerRequest.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A688A73DA9A886FDC462EE424622A38B /* AlertBubbleBezierPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B65C258F21BE3AC6059A213D25CD516 /* AlertBubbleBezierPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6F86284BB63F44793EE036801385615 /* PnrDetailVCProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DA3EA10ED2E064ABE706CD1E2C7B5D0 /* PnrDetailVCProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A7C82F06101D8E6CDDCC356E7D191EF6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD3E9BF64493458A10A8FC6502883AA /* MobileCoreServices.framework */; };
 		A7E6C236F5C97B35484B553454B609B0 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E4D4B511B8D3397AAFCCB704F4676422 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A852520350046704B9421723DC05A3FF /* PnrExtraVCPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 18F2CEEBFCAB3C96DFDD6470ABA3F8FE /* PnrExtraVCPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A881D3B930A6983E8169400BC14A3EDC /* UIImage+pRead.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E18CC088A88EC41DC5FFAE145B3ECC9 /* UIImage+pRead.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -192,16 +195,15 @@
 		AD435D115020377532A72F05DBB77EC4 /* PoporFoundation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC9C063E445A9E891BC1AFE0F99B1AF0 /* PoporFoundation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD75E96FED0D33D295F3D3A8BF56A9F8 /* GCDWebServerDataResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB83675FC539B526D7E5AD05ADE2325 /* GCDWebServerDataResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADD2B16DF46010F6A204CB3DAEA53856 /* AlertBubbleFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C14C7683B28940BABCF18528256FB87 /* AlertBubbleFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE1DF86C17A4D439F970AAD2839F1DA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */; };
 		AE573DA72F0AE61DD048C16CA3A6C709 /* UIView+pTool.h in Headers */ = {isa = PBXBuildFile; fileRef = CFE18269E2AB74CA04D53A5C5D59C536 /* UIView+pTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AECFCA2598AABAEB044F6C4594F3222F /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 91629BA5F041481B1ED1E3FF1835BF3F /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF4FD35764C95B90D242509797951F20 /* GCDWebServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 328582C53A782FB4E6F530D88E6ED84B /* GCDWebServerConnection.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AFC8EAD62774A6AEC9A0A44A3FE00FF2 /* GCDWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCCC08242C17CA2A3EAB4A9D1BB3486 /* GCDWebServer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AFE66DE3EC37058976794DBF17203588 /* PnrPrefix.h in Headers */ = {isa = PBXBuildFile; fileRef = E5B7E6A25918EAA0BDAAEBB45923C191 /* PnrPrefix.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0B635BFA4F68838C420E6E1321A02C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */; };
 		B173C3225654BA3E3E8B922F08B65BC3 /* UIDevice+pTool.h in Headers */ = {isa = PBXBuildFile; fileRef = E14F22AD26973211C1FF59305436577A /* UIDevice+pTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B194C198C3D1C441C2A52109E6BBDCDE /* UIImage+pEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = A1998D5F374CFDA160EB9FE5288737D4 /* UIImage+pEffects.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1A0A5E8558A3D24F6F7CCFC3BDD93F1 /* UIView+pExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DA2E12EE2AEC577F10881AC383E72E /* UIView+pExtension.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B2F2EEB2085231315447BC8BC52EAFB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */; };
 		B4658F8495B18BD4EB5D893CAFF3BBBC /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = A18D7F50678D5B9F0369422BDB894873 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B55540FD4FF46D4B059566D8F9CBADCE /* UITextField+pPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = D096B6795C99773F6FABCFC929820D7E /* UITextField+pPlaceholder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B61C062997792475CA691984DADFEBF7 /* PoporAFN-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1727AA1190F57639966F5FB057A9C2 /* PoporAFN-dummy.m */; };
@@ -212,13 +214,13 @@
 		B858DE16BA23A8A0CB42937FBC65028D /* PoporAFNConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9D1110ACF7B06F87006AF693CE8A09 /* PoporAFNConfig.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B8617891FB4C948981187E2C79686FC8 /* PoporFoundation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B471D8C1CE426665C2B755FEEA378A2 /* PoporFoundation-dummy.m */; };
 		BAFE272677A2DFFAEE597A1045CF87D7 /* NSString+pSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B3D710F2C754BB93B0D8F0C5BBC70CC /* NSString+pSwizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB26CE007DD19189203F7935CB32B6ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */; };
 		BB3103A3464135A170B166248FF36355 /* NSDictionary+pSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 17B39096FBE0760AD1600A4C57A74B26 /* NSDictionary+pSwizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC2E789DCD091C33A5CAA55FDFA9277C /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84114910406E575F9EB117D6BD34B9B8 /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BC876A4F8393985BA7C7519047EBA22C /* AlertBubbleBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FF57C80482955468AB7080C2CBDCE8 /* AlertBubbleBezierPath.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BCA11BA64D7F8B5AC04A443A69A946C3 /* PnrView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACDC2A480A7DC5C6C8A2F0BA8811ED7 /* PnrView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BCB91ABF6E4836B84F94A9288836F5D4 /* JSONSyntaxHighlight-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F322FE20B6BF6D4EA2CB15FDCFC295B9 /* JSONSyntaxHighlight-dummy.m */; };
 		BD09351D0BC68B0A3161D94935D59E00 /* PnrMessageVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AD0073933031F4309587E5D4620726B /* PnrMessageVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BDA75F5DC3B9AEBD277270E8C0B7D212 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */; };
 		BF768B939F44FD23B9B034EF769CB02F /* NSObject+pPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BA51808B12FFC70D53AF5A3F847701 /* NSObject+pPerformSelector.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C1F4F6BD2730C927FF1D8F6A71983E9D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F61DCFCC2A205188E3E6690BE73BB6 /* AFNetworking.framework */; };
 		C393D6EF4D867324C291E17EA65E6DE2 /* NSAttributedString+pAtt.h in Headers */ = {isa = PBXBuildFile; fileRef = E8CB9E10060EA97EBDFCF88CE46E70B0 /* NSAttributedString+pAtt.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -227,10 +229,8 @@
 		C8A22DCB7AD27D54E548A9EE69876767 /* PoporFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD460EE7B969C8F496A45EC494001A4 /* PoporFoundation.framework */; };
 		C9B7A1EB4C8AA7B0990F4E01DC39FC0C /* GCDWebServerURLEncodedFormRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 6421B40C06CE4F14B560D535C8DFA455 /* GCDWebServerURLEncodedFormRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9F701A2E6208D9E840E7A91287F21B9 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 11F88A48791B44C7D0613EFECD72D6F1 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CAF8C46C53669E8EE75840566BDE51E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */; };
 		CB51724028CE25890C1E7E3C3BBC184F /* JSONSyntaxHighlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1FA9556224ABEAFDB4E6AC7AABC07F /* JSONSyntaxHighlight.framework */; };
 		CC4DDC7142B0570EEDF7F45080162676 /* NSString+pEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = 96938038C48FCA3AED0670F0AFD2F0A1 /* NSString+pEmail.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CE93C54413259B4AC3683B6EB874D466 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF12D3399F981C9301BD040DBBE4B8 /* UIKit.framework */; };
 		CF858B29C8C18D2E8D969F7A98DF3D5A /* JSONSyntaxHighlight.h in Headers */ = {isa = PBXBuildFile; fileRef = A22097D8489B61433AA939B027EE0510 /* JSONSyntaxHighlight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFC0DE364E072FB0A0432DDEBC0E45A0 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E65EACEFFF97072DB513135312AEAB7A /* NSLayoutConstraint+MASDebugAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CFFB0AFAF52604E3F716AB02D2EFAC7A /* PnrListVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = C22E142E25335B027523DE557C613CDB /* PnrListVCInteractor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -241,6 +241,7 @@
 		D429AADFFF1C4B7C76BBDCB4AE584C84 /* IToast_Popor.m in Sources */ = {isa = PBXBuildFile; fileRef = 513ECB7B021C9032658EC5C19792B674 /* IToast_Popor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D4BC3E087322515B30556208AE6C6CB3 /* NSObject+pSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EF72505B8614F1E9D841562BBA3FF0F2 /* NSObject+pSwizzling.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D4C1D49C6D07C0D1518610CF78581A70 /* IToast_Popor.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E589FB02370425B9C26284F9F8A0D1 /* IToast_Popor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D616E03D2C147BD01833577A58F6668D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */; };
 		D62D938F537BEBABFF332AAA5B0F9B3D /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F16FABDF8D7A24EAC92D88F930A4ED53 /* MASLayoutConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D65B62F5F5D52B4BB17F827147F69C86 /* Pods-PoporNetRecord_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F070F35B39AB8C1CE5A5D8F47A248055 /* Pods-PoporNetRecord_Example-dummy.m */; };
 		D66716504D475B6377F7DD5C7C2BBCDE /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = ED4B2551604AC55500D2E1F6D624A581 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -250,7 +251,6 @@
 		D88E67121CD25E3B6DBC23E674D5073C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA3414AB105E0831A759D70BE86D11 /* AFURLRequestSerialization.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D9D7B8964D241E317F6AA39E4D974AAA /* Pods-PoporNetRecord_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C4BAE9FA81FD37F2A2EC8FCBDA934 /* Pods-PoporNetRecord_Tests-dummy.m */; };
 		DA00C5BFA8061EBD2734E280052FDA35 /* PnrListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA451E857FD4476CF4884648E1B0AA8 /* PnrListVC.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		DBD931F54DC116267BB217554B9C22CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */; };
 		DC577A2F280E08FE12CBA5CEA9BB67EA /* PoporFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD460EE7B969C8F496A45EC494001A4 /* PoporFoundation.framework */; };
 		DCE259073B2F6CDC9213C28E84941B7C /* GCDWebServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6D215A8FB2EFACD2EE209081AF2901 /* GCDWebServer.framework */; };
 		DD6D87BF8A761843BCA300CF4360360E /* GCDWebServerRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 50476CECF590B2654981F60340AD9A59 /* GCDWebServerRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -261,11 +261,11 @@
 		E398D6D217F79D0EEE19DECA2A31F738 /* PnrExtraVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDA74D3019B872AEFE614A533119ABC /* PnrExtraVCPresenter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E3F6C04C6ECBC389C510960DAFE2FFEC /* NSAttributedString+pAtt.m in Sources */ = {isa = PBXBuildFile; fileRef = 5987600F5525DB07B85F67606459E955 /* NSAttributedString+pAtt.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E4538E41D95C0501370BC3DAADEC9E48 /* AlertBubbleLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9754420ED0399F83830A85E71075AF /* AlertBubbleLable.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		E51F496BDC6ACADE04FDA059C6CB2342 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */; };
 		E58B5AF342596A7E3F7A0AA6355FB77F /* PnrCellEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = C19D3EFF7EA84D04F348ED856953C7ED /* PnrCellEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E5A9ED5674060D45E90A1CF68BD4BC0F /* GCDWebServer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 560FD85DE26756FD6DE5FADA7FC59885 /* GCDWebServer-dummy.m */; };
 		E5BAE6A9538DE2D0D333A6EB73378D63 /* GCDWebServerFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE359680E63F79B29CA163843AAC4B5 /* GCDWebServerFileResponse.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E623895AC3EBCE14E18860F2714A9BC5 /* PoporUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D07E5CED832012883B2638A33F70AA /* PoporUI-dummy.m */; };
+		E6F1E9CCF70D05BD928B7E4C24146A2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1159E252A3D7672F5E47A388096D3F80 /* UIKit.framework */; };
 		E7CA20228B3583F41927813EE904CAD3 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A728020E0793C44310FDF9634E255E2 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8CBD6F973CBB5C8E6D61CFCAFCC7EAA /* UIDevice+pSaveImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FA29E8F2DFBBC2F3A75D1F6BF75951 /* UIDevice+pSaveImage.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E8EB9F2CFC54AFE86B618DB528647311 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 25278C154045D99B9937EC170294D59E /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -288,6 +288,7 @@
 		F4B2E3E13F8D29649A8BE12AA679A606 /* UITextField+pPlaceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = E3E7C74F74001CCF48EFCC7760B5E4C9 /* UITextField+pPlaceholder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5D8C51BE22DE7C9BE73FF59EC820450 /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFB7A94FBC1B62347EB60AC7E5A3D5C /* AFImageDownloader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F7E4E54E246B8F93A4FFB87157674168 /* PoporAlertBubbleView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34963B784BD7F1AB74551A0C58045768 /* PoporAlertBubbleView-dummy.m */; };
+		FA4E78FFFBFA935F073360DE373DD8F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */; };
 		FA7E3B30992B61DB759BC398633DC694 /* GCDWebDAVServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 99512BE5AD663983AE7BAF500084A7E8 /* GCDWebDAVServer.m */; settings = {COMPILER_FLAGS = "-I$(SDKROOT)/usr/include/libxml2 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FAF834E7D2400513E790F741C6DFF840 /* UITextField+pFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F56E65CC0135F3C89AB1936A8173B6 /* UITextField+pFormat.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FAFBFA90F7BC3E7CF50F8A5CF0A8B264 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B2156DE2AA1385FEAA9504004E27FF3 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -297,7 +298,6 @@
 		FCF1FFA5D57D4332BBFBA34172AFA628 /* UIDevice+pPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 70939FF506090D97DFDD7DF4F0EF063D /* UIDevice+pPermission.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FCFAA7725A87A5CF11258589211D7C61 /* AlertBubbleHead.h in Headers */ = {isa = PBXBuildFile; fileRef = CC2AEE7A6E91C3A7B6CEC7F93EEF2752 /* AlertBubbleHead.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FDC710E3C58B6BD2EE4FC743307BEF13 /* GCDWebServerFileResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A3FB7BAFC5EF2121A3847CF473B6E84B /* GCDWebServerFileResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE64243BDBDC79E7B444D9B904718D13 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9C3AC48F7D73338DA13E6A3925B661 /* CFNetwork.framework */; };
 		FEE3137109FC35CF55D34F8D1472CF0B /* PnrWebServer.h in Headers */ = {isa = PBXBuildFile; fileRef = A3D815C926E75534C14EF2B9D8D3707E /* PnrWebServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -459,15 +459,16 @@
 		0898DD4E1311198094001480AC921711 /* JSONSyntaxHighlight.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JSONSyntaxHighlight.modulemap; sourceTree = "<group>"; };
 		08BA51808B12FFC70D53AF5A3F847701 /* NSObject+pPerformSelector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+pPerformSelector.m"; path = "PoporFoundation/Classes/NSObject/NSObject+pPerformSelector.m"; sourceTree = "<group>"; };
 		092BE5CA44AA3ACC4AA6BC00E3A2BBBD /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		0A2CB56B916033799770D8ECC08C5E62 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		0C0F9175E3E80D44FB2B6F6AFF1F2A8A /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
 		0C46A90B8852DDC2C289A346B98614D5 /* PnrWebBody.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrWebBody.m; path = Example/Classes/Web/PnrWebBody.m; sourceTree = "<group>"; };
 		0C4F51EBAD1FD994570341D2E8D84846 /* NSString+pTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+pTool.m"; path = "PoporFoundation/Classes/NSString/NSString+pTool.m"; sourceTree = "<group>"; };
 		0D34273734F4D2070B9D4EABFB4F06D2 /* UIImage+pCreate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+pCreate.m"; path = "PoporUI/Classes/UIImage/UIImage+pCreate.m"; sourceTree = "<group>"; };
 		0D9754420ED0399F83830A85E71075AF /* AlertBubbleLable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlertBubbleLable.m; path = PoporAlertBubbleView/Classes/AlertBubbleLable.m; sourceTree = "<group>"; };
-		0DD3E9BF64493458A10A8FC6502883AA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		0DD460EE7B969C8F496A45EC494001A4 /* PoporFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PoporFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5DC015ACB51D1A177CE0FFA0A551C4 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		108F40CEA429F142C0209616D4E4D45A /* PoporAFN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PoporAFN.framework; path = PoporAFN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1159E252A3D7672F5E47A388096D3F80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		11F88A48791B44C7D0613EFECD72D6F1 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		125234AF7C2DCE10023B116DF098E9C9 /* GCDWebServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServer.h; path = GCDWebServer/Core/GCDWebServer.h; sourceTree = "<group>"; };
 		12B217AE4D65549F3FAA20235387C289 /* PnrWebJs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrWebJs.m; path = Example/Classes/Web/PnrWebJs.m; sourceTree = "<group>"; };
@@ -570,6 +571,7 @@
 		569D401B8E4FA683B31BCAE685B1FE39 /* IToastPTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IToastPTool.h; path = PoporUI/Classes/IToast/IToastPTool.h; sourceTree = "<group>"; };
 		577676660F4EBF577B8A21B1378C9ABC /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		58CAA77F9A41FDAA957685443BCD3B33 /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFCompatibilityMacros.h; path = AFNetworking/AFCompatibilityMacros.h; sourceTree = "<group>"; };
+		592C239AFEBB44FA03F68F6D9F0F265F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		594495D312A9C75D9D1F0572DDB46354 /* GCDWebServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GCDWebServer.release.xcconfig; sourceTree = "<group>"; };
 		5987600F5525DB07B85F67606459E955 /* NSAttributedString+pAtt.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+pAtt.m"; path = "PoporFoundation/Classes/NSString/NSAttributedString+pAtt.m"; sourceTree = "<group>"; };
 		5D434BA5DB7B81A19009CBBB1D64A30B /* PoporAlertBubbleView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PoporAlertBubbleView.release.xcconfig; sourceTree = "<group>"; };
@@ -615,12 +617,12 @@
 		7CDD59E10E90AC30638CBFD8876B6DCF /* GCDWebServerDataRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerDataRequest.h; path = GCDWebServer/Requests/GCDWebServerDataRequest.h; sourceTree = "<group>"; };
 		7FA451E857FD4476CF4884648E1B0AA8 /* PnrListVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PnrListVC.m; path = Example/Classes/ListVC/PnrListVC.m; sourceTree = "<group>"; };
 		8253C71FB3AA710698576610BD31E3B4 /* JSONSyntaxHighlight-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSONSyntaxHighlight-umbrella.h"; sourceTree = "<group>"; };
+		82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		84114910406E575F9EB117D6BD34B9B8 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		852C3E5BAAE673909E7F3F742D0252ED /* AlertBubbleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlertBubbleView.h; path = PoporAlertBubbleView/Classes/AlertBubbleView.h; sourceTree = "<group>"; };
 		8530073A1960CB36BA801CBD11B7E940 /* PnrListVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrListVC.h; path = Example/Classes/ListVC/PnrListVC.h; sourceTree = "<group>"; };
 		854AF2A27559808769346F9A22CA7203 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		85A265AEE487B9FE8704B1129BEB89E2 /* PoporNetRecord-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporNetRecord-prefix.pch"; sourceTree = "<group>"; };
-		85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		863BEB80A3207E8B2471879DFCEE37D1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		8706F23F0F3E2610CCB7060F3D74CC59 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
 		871CA09F8D58A93CB40566BF5E4780D4 /* PoporAlertBubbleView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PoporAlertBubbleView.framework; path = PoporAlertBubbleView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -699,7 +701,6 @@
 		BCBCA6C0C369F2BC1DD717037009CD06 /* PoporAFNConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoporAFNConfig.h; path = PoporAFN/Classes/PoporAFNConfig.h; sourceTree = "<group>"; };
 		BE0495A13A1A0BA5C7FF5AF8F7858351 /* PoporAFN.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PoporAFN.modulemap; sourceTree = "<group>"; };
 		BF3CD7E9A2F0D4F0F4FD25D047D9B81E /* PnrDetailVCInteractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrDetailVCInteractor.h; path = Example/Classes/DetailVC/PnrDetailVCInteractor.h; sourceTree = "<group>"; };
-		C0BF12D3399F981C9301BD040DBBE4B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C19D3EFF7EA84D04F348ED856953C7ED /* PnrCellEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PnrCellEntity.h; path = Example/Classes/Entity/PnrCellEntity.h; sourceTree = "<group>"; };
 		C1FA3414AB105E0831A759D70BE86D11 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
 		C20715DF9DE7F63AE709893A6A4A4665 /* NSObject+pAssign.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+pAssign.h"; path = "PoporFoundation/Classes/NSObject/NSObject+pAssign.h"; sourceTree = "<group>"; };
@@ -784,7 +785,6 @@
 		F6AEA037AD80C58261FAC197B91EAA35 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
 		F942E11C824596532F59BC6487C1E596 /* UITextField+pMaxLength.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+pMaxLength.m"; path = "PoporUI/Classes/UITextField/UITextField+pMaxLength.m"; sourceTree = "<group>"; };
 		FA7E4F428122ED94D332535AD78791D0 /* NSDictionary+pTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+pTool.h"; path = "PoporFoundation/Classes/NSDictionary/NSDictionary+pTool.h"; sourceTree = "<group>"; };
-		FA9C3AC48F7D73338DA13E6A3925B661 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		FC55394970ED38697AAB8985ACFB0BBF /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
 		FC9C063E445A9E891BC1AFE0F99B1AF0 /* PoporFoundation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporFoundation-umbrella.h"; sourceTree = "<group>"; };
 		FD9CA5AE5E5B07F62D29DBB6465E49AA /* PoporAFN.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PoporAFN.m; path = PoporAFN/Classes/PoporAFN.m; sourceTree = "<group>"; };
@@ -802,7 +802,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1F4F6BD2730C927FF1D8F6A71983E9D /* AFNetworking.framework in Frameworks */,
-				B0B635BFA4F68838C420E6E1321A02C8 /* Foundation.framework in Frameworks */,
+				02B6D06605845C9DBBA05EFCC2BD7858 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,8 +810,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2F2EEB2085231315447BC8BC52EAFB0 /* Foundation.framework in Frameworks */,
-				5E47A6F1A58205037A9A90B1F2D2C43E /* UIKit.framework in Frameworks */,
+				D616E03D2C147BD01833577A58F6668D /* Foundation.framework in Frameworks */,
+				367522503E1451A5AAC8333D897951B7 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,9 +819,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE64243BDBDC79E7B444D9B904718D13 /* CFNetwork.framework in Frameworks */,
-				8FC45EDBF4874D340E0707199540AFBD /* Foundation.framework in Frameworks */,
-				A7C82F06101D8E6CDDCC356E7D191EF6 /* MobileCoreServices.framework in Frameworks */,
+				2AC412DFC6F9F0FA398731C398309BB7 /* CFNetwork.framework in Frameworks */,
+				1265940E6F208C395AACF2DE5A928EFB /* Foundation.framework in Frameworks */,
+				8F15A5799BB97B7F7A94B864CD40D388 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,8 +829,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E51F496BDC6ACADE04FDA059C6CB2342 /* Foundation.framework in Frameworks */,
-				CE93C54413259B4AC3683B6EB874D466 /* UIKit.framework in Frameworks */,
+				58AF805046CFD9986EFEAACCBA61F9BE /* Foundation.framework in Frameworks */,
+				5D5AB502D85BF8E27246A5964F6B3E9F /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,7 +838,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBD931F54DC116267BB217554B9C22CE /* Foundation.framework in Frameworks */,
+				0DCC520366BFAAC41DF8F3422242BCAC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,7 +846,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27256E913790A1EC111854E3D10E67F5 /* Foundation.framework in Frameworks */,
+				558419C90B0169B1AE0AEEDFCE351662 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,14 +854,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAF8C46C53669E8EE75840566BDE51E2 /* Foundation.framework in Frameworks */,
+				AE1DF86C17A4D439F970AAD2839F1DA2 /* Foundation.framework in Frameworks */,
 				DCE259073B2F6CDC9213C28E84941B7C /* GCDWebServer.framework in Frameworks */,
 				CB51724028CE25890C1E7E3C3BBC184F /* JSONSyntaxHighlight.framework in Frameworks */,
 				A399C9FD7F574A9BBFD983086D51BE79 /* Masonry.framework in Frameworks */,
 				638F27B5E47BFDA00F96517DA51DBA28 /* PoporAlertBubbleView.framework in Frameworks */,
 				E2D73911EA4C4EDF97C9D643622F6F5C /* PoporFoundation.framework in Frameworks */,
 				DE09BD98F5574ACDD3BB296AC3A3FC43 /* PoporUI.framework in Frameworks */,
-				64790CF280E02B447EFC96CDC4546F8E /* UIKit.framework in Frameworks */,
+				E6F1E9CCF70D05BD928B7E4C24146A2A /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,7 +869,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDA75F5DC3B9AEBD277270E8C0B7D212 /* Foundation.framework in Frameworks */,
+				FA4E78FFFBFA935F073360DE373DD8F1 /* Foundation.framework in Frameworks */,
 				DC577A2F280E08FE12CBA5CEA9BB67EA /* PoporFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -878,8 +878,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DAC530356685D877B7C5D13591371A4 /* Foundation.framework in Frameworks */,
-				5EFD1E430603BDFAA441CB716C1203CE /* UIKit.framework in Frameworks */,
+				BB26CE007DD19189203F7935CB32B6ED /* Foundation.framework in Frameworks */,
+				81FE47ED166B842B21830E893DE39B06 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,7 +887,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A941632244DAD3AC0F71A3F6875951A /* Foundation.framework in Frameworks */,
+				644A85BF845D65EFD3A36AD2197533AB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,7 +895,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AD8A260B1A5F310D2484DF1EB63DEFA /* Foundation.framework in Frameworks */,
+				6F6E3AA36B85ED5D8B83D5BE8697B276 /* Foundation.framework in Frameworks */,
 				C8A22DCB7AD27D54E548A9EE69876767 /* PoporFoundation.framework in Frameworks */,
 				45636F5D4102840D3002E288A9E07E9D /* PoporUI.framework in Frameworks */,
 			);
@@ -1521,7 +1521,7 @@
 				0422AFA4B55231012B01DC53B298CE5D /* PoporAlertBubbleView.framework */,
 				0DD460EE7B969C8F496A45EC494001A4 /* PoporFoundation.framework */,
 				6A753779D43EE5A816C944EABA62F6DB /* PoporUI.framework */,
-				C5EC5765B52E27F055402AE2DE07435B /* iOS */,
+				F156533F86B3FF5ECB70BE4FE8C03B0C /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1604,17 +1604,6 @@
 			);
 			name = PoporNetRecord;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		C5EC5765B52E27F055402AE2DE07435B /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				FA9C3AC48F7D73338DA13E6A3925B661 /* CFNetwork.framework */,
-				85EE964465BECA665FFD3FCE6F76016D /* Foundation.framework */,
-				0DD3E9BF64493458A10A8FC6502883AA /* MobileCoreServices.framework */,
-				C0BF12D3399F981C9301BD040DBBE4B8 /* UIKit.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		C6079594B5ED6B9DA28C3F819DE542EF /* Prefix */ = {
@@ -1703,6 +1692,17 @@
 				669F77684803C74A9E486C74D1C0638F /* Resources */,
 			);
 			name = WebUploader;
+			sourceTree = "<group>";
+		};
+		F156533F86B3FF5ECB70BE4FE8C03B0C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0A2CB56B916033799770D8ECC08C5E62 /* CFNetwork.framework */,
+				82AD2EFEDF29B34E5CDAEA1E9FAB22C0 /* Foundation.framework */,
+				592C239AFEBB44FA03F68F6D9F0F265F /* MobileCoreServices.framework */,
+				1159E252A3D7672F5E47A388096D3F80 /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		F25020932434A67F64D96DC05780DFEA /* PoporUI */ = {
@@ -2606,11 +2606,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		01ADA0A667D31AD00B94FC4B10A54510 /* Debug */ = {
+		17ADA24BF4ED0BA2BD6DFD6C6BED2F82 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4ACBDD053B49B92FF3D6AC8952EF7B9C /* PoporAlertBubbleView.debug.xcconfig */;
+			baseConfigurationReference = 6BD308F1B13FD513684A288042853BB9 /* PoporFoundation.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2619,50 +2618,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporFoundation/PoporFoundation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporFoundation/PoporFoundation-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView.modulemap";
-				PRODUCT_MODULE_NAME = PoporAlertBubbleView;
-				PRODUCT_NAME = PoporAlertBubbleView;
+				MODULEMAP_FILE = "Target Support Files/PoporFoundation/PoporFoundation.modulemap";
+				PRODUCT_MODULE_NAME = PoporFoundation;
+				PRODUCT_NAME = PoporFoundation;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1724267BC23804D473B894D74615F2BC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5197A2133711C7A5A8C207EFA9474499 /* Pods-PoporNetRecord_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-PoporNetRecord_Example/Pods-PoporNetRecord_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PoporNetRecord_Example/Pods-PoporNetRecord_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2670,11 +2636,10 @@
 			};
 			name = Release;
 		};
-		24C6F227940335ED0364EE68543C550D /* Debug */ = {
+		3291FBA6637F3E5F07587ED127D86F49 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C5E7C5E04C270D7FB2BE1EF4D2582D0 /* PoporAFN.debug.xcconfig */;
+			baseConfigurationReference = 9A8BFB845426B8F5DEBBDDB846B1C9B0 /* Masonry.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2683,24 +2648,55 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporAFN/PoporAFN-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporAFN/PoporAFN-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporAFN/PoporAFN.modulemap";
-				PRODUCT_MODULE_NAME = PoporAFN;
-				PRODUCT_NAME = PoporAFN;
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		264A9F638BB029C9415E7128794E01AD /* Release */ = {
+		3F841E701B3C76B094FFE8767CBBC4DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76E53F0054A9EB6E57115BB93D8DB289 /* PoporNetRecord.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporNetRecord/PoporNetRecord-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporNetRecord/PoporNetRecord-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoporNetRecord/PoporNetRecord.modulemap";
+				PRODUCT_MODULE_NAME = PoporNetRecord;
+				PRODUCT_NAME = PoporNetRecord;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		431BA2B8298F0EE71735B9E0114E1955 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2727,6 +2723,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2761,7 +2758,95 @@
 			};
 			name = Release;
 		};
-		31059FC4CDCFE28D42E245A795B024B8 /* Debug */ = {
+		4825529ED992F66BFA893CFEC1C4C83B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4ACBDD053B49B92FF3D6AC8952EF7B9C /* PoporAlertBubbleView.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView.modulemap";
+				PRODUCT_MODULE_NAME = PoporAlertBubbleView;
+				PRODUCT_NAME = PoporAlertBubbleView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		544DFB8745742584E91B5E180D8EDDE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B381CDEECE9A58B9E87D7D97DF4BCF44 /* PoporUI.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporUI/PoporUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporUI/PoporUI-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoporUI/PoporUI.modulemap";
+				PRODUCT_MODULE_NAME = PoporUI;
+				PRODUCT_NAME = PoporUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7464FDAD115A77ED41C6566497B0A10E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5A24BF008369EE9E51B9D62A88C82F4 /* PoporAFN.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporAFN/PoporAFN-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporAFN/PoporAFN-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoporAFN/PoporAFN.modulemap";
+				PRODUCT_MODULE_NAME = PoporAFN;
+				PRODUCT_NAME = PoporAFN;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		79759604D78320E712558F49DF19AA9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2788,6 +2873,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2826,11 +2912,10 @@
 			};
 			name = Debug;
 		};
-		39A3FF4DD9EDAEE218C8F5D8DDB358AA /* Release */ = {
+		7EC5A14BB825A306F64054A20D382D99 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CE9D35E503F7DF99E5CA2E2AA7D9E00 /* PoporUI.release.xcconfig */;
+			baseConfigurationReference = C9DBED98F68AC335844468F50D35DBAA /* JSONSyntaxHighlight.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2839,45 +2924,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporUI/PoporUI-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporUI/PoporUI-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporUI/PoporUI.modulemap";
-				PRODUCT_MODULE_NAME = PoporUI;
-				PRODUCT_NAME = PoporUI;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3DF28D2261B1C2B385A41761A5CB8FBE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 172F5541BB8DD165A19B5B7D5A06F0F0 /* PoporNetRecord.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporNetRecord/PoporNetRecord-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporNetRecord/PoporNetRecord-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporNetRecord/PoporNetRecord.modulemap";
-				PRODUCT_MODULE_NAME = PoporNetRecord;
-				PRODUCT_NAME = PoporNetRecord;
+				MODULEMAP_FILE = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight.modulemap";
+				PRODUCT_MODULE_NAME = JSONSyntaxHighlight;
+				PRODUCT_NAME = JSONSyntaxHighlight;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -2887,11 +2941,10 @@
 			};
 			name = Debug;
 		};
-		4BD206124B7EDC4A5280D428A1BF4349 /* Release */ = {
+		8AE891B0D2CD18CCAA4308A850FCFC79 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BD308F1B13FD513684A288042853BB9 /* PoporFoundation.release.xcconfig */;
+			baseConfigurationReference = A04C6A06FA755E8FB91590313F1D41A9 /* AFNetworking.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2900,14 +2953,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporFoundation/PoporFoundation-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporFoundation/PoporFoundation-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/AFNetworking-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporFoundation/PoporFoundation.modulemap";
-				PRODUCT_MODULE_NAME = PoporFoundation;
-				PRODUCT_NAME = PoporFoundation;
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				PRODUCT_MODULE_NAME = AFNetworking;
+				PRODUCT_NAME = AFNetworking;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -2918,12 +2971,133 @@
 			};
 			name = Release;
 		};
-		5553A6CF2A95FF6A0B1464A67CC154BE /* Debug */ = {
+		8CA082A81BFDE052CCE32D841129F948 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68FED695E40E479889B014A5CA90B7B7 /* JSONSyntaxHighlight.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight.modulemap";
+				PRODUCT_MODULE_NAME = JSONSyntaxHighlight;
+				PRODUCT_NAME = JSONSyntaxHighlight;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		94EA811983C36ADC129D97910817735B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15B4E963B10A8ADE67899C2BC9FDE556 /* GCDWebServer.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GCDWebServer/GCDWebServer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GCDWebServer/GCDWebServer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GCDWebServer/GCDWebServer.modulemap";
+				PRODUCT_MODULE_NAME = GCDWebServer;
+				PRODUCT_NAME = GCDWebServer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A57678CB42476613C238D0659A573265 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 594495D312A9C75D9D1F0572DDB46354 /* GCDWebServer.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GCDWebServer/GCDWebServer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GCDWebServer/GCDWebServer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GCDWebServer/GCDWebServer.modulemap";
+				PRODUCT_MODULE_NAME = GCDWebServer;
+				PRODUCT_NAME = GCDWebServer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A87C2F262DD0C763568D705F46C7984D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66DFE3B4DFE67D86B01033EBCD27CFBC /* Pods-PoporNetRecord_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PoporNetRecord_Tests/Pods-PoporNetRecord_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PoporNetRecord_Tests/Pods-PoporNetRecord_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BEA2FF1A380389427DABB8523C607728 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BAE2D8C8F784ED931F38272242043EC2 /* Pods-PoporNetRecord_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2951,11 +3125,10 @@
 			};
 			name = Debug;
 		};
-		655B4BC80615E1CB7644999E7099F7AF /* Release */ = {
+		C5AF8D69ED4F8916D3467C2AF1EF4711 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 594495D312A9C75D9D1F0572DDB46354 /* GCDWebServer.release.xcconfig */;
+			baseConfigurationReference = EBDB2D01E51F4097C9A6B458EE6B529B /* AFNetworking.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2964,14 +3137,72 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GCDWebServer/GCDWebServer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GCDWebServer/GCDWebServer-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/AFNetworking-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GCDWebServer/GCDWebServer.modulemap";
-				PRODUCT_MODULE_NAME = GCDWebServer;
-				PRODUCT_NAME = GCDWebServer;
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				PRODUCT_MODULE_NAME = AFNetworking;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D712B017AD905A544274ECED175FD440 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C5E7C5E04C270D7FB2BE1EF4D2582D0 /* PoporAFN.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporAFN/PoporAFN-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporAFN/PoporAFN-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoporAFN/PoporAFN.modulemap";
+				PRODUCT_MODULE_NAME = PoporAFN;
+				PRODUCT_NAME = PoporAFN;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DC4C69B039DC84BC4574255E3DDAEBAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D434BA5DB7B81A19009CBBB1D64A30B /* PoporAlertBubbleView.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView.modulemap";
+				PRODUCT_MODULE_NAME = PoporAlertBubbleView;
+				PRODUCT_NAME = PoporAlertBubbleView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -2982,12 +3213,161 @@
 			};
 			name = Release;
 		};
-		7883F1EB0690B637162ABBAE63041D21 /* Debug */ = {
+		DFF8953A30133F637F52B63FA93F2CB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C27AF3142311799A579ABFACA2066DAB /* PoporFoundation.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporFoundation/PoporFoundation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporFoundation/PoporFoundation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoporFoundation/PoporFoundation.modulemap";
+				PRODUCT_MODULE_NAME = PoporFoundation;
+				PRODUCT_NAME = PoporFoundation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ECC0BEE489D1A0A2A0B5C01058524995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5197A2133711C7A5A8C207EFA9474499 /* Pods-PoporNetRecord_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PoporNetRecord_Example/Pods-PoporNetRecord_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PoporNetRecord_Example/Pods-PoporNetRecord_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F41B37955474857B252ABC87FAD371A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B601C58894FEB55C665EADF62388C92 /* Masonry.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F75BA11E24CF212AA707885859BE5989 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CE9D35E503F7DF99E5CA2E2AA7D9E00 /* PoporUI.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporUI/PoporUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporUI/PoporUI-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoporUI/PoporUI.modulemap";
+				PRODUCT_MODULE_NAME = PoporUI;
+				PRODUCT_NAME = PoporUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FA827114B149534017959289B571A309 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 172F5541BB8DD165A19B5B7D5A06F0F0 /* PoporNetRecord.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PoporNetRecord/PoporNetRecord-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoporNetRecord/PoporNetRecord-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoporNetRecord/PoporNetRecord.modulemap";
+				PRODUCT_MODULE_NAME = PoporNetRecord;
+				PRODUCT_NAME = PoporNetRecord;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FFEDAA850BBFE4A4793AD2487EE8BEB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 045B8AABFD2E312870978D77A1F5918E /* Pods-PoporNetRecord_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -3015,414 +3395,14 @@
 			};
 			name = Debug;
 		};
-		84C58B518D43C3D8F8F5FC5FA93CDEB7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBDB2D01E51F4097C9A6B458EE6B529B /* AFNetworking.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AFNetworking/AFNetworking-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
-				PRODUCT_MODULE_NAME = AFNetworking;
-				PRODUCT_NAME = AFNetworking;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8C0D60D213FC0D4B7632F2CF74F8FFDB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66DFE3B4DFE67D86B01033EBCD27CFBC /* Pods-PoporNetRecord_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-PoporNetRecord_Tests/Pods-PoporNetRecord_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PoporNetRecord_Tests/Pods-PoporNetRecord_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		933C252AC1697174177192BE69B419F9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B601C58894FEB55C665EADF62388C92 /* Masonry.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
-				PRODUCT_MODULE_NAME = Masonry;
-				PRODUCT_NAME = Masonry;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		995FD4D267511141E39EFA06276E2F43 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9DBED98F68AC335844468F50D35DBAA /* JSONSyntaxHighlight.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight.modulemap";
-				PRODUCT_MODULE_NAME = JSONSyntaxHighlight;
-				PRODUCT_NAME = JSONSyntaxHighlight;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9E2557936BDB2D617BA8C3A21402E850 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B381CDEECE9A58B9E87D7D97DF4BCF44 /* PoporUI.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporUI/PoporUI-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporUI/PoporUI-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporUI/PoporUI.modulemap";
-				PRODUCT_MODULE_NAME = PoporUI;
-				PRODUCT_NAME = PoporUI;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A178BBBE1FA9C2D814181FC6D229F588 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D434BA5DB7B81A19009CBBB1D64A30B /* PoporAlertBubbleView.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporAlertBubbleView/PoporAlertBubbleView.modulemap";
-				PRODUCT_MODULE_NAME = PoporAlertBubbleView;
-				PRODUCT_NAME = PoporAlertBubbleView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AE4AEB7CCC826558F52EA3988BBB0852 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5A24BF008369EE9E51B9D62A88C82F4 /* PoporAFN.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporAFN/PoporAFN-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporAFN/PoporAFN-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporAFN/PoporAFN.modulemap";
-				PRODUCT_MODULE_NAME = PoporAFN;
-				PRODUCT_NAME = PoporAFN;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BD3A69076C1B8ED0EB8EED8E9254F409 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A04C6A06FA755E8FB91590313F1D41A9 /* AFNetworking.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AFNetworking/AFNetworking-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
-				PRODUCT_MODULE_NAME = AFNetworking;
-				PRODUCT_NAME = AFNetworking;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D1F20CA5AF74551DBEC539096B44760B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A8BFB845426B8F5DEBBDDB846B1C9B0 /* Masonry.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
-				PRODUCT_MODULE_NAME = Masonry;
-				PRODUCT_NAME = Masonry;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D92041104A164013937A144F9F5D4BC7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15B4E963B10A8ADE67899C2BC9FDE556 /* GCDWebServer.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GCDWebServer/GCDWebServer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GCDWebServer/GCDWebServer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GCDWebServer/GCDWebServer.modulemap";
-				PRODUCT_MODULE_NAME = GCDWebServer;
-				PRODUCT_NAME = GCDWebServer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E54A7B6A69A130C2D8D677F64063479D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C27AF3142311799A579ABFACA2066DAB /* PoporFoundation.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporFoundation/PoporFoundation-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporFoundation/PoporFoundation-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporFoundation/PoporFoundation.modulemap";
-				PRODUCT_MODULE_NAME = PoporFoundation;
-				PRODUCT_NAME = PoporFoundation;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F37273DF0297FD8C64E6FA41B037F6A1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68FED695E40E479889B014A5CA90B7B7 /* JSONSyntaxHighlight.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JSONSyntaxHighlight/JSONSyntaxHighlight.modulemap";
-				PRODUCT_MODULE_NAME = JSONSyntaxHighlight;
-				PRODUCT_NAME = JSONSyntaxHighlight;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F903B45715195D547B1487CDD09048A1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76E53F0054A9EB6E57115BB93D8DB289 /* PoporNetRecord.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PoporNetRecord/PoporNetRecord-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PoporNetRecord/PoporNetRecord-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PoporNetRecord/PoporNetRecord.modulemap";
-				PRODUCT_MODULE_NAME = PoporNetRecord;
-				PRODUCT_NAME = PoporNetRecord;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		3830A8F6EDCF58D638E2C2F47F328DEF /* Build configuration list for PBXNativeTarget "PoporFoundation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E54A7B6A69A130C2D8D677F64063479D /* Debug */,
-				4BD206124B7EDC4A5280D428A1BF4349 /* Release */,
+				DFF8953A30133F637F52B63FA93F2CB0 /* Debug */,
+				17ADA24BF4ED0BA2BD6DFD6C6BED2F82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3430,8 +3410,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				31059FC4CDCFE28D42E245A795B024B8 /* Debug */,
-				264A9F638BB029C9415E7128794E01AD /* Release */,
+				79759604D78320E712558F49DF19AA9F /* Debug */,
+				431BA2B8298F0EE71735B9E0114E1955 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3439,8 +3419,8 @@
 		683554C8761C1229240A6D5BA7420509 /* Build configuration list for PBXNativeTarget "PoporAlertBubbleView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				01ADA0A667D31AD00B94FC4B10A54510 /* Debug */,
-				A178BBBE1FA9C2D814181FC6D229F588 /* Release */,
+				4825529ED992F66BFA893CFEC1C4C83B /* Debug */,
+				DC4C69B039DC84BC4574255E3DDAEBAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3448,8 +3428,8 @@
 		6C8109F199226DE1302E7B48FC9A8D0A /* Build configuration list for PBXNativeTarget "Pods-PoporNetRecord_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7883F1EB0690B637162ABBAE63041D21 /* Debug */,
-				1724267BC23804D473B894D74615F2BC /* Release */,
+				FFEDAA850BBFE4A4793AD2487EE8BEB2 /* Debug */,
+				ECC0BEE489D1A0A2A0B5C01058524995 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3457,8 +3437,8 @@
 		7DA4F018F7D03D804A3DEFF5D101CAF4 /* Build configuration list for PBXNativeTarget "GCDWebServer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D92041104A164013937A144F9F5D4BC7 /* Debug */,
-				655B4BC80615E1CB7644999E7099F7AF /* Release */,
+				94EA811983C36ADC129D97910817735B /* Debug */,
+				A57678CB42476613C238D0659A573265 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3466,8 +3446,8 @@
 		843DCD4E1A526CCC9B8651E6EDDB012A /* Build configuration list for PBXNativeTarget "PoporUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9E2557936BDB2D617BA8C3A21402E850 /* Debug */,
-				39A3FF4DD9EDAEE218C8F5D8DDB358AA /* Release */,
+				544DFB8745742584E91B5E180D8EDDE6 /* Debug */,
+				F75BA11E24CF212AA707885859BE5989 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3475,8 +3455,8 @@
 		87FD40BD683E3BD044AA4D1B5CA58652 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				933C252AC1697174177192BE69B419F9 /* Debug */,
-				D1F20CA5AF74551DBEC539096B44760B /* Release */,
+				F41B37955474857B252ABC87FAD371A3 /* Debug */,
+				3291FBA6637F3E5F07587ED127D86F49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3484,8 +3464,8 @@
 		C6F0B973E7B23006DE38F9F4A5CB5208 /* Build configuration list for PBXNativeTarget "PoporAFN" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24C6F227940335ED0364EE68543C550D /* Debug */,
-				AE4AEB7CCC826558F52EA3988BBB0852 /* Release */,
+				D712B017AD905A544274ECED175FD440 /* Debug */,
+				7464FDAD115A77ED41C6566497B0A10E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3493,8 +3473,8 @@
 		D4A4B40CB38ADC88749D1E1C8A945364 /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				84C58B518D43C3D8F8F5FC5FA93CDEB7 /* Debug */,
-				BD3A69076C1B8ED0EB8EED8E9254F409 /* Release */,
+				C5AF8D69ED4F8916D3467C2AF1EF4711 /* Debug */,
+				8AE891B0D2CD18CCAA4308A850FCFC79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3502,8 +3482,8 @@
 		DD6CCB1B4086A16420A8E70879769504 /* Build configuration list for PBXNativeTarget "PoporNetRecord" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3DF28D2261B1C2B385A41761A5CB8FBE /* Debug */,
-				F903B45715195D547B1487CDD09048A1 /* Release */,
+				FA827114B149534017959289B571A309 /* Debug */,
+				3F841E701B3C76B094FFE8767CBBC4DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3511,8 +3491,8 @@
 		DF50D5D8822B585CDE7A3BC58A20E72E /* Build configuration list for PBXNativeTarget "Pods-PoporNetRecord_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5553A6CF2A95FF6A0B1464A67CC154BE /* Debug */,
-				8C0D60D213FC0D4B7632F2CF74F8FFDB /* Release */,
+				BEA2FF1A380389427DABB8523C607728 /* Debug */,
+				A87C2F262DD0C763568D705F46C7984D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3520,8 +3500,8 @@
 		F9FEDA716A6AFCB7C586B67A8767151F /* Build configuration list for PBXNativeTarget "JSONSyntaxHighlight" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				995FD4D267511141E39EFA06276E2F43 /* Debug */,
-				F37273DF0297FD8C64E6FA41B037F6A1 /* Release */,
+				7EC5A14BB825A306F64054A20D382D99 /* Debug */,
+				8CA082A81BFDE052CCE32D841129F948 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
